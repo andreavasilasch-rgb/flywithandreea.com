@@ -1,0 +1,13 @@
+from_city,from_code,to_city,to_code,date,time,price,aircraft,category
+Lugano,LUG,Figari,FSC,May 25,14:30 → 15:46,From €3200,Very Light Jet,europe
+Venice,VCE,Bordeaux,BOD,May 25,14:55 → 17:21,From €6800,Light Jet,europe
+Milan,LIN,Rome,FCO,May 26,04:37 → 06:00,From €2900,Very Light Jet,europe
+Geneva,GVA,Cork,ORK,May 26,09:15 → 11:00,From €7400,Midsize Jet,europe
+Ibiza,IBZ,Palma,PMI,May 26,12:40 → 13:20,From €1800,Light Jet,leisure
+Milan,LIN,St Tropez,LTT,May 26,06:15 → 07:26,From €4100,Light Jet,leisure
+London,BQH,Nice,NCE,May 27,08:00 → 10:15,From €8900,Midsize Jet,longhaul
+Zurich,ZRH,Ibiza,IBZ,May 27,11:30 → 13:45,From €9200,Large Jet,leisure
+Paris,LBG,Mykonos,JMK,May 28,09:00 → 12:30,From €11400,Large Jet,leisure
+Rome,FCO,London,LCY,May 28,14:00 → 16:10,From €10800,Midsize Jet,longhaul
+Geneva,GVA,Dubrovnik,DBV,May 29,10:20 → 12:05,From €7600,Light Jet,europe
+Madrid,MAD,Paris,LBG,May 29,16:30 → 18:45,From €8300,Midsize Jet,europe
