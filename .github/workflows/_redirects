@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+/home           /               301
+/charter        /               301
+/fleet          /aircraft-catalogue.html    301
+/aircraft       /aircraft-catalogue.html    301

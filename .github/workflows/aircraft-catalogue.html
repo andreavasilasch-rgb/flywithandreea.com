@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aircraft Catalogue — Fly with Andreea | Private Jet Fleet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --gold:#CBAD91;
+  --gold-light:#D6B89C;
+  --gold-pale:#F0E6D8;
+  --ink:#1D1D1F;
+  --ink-2:#3A3A3C;
+  --grey-dark:#6E6E73;
+  --grey:#86868B;
+  --grey-light:#D2D2D7;
+  --white:#FFFFFF;
+  --off-white:#F5F5F7;
+  --warm-grey:#E8E8ED;
+  --bg:#FFFFFF;
+  --border:#D2D2D7;
+  --muted:#86868B;
+  --text:#1D1D1F;
+  --card-shadow:0 2px 20px rgba(0,0,0,0.04);
+  --card-shadow-hover:0 8px 40px rgba(0,0,0,0.08);
+  --radius:20px;
+  --sidebar:260px;
+  --serif:'Cinzel',Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display','Helvetica Neue',Arial,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);min-height:100vh}
+
+/* ─── NAV ─── */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);z-index:100}
+.nav-logo{font-family:var(--serif);font-size:22px;letter-spacing:-0.5px;color:var(--ink)}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--grey-dark);font-size:13px;font-weight:400;letter-spacing:-0.01em;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--gold);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;transition:background .2s}
+.nav-cta:hover{background:var(--gold-light)}
+
+/* ─── BREADCRUMB ─── */
+.breadcrumb{padding:20px 48px;font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
+.breadcrumb a{color:var(--muted);text-decoration:none}
+.breadcrumb a:hover{color:var(--ink)}
+.breadcrumb-arrow{opacity:.4}
+
+/* ─── HERO ─── */
+.hero{text-align:center;padding:48px 48px 40px}
+.hero h1{font-family:var(--serif);font-size:clamp(48px,6vw,80px);font-weight:400;letter-spacing:-2px;line-height:1;margin-bottom:28px}
+.hero-desc{max-width:600px;margin:0 auto;color:var(--grey-dark);font-size:15px;line-height:1.8;letter-spacing:-0.01em}
+.hero-desc strong{color:var(--ink);font-weight:500}
+
+/* ─── LAYOUT ─── */
+.layout{display:flex;gap:0;padding:0 48px 80px}
+
+/* ─── SIDEBAR ─── */
+.sidebar{width:var(--sidebar);flex-shrink:0;padding-right:40px;position:sticky;top:80px;max-height:calc(100vh - 100px);overflow-y:auto}
+.sidebar::-webkit-scrollbar{width:4px}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.filter-group{margin-bottom:8px}
+.filter-header{display:flex;align-items:center;gap:10px;padding:12px 0;cursor:pointer;user-select:none}
+.filter-header svg{transition:transform .2s;flex-shrink:0}
+.filter-header.open svg{transform:rotate(180deg)}
+.filter-title{font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink)}
+.filter-body{padding-bottom:8px}
+.filter-option{display:flex;align-items:center;gap:10px;padding:7px 0;cursor:pointer}
+.filter-option input[type=checkbox]{width:18px;height:18px;border:0.5px solid var(--border);border-radius:4px;appearance:none;cursor:pointer;flex-shrink:0;transition:all .15s;position:relative}
+.filter-option input[type=checkbox]:checked{background:var(--gold);border-color:var(--gold)}
+.filter-option input[type=checkbox]:checked::after{content:'';position:absolute;left:4px;top:2px;width:6px;height:9px;border:2px solid #fff;border-top:none;border-left:none;transform:rotate(45deg)}
+.filter-option label{font-size:14px;color:var(--ink);cursor:pointer;flex:1}
+.filter-option label span{color:var(--muted);font-size:13px}
+.filter-sep{height:1px;background:var(--border);margin:4px 0 12px}
+
+/* ─── GRID ─── */
+.grid-area{flex:1;min-width:0}
+.grid-controls{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:0.5px solid var(--border)}
+.grid-count{font-family:var(--sans);font-size:13px;color:var(--grey);letter-spacing:-0.01em}
+.grid-count strong{color:var(--ink);font-weight:500}
+.compare-bar{display:none;align-items:center;gap:12px;background:var(--gold);color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:500}
+.compare-bar.visible{display:flex}
+.compare-bar button{background:rgba(255,255,255,0.2);border:none;color:#fff;padding:6px 14px;border-radius:6px;cursor:pointer;font-family:inherit;font-size:12px;transition:background .15s}
+.compare-bar button:hover{background:rgba(255,255,255,0.35)}
+.compare-bar .clear-btn{background:transparent;opacity:.7}
+
+.aircraft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+
+/* ─── CARD ─── */
+.aircraft-card{background:#F5F5F7;padding:24px;border-radius:20px;cursor:pointer;transition:all .25s;position:relative;display:flex;flex-direction:column;align-items:center;border:0.5px solid var(--border)}
+.aircraft-card:hover{background:#FFFFFF;box-shadow:var(--card-shadow-hover);z-index:2;transform:translateY(-3px);border-color:var(--gold)}
+.aircraft-card.selected{background:#F0E6D8;box-shadow:0 0 0 2px var(--gold)}
+.card-compare-btn{position:absolute;top:14px;right:14px;opacity:0;display:flex;align-items:center;gap:5px;background:#fff;border:0.5px solid var(--border);padding:5px 10px;border-radius:6px;font-size:11px;font-weight:500;color:var(--ink);cursor:pointer;transition:all .15s;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.aircraft-card:hover .card-compare-btn,
+.aircraft-card.selected .card-compare-btn{opacity:1}
+.aircraft-card.selected .card-compare-btn{background:var(--gold);color:#fff;border-color:var(--gold)}
+.card-compare-btn svg{flex-shrink:0}
+.card-img-wrap{width:100%;height:120px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.card-img-wrap img{max-width:90%;max-height:110px;object-fit:contain;filter:grayscale(15%);transition:filter .2s;drop-shadow(0 4px 12px rgba(0,0,0,0.08))}
+.aircraft-card:hover .card-img-wrap img{filter:grayscale(0%)}
+.card-name{font-size:15px;font-weight:500;text-align:center;color:var(--ink);line-height:1.3}
+.card-cat{font-family:var(--sans);font-size:11px;color:var(--grey);margin-top:4px;text-align:center;letter-spacing:0.04em;text-transform:uppercase}
+.card-hidden{display:none!important}
+
+/* ─── DETAIL MODAL ─── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.35);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal{background:#FFFFFF;border-radius:20px;width:100%;max-width:900px;overflow:hidden;animation:modalIn .25s ease;border:0.5px solid var(--border)}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:20px;right:20px;width:36px;height:36px;border-radius:50%;background:#f0f0f0;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);transition:background .15s;z-index:10}
+.modal-close:hover{background:#e0e0e0;color:var(--ink)}
+.modal-inner{position:relative;padding:40px}
+.modal-title{font-family:var(--serif);font-size:38px;font-weight:400;margin-bottom:28px;letter-spacing:-1px}
+.modal-gallery{border-radius:14px;overflow:hidden;background:#111;position:relative;margin-bottom:36px}
+.modal-gallery img{width:100%;height:360px;object-fit:cover;display:block}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--ink);transition:background .15s;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.gallery-nav:hover{background:#fff}
+.gallery-prev{left:16px}
+.gallery-next{right:16px}
+.modal-spec-title{font-family:var(--serif);font-size:26px;font-weight:400;margin-bottom:28px}
+.specs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 20px;margin-bottom:32px}
+.spec-item{display:flex;flex-direction:column;gap:8px}
+.spec-icon{width:36px;height:36px;opacity:.35}
+.spec-label{font-family:var(--sans);font-size:11px;color:var(--grey);letter-spacing:0.04em;text-transform:uppercase}
+.spec-value{font-size:15px;font-weight:500;color:var(--ink)}
+.modal-cta{background:var(--gold);color:#fff;border:none;padding:14px 32px;border-radius:10px;font-family:var(--sans);font-size:15px;font-weight:500;cursor:pointer;width:100%;transition:background .2s;margin-top:8px}
+.modal-cta:hover{background:var(--gold-light)}
+
+/* ─── COMPARE TABLE ─── */
+.compare-modal{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:300;display:none;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
+.compare-modal.open{display:flex}
+.compare-panel{background:#fff;border-radius:20px;width:100%;max-width:900px;max-height:90vh;overflow-y:auto;padding:36px;animation:modalIn .25s ease;position:relative}
+.compare-panel h2{font-family:var(--serif);font-size:28px;font-weight:400;margin-bottom:28px}
+.compare-table{width:100%;border-collapse:collapse}
+.compare-table th{font-size:13px;font-weight:500;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:2px solid var(--border)}
+.compare-table th.ac-col{text-align:center}
+.compare-table td{padding:12px 12px;border-bottom:0.5px solid var(--border);font-size:14px;vertical-align:middle}
+.compare-table td.ac-col{text-align:center;font-weight:500}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table .row-label{color:var(--muted);font-size:13px}
+.compare-ac-head{text-align:center;padding-bottom:12px}
+.compare-ac-img{width:140px;height:80px;object-fit:contain;filter:grayscale(10%)}
+.compare-ac-name{font-size:14px;font-weight:500;margin-top:6px}
+.highlight{background:#F0E6D8;font-weight:500;color:var(--gold)!important}
+
+/* ─── NO RESULTS ─── */
+.no-results{display:none;text-align:center;padding:80px 20px;color:var(--grey);font-family:var(--sans);font-size:15px;letter-spacing:-0.01em}
+.no-results.visible{display:block}
+
+/* ─── FOOTER ─── */
+footer{border-top:0.5px solid var(--border);background:#F5F5F7;padding:32px 48px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+@media(max-width:900px){
+  .aircraft-grid{grid-template-columns:repeat(2,1fr)}
+  .layout{flex-direction:column;padding:0 20px 60px}
+  .sidebar{width:100%;position:static;max-height:none;padding-right:0;margin-bottom:24px}
+  .nav{padding:0 20px}
+  .breadcrumb,.hero{padding-left:20px;padding-right:20px}
+  .specs-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .aircraft-grid{grid-template-columns:repeat(2,1fr)}
+  .modal-inner{padding:24px}
+  .modal-title{font-size:28px}
+  footer{flex-direction:column;gap:12px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo-link"><img src="logo.png" alt="Fly with Andreea" class="nav-logo-img-cat"></a>
+  <ul class="nav-links">
+    <li><a href="#">Charter</a></li>
+    <li><a href="#">Jet Sharing</a></li>
+    <li><a href="#">Empty Legs</a></li>
+    <li><a href="#" style="color:var(--ink);font-weight:500">Aircraft</a></li>
+    <li><a href="#">Airports</a></li>
+  </ul>
+  <button class="nav-cta">Send request</button>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Fly with Andreea</a>
+  <span class="breadcrumb-arrow">›</span>
+  <span>Aircraft catalogue</span>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>The fleet.</h1>
+  <p class="hero-desc">
+    <strong>Find the right aircraft for your journey.</strong><br><br>
+    Browse every aircraft we can access across our global network of 450+ operators. Filter by category, compare side by side, and ask Andreea to arrange any aircraft you see here.
+  </p>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="filter-group">
+      <div class="filter-header open" onclick="toggleFilter(this)">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4l5 5 5-5" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="filter-title">Aircraft Type</span>
+      </div>
+      <div class="filter-body" id="type-filter">
+        <div class="filter-option">
+          <input type="checkbox" id="f-lr" value="Long-range" onchange="applyFilters()">
+          <label for="f-lr">Long-range <span id="count-lr"></span></label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="f-hv" value="Heavy" onchange="applyFilters()">
+          <label for="f-hv">Heavy <span id="count-hv"></span></label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="f-sm" value="Super midsize" onchange="applyFilters()">
+          <label for="f-sm">Super midsize <span id="count-sm"></span></label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="f-md" value="Midsize" onchange="applyFilters()">
+          <label for="f-md">Midsize <span id="count-md"></span></label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="f-li" value="Light" onchange="applyFilters()">
+          <label for="f-li">Light <span id="count-li"></span></label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="f-vl" value="Very light" onchange="applyFilters()">
+          <label for="f-vl">Very light <span id="count-vl"></span></label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" id="f-tp" value="Turboprops" onchange="applyFilters()">
+          <label for="f-tp">Turboprops <span id="count-tp"></span></label>
+        </div>
+      </div>
+    </div>
+    <div class="filter-sep"></div>
+    <div style="padding:4px 0 8px">
+      <button onclick="clearFilters()" style="background:none;border:0.5px solid var(--border);padding:8px 16px;border-radius:40px;font-family:var(--sans);font-size:13px;letter-spacing:-0.01em;color:var(--grey);cursor:pointer;width:100%;transition:border-color .2s,color .2s">Clear filters</button>
+    </div>
+  </aside>
+
+  <!-- GRID AREA -->
+  <div class="grid-area">
+    <div class="grid-controls">
+      <div class="grid-count">Showing <strong id="visible-count">0</strong> aircraft</div>
+      <div class="compare-bar" id="compare-bar">
+        <span id="compare-count-label">0 selected</span>
+        <button onclick="openCompare()">Compare</button>
+        <button class="clear-btn" onclick="clearCompare()">✕ Clear</button>
+      </div>
+    </div>
+    <div class="aircraft-grid" id="grid"></div>
+    <div class="no-results" id="no-results">No aircraft match these filters. Try clearing to see all.</div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="detail-modal" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" onclick="closeDetailModal()">✕</button>
+      <h1 class="modal-title" id="modal-title"></h1>
+      <div class="modal-gallery">
+        <img id="modal-img" src="" alt="">
+        <button class="gallery-nav gallery-prev" onclick="galleryPrev()">‹</button>
+        <button class="gallery-nav gallery-next" onclick="galleryNext()">›</button>
+      </div>
+      <h2 class="modal-spec-title" id="modal-spec-title"></h2>
+      <div class="specs-grid" id="modal-specs"></div>
+      <a href="index.html#quote" class="modal-cta" style="display:block;text-align:center;text-decoration:none">Book now</a>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARE MODAL -->
+<div class="compare-modal" id="compare-modal" onclick="closeCompareModal(event)">
+  <div class="compare-panel">
+    <button class="modal-close" onclick="closeCompareModal()" style="position:absolute;top:16px;right:16px">✕</button>
+    <h2>Compare aircraft</h2>
+    <div id="compare-table-wrap"></div>
+  </div>
+</div>
+
+<footer>
+  <div>© 2026 Fly with Andreea. All rights reserved.</div>
+  <div style="display:flex;gap:24px">
+    <a href="#" style="color:var(--muted);text-decoration:none">Privacy Policy</a>
+    <a href="#" style="color:var(--muted);text-decoration:none">Terms</a>
+    <a href="#" style="color:var(--muted);text-decoration:none">Contact</a>
+  </div>
+</footer>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+const AIRCRAFT = [
+  // Long-range
+  {name:"Embraer Lineage 1000",cat:"Long-range",seats:19,range:"8050 km (5003 mi)",speed:"870 km/h (541 mph)",luggage:"8.7 m³",cabinH:"1.98 m (6.5 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=70"},
+  {name:"Falcon 7X",cat:"Long-range",seats:14,range:"11000 km (6835 mi)",speed:"900 km/h (560 mph)",luggage:"5.6 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.34 m (7.7 ft)",mfr:"Dassault",img:"https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=600&q=70"},
+  {name:"Falcon 8X",cat:"Long-range",seats:16,range:"11945 km (7420 mi)",speed:"900 km/h (560 mph)",luggage:"5.8 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.34 m (7.7 ft)",mfr:"Dassault",img:"https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=600&q=70"},
+  {name:"Global 5000",cat:"Long-range",seats:14,range:"9630 km (5985 mi)",speed:"904 km/h (562 mph)",luggage:"6.2 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&q=70"},
+  {name:"Global 6000",cat:"Long-range",seats:14,range:"11100 km (6898 mi)",speed:"904 km/h (562 mph)",luggage:"6.8 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&q=70"},
+  {name:"Global Express",cat:"Long-range",seats:13,range:"11390 km (7079 mi)",speed:"904 km/h (562 mph)",luggage:"6.8 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&q=70"},
+  {name:"Gulfstream G550",cat:"Long-range",seats:16,range:"12500 km (7767 mi)",speed:"941 km/h (585 mph)",luggage:"6.5 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.24 m (7.3 ft)",mfr:"Gulfstream",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  {name:"Gulfstream G650",cat:"Long-range",seats:18,range:"13890 km (8633 mi)",speed:"956 km/h (594 mph)",luggage:"7.0 m³",cabinH:"1.95 m (6.4 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Gulfstream",img:"https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=600&q=70"},
+  {name:"Gulfstream G700",cat:"Long-range",seats:19,range:"13890 km (8633 mi)",speed:"956 km/h (594 mph)",luggage:"7.8 m³",cabinH:"1.98 m (6.5 ft)",cabinW:"2.59 m (8.5 ft)",mfr:"Gulfstream",img:"https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=600&q=70"},
+  {name:"Gulfstream G500",cat:"Long-range",seats:16,range:"11297 km (7020 mi)",speed:"956 km/h (594 mph)",luggage:"6.5 m³",cabinH:"1.90 m (6.2 ft)",cabinW:"2.36 m (7.7 ft)",mfr:"Gulfstream",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  // Heavy
+  {name:"Challenger 604",cat:"Heavy",seats:10,range:"7408 km (4604 mi)",speed:"882 km/h (548 mph)",luggage:"5.1 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  {name:"Challenger 605",cat:"Heavy",seats:12,range:"7408 km (4604 mi)",speed:"882 km/h (548 mph)",luggage:"5.1 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  {name:"Challenger 650",cat:"Heavy",seats:12,range:"7408 km (4604 mi)",speed:"882 km/h (548 mph)",luggage:"5.5 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  {name:"Challenger 850",cat:"Heavy",seats:14,range:"5834 km (3625 mi)",speed:"882 km/h (548 mph)",luggage:"6.2 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.49 m (8.2 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  {name:"Embraer Legacy 600",cat:"Heavy",seats:13,range:"6019 km (3740 mi)",speed:"834 km/h (518 mph)",luggage:"7.0 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=70"},
+  {name:"Embraer Legacy 650",cat:"Heavy",seats:14,range:"7223 km (4489 mi)",speed:"834 km/h (518 mph)",luggage:"7.1 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=70"},
+  {name:"Falcon 2000",cat:"Heavy",seats:10,range:"5559 km (3455 mi)",speed:"870 km/h (541 mph)",luggage:"3.5 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.34 m (7.7 ft)",mfr:"Dassault",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Falcon 2000LX",cat:"Heavy",seats:10,range:"7408 km (4604 mi)",speed:"870 km/h (541 mph)",luggage:"3.7 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.34 m (7.7 ft)",mfr:"Dassault",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Falcon 2000S",cat:"Heavy",seats:10,range:"6020 km (3742 mi)",speed:"870 km/h (541 mph)",luggage:"3.7 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.34 m (7.7 ft)",mfr:"Dassault",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Falcon 900LX",cat:"Heavy",seats:12,range:"7800 km (4847 mi)",speed:"870 km/h (541 mph)",luggage:"4.5 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.34 m (7.7 ft)",mfr:"Dassault",img:"https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=600&q=70"},
+  {name:"Gulfstream G450",cat:"Heavy",seats:14,range:"7822 km (4861 mi)",speed:"956 km/h (594 mph)",luggage:"5.1 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.24 m (7.3 ft)",mfr:"Gulfstream",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  // Super midsize
+  {name:"Cessna Citation Latitude",cat:"Super midsize",seats:9,range:"3724 km (2315 mi)",speed:"790 km/h (491 mph)",luggage:"2.7 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"1.98 m (6.5 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Cessna Citation Sovereign",cat:"Super midsize",seats:9,range:"4629 km (2877 mi)",speed:"830 km/h (516 mph)",luggage:"2.5 m³",cabinH:"1.73 m (5.7 ft)",cabinW:"1.68 m (5.5 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Challenger 300",cat:"Super midsize",seats:8,range:"5741 km (3567 mi)",speed:"870 km/h (541 mph)",luggage:"3.0 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.18 m (7.1 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Challenger 350",cat:"Super midsize",seats:10,range:"5926 km (3682 mi)",speed:"870 km/h (541 mph)",luggage:"3.0 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.18 m (7.1 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Challenger 3500",cat:"Super midsize",seats:10,range:"5926 km (3682 mi)",speed:"870 km/h (541 mph)",luggage:"3.2 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.18 m (7.1 ft)",mfr:"Bombardier",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Citation Longitude",cat:"Super midsize",seats:12,range:"6482 km (4029 mi)",speed:"870 km/h (541 mph)",luggage:"3.0 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.02 m (6.6 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Embraer Legacy 500",cat:"Super midsize",seats:12,range:"5556 km (3453 mi)",speed:"834 km/h (518 mph)",luggage:"3.3 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Embraer Praetor 600",cat:"Super midsize",seats:12,range:"7590 km (4717 mi)",speed:"834 km/h (518 mph)",luggage:"3.5 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=600&q=70"},
+  {name:"Gulfstream G280",cat:"Super midsize",seats:10,range:"6667 km (4143 mi)",speed:"870 km/h (541 mph)",luggage:"3.1 m³",cabinH:"1.88 m (6.2 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Gulfstream",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  // Midsize
+  {name:"Cessna Citation Excel",cat:"Midsize",seats:8,range:"3185 km (1980 mi)",speed:"790 km/h (491 mph)",luggage:"1.7 m³",cabinH:"1.73 m (5.7 ft)",cabinW:"1.68 m (5.5 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Cessna Citation XLS",cat:"Midsize",seats:8,range:"3705 km (2303 mi)",speed:"790 km/h (491 mph)",luggage:"1.7 m³",cabinH:"1.73 m (5.7 ft)",cabinW:"1.68 m (5.5 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  {name:"Cessna Citation XLS+",cat:"Midsize",seats:8,range:"3705 km (2303 mi)",speed:"790 km/h (491 mph)",luggage:"1.7 m³",cabinH:"1.73 m (5.7 ft)",cabinW:"1.68 m (5.5 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=70"},
+  {name:"Cessna Citation VII",cat:"Midsize",seats:8,range:"3778 km (2348 mi)",speed:"830 km/h (516 mph)",luggage:"1.8 m³",cabinH:"1.73 m (5.7 ft)",cabinW:"1.68 m (5.5 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Embraer Legacy 450",cat:"Midsize",seats:9,range:"4260 km (2648 mi)",speed:"834 km/h (518 mph)",luggage:"3.0 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Embraer Praetor 500",cat:"Midsize",seats:9,range:"4018 km (2496 mi)",speed:"834 km/h (518 mph)",luggage:"2.8 m³",cabinH:"1.83 m (6.0 ft)",cabinW:"2.10 m (6.9 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Hawker 750XP",cat:"Midsize",seats:8,range:"4630 km (2878 mi)",speed:"830 km/h (516 mph)",luggage:"2.0 m³",cabinH:"1.75 m (5.7 ft)",cabinW:"1.83 m (6.0 ft)",mfr:"Hawker",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Hawker 900XP",cat:"Midsize",seats:9,range:"4630 km (2878 mi)",speed:"830 km/h (516 mph)",luggage:"2.0 m³",cabinH:"1.75 m (5.7 ft)",cabinW:"1.83 m (6.0 ft)",mfr:"Hawker",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Learjet 60XR",cat:"Midsize",seats:8,range:"4622 km (2873 mi)",speed:"861 km/h (535 mph)",luggage:"1.5 m³",cabinH:"1.73 m (5.7 ft)",cabinW:"1.93 m (6.3 ft)",mfr:"Learjet",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Pilatus PC-24",cat:"Midsize",seats:11,range:"3334 km (2072 mi)",speed:"815 km/h (507 mph)",luggage:"2.1 m³",cabinH:"1.52 m (5.0 ft)",cabinW:"1.60 m (5.2 ft)",mfr:"Pilatus",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  // Light
+  {name:"Cessna Citation CJ2",cat:"Light",seats:6,range:"2964 km (1842 mi)",speed:"765 km/h (476 mph)",luggage:"0.9 m³",cabinH:"1.45 m (4.8 ft)",cabinW:"1.49 m (4.9 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Cessna Citation CJ3",cat:"Light",seats:7,range:"3334 km (2072 mi)",speed:"778 km/h (483 mph)",luggage:"0.9 m³",cabinH:"1.45 m (4.8 ft)",cabinW:"1.49 m (4.9 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Cessna Citation CJ4",cat:"Light",seats:8,range:"3334 km (2072 mi)",speed:"793 km/h (493 mph)",luggage:"1.0 m³",cabinH:"1.45 m (4.8 ft)",cabinW:"1.49 m (4.9 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Embraer Phenom 300",cat:"Light",seats:8,range:"3650 km (2269 mi)",speed:"834 km/h (518 mph)",luggage:"1.6 m³",cabinH:"1.49 m (4.9 ft)",cabinW:"1.55 m (5.1 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Embraer Phenom 300E",cat:"Light",seats:9,range:"3723 km (2314 mi)",speed:"834 km/h (518 mph)",luggage:"1.6 m³",cabinH:"1.49 m (4.9 ft)",cabinW:"1.55 m (5.1 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Hawker 400XP",cat:"Light",seats:7,range:"2501 km (1555 mi)",speed:"796 km/h (495 mph)",luggage:"0.9 m³",cabinH:"1.45 m (4.8 ft)",cabinW:"1.50 m (4.9 ft)",mfr:"Hawker",img:"https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=70"},
+  {name:"Learjet 45XR",cat:"Light",seats:8,range:"3779 km (2349 mi)",speed:"859 km/h (534 mph)",luggage:"1.0 m³",cabinH:"1.47 m (4.8 ft)",cabinW:"1.60 m (5.2 ft)",mfr:"Learjet",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  // Very light
+  {name:"Cessna Citation M2",cat:"Very light",seats:5,range:"2406 km (1495 mi)",speed:"748 km/h (465 mph)",luggage:"0.7 m³",cabinH:"1.45 m (4.8 ft)",cabinW:"1.47 m (4.8 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Cessna Citation Mustang",cat:"Very light",seats:4,range:"2130 km (1324 mi)",speed:"630 km/h (392 mph)",luggage:"0.5 m³",cabinH:"1.37 m (4.5 ft)",cabinW:"1.47 m (4.8 ft)",mfr:"Cessna",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Embraer Phenom 100",cat:"Very light",seats:4,range:"2182 km (1356 mi)",speed:"704 km/h (437 mph)",luggage:"0.5 m³",cabinH:"1.50 m (4.9 ft)",cabinW:"1.55 m (5.1 ft)",mfr:"Embraer",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"HondaJet",cat:"Very light",seats:5,range:"2661 km (1654 mi)",speed:"782 km/h (486 mph)",luggage:"0.45 m³",cabinH:"1.47 m (4.8 ft)",cabinW:"1.52 m (5.0 ft)",mfr:"Honda",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  // Turboprops
+  {name:"King Air 260",cat:"Turboprops",seats:9,range:"3009 km (1870 mi)",speed:"540 km/h (336 mph)",luggage:"1.2 m³",cabinH:"1.37 m (4.5 ft)",cabinW:"1.37 m (4.5 ft)",mfr:"Beechcraft",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Pilatus PC-12 NGX",cat:"Turboprops",seats:9,range:"3417 km (2123 mi)",speed:"574 km/h (357 mph)",luggage:"1.6 m³",cabinH:"1.52 m (5.0 ft)",cabinW:"1.52 m (5.0 ft)",mfr:"Pilatus",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+  {name:"Pilatus PC-12/47(E) NG",cat:"Turboprops",seats:9,range:"3417 km (2123 mi)",speed:"500 km/h (311 mph)",luggage:"1.4 m³",cabinH:"1.52 m (5.0 ft)",cabinW:"1.52 m (5.0 ft)",mfr:"Pilatus",img:"https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=70"},
+];
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let activeFilters = new Set();
+let compareList = [];
+let currentAircraft = null;
+let galleryIdx = 0;
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+function renderGrid(data){
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  data.forEach((ac,i) => {
+    const sel = compareList.includes(ac.name);
+    const div = document.createElement('div');
+    div.className = 'aircraft-card' + (sel ? ' selected' : '');
+    div.dataset.name = ac.name;
+    div.dataset.cat = ac.cat;
+    div.style.animationDelay = (i%9 * 40)+'ms';
+    div.innerHTML = `
+      <button class="card-compare-btn" onclick="toggleCompare(event,'${ac.name}')">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3h12M1 7h8M1 11h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 10l1.5-1.5L12 7" stroke="${sel?'#fff':'currentColor'}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        ${sel?'Added':'Compare'}
+      </button>
+      <div class="card-img-wrap">
+        <img src="${ac.img}" alt="${ac.name}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 80%22><text x=%2250%%22 y=%2260%%22 text-anchor=%22middle%22 font-size=%2213%22 fill=%22%23bbb%22>No image</text></svg>'">
+      </div>
+      <div class="card-name">${ac.name}</div>
+      <div class="card-cat">${ac.cat}</div>
+    `;
+    div.addEventListener('click', (e) => {
+      if(e.target.closest('.card-compare-btn')) return;
+      openDetail(ac);
+    });
+    grid.appendChild(div);
+  });
+  document.getElementById('visible-count').textContent = data.length;
+  document.getElementById('no-results').classList.toggle('visible', data.length === 0);
+}
+
+function updateCounts(){
+  const cats = {
+    'Long-range':'count-lr','Heavy':'count-hv','Super midsize':'count-sm',
+    'Midsize':'count-md','Light':'count-li','Very light':'count-vl','Turboprops':'count-tp'
+  };
+  Object.entries(cats).forEach(([cat,id])=>{
+    document.getElementById(id).textContent = '('+AIRCRAFT.filter(a=>a.cat===cat).length+')';
+  });
+}
+
+function applyFilters(){
+  const checkboxes = document.querySelectorAll('.filter-option input:checked');
+  activeFilters = new Set([...checkboxes].map(c=>c.value));
+  const filtered = activeFilters.size===0 ? AIRCRAFT : AIRCRAFT.filter(a=>activeFilters.has(a.cat));
+  renderGrid(filtered);
+}
+
+function clearFilters(){
+  document.querySelectorAll('.filter-option input').forEach(c=>c.checked=false);
+  activeFilters.clear();
+  renderGrid(AIRCRAFT);
+}
+
+function toggleFilter(header){
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  body.style.display = header.classList.contains('open') ? 'block' : 'none';
+}
+
+// ─── COMPARE ─────────────────────────────────────────────────────────────────
+function toggleCompare(e, name){
+  e.stopPropagation();
+  if(compareList.includes(name)){
+    compareList = compareList.filter(n=>n!==name);
+  } else {
+    if(compareList.length >= 4){alert('You can compare up to 4 aircraft at a time.');return;}
+    compareList.push(name);
+  }
+  updateCompareBar();
+  applyFilters();
+}
+
+function updateCompareBar(){
+  const bar = document.getElementById('compare-bar');
+  const lbl = document.getElementById('compare-count-label');
+  bar.classList.toggle('visible', compareList.length > 0);
+  lbl.textContent = compareList.length + ' selected';
+}
+
+function clearCompare(){
+  compareList=[];
+  updateCompareBar();
+  applyFilters();
+}
+
+function openCompare(){
+  if(compareList.length < 2){alert('Select at least 2 aircraft to compare.');return;}
+  const acs = compareList.map(n=>AIRCRAFT.find(a=>a.name===n)).filter(Boolean);
+  const rows = [
+    ['Aircraft type','cat'],
+    ['Manufacturer','mfr'],
+    ['Number of seats','seats'],
+    ['Flight range','range'],
+    ['Cruising speed','speed'],
+    ['Baggage space','luggage'],
+    ['Cabin height','cabinH'],
+    ['Cabin width','cabinW'],
+  ];
+  let html = `<div style="overflow-x:auto"><table class="compare-table"><thead><tr><th style="width:160px">Specification</th>`;
+  acs.forEach(ac=>{
+    html += `<th class="ac-col"><div class="compare-ac-head"><img class="compare-ac-img" src="${ac.img}" onerror="this.style.display='none'"><div class="compare-ac-name">${ac.name}</div></div></th>`;
+  });
+  html += '</tr></thead><tbody>';
+  rows.forEach(([label,key])=>{
+    const vals = acs.map(a=>String(a[key]));
+    const maxNum = key==='seats' ? Math.max(...vals.map(Number)) : null;
+    html += `<tr><td class="row-label">${label}</td>`;
+    acs.forEach(ac=>{
+      const v = String(ac[key]);
+      const isTop = key==='seats' && Number(v)===maxNum;
+      html += `<td class="ac-col${isTop?' highlight':''}">${v}</td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table></div>';
+  document.getElementById('compare-table-wrap').innerHTML = html;
+  document.getElementById('compare-modal').classList.add('open');
+}
+
+function closeCompareModal(e){
+  if(!e || e.target===document.getElementById('compare-modal') || e.target.classList.contains('modal-close')){
+    document.getElementById('compare-modal').classList.remove('open');
+  }
+}
+
+// ─── DETAIL MODAL ────────────────────────────────────────────────────────────
+function openDetail(ac){
+  currentAircraft = ac;
+  galleryIdx = 0;
+  document.getElementById('modal-title').textContent = ac.name;
+  document.getElementById('modal-img').src = ac.img;
+  document.getElementById('modal-spec-title').textContent = 'Characteristics of ' + ac.name;
+
+  const specs = [
+    {icon:'plane', label:'Aircraft type', value:ac.cat},
+    {icon:'range', label:'Flight range',  value:ac.range},
+    {icon:'seats', label:'Number of seats', value:ac.seats},
+    {icon:'gear',  label:'Manufacturer',  value:ac.mfr},
+    {icon:'speed', label:'Cruising speed', value:ac.speed},
+    {icon:'bag',   label:'Baggage space', value:ac.luggage},
+    {icon:'h',     label:'Cabin height',  value:ac.cabinH},
+    {icon:'w',     label:'Cabin width',   value:ac.cabinW},
+  ];
+
+  const iconSVGs = {
+    plane:`<svg viewBox="0 0 36 36" fill="none"><path d="M6 24l4-4 2 1 8-8-8-6 3-3 10 5 5-5c1-1 3-1 4 0 1 1 1 3 0 4l-5 5 5 10-3 3-6-8-8 8 1 2-4 4-3-8z" stroke="#555" stroke-width="1.5" stroke-linejoin="round"/></svg>`,
+    range:`<svg viewBox="0 0 36 36" fill="none"><circle cx="13" cy="13" r="5" stroke="#555" stroke-width="1.5"/><path d="M18 18l8 8" stroke="#555" stroke-width="1.5" stroke-linecap="round"/><path d="M13 8v2M13 18v2M8 13h2M18 13h2" stroke="#555" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    seats:`<svg viewBox="0 0 36 36" fill="none"><circle cx="12" cy="9" r="3" stroke="#555" stroke-width="1.5"/><circle cx="24" cy="9" r="3" stroke="#555" stroke-width="1.5"/><path d="M6 27v-5a6 6 0 0112 0v5M18 27v-5a6 6 0 0112 0v5" stroke="#555" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    gear:`<svg viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="5" stroke="#555" stroke-width="1.5"/><path d="M18 6v4M18 26v4M6 18h4M26 18h4M9.5 9.5l3 3M23.5 23.5l3 3M9.5 26.5l3-3M23.5 12.5l3-3" stroke="#555" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    speed:`<svg viewBox="0 0 36 36" fill="none"><path d="M8 24a12 12 0 1120 0" stroke="#555" stroke-width="1.5" stroke-linecap="round"/><path d="M18 24l-4-8" stroke="#555" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    bag:`<svg viewBox="0 0 36 36" fill="none"><rect x="6" y="14" width="24" height="16" rx="3" stroke="#555" stroke-width="1.5"/><path d="M13 14v-3a5 5 0 0110 0v3" stroke="#555" stroke-width="1.5" stroke-linecap="round"/><path d="M6 20h24" stroke="#555" stroke-width="1.5"/></svg>`,
+    h:`<svg viewBox="0 0 36 36" fill="none"><rect x="10" y="8" width="6" height="20" rx="2" stroke="#555" stroke-width="1.5"/><path d="M10 18h6" stroke="#555" stroke-width="1.5"/><path d="M22 8v20M20 8h4M20 28h4" stroke="#555" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    w:`<svg viewBox="0 0 36 36" fill="none"><rect x="8" y="10" width="20" height="6" rx="2" stroke="#555" stroke-width="1.5"/><path d="M18 10v6" stroke="#555" stroke-width="1.5"/><path d="M8 22h20M8 20v4M28 20v4" stroke="#555" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+  };
+
+  const specsEl = document.getElementById('modal-specs');
+  specsEl.innerHTML = specs.map(s=>`
+    <div class="spec-item">
+      <div class="spec-icon">${iconSVGs[s.icon]||''}</div>
+      <div class="spec-label">${s.label}</div>
+      <div class="spec-value">${s.value}</div>
+    </div>
+  `).join('');
+
+  document.getElementById('detail-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetailModal(){
+  document.getElementById('detail-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModal(e){
+  if(e.target===document.getElementById('detail-modal')) closeDetailModal();
+}
+
+function galleryPrev(){
+  // In a real build, cycle through multiple images; here we just show main
+}
+function galleryNext(){}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+updateCounts();
+renderGrid(AIRCRAFT);
+</script>
+</body>
+</html>
