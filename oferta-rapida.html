@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta name="description" content="Private jet charter across Europe, the Middle East and Africa. 55-minute take-off, 450+ operators, 180 countries. Rezervă with Fly with Andreea.">
+  <meta name="description" content="Private jet charter across Europe, the Middle East and Africa. 55-minute take-off, 450+ operators, 180 countries. Book now with Fly with Andreea.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.flywithandreea.com/ro/">
-<link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/">
-<link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/">
-<link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/">
-<link rel="alternate" hreflang="ro" href="https://www.flywithandreea.com/ro/">
-<link rel="alternate" hreflang="es" href="https://www.flywithandreea.com/es/">
-<link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/">
-
+  <link rel="canonical" href="https://www.flywithandreea.com/ro/oferta-rapida">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
-  <meta property="og:title" content="Fly with Andreea — Charter de jet privat">
-  <meta property="og:description" content="Charter de jet privat în Europa, Orientul Mijlociu și Africa. Decolare în 55 de minute. Peste 450 de operatori. 180 de țări. O persoană. Mereu Andreea.">
+  <meta property="og:title" content="Fly with Andreea — Private Jet Charter">
+  <meta property="og:description" content="Private jet charter across Europe, the Middle East and Africa. 55-minute take-off. 450+ operators. 180 countries. One person. Always Andreea.">
   <meta property="og:image" content="https://www.flywithandreea.com/logo.png">
-  <meta property="og:url" content="https://www.flywithandreea.com/ro/">
+  <meta property="og:url" content="https://www.flywithandreea.com/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fly with Andreea — Charter de jet privat">
+  <meta name="twitter:title" content="Fly with Andreea — Private Jet Charter">
   <meta name="twitter:description" content="Private jet charter. Europe, Middle East, Africa. 55-minute take-off. Always Andreea.">
   <meta name="twitter:image" content="https://www.flywithandreea.com/logo.png">
   <script type="application/ld+json">
@@ -39,7 +32,7 @@
   </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fly with Andreea | Charter de jet privat — Europa, Orientul Mijlociu și Africa</title>
+<title>Cere o ofertă rapidă | Fly with Andreea</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -781,6 +774,69 @@ nav.scrolled .logo-on-light { display: inline-block; }
   .add-leg, #bbSearch{ width:100%; margin-right:0; text-align:center; }
 }
 
+/* --- fast quote form (refined) --- */
+.fq-sec{ background:var(--paper-2,#F5F5F7); padding:84px 0; }
+.fq-wrap{ max-width:980px; }
+.fq-head{ text-align:left; margin-bottom:44px; }
+.fq-head .eyebrow{ font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:14px; }
+.fq-title{ font-family:var(--serif); font-weight:300; font-size:clamp(30px,4.4vw,48px); line-height:1.1; margin:0 0 18px; letter-spacing:0.01em; text-transform:uppercase; }
+.fq-title em{ font-style:italic; color:var(--gold); }
+.fq-head p{ color:var(--grey-dark,#5b5b5b); font-size:1.02rem; line-height:1.7; max-width:620px; margin:0; font-weight:300; }
+.fq-bar{ display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:38px; padding-bottom:20px; border-bottom:0.5px solid var(--grey-light); }
+.fq-steps{ display:flex; align-items:center; gap:12px; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--grey); }
+.fq-step{ font-weight:500; }
+.fq-step.active{ color:var(--ink); }
+.fq-step.done{ color:var(--gold-deep,#B8966B); }
+.fq-sep{ color:var(--grey-light); }
+.fq-note{ font-size:11px; letter-spacing:0.06em; color:var(--grey); }
+.req{ color:var(--gold); } .opt{ color:var(--grey); font-weight:400; text-transform:none; letter-spacing:0; }
+.fq-grid{ display:grid; grid-template-columns:1fr 1fr; gap:26px 32px; }
+.fq-field{ display:flex; flex-direction:column; gap:10px; position:relative; }
+.fq-field label{ font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--grey); }
+.fq-input{ background:#fff; border:0.5px solid var(--grey-light); border-radius:12px; padding:14px 18px; font-family:var(--sans); font-size:15px; font-weight:300; color:var(--ink); outline:none; width:100%; transition:border-color .2s; }
+.fq-input:focus{ border-color:var(--gold); }
+.fq-textarea{ resize:vertical; min-height:120px; }
+.fq-field.err .fq-input, .fq-field.err .cc-trigger, .fq-field.err .time-trigger{ border-color:#E53935; }
+.fq-err{ display:none; color:#E53935; font-size:12px; font-weight:500; margin-top:2px; }
+.fq-field.err .fq-err{ display:block; }
+.fq-actions{ display:flex; justify-content:flex-end; align-items:center; gap:18px; margin-top:36px; }
+.fq-back{ background:transparent; border:0; color:var(--grey-dark,#5b5b5b); font-family:var(--sans); font-size:14px; cursor:pointer; }
+.fq-back:hover{ color:var(--ink); }
+.fq-block[hidden]{ display:none; }
+.fq-consents{ margin-top:32px; display:flex; flex-direction:column; gap:8px; }
+.fq-check{ display:flex; gap:12px; align-items:flex-start; font-size:13px; font-weight:300; color:var(--grey-dark,#444); cursor:pointer; line-height:1.6; }
+.fq-check input{ margin-top:3px; flex-shrink:0; width:16px; height:16px; accent-color:var(--gold); }
+.fq-check a{ color:var(--gold-deep,#B8966B); }
+.fq-err[data-for]{ margin:0 0 4px 28px; }
+.fq-success{ margin-top:24px; padding:18px 20px; background:rgba(203,173,145,0.12); border:0.5px solid var(--gold); border-radius:12px; color:var(--ink); font-weight:300; }
+.fq-toggle{ display:flex; width:100%; gap:6px; background:#fff; border:0.5px solid var(--grey-light); border-radius:12px; padding:5px; }
+.fq-opt{ flex:1; border:0; background:transparent; color:var(--grey-dark,#5b5b5b); font-family:var(--sans); font-size:14px; font-weight:400; padding:11px 14px; border-radius:9px; cursor:pointer; transition:background .2s,color .2s; }
+.fq-opt.active{ background:var(--gold); color:#fff; }
+.fq-time{ position:relative; }
+.fq-time .time-trigger{ display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%; background:#fff; border:0.5px solid var(--grey-light); border-radius:12px; padding:14px 18px; font-family:var(--sans); font-size:15px; font-weight:300; color:var(--ink); cursor:pointer; }
+.fq-time .time-trigger .time-val{ color:var(--grey-light); }
+.fq-time .time-trigger.has-val .time-val{ color:var(--ink); }
+.fq-time .time-trigger svg{ color:var(--grey,#9b9b9b); transition:transform .2s; }
+.fq-time.open .time-trigger svg{ transform:rotate(180deg); }
+.fq-time .time-menu{ width:100%; left:0; right:auto; }
+.cc-dd{ position:relative; }
+.cc-trigger{ display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%; background:#fff; border:0.5px solid var(--grey-light); border-radius:12px; padding:14px 18px; font-family:var(--sans); font-size:15px; font-weight:300; color:var(--ink); cursor:pointer; }
+.cc-trigger.placeholder .cc-val{ color:var(--grey-light); }
+.cc-trigger svg{ flex-shrink:0; color:var(--grey,#9b9b9b); transition:transform .2s; }
+.cc-dd.open .cc-trigger svg{ transform:rotate(180deg); }
+.cc-menu{ position:absolute; left:0; top:calc(100% + 8px); z-index:70; width:100%; min-width:240px; background:#fff; border:0.5px solid var(--grey-light); border-radius:14px; box-shadow:0 18px 50px rgba(26,24,20,0.18); padding:8px; display:none; }
+.cc-dd.open .cc-menu{ display:block; }
+.cc-search{ width:100%; border:0.5px solid var(--grey-light); border-radius:9px; padding:9px 12px; font-family:var(--sans); font-size:14px; margin-bottom:6px; outline:none; }
+.cc-search:focus{ border-color:var(--gold); }
+.cc-list{ list-style:none; margin:0; padding:0; max-height:240px; overflow-y:auto; }
+.cc-opt{ padding:10px 12px; border-radius:9px; cursor:pointer; font-size:14px; font-weight:300; color:var(--ink); }
+.cc-opt:hover, .cc-opt.sel{ background:var(--gold); color:#fff; }
+.phone-row{ display:flex; gap:12px; }
+.phone-row .cc-dd{ width:132px; flex:none; }
+.phone-row .cc-menu{ min-width:260px; }
+.phone-row .fq-input{ flex:1; }
+@media (max-width:768px){ .fq-grid{ grid-template-columns:1fr; gap:22px; } .phone-row .cc-dd{ width:118px; } .fq-bar{ gap:10px; } }
+
 /* --- footer refine (added) --- */
 .footer-logo-img{ height:38px; }
 .footer-brand{ max-width:300px; }
@@ -795,6 +851,22 @@ nav.scrolled .logo-on-light { display: inline-block; }
 .footer-col h4{ margin-bottom:14px; }
 .footer-col a{ font-size:13px; white-space:nowrap; margin-bottom:11px; }
 @media (max-width:760px){ .footer-links{ grid-template-columns:1fr 1fr; gap:24px 30px; } .footer-col a{ white-space:normal; } }
+
+/* --- privacy modal (added) --- */
+.pv-overlay{ position:fixed; inset:0; z-index:1000; background:rgba(20,18,15,0.55); display:flex; align-items:center; justify-content:center; padding:24px; -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); }
+.pv-overlay[hidden]{ display:none; }
+.pv-dialog{ display:flex; flex-direction:column; background:#fff; max-width:720px; width:100%; max-height:86vh; overflow-y:auto; border-radius:18px; padding:32px 44px 40px; position:relative; box-shadow:0 30px 80px rgba(0,0,0,0.32); }
+.pv-close{ align-self:flex-end; position:sticky; top:0; background:#fff; border:0; font-size:30px; line-height:1; color:var(--grey,#9b9b9b); cursor:pointer; padding:0 4px; margin:0 -8px 0 0; z-index:2; }
+.pv-close:hover{ color:var(--ink); }
+.pv-content{ font-family:var(--sans); color:var(--ink); }
+.pv-title{ font-family:var(--serif); font-weight:400; font-size:30px; margin:0 0 4px; letter-spacing:-0.01em; }
+.pv-content h3{ font-family:var(--serif); font-weight:400; font-size:19px; margin:28px 0 8px; color:var(--ink); }
+.pv-content h4{ font-size:12px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--gold-deep,#B8966B); margin:18px 0 6px; }
+.pv-content p{ font-size:14px; line-height:1.7; font-weight:300; color:var(--grey-dark,#444); margin:0 0 12px; }
+.pv-content ul{ margin:0 0 14px; padding-left:20px; }
+.pv-content li{ font-size:14px; line-height:1.65; font-weight:300; color:var(--grey-dark,#444); margin-bottom:7px; }
+.pv-content a{ color:var(--gold-deep,#B8966B); }
+@media (max-width:600px){ .pv-dialog{ padding:24px 20px 30px; } .pv-title{ font-size:25px; } }
 
 /* --- canonical header v3 (added) --- */
 .nav-logo{ display:flex; align-items:center; }
@@ -868,64 +940,17 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 .tb-lang-opt.active{ color:var(--gold-deep,#B8966B); font-weight:600; }
 .tb-soon{ font-size:10px; color:var(--grey,#9b9b9b); text-transform:uppercase; letter-spacing:0.04em; }
 @media (max-width:600px){ .topbar{ padding:0 14px; gap:10px; } .tb-search{ max-width:none; } }
-
-/* --- about section: resize + wow (added) --- */
-.about-section{ padding:70px 48px 74px; }
-.about-inner{ gap:72px; }
-.about-title{ margin-bottom:22px; }
-.about-body{ line-height:1.7; }
-.about-right{ padding-top:0; }
-.about-stat{ padding:22px 0; transition:opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
-.about-stat-num{ font-size:clamp(44px,4.8vw,60px); transition:transform .3s ease, color .3s ease; }
-.about-stat:hover .about-stat-num{ transform:translateX(5px); color:var(--gold-deep,#B8966B); }
-.about-stats.animate .about-stat{ opacity:0; transform:translateY(16px); }
-.about-stats.animate .about-stat.in{ opacity:1; transform:none; }
-@media (max-width:760px){ .about-section{ padding:46px 24px 50px; } .about-stat-num{ font-size:clamp(40px,12vw,52px); } }
-
-/* --- about section: timeline + countries wow v2 (added) --- */
-.g{ color:var(--gold-deep,#B8966B); font-weight:600; }
-.about-stats{ display:block !important; }
-.ab-wrap{ display:flex; flex-direction:column; gap:30px; }
-.ab-cap{ font-family:var(--sans); font-size:13px; font-weight:300; color:var(--grey-dark,#5b5b5b); line-height:1.5; }
-.ab-cap em{ font-style:italic; color:var(--gold-deep,#B8966B); font-weight:500; }
-.ab-num{ font-family:var(--serif); font-weight:300; color:var(--gold); font-size:clamp(40px,4.4vw,54px); line-height:1; }
-.ab-tl-bar{ position:relative; height:3px; background:var(--grey-light,#D2D2D7); border-radius:3px; margin:2px 0 12px; }
-.ab-tl-fill{ position:absolute; left:0; top:0; height:100%; width:0; background:linear-gradient(90deg,var(--gold,#CBAD91),var(--gold-deep,#B8966B)); border-radius:3px; transition:width 1.9s cubic-bezier(.2,.7,.2,1); }
-.ab-tl-dot{ position:absolute; top:50%; left:0; width:9px; height:9px; margin:-4.5px 0 0 -4.5px; border-radius:50%; background:var(--gold-deep,#B8966B); box-shadow:0 0 0 4px rgba(203,173,145,0.25); transition:left 1.9s cubic-bezier(.2,.7,.2,1); }
-.ab-tl-years{ display:flex; justify-content:space-between; }
-.ab-tl-years span{ font-family:var(--sans); font-size:11px; letter-spacing:0.04em; color:var(--grey,#9b9b9b); transition:color .3s ease, font-weight .3s ease; }
-.ab-tl-years span.on{ color:var(--gold-deep,#B8966B); font-weight:600; }
-.ab-row{ display:flex; gap:36px; }
-.ab-mini{ flex:1; }
-.ab-mini .ab-cap{ margin-top:7px; }
-.ab-c-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:9px; }
-.ab-c-num{ font-family:var(--serif); font-weight:300; color:var(--gold); font-size:clamp(34px,3.6vw,46px); line-height:1; }
-.ab-c-bar{ position:relative; height:32px; background:var(--paper-2,#F5F5F7); border:0.5px solid var(--grey-light,#D2D2D7); border-radius:9px; overflow:hidden; }
-.ab-c-fill{ position:absolute; left:0; top:0; height:100%; width:0; background:linear-gradient(90deg, rgba(203,173,145,0.22), rgba(184,150,107,0.5)); transition:width 2.3s cubic-bezier(.2,.7,.2,1); }
-.ab-c-name{ position:absolute; right:13px; top:50%; transform:translateY(-50%); font-family:var(--sans); font-size:12px; letter-spacing:0.02em; color:var(--gold-deep,#B8966B); font-weight:600; white-space:nowrap; }
-@media (max-width:760px){ .ab-row{ gap:24px; } }
-
-/* --- about refine v3 (added) --- */
-.about-section{ padding:62px 48px 40px !important; }
-.about-wa{ font-size:15px !important; padding:14px 28px !important; }
-.about-wa:hover{ transform:translateY(-1px); }
-.about-read-more{ background:none; border:0; padding:0; margin-top:20px; font-family:var(--sans); font-size:13px; color:var(--gold-deep,#B8966B); letter-spacing:-0.01em; cursor:pointer; display:inline-flex; align-items:center; gap:5px; transition:gap .2s ease, color .2s ease; }
-.about-read-more:hover{ gap:9px; color:var(--gold); }
-.about-read-more-chevron{ display:inline-block; }
-.ab-c-fill{ transition:width 6.9s cubic-bezier(.2,.7,.2,1) !important; }
-@media (max-width:760px){ .about-section{ padding:42px 24px 30px !important; } }
-
-/* --- about collapse + button align v4 (added) --- */
-.about-body-hidden{ display:none; }
-.about-inner{ align-items:stretch; }
-.about-left{ display:flex; flex-direction:column; }
-.about-read-more{ margin-top:auto; align-self:flex-start; }
-@media (max-width:760px){ .about-left{ display:block; } .about-read-more{ margin-top:18px; } }
 </style>
-<link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/">
-<link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/">
-<link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/">
-<link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/">
+<link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/fastquote">
+<link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/preventivo-rapido">
+<link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/fastquote">
+<link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/devis-rapide">
+<link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/fastquote">
+<link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/preventivo-rapido">
+<link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/devis-rapide">
+<link rel="alternate" hreflang="ro" href="https://www.flywithandreea.com/ro/oferta-rapida">
+<link rel="alternate" hreflang="es" href="https://www.flywithandreea.com/es/presupuesto-rapido">
+<link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/fastquote">
 </head>
 <body>
 <div class="topbar">
@@ -937,11 +962,11 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   <div class="tb-lang" id="tbLang">
     <button type="button" class="tb-lang-btn" aria-haspopup="true" aria-expanded="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span class="lng">RO</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
     <div class="tb-lang-menu">
-      <a class="tb-lang-opt" href="/" data-lang="en">English</a>
-      <a class="tb-lang-opt" href="/it/" data-lang="it">Italiano</a>
-      <a class="tb-lang-opt active" href="/ro/" data-lang="ro">Română</a>
-      <a class="tb-lang-opt" href="/fr/" data-lang="fr">Français</a>
-      <a class="tb-lang-opt" href="/es/" data-lang="es">Español</a>
+      <a class="tb-lang-opt" href="/fastquote" data-lang="en">English</a>
+      <a class="tb-lang-opt" href="/it/preventivo-rapido" data-lang="it">Italiano</a>
+      <a class="tb-lang-opt active" href="/ro/oferta-rapida" data-lang="ro">Română</a>
+      <a class="tb-lang-opt" href="/fr/devis-rapide" data-lang="fr">Français</a>
+      <a class="tb-lang-opt" href="/es/presupuesto-rapido" data-lang="es">Español</a>
     </div>
   </div>
 </div>
@@ -1022,1600 +1047,118 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 
 
 
-<!-- STATS -->
-<section class="stats-section">
-  <div class="stats-grid">
-    <div class="stat-item">
-      <div class="stat-num">55<span style="font-size:26px"> min</span></div>
-      <div class="stat-label">Timp minim până la decolare</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">450<span style="font-size:26px">+</span></div>
-      <div class="stat-label">Operatori în întreaga lume</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">90<span style="font-size:26px">%</span></div>
-      <div class="stat-label">Acoperire globală</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">180</div>
-      <div class="stat-label">Țări</div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- SUBNAV -->
-<nav class="subnav" id="subnav" aria-label="Page sections">
-  <a href="#services"     class="subnav-link">Servicii</a>
-  <a href="#experience"   class="subnav-link">Experiență</a>
-  <a href="#extras"       class="subnav-link">La bord</a>
-  <a href="#fleet-sec"    class="subnav-link">Flotă</a>
-  <a href="#destinations" class="subnav-link">Destinații</a>
-  <a href="#empty-legs"   class="subnav-link">Empty Legs</a>
-  <a href="#routes-sec"   class="subnav-link">Rute</a>
-  <a href="#about"        class="subnav-link">Despre</a>
-  <a href="#quote"        class="subnav-link">Rezervă</a>
-</nav>
-
-
-<!-- ABOUT -->
-<section class="about-section" id="about">
-  <div class="about-inner">
-    <div class="about-left">
-      <div class="about-eyebrow">Cine este Andreea</div>
-      <h2 class="about-title">Nu un call center.<br>Nu o platformă.<br><em>O persoană.</em></h2>
-      <div class="about-body">
-        <p>Din 2021, Andreea organizează zboruri private în <strong class="g">Europa, Orientul Mijlociu și Africa</strong>, după ce a lucrat în cadrul unor brokeri de top înainte de a o face independent, <strong class="g">în propriii termeni</strong>.</p>
-        <p>Acest parcurs contează. Înseamnă că ea cunoaște industria din interior. În ce operatori să ai încredere. Care rute ascund costuri suplimentare. Ce solicitări trebuie făcute cu <strong class="g">48 de ore</strong> înainte și care pot fi confirmate în <strong class="g">40 de minute</strong>.</p>
-      </div>
-      <div class="about-body about-body-hidden" id="aboutMore" aria-hidden="true">
-        <p>Când contactezi Fly with Andreea, pe ea o găsești. Nu un coordonator junior. Nu o căsuță comună. Pe ea. Aceeași persoană care selectează aeronava, confirmă extrele și răspunde la telefon dacă ceva se schimbă în acea zi.</p>
-        <p>Acesta nu este standardul în această industrie. Ar trebui să fie.</p>
-      </div>
-      <button class="about-read-more" id="aboutReadMore" aria-expanded="false" aria-controls="aboutMore">
-        Află mai multe <span class="about-read-more-chevron">›</span>
-      </button>
-    </div>
-    <div class="about-right">
-      <div class="about-stats">
-  <div class="ab-wrap">
-    <div class="ab-tl">
-      <div class="ab-tl-bar"><div class="ab-tl-fill"></div><div class="ab-tl-dot"></div></div>
-      <div class="ab-tl-years"><span>2021</span><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div>
-      <div class="ab-cap" style="margin-top:12px">Primul zbor organizat. <em>Și continuă.</em></div>
-    </div>
-    <div class="ab-countries" data-countries="United Kingdom|France|Italy|Spain|Germany|Switzerland|Austria|Netherlands|Belgium|Portugal|Greece|Ireland|Monaco|Malta|Cyprus|Luxembourg|Denmark|Sweden|Norway|Finland|Iceland|Poland|Czechia|Hungary|Romania|Bulgaria|Croatia|Slovenia|Slovakia|Serbia|Montenegro|Albania|North Macedonia|Bosnia and Herzegovina|Estonia|Latvia|Lithuania|Ukraine|Moldova|Andorra|Liechtenstein|San Marino|United Arab Emirates|Saudi Arabia|Qatar|Bahrain|Kuwait|Oman|Jordan|Lebanon|Israel|Turkey|Iraq|Iran|Yemen|Morocco|Egypt|Tunisia|Algeria|Libya|South Africa|Kenya|Nigeria|Ghana|Tanzania|Ethiopia|Senegal|Côte d'Ivoire|Cameroon|Rwanda|Uganda|Angola|Mozambique|Namibia|Botswana|Zambia|Zimbabwe|Mauritius|Seychelles|Cabo Verde|Gabon|Mali|Mauritania|Madagascar|Sudan|Somalia|Djibouti|Benin|Togo|Burkina Faso|Guinea|Malawi|Republic of the Congo|DR Congo|Eswatini|Lesotho">
-      <div class="ab-c-head"><span class="ab-c-num">0</span><span class="ab-cap">țări la îndemână</span></div>
-      <div class="ab-c-bar"><div class="ab-c-fill"></div><span class="ab-c-name"></span></div>
-    </div>
-    <div class="ab-row">
-      <div class="ab-mini"><div class="ab-num">3</div><div class="ab-cap">Continente. Europa, Orientul Mijlociu și Africa.</div></div>
-      <div class="ab-mini"><div class="ab-num"><span data-count="450" data-suffix="+">0</span></div><div class="ab-cap">Operatori în rețea. Fiecare verificat.</div></div>
-    </div>
-    <div class="ab-mini"><div class="ab-num">1</div><div class="ab-cap">Un singur punct de contact. <em>Mereu Andreea.</em></div></div>
-  </div>
-</div>
-        <div class="about-cta">
-        <a href="https://wa.me/971503372980" class="about-wa" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Scrie-i Andreei</a>
-        <a href="mailto:andreea@flywithandreea.com" class="about-secondary">andreea@flywithandreea.com</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- SERVICES -->
-<section class="services-section" id="services">
-  <div class="section-header">
-    <h2 class="section-title">Totul este gestionat.<br><em>Înainte să aterizezi.</em></h2>
-  </div>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.5H2M5 20l-3-3.5 3-3.5M17 4l5 3.5-5 3.5M2 7.5h20"/></svg>
-      </div>
-      <div class="service-title">Charter la cerere</div>
-      <div class="service-desc">Rezervi în câteva ore. 450 de operatori. Aeronava potrivită pentru ruta, grupul și programul tău.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      </div>
-      <div class="service-title">Mereu activi</div>
-      <div class="service-desc">Zi și noapte. De la primul apel până la aterizarea finală. Echipa noastră nu doarme niciodată, ca tu să nu aștepți niciodată.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-      </div>
-      <div class="service-title">Cu adevărat global</div>
-      <div class="service-desc">De la Milano la Miami. De la Tokyo la Tenerife. 90% din lume, acoperite. Dacă există o pistă, te ducem acolo.</div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<!-- EXPERIENCE -->
-<section class="experience-section" id="experience"
-  itemscope itemtype="https://schema.org/Service"
-  aria-label="Private jet charter concierge services included on select routes">
-  <div class="exp-bg" aria-hidden="true"></div>
-  <div class="exp-inner">
-    <div class="exp-content">
-      <!-- Fix 3: eyebrow is meaningful — aria-hidden removed -->
-      <div class="exp-eyebrow">Inclus, pe anumite rute</div>
-      <h2 class="exp-title" itemprop="name">Zborul tău oferă<br>mult mai mult<br><em>decât crezi.</em></h2>
-      <p class="exp-body" itemprop="description">Charterul de jet privat cu Fly with Andreea include servicii de concierge gratuite pe anumite rute din Europa, Orientul Mijlociu și Africa. Transferuri din ușă în ușă, șampanie la bord, flori proaspete în cabină, catering gourmet: întreabă înainte de a confirma ca să descoperi ce este deja inclus, fără costuri suplimentare.</p>
-      <!-- SEO list: visually hidden, semantically present -->
-      <ul class="exp-seo-list" aria-label="Included services on select routes">
-        <li>Transferuri aeroportuare private și preluare de la ușă până la pistă</li>
-        <li>Șampanie și catering gourmet la bord</li>
-        <li>Flori proaspete aranjate în cabină înainte de îmbarcare</li>
-        <li>Cabină pet-friendly: câini, pisici, păsări binevenite</li>
-        <li>Concierge dedicat 24/7, de la rezervare la aterizare</li>
-      </ul>
-      <!-- Fix 5: no border-left, spacing separation only -->
-      <blockquote class="exp-quote">
-        <p>„Întreabă-ne înainte de a confirma. Ce te așteaptă pe ruta ta te-ar putea surprinde.”</p>
-      </blockquote>
-      <!-- Fix 6: frosted glass CTA — Apple dark-section standard -->
-      <a href="#quote" class="exp-cta"
-        aria-label="Contact Fly with Andreea about included services on your route">Ia legătura</a>
-    </div>
-  </div>
-</section>
-
-<!-- ON BOARD -->
-<section class="extras-section" id="extras">
-  <div class="section-header">
-    <h2 class="section-title">Lucrurile care fac<br><em>tot restul irelevant.</em></h2>
-  </div>
-  <div class="extras-track-wrap" id="extrasTrack">
-    <div class="extras-grid">
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/champagne-catering.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Șampanie și catering</div>
-        <div class="extra-desc">Șampania ta preferată, rece și pregătită. Catering organizat exact după indicațiile tale, fie că este o platou ușor, o masă completă sau un tort aniversar la 12.000 de metri.</div>
-        <div class="extra-note">Disponibil la cerere ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/fresh-flowers.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Flori proaspete</div>
-        <div class="extra-desc">Trandafiri, bujori, orhidee: cele pe care le iubești. Aranjate în cabină înainte de îmbarcare. Un detaliu la care puțini se gândesc. Noi, da.</div>
-        <div class="extra-note">Întreabă despre ruta ta ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/pets-cabin.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Animale în cabină</div>
-        <div class="extra-desc">Câini, pisici, păsări, chiar și reptile mici. Călătoresc lângă tine, nu în cală, nestresate, neseparate. Pur și simplu confortabil, așa cum ar trebui.</div>
-        <div class="extra-note">Toate dimensiunile binevenite ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/door-to-tarmac.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Transferuri ușă-pistă</div>
-        <div class="extra-desc">O mașină de la ușa ta până la scara aeronavei. Fără terminale, fără cozi, niciun indicator de urmat. Sosești, te îmbarci. Acesta e tot procesul.</div>
-        <div class="extra-note">Inclus pe anumite rute ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/butler-service.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Serviciu de majordom dedicat</div>
-        <div class="extra-desc">Un punct de contact personal de la primul apel până la aterizarea finală. Preferințele tale notate. Solicitările tale anticipate. Călătoria ta gestionată, ca să nu fie nevoie să te gândești la ea.</div>
-        <div class="extra-note">Disponibil la cerere ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/special-occasions.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Ocazii speciale</div>
-        <div class="extra-desc">Cereri în căsătorie la altitudine. Surprize de ziua de naștere în zbor. Cine aniversare deasupra norilor. Le-am organizat pe toate. Spune-ne ce ai în minte.</div>
-        <div class="extra-note">Întreabă-ne orice ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/helicopter.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Conexiuni cu elicopterul</div>
-        <div class="extra-desc">De la pistă la rooftop. Coordonăm transferuri cu elicopterul fără întreruperi, din terminalele private către centrele orașelor, ocolind fiecare drum, fiecare coadă, fiecare întârziere.</div>
-        <div class="extra-note">În centrul orașului în câteva minute ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/yacht-villa.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Conexiuni yacht și vilă</div>
-        <div class="extra-desc">Jetul tău aterizează. Tenderul tău așteaptă. Coordonăm întreaga călătorie, de la aviația privată la superyacht, sosirea la vilă sau transferul la resort, ca o singură experiență neîntreruptă.</div>
-        <div class="extra-note">Întreaga călătorie gestionată ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Stare de bine în zbor</div>
-        <div class="extra-desc">Cerințe alimentare specifice. O anumită marcă de apă. O preferință pentru pernă. Căști cu reducerea zgomotului, un anumit ziar, un prosop rece la sosire. Nimic nu e prea mic.</div>
-        <div class="extra-note">Preferințele tale, reținute ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/luggage.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Manipulare sigură a bagajelor</div>
-        <div class="extra-desc">Bagaje supradimensionate, crose de golf, echipament de schi, opere de artă, instrumente. Coordonăm aeronava și asistența la sol potrivite ca totul să ajungă intact și la timp.</div>
-        <div class="extra-note">Orice marfă, gestionată ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/medical.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Medical și accesibilitate</div>
-        <div class="extra-desc">Aeronave configurate cu targă. Oxigen suplimentar. Însoțire medicală. Asistență la îmbarcare pentru mobilitate redusă. Aviația privată elimină obstacolele pe care călătoria comercială nu le poate evita.</div>
-        <div class="extra-note">Discreți, mereu ›</div>
-      </div>
-    </div>
-    <div class="extra-card">
-      <div class="extra-img" style="background-image:url('/extras/surprise-roses.jpg');"></div>
-      <div class="extra-body">
-        <div class="extra-title">Surpriză și discreție</div>
-        <div class="extra-desc">Uneori, călătoria în sine este cadoul. Gestionăm fiecare detaliu fără a dezvălui destinația: un zbor surpriză, organizat cu discreție totală, de la rezervare la îmbarcare.</div>
-        <div class="extra-note">Spune-ne povestea ›</div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- FLEET -->
-<section class="fleet-section" id="fleet-sec">
-  <div class="fleet-left">
-    <h2 class="section-title">4.000 de aeronave.<br><em>Un singur apel.</em></h2>
-    <p>De la Very Light Jet la VIP Airliner. Indiferent de rută, indiferent de grup, există o aeronavă pregătită.</p>
-    <a href="#quote" class="fleet-browse">Vezi tot ›</a>
-  </div>
-  <div class="fleet-right">
-    <div class="fleet-track">
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Very Light Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;4–5 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Light Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;6–8 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Midsize Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;7–9 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Large Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;10–16 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Ultra Long Range</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;12–19 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1559628233-100c798642d8?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Turboprop</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;6–10 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">VIP Airliner</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;15–50 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Very Light Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;4–5 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Light Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;6–8 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Midsize Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;7–9 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Large Jet</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;10–16 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Ultra Long Range</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;12–19 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1559628233-100c798642d8?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">Turboprop</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;6–10 pasageri</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <div class="fleet-card-img" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=80');"></div>
-        <div class="fleet-card-info">
-          <div class="fleet-card-type">Categorie de aeronavă</div>
-          <div class="fleet-card-name">VIP Airliner</div>
-          <div class="fleet-card-pax"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="flex-shrink:0"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>&nbsp;15–50 pasageri</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- JET FINDER -->
-<section class="jetfinder-section">
-  <div class="jetfinder-title">Găsește-ți jetul</div>
-  <div class="jetfinder-track-wrap">
-    <button class="jetfinder-prev" id="jfPrev" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-    </button>
-    <div class="jetfinder-track" id="jfTrack">
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-phenom-100.png" alt="Embraer Phenom 100" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 100</div>
-      <div class="jet-thumb-maker">Embraer · Very Light</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-phenom-100-e.png" alt="Embraer Phenom 100E" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 100E</div>
-      <div class="jet-thumb-maker">Embraer · Very Light</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-phenom-100-ev.png" alt="Embraer Phenom 100EV" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 100EV</div>
-      <div class="jet-thumb-maker">Embraer · Very Light</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-phenom-300.png" alt="Embraer Phenom 300" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 300</div>
-      <div class="jet-thumb-maker">Embraer · Light Jet</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-phenom-300-e.png" alt="Embraer Phenom 300E" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 300E</div>
-      <div class="jet-thumb-maker">Embraer · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-praetor-500.png" alt="Embraer Praetor 500" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Praetor 500</div>
-      <div class="jet-thumb-maker">Embraer · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-praetor-600.png" alt="Embraer Praetor 600" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Praetor 600</div>
-      <div class="jet-thumb-maker">Embraer · Super Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-legacy-450.png" alt="Embraer Legacy 450" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 450</div>
-      <div class="jet-thumb-maker">Embraer · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-legacy-500.png" alt="Embraer Legacy 500" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 500</div>
-      <div class="jet-thumb-maker">Embraer · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-legacy-600.png" alt="Embraer Legacy 600" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 600</div>
-      <div class="jet-thumb-maker">Embraer · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-legacy-650.png" alt="Embraer Legacy 650" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 650</div>
-      <div class="jet-thumb-maker">Embraer · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/embraer-lineage-1000.png" alt="Embraer Lineage 1000" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Lineage 1000</div>
-      <div class="jet-thumb-maker">Embraer · VIP Airliner</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-g350.png" alt="Gulfstream G350" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G350</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-g450.png" alt="Gulfstream G450" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G450</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-g500.png" alt="Gulfstream G500" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G500</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-g550.png" alt="Gulfstream G550" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G550</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-g650.png" alt="Gulfstream G650" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G650</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-g700.png" alt="Gulfstream G700" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G700</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-      <div class="jet-thumb-badge">Nou</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-ii.png" alt="Gulfstream II" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream II</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-iii.png" alt="Gulfstream III" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream III</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-iv.png" alt="Gulfstream IV" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream IV</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-iv-sp.png" alt="Gulfstream IV-SP" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream IV-SP</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/gulfstream-v.png" alt="Gulfstream V" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream V</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-learjet-31a.png" alt="Bombardier Learjet 31A" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 31A</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-learjet-35.png" alt="Bombardier Learjet 35" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 35</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-learjet-40xr.png" alt="Bombardier Learjet 40XR" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 40XR</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-learjet-45xr.png" alt="Bombardier Learjet 45XR" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 45XR</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-learjet-55.png" alt="Bombardier Learjet 55" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 55</div>
-      <div class="jet-thumb-maker">Bombardier · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-learjet-60.png" alt="Bombardier Learjet 60" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 60</div>
-      <div class="jet-thumb-maker">Bombardier · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-learjet-75.png" alt="Bombardier Learjet 75" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 75</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-300.png" alt="Bombardier Challenger 300" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 300</div>
-      <div class="jet-thumb-maker">Bombardier · Super Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-350.png" alt="Bombardier Challenger 350" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 350</div>
-      <div class="jet-thumb-maker">Bombardier · Super Midsize</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-3500.png" alt="Bombardier Challenger 3500" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 3500</div>
-      <div class="jet-thumb-maker">Bombardier · Super Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-601.png" alt="Bombardier Challenger 601" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 601</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-604.png" alt="Bombardier Challenger 604" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 604</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-605.png" alt="Bombardier Challenger 605" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 605</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-650.png" alt="Bombardier Challenger 650" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 650</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-800.png" alt="Bombardier Challenger 800" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 800</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-challenger-850.png" alt="Bombardier Challenger 850" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 850</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-global-5000.png" alt="Bombardier Global 5000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 5000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-global-6000.png" alt="Bombardier Global 6000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 6000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-global-7000.png" alt="Bombardier Global 7000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 7000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-global-7500.png" alt="Bombardier Global 7500" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 7500</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-      <div class="jet-thumb-badge">Nou</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-global-8000.png" alt="Bombardier Global 8000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 8000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-global-express.png" alt="Bombardier Global Express" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global Express</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/bombardier-global-express-xrs.png" alt="Bombardier Global Express XRS" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global Express XRS</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-50.png" alt="Dassault Falcon 50" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 50</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-50ex.png" alt="Dassault Falcon 50EX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 50EX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-900b.png" alt="Dassault Falcon 900B" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900B</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-900dx.png" alt="Dassault Falcon 900DX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900DX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-900ex.png" alt="Dassault Falcon 900EX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900EX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-900lx.png" alt="Dassault Falcon 900LX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900LX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-2000s.png" alt="Dassault Falcon 2000S" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000S</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-2000ex.png" alt="Dassault Falcon 2000EX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000EX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-2000ex-easy.png" alt="Dassault Falcon 2000EX EASy" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000EX EASy</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-2000lx.png" alt="Dassault Falcon 2000LX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000LX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-7x.png" alt="Dassault Falcon 7X" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 7X</div>
-      <div class="jet-thumb-maker">Dassault · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="/jets/dassault-falcon-8x.png" alt="Dassault Falcon 8X" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 8X</div>
-      <div class="jet-thumb-maker">Dassault · Ultra Long</div>
-      <div class="jet-thumb-badge">Nou</div>
-    </div>
-    </div>
-    <button class="jetfinder-next" id="jfNext" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
-    </button>
-  </div>
-  <div class="jetfinder-cta">
-    <span class="jetfinder-cta-text">58 de aeronave. 4 producători.</span>
-    <a href="#quote">Cere orice aeronavă ›</a>
-  </div>
-</section>
-
-
-<!-- FLIGHT CATEGORIES -->
-<section class="categories-section">
-  <div class="cat-panel">
-    <div class="cat-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1583416750470-965b2707b355?w=900&q=80');"></div>
-    <div class="cat-panel-overlay"></div>
-    <div class="cat-panel-content">
-      <div class="cat-panel-num">01</div>
-      <div class="cat-panel-title">Charter de jet privat</div>
-      <div class="cat-panel-desc">Zboruri la cerere pentru persoane și familii. Cel mai rapid și mai personal mod de a zbura.</div>
-      <a href="#quote" class="cat-panel-arrow">
-        Rezervă
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-  <div class="cat-panel">
-    <div class="cat-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80');"></div>
-    <div class="cat-panel-overlay"></div>
-    <div class="cat-panel-content">
-      <div class="cat-panel-num">02</div>
-      <div class="cat-panel-title">Charter aerian de grup</div>
-      <div class="cat-panel-desc">Aeronave exclusive pentru evenimente corporative, călătorii de tip incentive și deplasări ale grupurilor mari în întreaga lume.</div>
-      <a href="#quote" class="cat-panel-arrow">
-        Rezervă
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-  <div class="cat-panel">
-    <div class="cat-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=900&q=80');"></div>
-    <div class="cat-panel-overlay"></div>
-    <div class="cat-panel-content">
-      <div class="cat-panel-num">03</div>
-      <div class="cat-panel-title">Zboruri pet-friendly</div>
-      <div class="cat-panel-desc">Animalele tale zboară în cabină cu tine. Câini, pisici, păsări: toate binevenite la bord.</div>
-      <a href="#quote" class="cat-panel-arrow">
-        Rezervă
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-  <div class="cat-panel">
-    <div class="cat-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=900&q=80');"></div>
-    <div class="cat-panel-overlay"></div>
-    <div class="cat-panel-content">
-      <div class="cat-panel-num">04</div>
-      <div class="cat-panel-title">Rezervări de ultim moment</div>
-      <div class="cat-panel-desc">Trebuie să zbori azi? Activăm rețeaua noastră globală în câteva minute. Decolare minimă 55 min.</div>
-      <a href="#quote" class="cat-panel-arrow">
-        Rezervă
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-  <div class="cat-panel">
-    <div class="cat-panel-bg" style="background-image:url('https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=900&q=80');"></div>
-    <div class="cat-panel-overlay"></div>
-    <div class="cat-panel-content">
-      <div class="cat-panel-num">05</div>
-      <div class="cat-panel-title">VIP Airliner</div>
-      <div class="cat-panel-desc">Călătorește în lux absolut, cu cabine la dimensiune completă configurate pentru experiența supremă.</div>
-      <a href="#quote" class="cat-panel-arrow">
-        Rezervă
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- DESTINATIONS -->
-<section class="dest-section" id="destinations">
-  <div class="dest-left">
-    <div>
-      <div class="section-eyebrow">Unde zburăm</div>
-      <h2 class="section-title">Cele mai căutate destinații în jet privat</h2>
-    </div>
-    <a href="#quote" class="dest-view-btn">Toate destinațiile ›</a>
-    <div class="dest-arrows">
-      <button class="dest-arrow" id="destPrev" aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button class="dest-arrow" id="destNext" aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-    </div>
-  </div>
-  <div class="dest-right">
-    <div class="dest-track-wrap">
-      <div class="dest-track" id="destTrack">
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris" loading="lazy"></div>
-          <div class="dest-card-name">Paris</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80" alt="London" loading="lazy"></div>
-          <div class="dest-card-name">Londra</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&q=80" alt="Nice" loading="lazy"></div>
-          <div class="dest-card-name">Nisa</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai" loading="lazy"></div>
-          <div class="dest-card-name">Dubai</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80" alt="Mykonos" loading="lazy"></div>
-          <div class="dest-card-name">Mykonos</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80" alt="New York" loading="lazy"></div>
-          <div class="dest-card-name">New York</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1559628233-100c798642d8?w=600&q=80" alt="Monaco" loading="lazy"></div>
-          <div class="dest-card-name">Monaco</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Ibiza" loading="lazy"></div>
-          <div class="dest-card-name">Ibiza</div>
-          <div class="dest-card-bar"></div>
-        </div>
-        <div class="dest-card">
-          <div class="dest-card-img"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80" alt="Maldives" loading="lazy"></div>
-          <div class="dest-card-name">Maldive</div>
-          <div class="dest-card-bar"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- SCROLL CARDS -->
-<section class="scroll-cards-section">
-  <div class="scroll-cards-header">
-    <h2 class="section-title">De la primul apel<br><em>la aterizarea finală.</em></h2>
-  </div>
-  <div class="scroll-cards-track-wrap" id="scrollTrack">
-    <div class="scroll-cards-track">
-
-      <div class="scroll-card">
-        <div class="scroll-card-img" style="background-image:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80');"></div>
-        <div class="scroll-card-body">
-          <div class="scroll-card-num">01</div>
-          <h3 class="scroll-card-title">O experiență de zbor privat de la cap la coadă</h3>
-          <p class="scroll-card-desc">De la transferuri cu șofer și elicopter la zboruri pet-friendly și rezervări de ultim moment, fiecare detaliu este gestionat cu precizie și grijă.</p>
-          <a href="#quote" class="scroll-card-cta">Află mai multe ›</a>
-        </div>
-      </div>
-
-      <div class="scroll-card">
-        <div class="scroll-card-img" style="background-image:url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80');"></div>
-        <div class="scroll-card-body">
-          <div class="scroll-card-num">02</div>
-          <h3 class="scroll-card-title">Prețuri transparente, totul inclus</h3>
-          <p class="scroll-card-desc">Platforma noastră independentă de rezervări și experții noștri interni folosesc tehnologii avansate ca să-ți asigure cele mai competitive prețuri pentru jet privat. Plătești doar ce ai nevoie: fără costuri ascunse, fără comisioane, transparență totală.</p>
-          <a href="#quote" class="scroll-card-cta">Află mai multe ›</a>
-        </div>
-      </div>
-
-      <div class="scroll-card">
-        <div class="scroll-card-img" style="background-image:url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80');"></div>
-        <div class="scroll-card-body">
-          <div class="scroll-card-num">03</div>
-          <h3 class="scroll-card-title">Zboruri în jet privat pet-friendly</h3>
-          <p class="scroll-card-desc">Călătorește confortabil cu animalele tale, fie câini, pisici, păsări sau chiar reptile mici. Echipa noastră are o vastă experiență în organizarea charterelor pet-friendly, asigurând siguranță și confort fiecărui pasager la bord.</p>
-          <a href="#quote" class="scroll-card-cta">Află mai multe ›</a>
-        </div>
-      </div>
-
-      <div class="scroll-card">
-        <div class="scroll-card-img" style="background-image:url('https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&q=80');"></div>
-        <div class="scroll-card-body">
-          <div class="scroll-card-num">04</div>
-          <h3 class="scroll-card-title">Acoperire globală 24/7</h3>
-          <p class="scroll-card-desc">Cu peste 450 de operatori în 180 de țări și o decolare minimă de 55 de minute, suntem mereu pregătiți. Oriunde ai nevoie să mergi, facem posibil: rapid, fiabil și cu grijă.</p>
-          <a href="#quote" class="scroll-card-cta">Află mai multe ›</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <div class="scroll-hint-line"></div>
-    Derulează pentru a explora
-    <div class="scroll-hint-line"></div>
-  </div>
-</section>
-
-
-
-<!-- FREQUENT ROUTES -->
-<section class="routes-section" id="routes-sec">
-  <h2 class="routes-headline">Rute frecvente.</h2>
-  <div class="routes-filters">
-    <button class="route-filter active" data-cat="all">Toate rutele</button>
-    <button class="route-filter" data-cat="europe">Europa</button>
-    <button class="route-filter" data-cat="longhaul">Curse lungi</button>
-    <button class="route-filter" data-cat="leisure">Vacanță</button>
-  </div>
-  <div class="routes-grid">
-      <div class="route-card visible" data-cat="europe">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Rută populară</div>
-          <div class="route-card-name">Paris – Frankfurt</div>
-          <div class="route-card-desc">50 de minute. De la capitala financiară a Germaniei la inima economică a Franței.</div>
-          <div class="route-card-meta"><strong>De la 7.200 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
+<!-- FAST QUOTE -->
+<section class="block fq-sec" id="fastquote">
+  <div class="wrap fq-wrap">
+    <div class="fq-head">
+      <h2 class="section-title fq-title">Spune-ne planurile tale.<br><em>Andreea se ocupă de rest.</em></h2>
+    </div>
+    <div class="fq-bar">
+      <div class="fq-steps"><span class="fq-step active" data-s="1">1. Detaliile călătoriei</span><span class="fq-sep">&rsaquo;</span><span class="fq-step" data-s="3">2. Date de contact</span></div>
+      <div class="fq-note">Câmpurile marcate cu <span class="req">*</span> sunt obligatorii.</div>
+    </div>
+    <form id="fqForm" novalidate>
+      <div class="fq-block" data-step="1">
+        <div class="fq-grid">
+          <div class="fq-field">
+            <label>Tip de aeronavă<span class="req">*</span></label>
+            <div class="fq-toggle" role="tablist">
+              <button type="button" class="fq-opt active" data-trip="passenger">Pasageri</button>
+              <button type="button" class="fq-opt" data-trip="cargo">Cargo</button>
+            </div>
+          </div>
+          <div class="fq-field">
+            <label id="fqPaxLabel">Pasageri<span class="req">*</span></label>
+            <input class="fq-input" id="fqPax" type="text" inputmode="numeric" placeholder="1" value="1">
+            <div class="fq-err">Câmp obligatoriu</div>
+          </div>
+          <div class="fq-field ac-field">
+            <label>Plecare<span class="req">*</span></label>
+            <input class="fq-input ac-input" id="fqFrom" type="text" placeholder="Oraș, aeroport, IATA sau ICAO" autocomplete="off">
+            <ul class="ac-list"></ul>
+            <div class="fq-err">Câmp obligatoriu</div>
+          </div>
+          <div class="fq-field ac-field">
+            <label>Destinație<span class="req">*</span></label>
+            <input class="fq-input ac-input" id="fqTo" type="text" placeholder="Oraș, aeroport, IATA sau ICAO" autocomplete="off">
+            <ul class="ac-list"></ul>
+            <div class="fq-err">Câmp obligatoriu</div>
+          </div>
+          <div class="fq-field">
+            <label>Data plecării<span class="req">*</span></label>
+            <input class="fq-input" id="fqDepDate" type="date">
+            <div class="fq-err">Câmp obligatoriu</div>
+          </div>
+          <div class="fq-field">
+            <label>Ora plecării</label>
+            <div class="time-dd fq-time"><button type="button" class="time-trigger" aria-haspopup="listbox" aria-expanded="false"><span class="time-val">Oricând</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><ul class="time-menu" role="listbox"><li class="time-opt sel" role="option" data-v="">Oricând</li><li class="time-opt" role="option" data-v="00:00">00:00</li><li class="time-opt" role="option" data-v="00:30">00:30</li><li class="time-opt" role="option" data-v="01:00">01:00</li><li class="time-opt" role="option" data-v="01:30">01:30</li><li class="time-opt" role="option" data-v="02:00">02:00</li><li class="time-opt" role="option" data-v="02:30">02:30</li><li class="time-opt" role="option" data-v="03:00">03:00</li><li class="time-opt" role="option" data-v="03:30">03:30</li><li class="time-opt" role="option" data-v="04:00">04:00</li><li class="time-opt" role="option" data-v="04:30">04:30</li><li class="time-opt" role="option" data-v="05:00">05:00</li><li class="time-opt" role="option" data-v="05:30">05:30</li><li class="time-opt" role="option" data-v="06:00">06:00</li><li class="time-opt" role="option" data-v="06:30">06:30</li><li class="time-opt" role="option" data-v="07:00">07:00</li><li class="time-opt" role="option" data-v="07:30">07:30</li><li class="time-opt" role="option" data-v="08:00">08:00</li><li class="time-opt" role="option" data-v="08:30">08:30</li><li class="time-opt" role="option" data-v="09:00">09:00</li><li class="time-opt" role="option" data-v="09:30">09:30</li><li class="time-opt" role="option" data-v="10:00">10:00</li><li class="time-opt" role="option" data-v="10:30">10:30</li><li class="time-opt" role="option" data-v="11:00">11:00</li><li class="time-opt" role="option" data-v="11:30">11:30</li><li class="time-opt" role="option" data-v="12:00">12:00</li><li class="time-opt" role="option" data-v="12:30">12:30</li><li class="time-opt" role="option" data-v="13:00">13:00</li><li class="time-opt" role="option" data-v="13:30">13:30</li><li class="time-opt" role="option" data-v="14:00">14:00</li><li class="time-opt" role="option" data-v="14:30">14:30</li><li class="time-opt" role="option" data-v="15:00">15:00</li><li class="time-opt" role="option" data-v="15:30">15:30</li><li class="time-opt" role="option" data-v="16:00">16:00</li><li class="time-opt" role="option" data-v="16:30">16:30</li><li class="time-opt" role="option" data-v="17:00">17:00</li><li class="time-opt" role="option" data-v="17:30">17:30</li><li class="time-opt" role="option" data-v="18:00">18:00</li><li class="time-opt" role="option" data-v="18:30">18:30</li><li class="time-opt" role="option" data-v="19:00">19:00</li><li class="time-opt" role="option" data-v="19:30">19:30</li><li class="time-opt" role="option" data-v="20:00">20:00</li><li class="time-opt" role="option" data-v="20:30">20:30</li><li class="time-opt" role="option" data-v="21:00">21:00</li><li class="time-opt" role="option" data-v="21:30">21:30</li><li class="time-opt" role="option" data-v="22:00">22:00</li><li class="time-opt" role="option" data-v="22:30">22:30</li><li class="time-opt" role="option" data-v="23:00">23:00</li><li class="time-opt" role="option" data-v="23:30">23:30</li></ul><input type="hidden" class="leg-time" id="fqDepTime" value=""></div>
+          </div>
+          <div class="fq-field">
+            <label>Data întoarcerii <span class="opt">(opțional)</span></label>
+            <input class="fq-input" id="fqRetDate" type="date">
+          </div>
+          <div class="fq-field">
+            <label>Ora întoarcerii <span class="opt">(opțional)</span></label>
+            <div class="time-dd fq-time"><button type="button" class="time-trigger" aria-haspopup="listbox" aria-expanded="false"><span class="time-val">Oricând</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><ul class="time-menu" role="listbox"><li class="time-opt sel" role="option" data-v="">Oricând</li><li class="time-opt" role="option" data-v="00:00">00:00</li><li class="time-opt" role="option" data-v="00:30">00:30</li><li class="time-opt" role="option" data-v="01:00">01:00</li><li class="time-opt" role="option" data-v="01:30">01:30</li><li class="time-opt" role="option" data-v="02:00">02:00</li><li class="time-opt" role="option" data-v="02:30">02:30</li><li class="time-opt" role="option" data-v="03:00">03:00</li><li class="time-opt" role="option" data-v="03:30">03:30</li><li class="time-opt" role="option" data-v="04:00">04:00</li><li class="time-opt" role="option" data-v="04:30">04:30</li><li class="time-opt" role="option" data-v="05:00">05:00</li><li class="time-opt" role="option" data-v="05:30">05:30</li><li class="time-opt" role="option" data-v="06:00">06:00</li><li class="time-opt" role="option" data-v="06:30">06:30</li><li class="time-opt" role="option" data-v="07:00">07:00</li><li class="time-opt" role="option" data-v="07:30">07:30</li><li class="time-opt" role="option" data-v="08:00">08:00</li><li class="time-opt" role="option" data-v="08:30">08:30</li><li class="time-opt" role="option" data-v="09:00">09:00</li><li class="time-opt" role="option" data-v="09:30">09:30</li><li class="time-opt" role="option" data-v="10:00">10:00</li><li class="time-opt" role="option" data-v="10:30">10:30</li><li class="time-opt" role="option" data-v="11:00">11:00</li><li class="time-opt" role="option" data-v="11:30">11:30</li><li class="time-opt" role="option" data-v="12:00">12:00</li><li class="time-opt" role="option" data-v="12:30">12:30</li><li class="time-opt" role="option" data-v="13:00">13:00</li><li class="time-opt" role="option" data-v="13:30">13:30</li><li class="time-opt" role="option" data-v="14:00">14:00</li><li class="time-opt" role="option" data-v="14:30">14:30</li><li class="time-opt" role="option" data-v="15:00">15:00</li><li class="time-opt" role="option" data-v="15:30">15:30</li><li class="time-opt" role="option" data-v="16:00">16:00</li><li class="time-opt" role="option" data-v="16:30">16:30</li><li class="time-opt" role="option" data-v="17:00">17:00</li><li class="time-opt" role="option" data-v="17:30">17:30</li><li class="time-opt" role="option" data-v="18:00">18:00</li><li class="time-opt" role="option" data-v="18:30">18:30</li><li class="time-opt" role="option" data-v="19:00">19:00</li><li class="time-opt" role="option" data-v="19:30">19:30</li><li class="time-opt" role="option" data-v="20:00">20:00</li><li class="time-opt" role="option" data-v="20:30">20:30</li><li class="time-opt" role="option" data-v="21:00">21:00</li><li class="time-opt" role="option" data-v="21:30">21:30</li><li class="time-opt" role="option" data-v="22:00">22:00</li><li class="time-opt" role="option" data-v="22:30">22:30</li><li class="time-opt" role="option" data-v="23:00">23:00</li><li class="time-opt" role="option" data-v="23:30">23:30</li></ul><input type="hidden" class="leg-time" id="fqRetTime" value=""></div>
           </div>
         </div>
+        <div class="fq-actions"><button type="button" class="bb-btn fq-next" data-next="2">Înainte &rarr;</button></div>
       </div>
-      <div class="route-card visible" data-cat="europe">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Cea mai bună alegere</div>
-          <div class="route-card-name">Milano – Londra</div>
-          <div class="route-card-desc">Două capitale ale designului. Un zbor impecabil.</div>
-          <div class="route-card-meta"><strong>De la 9.500 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="route-card visible" data-cat="europe">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Salt scurt</div>
-          <div class="route-card-name">Nisa – Monaco</div>
-          <div class="route-card-desc">Cel mai rapid mod între două dintre cele mai frumoase perle ale Mediteranei.</div>
-          <div class="route-card-meta"><strong>De la 3.800 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="route-card visible" data-cat="longhaul">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Cursă lungă</div>
-          <div class="route-card-name">Dubai – Maldive</div>
-          <div class="route-card-desc">Lasă în urmă skyline-ul. Sosește la ocean.</div>
-          <div class="route-card-meta"><strong>De la 22.000 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="route-card visible" data-cat="longhaul">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Transatlantic</div>
-          <div class="route-card-name">Londra – New York</div>
-          <div class="route-card-desc">Îmbarcare în Mayfair. Aterizare în Manhattan.</div>
-          <div class="route-card-meta"><strong>De la 68.000 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="route-card visible" data-cat="leisure">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Favorita sezonului</div>
-          <div class="route-card-name">Paris – Ibiza</div>
-          <div class="route-card-desc">Evită cozile. Sosește pregătit.</div>
-          <div class="route-card-meta"><strong>De la 11.000 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="route-card visible" data-cat="leisure">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Rută de vară</div>
-          <div class="route-card-name">Milano – Mykonos</div>
-          <div class="route-card-desc">De la Mediterana la Mediterana. Două ore de cer.</div>
-          <div class="route-card-meta"><strong>De la 13.500 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
-          </div>
-        </div>
-      </div>
-      <div class="route-card visible" data-cat="longhaul">
-        <div class="route-card-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80'); background-size:cover; background-position:center; height:180px;"></div>
-        <div class="route-card-body">
-          <div class="route-card-badge">Rută de business</div>
-          <div class="route-card-name">Geneva – Dubai</div>
-          <div class="route-card-desc">Două hub-uri globale. O conexiune directă.</div>
-          <div class="route-card-meta"><strong>De la 34.000 €</strong> · light jet</div>
-          <div class="route-card-actions">
-            <a href="#quote" class="route-card-btn">Rezervă</a>
-            <a href="#quote" class="route-card-link">Cere o ofertă ›</a>
-          </div>
-        </div>
-      </div>
-  </div>
-  <div class="routes-qa">
-    <div class="routes-qa-title">Paris – Frankfurt. Tot ce trebuie să știi.</div>
-    <div class="routes-qa-track-wrap" id="qaTrack">
-      <div class="routes-qa-track">
-      <div class="qa-card">
-        <div class="qa-q">Cât costă?</div>
-        <div class="qa-a">Paris – Frankfurt pornește de la circa 7.200 € pe un light jet, ajungând la 16.500 € pentru o cabină mai mare. Suma finală depinde de poziționarea aeronavei, de cererea sezonieră și de orice configurație specifică dorită.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Ce aeroporturi sunt cele mai potrivite?</div>
-        <div class="qa-a">Terminalul de aviație generală din Frankfurt se află la 12 km de oraș. Paris Le Bourget, cel mai aglomerat hub de aviație privată din Europa, oferă șapte FBO-uri și servicii non-stop. Ambele sunt conectate la centrele orașelor cu elicopterul sau transfer terestru în mai puțin de 20 de minute.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Cât durează zborul?</div>
-        <div class="qa-a">Aproximativ 50–60 de minute în aer. Adaugă 15 minute la fiecare terminal privat, fără cozi și fără teatrul securității, iar din ușă în ușă rămâne mult sub două ore.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Ce aeronave zboară cel mai des pe această rută?</div>
-        <div class="qa-a">Phenom 100, Phenom 300 și PC-12 NG sunt cele mai frecvente alegeri în 2025. Toate acoperă distanța confortabil, cu loc pentru opt pasageri și bagajele standard.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Există restricții pentru zborurile de noapte?</div>
-        <div class="qa-a">Aeroportul Frankfurt aplică o interdicție pe timp de noapte, aproximativ între 23:00 și 5:00. Pentru plecările târzii, Egelsbach (EDFE), hub-ul dedicat aviației generale la sud de oraș, este alternativa obișnuită, cu orare mai flexibile pentru light și midsize jet.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Pot ajunge la Paris cu elicopterul?</div>
-        <div class="qa-a">Da. De la Le Bourget, un transfer cu elicopterul către heliportul Issy-les-Moulineaux te lasă la câteva minute de Turnul Eiffel și de cartierul de afaceri, de regulă 10–15 minute de zbor.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Care este franciza de bagaje?</div>
-        <div class="qa-a">Pe un Phenom 300 sau un Citation CJ3, ia în calcul șase până la opt valize standard plus bagajele de cabină. Călătorești cu crose de golf sau echipament voluminos? Un midsize jet sau un PC-12, care are o ușă de cală dedicată, mare, este alegerea practică.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Animalul meu poate zbura cu mine?</div>
-        <div class="qa-a">Întotdeauna. Cu certificatele sanitare necesare, câinele, pisica sau pasărea ta călătorește în cabină lângă tine. Atât Frankfurt, cât și Le Bourget au puncte de intrare dedicate animalelor: procesul este simplu și fără grabă.</div>
-      </div>
-      <div class="qa-card">
-        <div class="qa-q">Am nevoie de viză pentru această rută?</div>
-        <div class="qa-a">Atât Franța, cât și Germania sunt membre ale spațiului Schengen, așa că posesorii de pașaport UE trec fără controale suplimentare. Călătorii din afara UE ar trebui să verifice împreună cu noi cerințele lor specifice înainte de a rezerva.</div>
-      </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+      <div class="fq-block" data-step="2" hidden>
+        <div class="fq-field">
+          <label>Informații suplimentare <span class="opt">(opțional)</span></label>
+          <textarea class="fq-input fq-textarea" id="fqMsg" rows="5" placeholder="Altceva ce ar trebui să știm? Catering, animale, transferuri la sol, flexibilitate la date."></textarea>
+        </div>
+        <div class="fq-actions"><button type="button" class="fq-back" data-back="1">&larr; Înapoi</button><button type="button" class="bb-btn fq-next" data-next="3">Înainte &rarr;</button></div>
+      </div>
 
-<!-- EMPTY LEGS -->
-<section class="empty-section" id="empty-legs">
-  <div class="empty-top">
-    <h2 class="section-title">Empty legs.<br><em>Zboară mai ieftin.</em></h2>
-    <div class="empty-top-right">
-      <p>Zboruri de repoziționare dus, la o fracțiune din tariful de charter. Actualizate periodic. Primul venit, primul servit.</p>
-    </div>
-  </div>
-  <div class="empty-update">
-    <div class="empty-update-dot"></div>
-    Actualizat azi · 12 trasee disponibile
-  </div>
-  <div class="empty-filters">
-    <button class="empty-filter active" data-cat="all">Toate rutele</button>
-    <button class="empty-filter" data-cat="europe">Europa</button>
-    <button class="empty-filter" data-cat="leisure">Vacanță</button>
-    <button class="empty-filter" data-cat="longhaul">Curse lungi</button>
-  </div>
-  <div class="empty-grid" id="emptyGrid">
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Lugano%20to%20Figari%20on%20May%2025%20%28From%20%E2%82%AC3%2C200%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Lugano (LUG) → Figari (FSC)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">25 mai</div>
-          <div class="empty-time">14:30 → 15:46</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 3.200 €</div>
-            <div class="empty-aircraft">Very Light Jet</div>
+      <div class="fq-block" data-step="3" hidden>
+        <div class="fq-grid">
+          <div class="fq-field">
+            <label>Nume<span class="req">*</span></label>
+            <input class="fq-input" id="fqName" type="text">
+            <div class="fq-err">Câmp obligatoriu</div>
           </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:53%"></div></div><div class="empty-prob-pct">53%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Venice%20to%20Bordeaux%20on%20May%2025%20%28From%20%E2%82%AC6%2C800%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Venice (VCE) → Bordeaux (BOD)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">25 mai</div>
-          <div class="empty-time">14:55 → 17:21</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 6.800 €</div>
-            <div class="empty-aircraft">Light Jet</div>
+          <div class="fq-field">
+            <label>E-mail<span class="req">*</span></label>
+            <input class="fq-input" id="fqEmail" type="email">
+            <div class="fq-err">Este necesară o adresă de e-mail validă</div>
           </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:27%"></div></div><div class="empty-prob-pct">27%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Milan%20to%20Rome%20on%20May%2026%20%28From%20%E2%82%AC2%2C900%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Milan (LIN) → Rome (FCO)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">26 mai</div>
-          <div class="empty-time">04:37 → 06:00</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 2.900 €</div>
-            <div class="empty-aircraft">Very Light Jet</div>
+          <div class="fq-field">
+            <label>Țară<span class="req">*</span></label>
+            <div class="cc-dd" id="fqCountryDD" data-kind="country">
+              <button type="button" class="cc-trigger placeholder"><span class="cc-val">Selectează</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+              <div class="cc-menu"><input type="text" class="cc-search" placeholder="Caută țara"><ul class="cc-list"></ul></div>
+              <input type="hidden" class="cc-input" id="fqCountry" value="">
+            </div>
+            <div class="fq-err">Câmp obligatoriu</div>
           </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:50%"></div></div><div class="empty-prob-pct">50%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Geneva%20to%20Cork%20on%20May%2026%20%28From%20%E2%82%AC7%2C400%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Geneva (GVA) → Cork (ORK)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">26 mai</div>
-          <div class="empty-time">09:15 → 11:00</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 7.400 €</div>
-            <div class="empty-aircraft">Midsize Jet</div>
+          <div class="fq-field">
+            <label>Telefon<span class="req">*</span></label>
+            <div class="phone-row">
+              <div class="cc-dd" id="fqDialDD" data-kind="dial">
+                <button type="button" class="cc-trigger placeholder"><span class="cc-val">+__</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="cc-menu"><input type="text" class="cc-search" placeholder="Caută prefixul"><ul class="cc-list"></ul></div>
+                <input type="hidden" class="cc-input" id="fqDial" value="">
+              </div>
+              <input class="fq-input" id="fqPhone" type="tel" inputmode="tel" placeholder="Număr de telefon">
+            </div>
+            <div class="fq-err">Câmp obligatoriu</div>
           </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
         </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:27%"></div></div><div class="empty-prob-pct">27%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Ibiza%20to%20Palma%20on%20May%2026%20%28From%20%E2%82%AC1%2C800%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Ibiza (IBZ) → Palma (PMI)</div>
-          <div class="empty-badge">Empty leg</div>
+        <div class="fq-consents">
+          <label class="fq-check"><input type="checkbox" id="fqC1"><span>Sunt de acord ca Fly with Andreea să folosească informațiile mele pentru a mă contacta prin telefon și e-mail în legătură cu solicitarea mea și / sau cu produse și servicii conexe.</span></label>
+          <div class="fq-err" data-for="fqC1">Câmp obligatoriu</div>
+          <label class="fq-check"><input type="checkbox" id="fqC2"><span>Accept <a href="#" class="open-privacy">Privacy</a> și <a href="#" target="_blank" rel="noopener">Cookie Policy</a>.</span></label>
+          <div class="fq-err" data-for="fqC2">Câmp obligatoriu</div>
         </div>
-        <div class="empty-meta">
-          <div class="empty-date">26 mai</div>
-          <div class="empty-time">12:40 → 13:20</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 1.800 €</div>
-            <div class="empty-aircraft">Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:38%"></div></div><div class="empty-prob-pct">38%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Milan%20to%20St%20Tropez%20on%20May%2026%20%28From%20%E2%82%AC4%2C100%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Milan (LIN) → St Tropez (LTT)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">26 mai</div>
-          <div class="empty-time">06:15 → 07:26</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 4.100 €</div>
-            <div class="empty-aircraft">Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:43%"></div></div><div class="empty-prob-pct">43%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20London%20to%20Nice%20on%20May%2027%20%28From%20%E2%82%AC8%2C900%29.%20Please%20send%20more%20details." target="_blank" data-cat="longhaul">
-        <div class="empty-card-top">
-          <div class="empty-route">London (BQH) → Nice (NCE)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">27 mai</div>
-          <div class="empty-time">08:00 → 10:15</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 8.900 €</div>
-            <div class="empty-aircraft">Midsize Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:27%"></div></div><div class="empty-prob-pct">27%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Zurich%20to%20Ibiza%20on%20May%2027%20%28From%20%E2%82%AC9%2C200%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Zurich (ZRH) → Ibiza (IBZ)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">27 mai</div>
-          <div class="empty-time">11:30 → 13:45</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 9.200 €</div>
-            <div class="empty-aircraft">Large Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:21%"></div></div><div class="empty-prob-pct">21%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Paris%20to%20Mykonos%20on%20May%2028%20%28From%20%E2%82%AC11%2C400%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Paris (LBG) → Mykonos (JMK)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">28 mai</div>
-          <div class="empty-time">09:00 → 12:30</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 11.400 €</div>
-            <div class="empty-aircraft">Large Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:58%"></div></div><div class="empty-prob-pct">58%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Rome%20to%20London%20on%20May%2028%20%28From%20%E2%82%AC10%2C800%29.%20Please%20send%20more%20details." target="_blank" data-cat="longhaul">
-        <div class="empty-card-top">
-          <div class="empty-route">Rome (FCO) → London (LCY)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">28 mai</div>
-          <div class="empty-time">14:00 → 16:10</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 10.800 €</div>
-            <div class="empty-aircraft">Midsize Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:21%"></div></div><div class="empty-prob-pct">21%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Geneva%20to%20Dubrovnik%20on%20May%2029%20%28From%20%E2%82%AC7%2C600%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Geneva (GVA) → Dubrovnik (DBV)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">29 mai</div>
-          <div class="empty-time">10:20 → 12:05</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 7.600 €</div>
-            <div class="empty-aircraft">Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:21%"></div></div><div class="empty-prob-pct">21%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Madrid%20to%20Paris%20on%20May%2029%20%28From%20%E2%82%AC8%2C300%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Madrid (MAD) → Paris (LBG)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">29 mai</div>
-          <div class="empty-time">16:30 → 18:45</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">De la 8.300 €</div>
-            <div class="empty-aircraft">Midsize Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Întreabă pe WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Probabilitate de confirmare</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:51%"></div></div><div class="empty-prob-pct">51%</div></div>
-      </a>
-  </div>
-  <div class="empty-bottom">
-    <div class="empty-note">Prețurile sunt estimative și supuse confirmării. Toate traseele sunt sub rezerva disponibilității.</div>
-    <a href="#quote" class="empty-all">Cere o rută anume ›</a>
-  </div>
-</section>
-
-
-
-<!-- NEWSLETTER -->
-<section class="newsletter-section">
-  <div class="newsletter-inner">
-    <div class="newsletter-left">
-      <h2>Empty legs, în avanpremieră.<br><em>Mereu.</em></h2>
-      <p>Trasee noi în fiecare zi. Abonații află primii.</p>
-    </div>
-    <div>
-      <form id="newsletterForm" action="https://formspree.io/f/xojbkjyo" method="POST" style="display:contents" novalidate>
-        <input type="hidden" name="_subject" value="Newsletter signup — Fly with Andreea">
-        <input type="hidden" name="type" value="newsletter">
-        <div class="newsletter-form">
-          <input class="newsletter-input" id="nl-email" name="email" type="email" placeholder="Adresa ta de e-mail" required>
-          <button type="submit" class="newsletter-btn" id="nlSubmit">Abonează-te</button>
-        </div>
-        <div class="newsletter-note" id="nlNote">Fără spam. Te dezabonezi oricând.</div>
-        <div id="nlSuccess" style="display:none; font-family:var(--sans); font-size:13px; color:var(--gold); letter-spacing:-0.01em; margin-top:8px;">
-          ✓ &nbsp;Gata. Empty legs ajung primele în inboxul tău.
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-
-<!-- TESTIMONIALS -->
-<section class="testimonials-section">
-  <div class="testimonials-top">
-    <h2 class="section-title">Ce spun<br><em>clienții.</em></h2>
-    <div class="testimonials-metrics">
-      <div class="t-metric">
-        <div class="t-metric-num">94%</div>
-        <div class="t-metric-label">rezervă din nou în 6 luni</div>
-      </div>
-      <div class="t-metric">
-        <div class="t-metric-num">18 min</div>
-        <div class="t-metric-label">timp mediu de răspuns</div>
-      </div>
-      <div class="t-metric">
-        <div class="t-metric-num">4.9</div>
-        <div class="t-metric-label">satisfacția clienților</div>
-      </div>
-    </div>
-  </div>
-  <div class="testimonials-grid">
-      <div class="t-card">
-        <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
-        <div class="t-quote">„Fiecare detaliu a fost rezolvat înainte să mă gândesc să cer. Mașina aștepta, șampania era eticheta mea și am plecat cu douăsprezece minute mai devreme. Acesta e standardul pe care îl aștept acum.”</div>
-        <div class="t-footer">
-          <div class="t-identity">
-            <div class="t-name">A.R. · CEO</div>
-            <div class="t-route">Dubai → Geneva · Gulfstream G550</div>
-          </div>
-          <div class="t-flag">🇦🇪</div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
-        <div class="t-quote">„Călătoresc cu doi câini și cu o idee foarte precisă despre confort. Andreea a fost primul broker care nu a tratat niciuna ca pe o problemă. Acum sunt la al treilea zbor. Nimic nu s-a schimbat, în cel mai bun sens.”</div>
-        <div class="t-footer">
-          <div class="t-identity">
-            <div class="t-name">S.M. · Client privat</div>
-            <div class="t-route">Londra → Ibiza · Phenom 300</div>
-          </div>
-          <div class="t-flag">🇬🇧</div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
-        <div class="t-quote">„Ultim moment, noaptea de Revelion, patru pasageri și o destinație schimbată de două ori. Confirmat în 40 de minute. Acest gen de reacție nu se găsește. Trebuie să-ți fie prezentat.”</div>
-        <div class="t-footer">
-          <div class="t-identity">
-            <div class="t-name">F.L. · Antreprenor</div>
-            <div class="t-route">Paris → Nisa → Mykonos · Citation XLS</div>
-          </div>
-          <div class="t-flag">🇫🇷</div>
-        </div>
-      </div>
-  </div>
-  <div class="t-bottom">
-    <div class="t-verified">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-      Toate recenziile provin de la clienți verificați. Numele și rutele sunt împărtășite cu acordul lor.
-    </div>
-    <a href="#quote" class="t-cta">Fly with Andreea ›</a>
-  </div>
-</section>
-
-
-<!-- FAQ -->
-<section class="faq-section">
-  <div class="faq-left">
-    <h2 class="section-title">Întrebări.</h2>
-    <p>Tot ce trebuie să știi. Dacă întrebarea ta nu e aici, suntem la un mesaj distanță.</p>
-    <div class="faq-btns">
-      <a href="#quote" class="faq-btn">Ia legătura ›</a>
-      <a href="#quote" class="faq-btn">Rezervă ›</a>
-    </div>
-  </div>
-  <div class="faq-right">
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Cât costă charterul unui jet privat?</span>
-        <div class="faq-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Prețurile de charter pentru jet privat variază în funcție de tipul aeronavei, rută, distanță și disponibilitate. O cursă scurtă europeană pe un light jet poate porni de la circa 3.000–6.000 €, în timp ce un zbor transatlantic pe un jet ultra-long-range poate costa 80.000 € sau mai mult. Contactează-ne pentru o ofertă personalizată: găsim mereu cel mai competitiv preț, cu transparență totală și fără costuri ascunse.</div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Cum decurge check-in-ul pentru un zbor cu jet privat?</span>
-        <div class="faq-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Check-in-ul la jet privat este fluid. Ajungi la terminalul privat (FBO) cu doar 15–20 de minute înainte de plecare. Fără cozi lungi, fără controale de securitate publice: doar un proces rapid și discret înainte de îmbarcarea directă. Ne ocupăm de toată logistica, tu doar sosești și zbori.</div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Ce tipuri de jeturi private sunt disponibile și cum voi ști pe care să rezerv?</span>
-        <div class="faq-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Avem acces la peste 4.000 de aeronave în întreaga lume, de la Very Light Jet (4–5 pasageri), ideale pentru curse scurte, la Large Jet și VIP Airliner pentru călătoriile de grup pe distanțe lungi. Îți vom recomanda aeronava potrivită în funcție de rută, dimensiunea grupului, bagaje și buget: spune-ne doar nevoile tale.</div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Pot zbura cu animalul meu pe un zbor de charter privat?</span>
-        <div class="faq-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Absolut. Zborurile pet-friendly sunt una dintre specialitățile noastre. Câinii, pisicile, păsările sau reptilele mici zboară în cabină cu tine, nu în cală. Echipa noastră are o vastă experiență în organizarea de călătorii confortabile și fără stres pentru animale de toate felurile.</div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Cât de repede puteți organiza un zbor?</span>
-        <div class="faq-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Putem organiza un jet privat în doar 55 de minute după o rezervare confirmată. Echipa noastră 24/7 este mereu în alertă și, cu peste 450 de operatori în rețeaua noastră globală, răspundem solicitărilor de ultim moment cu rapiditate și fiabilitate.</div>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Ce servicii suplimentare sunt incluse pe ruta mea?</span>
-        <div class="faq-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-        </div>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">Înainte de a-ți confirma zborul, întreabă-ne mereu ce este inclus pe ruta ta specifică. În funcție de călătorie, putem organiza transferuri dus-întors gratuite, șampanie la bord, catering gourmet și flori proaspete în cabină, fără costuri suplimentare.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- INSTAGRAM -->
-<section class="insta-section">
-  <div class="insta-header">
-    <div class="insta-header-left">
-      <div class="section-eyebrow">Urmărește călătoria</div>
-      <h2 class="section-title">Așa cum a apărut pe <em>Instagram.</em></h2>
-    </div>
-    <a href="https://www.instagram.com/flywithAndreea" target="_blank" class="insta-handle">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      @flywithAndreea
-    </a>
-  </div>
-  <div class="insta-track-wrap" id="instaTrack">
-    <div class="insta-track">
-      <div class="insta-card">
-        <div class="insta-img-wrap">
-          <img src="https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=80" alt="Instagram post" loading="lazy">
-          <div class="insta-ig-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></div>
-        </div>
-        <p class="insta-caption">Un zbor gândit pentru începuturi. Pista este doar primul capitol...</p>
-      </div>
-      <div class="insta-card">
-        <div class="insta-img-wrap">
-          <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&q=80" alt="Instagram post" loading="lazy">
-          <div class="insta-ig-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></div>
-        </div>
-        <p class="insta-caption">Atinge-o o dată. Și restul lumii pare departe...</p>
-      </div>
-      <div class="insta-card">
-        <div class="insta-img-wrap">
-          <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?w=600&q=80" alt="Instagram post" loading="lazy">
-          <div class="insta-ig-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></div>
-        </div>
-        <p class="insta-caption">Un zbor gândit în jurul timpului tău. Doar tu, cerul și lumea de dedesubt...</p>
-      </div>
-      <div class="insta-card">
-        <div class="insta-img-wrap">
-          <img src="https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=600&q=80" alt="Instagram post" loading="lazy">
-          <div class="insta-ig-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></div>
-        </div>
-        <p class="insta-caption">Plutind peste tot, depășind tot. O nouă perspectivă asupra vitezei...</p>
-      </div>
-      <div class="insta-card">
-        <div class="insta-img-wrap">
-          <img src="https://images.unsplash.com/photo-1570710891163-6d3b5c47248b?w=600&q=80" alt="Instagram post" loading="lazy">
-          <div class="insta-ig-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></div>
-        </div>
-        <p class="insta-caption">Nu orice călătorie este o destinație. Unele sunt o experiență în sine...</p>
-      </div>
-      <div class="insta-card">
-        <div class="insta-img-wrap">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Instagram post" loading="lazy">
-          <div class="insta-ig-icon"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></div>
-        </div>
-        <p class="insta-caption">Fiecare detaliu gândit. Fiecare confort anticipat. Fiecare zbor, perfect...</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<!-- QUOTE FORM -->
-<section class="quote-section" id="quote">
-  <div class="quote-wrap">
-    <div class="section-header">
-      <h2 class="section-title">Rezervă-ți<br><em>următorul zbor.</em></h2>
-    </div>
-    <form id="quoteForm" action="https://formspree.io/f/xojbkjyo" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="New flight request — Fly with Andreea">
-      <input type="hidden" name="_replyto" value="andreea@flywithandreea.com">
-      <input type="hidden" name="_next" value="https://www.flywithandreea.com/#quote">
-      <div class="form-grid">
-        <div class="form-group">
-          <label class="form-label" for="q-name">Numele tău</label>
-          <input class="form-input" id="q-name" name="name" type="text" placeholder="Nume complet" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="q-contact">E-mail sau WhatsApp</label>
-          <input class="form-input" id="q-contact" name="contact" type="text" placeholder="Cum te putem contacta" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="q-from">Plecare din</label>
-          <input class="form-input" id="q-from" name="from" type="text" placeholder="Oraș sau aeroport" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="q-to">Destinație</label>
-          <input class="form-input" id="q-to" name="to" type="text" placeholder="Oraș sau aeroport" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="q-date">Data și ora</label>
-          <input class="form-input" id="q-date" name="date" type="text" placeholder="ex. 15 iunie, dimineața">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="q-pax">Pasageri</label>
-          <input class="form-input" id="q-pax" name="passengers" type="number" min="1" max="50" placeholder="ex. 2">
-        </div>
-        <div class="form-group full">
-          <label class="form-label" for="q-notes">Altceva?</label>
-          <textarea class="form-input" id="q-notes" name="notes" placeholder="Solicitări speciale, întrebări despre extrele incluse pe ruta ta..."></textarea>
-        </div>
-      </div>
-      <button type="submit" class="form-submit" id="quoteSubmit">Continuă</button>
-      <p class="form-note" id="quoteNote">Te contactăm în 30 de minute. Sau scrie-ne direct la <a href="mailto:andreea@flywithandreea.com" style="color:var(--gold);text-decoration:none">andreea@flywithandreea.com</a></p>
-      <div class="form-success" id="quoteSuccess" style="display:none;">
-        <div class="form-success-icon">✓</div>
-        <div class="form-success-title">Cerere trimisă.</div>
-        <div class="form-success-sub">Andreea te va contacta în 30 de minute.</div>
+        <div class="fq-actions"><button type="button" class="fq-back" data-back="2">&larr; Înapoi</button><button type="submit" class="bb-btn fq-submit">Trimite &rarr;</button></div>
+        <div class="fq-success" id="fqSuccess" hidden>Mulțumim. Cererea ta a fost trimisă, iar Andreea te va contacta în curând.</div>
       </div>
     </form>
   </div>
 </section>
-
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -2653,329 +1196,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   </div>
 </footer>
 
-<script>
 
-  const track = document.getElementById('scrollTrack');
-  let isDown = false, startX, scrollLeft;
-  track.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
-  track.addEventListener('mouseleave', () => isDown = false);
-  track.addEventListener('mouseup', () => isDown = false);
-  track.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - track.offsetLeft; track.scrollLeft = scrollLeft - (x - startX); });
-
-
-  const instaTrack = document.getElementById('instaTrack');
-  let iDown = false, iStartX, iScrollLeft;
-  instaTrack.addEventListener('mousedown', e => { iDown = true; iStartX = e.pageX - instaTrack.offsetLeft; iScrollLeft = instaTrack.scrollLeft; });
-  instaTrack.addEventListener('mouseleave', () => iDown = false);
-  instaTrack.addEventListener('mouseup', () => iDown = false);
-  instaTrack.addEventListener('mousemove', e => { if (!iDown) return; e.preventDefault(); const x = e.pageX - instaTrack.offsetLeft; instaTrack.scrollLeft = iScrollLeft - (x - iStartX); });
-
-
-  (function() {
-    const dt = document.getElementById('destTrack');
-    if (!dt) return;
-    const cardW = 320;
-    let idx = 0;
-    const total = dt.children.length;
-    function slide() { dt.style.transform = 'translateX(-' + (idx * cardW) + 'px)'; }
-    document.getElementById('destNext').addEventListener('click', () => { idx = Math.min(idx + 1, total - 3); slide(); });
-    document.getElementById('destPrev').addEventListener('click', () => { idx = Math.max(idx - 1, 0); slide(); });
-  })();
-
-
-  document.querySelectorAll('.faq-question').forEach(function(q) {
-    q.addEventListener('click', function() {
-      var item = this.closest('.faq-item');
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-
-  (function() {
-    var jft = document.getElementById('jfTrack');
-    if (!jft) return;
-    var step = 140, idx = 0;
-    var max = jft.children.length - Math.floor(jft.parentElement.offsetWidth / step);
-    document.getElementById('jfNext').addEventListener('click', function() {
-      idx = Math.min(idx + 4, max);
-      jft.style.transform = 'translateX(-' + (idx * step) + 'px)';
-    });
-    document.getElementById('jfPrev').addEventListener('click', function() {
-      idx = Math.max(idx - 4, 0);
-      jft.style.transform = 'translateX(-' + (idx * step) + 'px)';
-    });
-  })();
-
-
-  (function() {
-    var filters = document.querySelectorAll('.route-filter');
-    filters.forEach(function(f) {
-      f.addEventListener('click', function() {
-        filters.forEach(function(x) { x.classList.remove('active'); });
-        this.classList.add('active');
-        var cat = this.dataset.cat;
-        document.querySelectorAll('.route-card').forEach(function(c) {
-          if (cat === 'all' || c.dataset.cat === cat) {
-            c.classList.add('visible');
-          } else {
-            c.classList.remove('visible');
-          }
-        });
-      });
-    });
-    var qaWrap = document.getElementById('qaTrack');
-    var qDown = false, qStartX, qScrollLeft;
-    if (qaWrap) {
-      qaWrap.addEventListener('mousedown', function(e) { qDown = true; qStartX = e.pageX - qaWrap.offsetLeft; qScrollLeft = qaWrap.scrollLeft; });
-      qaWrap.addEventListener('mouseleave', function() { qDown = false; });
-      qaWrap.addEventListener('mouseup', function() { qDown = false; });
-      qaWrap.addEventListener('mousemove', function(e) { if (!qDown) return; e.preventDefault(); var x = e.pageX - qaWrap.offsetLeft; qaWrap.scrollLeft = qScrollLeft - (x - qStartX); });
-    }
-  })();
-
-
-  var extrasTrack = document.getElementById('extrasTrack');
-  if (extrasTrack) {
-    var eDown = false, eStartX, eScrollLeft;
-    extrasTrack.addEventListener('mousedown', function(e) { eDown = true; eStartX = e.pageX - extrasTrack.offsetLeft; eScrollLeft = extrasTrack.scrollLeft; });
-    extrasTrack.addEventListener('mouseleave', function() { eDown = false; });
-    extrasTrack.addEventListener('mouseup', function() { eDown = false; });
-    extrasTrack.addEventListener('mousemove', function(e) { if (!eDown) return; e.preventDefault(); extrasTrack.scrollLeft = eScrollLeft - (e.pageX - extrasTrack.offsetLeft - eStartX); });
-  }
-
-
-  (function() {
-    var filters = document.querySelectorAll('.empty-filter');
-    filters.forEach(function(f) {
-      f.addEventListener('click', function() {
-        filters.forEach(function(x) { x.classList.remove('active'); });
-        this.classList.add('active');
-        var cat = this.dataset.cat;
-        document.querySelectorAll('.empty-card').forEach(function(c) {
-          if (cat === 'all' || c.dataset.cat === cat) {
-            c.classList.remove('hidden');
-          } else {
-            c.classList.add('hidden');
-          }
-        });
-      });
-    });
-  })();
-
-
-  // Subnav active state
-  (function() {
-    var links = document.querySelectorAll('.subnav-link');
-    var targets = Array.from(links).map(function(l) {
-      var id = l.getAttribute('href').slice(1);
-      return document.getElementById(id);
-    });
-    function onScroll() {
-      var scrollY = window.scrollY + 120;
-      var active = null;
-      targets.forEach(function(t, i) {
-        if (t && t.offsetTop <= scrollY) active = i;
-      });
-      links.forEach(function(l, i) {
-        l.classList.toggle('active', i === active);
-      });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
-
-
-  // About read more
-  (function() {
-    var btn = document.getElementById('aboutReadMore');
-    var more = document.getElementById('aboutMore');
-    if (!btn || !more) return;
-    btn.addEventListener('click', function() {
-      var hidden = more.classList.contains('about-body-hidden');
-      if (hidden) {
-        more.classList.remove('about-body-hidden');
-        more.classList.add('about-body-visible');
-        more.setAttribute('aria-hidden', 'false');
-        btn.setAttribute('aria-expanded', 'true');
-        btn.innerHTML = 'Read less <span class="about-read-more-chevron" style="display:inline-block;transform:rotate(90deg)">›</span>';
-      } else {
-        more.classList.remove('about-body-visible');
-        more.classList.add('about-body-hidden');
-        more.setAttribute('aria-hidden', 'true');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.innerHTML = 'Află mai multe <span class="about-read-more-chevron">›</span>';
-      }
-    });
-  })();
-
-
-  // ── QUOTE FORM ──
-  (function() {
-    var form = document.getElementById('quoteForm');
-    if (!form) return;
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      // Clear errors
-      form.querySelectorAll('.form-error-msg').forEach(function(el) { el.remove(); });
-      form.querySelectorAll('.form-input.error').forEach(function(el) { el.classList.remove('error'); });
-
-      // Validate required fields
-      var valid = true;
-      form.querySelectorAll('[required]').forEach(function(field) {
-        if (!field.value.trim()) {
-          field.classList.add('error');
-          var msg = document.createElement('div');
-          msg.className = 'form-error-msg';
-          msg.textContent = 'This field is required.';
-          field.parentNode.appendChild(msg);
-          valid = false;
-        }
-      });
-      if (!valid) return;
-
-      // Submit
-      var btn = document.getElementById('quoteSubmit');
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        var res = await fetch('https://formspree.io/f/xojbkjyo', {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          form.querySelector('.form-grid').style.display = 'none';
-          btn.style.display = 'none';
-          document.getElementById('quoteNote').style.display = 'none';
-          document.getElementById('quoteSuccess').style.display = 'block';
-        } else {
-          btn.textContent = 'Try again';
-          btn.disabled = false;
-          alert('Something went wrong. Please try WhatsApp instead.');
-        }
-      } catch(err) {
-        btn.textContent = 'Try again';
-        btn.disabled = false;
-        alert('Connection error. Please try WhatsApp instead.');
-      }
-    });
-  })();
-
-  // ── NEWSLETTER FORM ──
-  (function() {
-    var form = document.getElementById('newsletterForm');
-    if (!form) return;
-    form.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      var email = document.getElementById('nl-email');
-      if (!email.value.trim() || !email.value.includes('@')) {
-        email.style.borderColor = '#E53935';
-        return;
-      }
-      email.style.borderColor = '';
-      var btn = document.getElementById('nlSubmit');
-      btn.textContent = '...';
-      btn.disabled = true;
-
-      try {
-        var res = await fetch('https://formspree.io/f/xojbkjyo', {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          document.getElementById('nlNote').style.display = 'none';
-          document.querySelector('.newsletter-form').style.display = 'none';
-          document.getElementById('nlSuccess').style.display = 'block';
-        } else {
-          btn.textContent = 'Subscribe';
-          btn.disabled = false;
-        }
-      } catch(err) {
-        btn.textContent = 'Subscribe';
-        btn.disabled = false;
-      }
-    });
-  })();
-
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
-
-  // ── LOCATION-AWARE ROUTE ENGINE ──
-  (function() {
-    function loadRoutes(userCountry) {
-      fetch('routes.json')
-        .then(function(r) { return r.json(); })
-        .then(function(routes) { showRoute(routes, userCountry); })
-        .catch(function() {
-          // Fallback: show first route if fetch fails (e.g. file:// protocol)
-          var fallback = [{"id":"paris-frankfurt","from_city":"Paris","to_city":"Frankfurt","from_country":"FR","to_country":"DE","trigger_countries":["FR","DE","BE","LU","NL","CH","IT","ES","AT","PL"],"badge":"Popular route","desc":"50 minutes. Germany's financial capital to France's business heart.","price_from":"€7,200","aircraft":"light jet","duration":"50–60 min","airports":"CDG / LBG → FRA","qa":[{"q":"How much does it cost?","a":"Paris to Frankfurt starts from around €7,200 on a light jet, rising to €16,500 for a larger cabin."},{"q":"How long is the flight?","a":"Roughly 50 to 60 minutes in the air. Add 15 minutes at each private terminal — door-to-door is well under two hours."},{"q":"Can my pet fly with me?","a":"Always. With the right health certificates, your dog, cat, or bird travels in the cabin beside you."}]}];
-          showRoute(fallback, userCountry);
-        });
-    }
-
-    function showRoute(routes, userCountry) {
-      // Find best route match for user's country
-      var matched = routes.filter(function(r) {
-        return r.trigger_countries && r.trigger_countries.indexOf(userCountry) !== -1;
-      });
-      // If no match, pick randomly from all routes
-      var pool = matched.length > 0 ? matched : routes;
-      // Use date seed so same visitor sees same route all day, different next day
-      var seed = Math.floor(Date.now() / 86400000);
-      var route = pool[seed % pool.length];
-
-      // Render Q&A title
-      var qaTitle = document.getElementById('qaTitle');
-      var qaMeta = document.getElementById('qaMeta');
-      var qaCards = document.getElementById('qaCards');
-      var qaSection = document.getElementById('routesQA');
-      var locationNote = document.getElementById('locationNote');
-
-      if (!qaTitle || !route) return;
-
-      qaTitle.textContent = route.from_city + ' to ' + route.to_city + '. Everything you need to know.';
-      qaMeta.textContent = route.duration + ' · ' + route.price_from + ' · ' + route.aircraft;
-
-      // Render Q&A cards
-      qaCards.innerHTML = '';
-      (route.qa || []).forEach(function(item) {
-        var card = document.createElement('div');
-        card.className = 'qa-card';
-        card.innerHTML = '<div class="qa-q">' + item.q + '</div><div class="qa-a">' + item.a + '</div>';
-        qaCards.appendChild(card);
-      });
-
-      // Show section
-      qaSection.style.display = 'block';
-
-      // Location note
-      if (matched.length > 0 && locationNote) {
-        locationNote.textContent = 'Showing routes relevant to your location.';
-      }
-
-      // Rewire drag scroll
-      var qaWrap = document.getElementById('qaTrack');
-      var qDown = false, qStartX, qScrollLeft;
-      qaWrap.addEventListener('mousedown', function(e) { qDown = true; qStartX = e.pageX - qaWrap.offsetLeft; qScrollLeft = qaWrap.scrollLeft; });
-      qaWrap.addEventListener('mouseleave', function() { qDown = false; });
-      qaWrap.addEventListener('mouseup', function() { qDown = false; });
-      qaWrap.addEventListener('mousemove', function(e) { if (!qDown) return; e.preventDefault(); qaWrap.scrollLeft = qScrollLeft - (e.pageX - qaWrap.offsetLeft - qStartX); });
-    }
-
-    // Detect country via free IP API — no key needed, GDPR-safe (no personal data stored)
-    fetch('https://ipapi.co/json/')
-      .then(function(r) { return r.json(); })
-      .then(function(data) { loadRoutes(data.country_code || 'FR'); })
-      .catch(function() { loadRoutes('FR'); }); // Default to France on failure
-  })();
-
-</script>
 </body>
 </html>
 
@@ -3064,7 +1285,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     b.classList.add('active'); b.setAttribute('aria-selected','true');
     var cargo=b.getAttribute('data-trip')==='cargo';
     document.getElementById('bbPaxLabel').textContent=cargo?'Weight':'Passengers';
-    var pax=document.getElementById('bbPax'); pax.value=''; pax.placeholder=cargo?'e.g. 500 kg':'1';
+    var pax=document.getElementById('bbPax'); pax.value=''; pax.placeholder=cargo?'ex. 500 kg':'1';
   }); });
   function collectSearch(){
     var trip=document.querySelector('.trip-opt.active').getAttribute('data-trip');
@@ -3081,8 +1302,272 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     var state=collectSearch();
     if(typeof window.fwaPrefill==='function'){ window.fwaPrefill(state); var t=document.getElementById('fastquote'); if(t&&t.scrollIntoView) t.scrollIntoView({behavior:'smooth'}); return; }
     try{ sessionStorage.setItem('fwa_quote', JSON.stringify(state)); }catch(e){}
-    window.location.href='/ro/oferta-rapida';
+    window.location.href='/fastquote';
   });
+})();
+</script>
+<script>
+(function(){
+  var form=document.getElementById('fqForm'); if(!form) return;
+  var COUNTRIES=[["Afghanistan","+93","AF"],["\u00c5land Islands","+358","AX"],["Albania","+355","AL"],["Algeria","+213","DZ"],["American Samoa","+1684","AS"],["Andorra","+376","AD"],["Angola","+244","AO"],["Anguilla","+1264","AI"],["Antarctica","+672","AQ"],["Antigua and Barbuda","+1268","AG"],["Argentina","+54","AR"],["Armenia","+374","AM"],["Aruba","+297","AW"],["Australia","+61","AU"],["Austria","+43","AT"],["Azerbaijan","+994","AZ"],["Bahamas","+1242","BS"],["Bahrain","+973","BH"],["Bangladesh","+880","BD"],["Barbados","+1246","BB"],["Belarus","+375","BY"],["Belgium","+32","BE"],["Belize","+501","BZ"],["Benin","+229","BJ"],["Bermuda","+1441","BM"],["Bhutan","+975","BT"],["Bolivia","+591","BO"],["Bosnia and Herzegovina","+387","BA"],["Botswana","+267","BW"],["Bouvet Island","+47","BV"],["Brazil","+55","BR"],["British Indian Ocean Territory","+246","IO"],["British Virgin Islands","+1284","VG"],["Brunei","+673","BN"],["Bulgaria","+359","BG"],["Burkina Faso","+226","BF"],["Burundi","+257","BI"],["Cambodia","+855","KH"],["Cameroon","+237","CM"],["Canada","+1","CA"],["Cape Verde","+238","CV"],["Caribbean Netherlands","+599","BQ"],["Cayman Islands","+1345","KY"],["Central African Republic","+236","CF"],["Chad","+235","TD"],["Chile","+56","CL"],["China","+86","CN"],["Christmas Island","+61","CX"],["Cocos (Keeling) Islands","+61","CC"],["Colombia","+57","CO"],["Comoros","+269","KM"],["Congo","+243","CD"],["Congo","+242","CG"],["Cook Islands","+682","CK"],["Costa Rica","+506","CR"],["C\u00f4te d\u2019Ivoire","+225","CI"],["Croatia","+385","HR"],["Cuba","+53","CU"],["Cura\u00e7ao","+599","CW"],["Cyprus","+357","CY"],["Czech Republic","+420","CZ"],["Denmark","+45","DK"],["Djibouti","+253","DJ"],["Dominica","+1767","DM"],["Dominican Republic","+1","DO"],["Ecuador","+593","EC"],["Egypt","+20","EG"],["El Salvador","+503","SV"],["Equatorial Guinea","+240","GQ"],["Eritrea","+291","ER"],["Estonia","+372","EE"],["Ethiopia","+251","ET"],["Falkland Islands","+500","FK"],["Faroe Islands","+298","FO"],["Fiji","+679","FJ"],["Finland","+358","FI"],["France","+33","FR"],["French Guiana","+594","GF"],["French Polynesia","+689","PF"],["French Southern and Antarctic Lands","+262","TF"],["Gabon","+241","GA"],["Gambia","+220","GM"],["Georgia","+995","GE"],["Germany","+49","DE"],["Ghana","+233","GH"],["Gibraltar","+350","GI"],["Greece","+30","GR"],["Greenland","+299","GL"],["Grenada","+1473","GD"],["Guadeloupe","+590","GP"],["Guam","+1671","GU"],["Guatemala","+502","GT"],["Guernsey","+44","GG"],["Guinea","+224","GN"],["Guinea-Bissau","+245","GW"],["Guyana","+592","GY"],["Haiti","+509","HT"],["Heard Island and McDonald Islands","+672","HM"],["Honduras","+504","HN"],["Hong Kong","+852","HK"],["Hungary","+36","HU"],["Iceland","+354","IS"],["India","+91","IN"],["Indonesia","+62","ID"],["Iran","+98","IR"],["Iraq","+964","IQ"],["Ireland","+353","IE"],["Isle of Man","+44","IM"],["Israel","+972","IL"],["Italy","+39","IT"],["Jamaica","+1876","JM"],["Japan","+81","JP"],["Jersey","+44","JE"],["Jordan","+962","JO"],["Kazakhstan","+7","KZ"],["Kenya","+254","KE"],["Kiribati","+686","KI"],["Kosovo","+383","XK"],["Kuwait","+965","KW"],["Kyrgyzstan","+996","KG"],["Laos","+856","LA"],["Latvia","+371","LV"],["Lebanon","+961","LB"],["Lesotho","+266","LS"],["Liberia","+231","LR"],["Libya","+218","LY"],["Liechtenstein","+423","LI"],["Lithuania","+370","LT"],["Luxembourg","+352","LU"],["Macau","+853","MO"],["Macedonia","+389","MK"],["Madagascar","+261","MG"],["Malawi","+265","MW"],["Malaysia","+60","MY"],["Maldives","+960","MV"],["Mali","+223","ML"],["Malta","+356","MT"],["Marshall Islands","+692","MH"],["Martinique","+596","MQ"],["Mauritania","+222","MR"],["Mauritius","+230","MU"],["Mayotte","+262","YT"],["Mexico","+52","MX"],["Micronesia","+691","FM"],["Moldova","+373","MD"],["Monaco","+377","MC"],["Mongolia","+976","MN"],["Montenegro","+382","ME"],["Montserrat","+1664","MS"],["Morocco","+212","MA"],["Mozambique","+258","MZ"],["Myanmar","+95","MM"],["Namibia","+264","NA"],["Nauru","+674","NR"],["Nepal","+977","NP"],["Netherlands","+31","NL"],["New Caledonia","+687","NC"],["New Zealand","+64","NZ"],["Nicaragua","+505","NI"],["Niger","+227","NE"],["Nigeria","+234","NG"],["Niue","+683","NU"],["Norfolk Island","+672","NF"],["North Korea","+850","KP"],["Northern Mariana Islands","+1670","MP"],["Norway","+47","NO"],["Oman","+968","OM"],["Pakistan","+92","PK"],["Palau","+680","PW"],["Palestine","+970","PS"],["Panama","+507","PA"],["Papua New Guinea","+675","PG"],["Paraguay","+595","PY"],["Peru","+51","PE"],["Philippines","+63","PH"],["Pitcairn Islands","+64","PN"],["Poland","+48","PL"],["Portugal","+351","PT"],["Puerto Rico","+1","PR"],["Qatar","+974","QA"],["R\u00e9union","+262","RE"],["Romania","+40","RO"],["Russia","+7","RU"],["Rwanda","+250","RW"],["Saint Barth\u00e9lemy","+590","BL"],["Saint Helena","+290","SH"],["Saint Kitts and Nevis","+1869","KN"],["Saint Lucia","+1758","LC"],["Saint Martin","+590","MF"],["Saint Pierre and Miquelon","+508","PM"],["Saint Vincent and the Grenadines","+1784","VC"],["Samoa","+685","WS"],["San Marino","+378","SM"],["S\u00e3o Tom\u00e9 and Pr\u00edncipe","+239","ST"],["Saudi Arabia","+966","SA"],["Senegal","+221","SN"],["Serbia","+381","RS"],["Seychelles","+248","SC"],["Sierra Leone","+232","SL"],["Singapore","+65","SG"],["Sint Maarten","+1721","SX"],["Slovakia","+421","SK"],["Slovenia","+386","SI"],["Solomon Islands","+677","SB"],["Somalia","+252","SO"],["South Africa","+27","ZA"],["South Georgia and the South Sandwich Islands","+500","GS"],["South Korea","+82","KR"],["South Sudan","+211","SS"],["Spain","+34","ES"],["Sri Lanka","+94","LK"],["Sudan","+249","SD"],["Suriname","+597","SR"],["Svalbard and Jan Mayen","+47","SJ"],["Swaziland","+268","SZ"],["Sweden","+46","SE"],["Switzerland","+41","CH"],["Syria","+963","SY"],["Taiwan","+886","TW"],["Tajikistan","+992","TJ"],["Tanzania","+255","TZ"],["Thailand","+66","TH"],["Timor-Leste","+670","TL"],["Togo","+228","TG"],["Tokelau","+690","TK"],["Tonga","+676","TO"],["Trinidad and Tobago","+1868","TT"],["Tunisia","+216","TN"],["Turkey","+90","TR"],["Turkmenistan","+993","TM"],["Turks and Caicos Islands","+1649","TC"],["Tuvalu","+688","TV"],["U.S. Virgin Islands","+1340","VI"],["Uganda","+256","UG"],["Ukraine","+380","UA"],["United Arab Emirates","+971","AE"],["United Kingdom","+44","GB"],["United States","+1","US"],["United States Minor Outlying Islands","+1","UM"],["Uruguay","+598","UY"],["Uzbekistan","+998","UZ"],["Vanuatu","+678","VU"],["Vatican City","+39","VA"],["Venezuela","+58","VE"],["Vietnam","+84","VN"],["Wallis and Futuna","+681","WF"],["Western Sahara","+212","EH"],["Yemen","+967","YE"],["Zambia","+260","ZM"],["Zimbabwe","+263","ZW"]];
+  // ---------- styled select (country / dial) ----------
+  function buildCC(dd){
+    var kind=dd.getAttribute('data-kind'), trig=dd.querySelector('.cc-trigger'), val=trig.querySelector('.cc-val'),
+        menu=dd.querySelector('.cc-menu'), search=dd.querySelector('.cc-search'), list=dd.querySelector('.cc-list'), hidden=dd.querySelector('.cc-input');
+    function render(q){
+      q=(q||'').toLowerCase(); var html='';
+      for(var i=0;i<COUNTRIES.length;i++){ var c=COUNTRIES[i];
+        var label=kind==='dial'?(c[1]+'  '+c[0]):c[0];
+        if(q && label.toLowerCase().indexOf(q)===-1 && c[1].indexOf(q)===-1) continue;
+        var v=kind==='dial'?c[1]:c[0];
+        html+='<li class="cc-opt" data-v="'+v.replace(/"/g,'&quot;')+'" data-dial="'+c[1]+'">'+label+'</li>';
+      }
+      list.innerHTML=html;
+    }
+    render('');
+    trig.addEventListener('click',function(e){ e.stopPropagation(); var open=!dd.classList.contains('open'); closeAllCC(); if(open){ dd.classList.add('open'); render(''); search.value=''; setTimeout(function(){search.focus();},30); } });
+    search.addEventListener('input',function(){ render(search.value); });
+    search.addEventListener('click',function(e){ e.stopPropagation(); });
+    list.addEventListener('click',function(e){ var li=e.target.closest('.cc-opt'); if(!li) return;
+      hidden.value=li.getAttribute('data-v'); val.textContent=kind==='dial'?li.getAttribute('data-dial'):li.textContent; trig.classList.remove('placeholder');
+      dd.classList.remove('open'); dd.closest('.fq-field').classList.remove('err');
+      if(kind==='country'){ var dialDD=document.getElementById('fqDialDD'); if(dialDD && !document.getElementById('fqDial').value){ var d=li.getAttribute('data-dial'); document.getElementById('fqDial').value=d; var t=dialDD.querySelector('.cc-val'); t.textContent=d; dialDD.querySelector('.cc-trigger').classList.remove('placeholder'); } }
+    });
+  }
+  function closeAllCC(){ document.querySelectorAll('.cc-dd.open').forEach(function(d){ d.classList.remove('open'); }); }
+  document.addEventListener('click',closeAllCC);
+  document.querySelectorAll('.cc-dd').forEach(buildCC);
+
+  // ---------- time dropdowns ----------
+  function closeAllTime(){ document.querySelectorAll('.fq-time.open').forEach(function(d){ d.classList.remove('open'); }); }
+  document.addEventListener('click',closeAllTime);
+  document.querySelectorAll('.fq-time').forEach(function(dd){
+    var trig=dd.querySelector('.time-trigger'), menu=dd.querySelector('.time-menu'), val=dd.querySelector('.leg-time'), lbl=dd.querySelector('.time-val');
+    trig.addEventListener('click',function(e){ e.stopPropagation(); var open=!dd.classList.contains('open'); closeAllTime(); if(open){ dd.classList.add('open'); } });
+    menu.addEventListener('click',function(e){ var li=e.target.closest('.time-opt'); if(!li) return; menu.querySelectorAll('.time-opt').forEach(function(x){x.classList.remove('sel');}); li.classList.add('sel'); val.value=li.getAttribute('data-v'); lbl.textContent=li.textContent; trig.classList.toggle('has-val', !!li.getAttribute('data-v')); dd.classList.remove('open'); });
+  });
+
+  // ---------- airport autocomplete ----------
+  var MAJOR={LHR:1,LGW:1,LCY:1,CDG:1,ORY:1,LBG:1,JFK:1,EWR:1,LAX:1,DXB:1,AUH:1,DOH:1,SIN:1,HKG:1,FRA:1,MUC:1,AMS:1,MAD:1,BCN:1,FCO:1,MXP:1,IST:1,JED:1,RUH:1,BOM:1,DEL:1,NRT:1,HND:1,PEK:1,PVG:1,SYD:1,MEL:1,GVA:1,ZRH:1,VIE:1,BRU:1,LIS:1,ATH:1,MIA:1,ORD:1,SFO:1,YYZ:1,GRU:1,NCE:1,CAI:1,MAN:1,DUB:1,CPH:1,OSL:1,ARN:1,HEL:1};
+  function setupAC(inp){
+    var field=inp.closest('.ac-field'), list=field.querySelector('.ac-list');
+    function close(){ list.innerHTML=''; list.classList.remove('open'); }
+    inp.addEventListener('input',function(){
+      var data=window.AIRPORTS||[], q=inp.value.trim().toUpperCase(); field.classList.remove('err');
+      if(q.length<2){ close(); return; }
+      var sc=[];
+      for(var i=0;i<data.length;i++){ var a=data[i],ia=a[0]||'',ic=a[1]||'',ci=(a[2]||'').toUpperCase(),nm=(a[3]||'').toUpperCase(),v=-1;
+        if(ia===q||ic===q)v=0; else if(ci.indexOf(q)===0)v=1; else if(ia.indexOf(q)===0||ic.indexOf(q)===0)v=2; else if(nm.indexOf(q)===0)v=3; else if(ci.indexOf(q)!==-1||nm.indexOf(q)!==-1)v=4;
+        if(v>=0){ if(MAJOR[ia])v-=0.5; sc.push([v,a]); } }
+      sc.sort(function(x,y){return x[0]-y[0];});
+      var res=sc.slice(0,8).map(function(p){return p[1];});
+      if(!res.length){ close(); return; }
+      list.innerHTML=res.map(function(a){ var code=a[0]||a[1],place=a[2]||a[3],sub=(a[2]&&a[3]?(a[3]+', '):'')+(a[4]||''),vv=place+' ('+code+')';
+        return '<li class="ac-item" data-val="'+vv.replace(/"/g,'&quot;')+'"><span class="ac-code">'+code+'</span><span class="ac-txt"><strong>'+place+'</strong><br>'+sub+'</span></li>'; }).join('');
+      list.classList.add('open');
+    });
+    list.addEventListener('mousedown',function(e){ var li=e.target.closest('.ac-item'); if(!li) return; e.preventDefault(); inp.value=li.getAttribute('data-val'); close(); });
+    inp.addEventListener('blur',function(){ setTimeout(close,160); });
+  }
+  document.querySelectorAll('#fqForm .ac-input').forEach(setupAC);
+
+  // ---------- aircraft toggle ----------
+  var fopts=document.querySelectorAll('.fq-opt');
+  fopts.forEach(function(b){ b.addEventListener('click',function(){ fopts.forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); var cargo=b.getAttribute('data-trip')==='cargo'; document.getElementById('fqPaxLabel').innerHTML=(cargo?'Greutate':'Pasageri')+'<span class="req">*</span>'; var px=document.getElementById('fqPax'); px.placeholder=cargo?'e.g. 500 kg':'1'; }); });
+
+  // dates: no past
+  try{ var t=new Date().toISOString().split('T')[0]; document.getElementById('fqDepDate').min=t; document.getElementById('fqRetDate').min=t; }catch(e){}
+
+  // ---------- step nav + validation ----------
+  function fieldOf(el){ return el.closest('.fq-field'); }
+  function setErr(el,on){ var f=fieldOf(el); if(f) f.classList.toggle('err',!!on); return !on; }
+  function emailOK(v){ return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v); }
+  function show(step){ var b=form.querySelector('.fq-block[data-step="'+step+'"]'); if(b){ b.hidden=false; b.scrollIntoView({behavior:'smooth',block:'center'}); } }
+  function setStepLabel(active){ document.querySelectorAll('.fq-step').forEach(function(s){ var n=+s.getAttribute('data-s'); s.classList.toggle('active', n===active); s.classList.toggle('done', active>n); }); }
+  function validateStep1(){
+    var ok=true;
+    ok=setErr(document.getElementById('fqFrom'), !document.getElementById('fqFrom').value.trim()) && ok;
+    ok=setErr(document.getElementById('fqTo'), !document.getElementById('fqTo').value.trim()) && ok;
+    ok=setErr(document.getElementById('fqDepDate'), !document.getElementById('fqDepDate').value) && ok;
+    ok=setErr(document.getElementById('fqPax'), !document.getElementById('fqPax').value.trim()) && ok;
+    return ok;
+  }
+  function validateContact(){
+    var ok=true;
+    ok=setErr(document.getElementById('fqName'), !document.getElementById('fqName').value.trim()) && ok;
+    ok=setErr(document.getElementById('fqEmail'), !emailOK(document.getElementById('fqEmail').value.trim())) && ok;
+    ok=setErr(document.getElementById('fqCountry'), !document.getElementById('fqCountry').value) && ok;
+    ok=setErr(document.getElementById('fqPhone'), !document.getElementById('fqPhone').value.trim()) && ok;
+    var c1=document.getElementById('fqC1'), c2=document.getElementById('fqC2');
+    var e1=form.querySelector('.fq-err[data-for="fqC1"]'), e2=form.querySelector('.fq-err[data-for="fqC2"]');
+    if(e1) e1.style.display=c1.checked?'none':'block'; if(!c1.checked) ok=false;
+    if(e2) e2.style.display=c2.checked?'none':'block'; if(!c2.checked) ok=false;
+    return ok;
+  }
+  form.querySelectorAll('.fq-next').forEach(function(btn){ btn.addEventListener('click',function(){
+    var nxt=btn.getAttribute('data-next');
+    if(nxt==='2'){ if(!validateStep1()) return; show('2'); }
+    else if(nxt==='3'){ show('3'); setStepLabel(3); }
+  }); });
+  form.querySelectorAll('.fq-back').forEach(function(btn){ btn.addEventListener('click',function(){ var b=btn.getAttribute('data-back'); show(b); setStepLabel(b==='1'?1:1); }); });
+  // clear error on input
+  form.addEventListener('input',function(e){ var f=e.target.closest('.fq-field'); if(f) f.classList.remove('err'); });
+  document.getElementById('fqC1').addEventListener('change',function(){ var e1=form.querySelector('.fq-err[data-for="fqC1"]'); if(e1&&this.checked) e1.style.display='none'; });
+  document.getElementById('fqC2').addEventListener('change',function(){ var e2=form.querySelector('.fq-err[data-for="fqC2"]'); if(e2&&this.checked) e2.style.display='none'; });
+
+  // ---------- submit ----------
+  form.addEventListener('submit',function(e){ e.preventDefault(); if(!validateContact()) return;
+    var trip=document.querySelector('.fq-opt.active').getAttribute('data-trip');
+    var payload={
+      _subject:'Fast Quote request — Fly with Andreea',
+      type:trip==='cargo'?'Cargo':'Passenger',
+      passengers_or_weight:document.getElementById('fqPax').value.trim(),
+      departing:document.getElementById('fqFrom').value.trim(),
+      destination:document.getElementById('fqTo').value.trim(),
+      departure_date:document.getElementById('fqDepDate').value,
+      departure_time:document.getElementById('fqDepTime').value||'Anytime',
+      return_date:document.getElementById('fqRetDate').value,
+      return_time:document.getElementById('fqRetTime').value||'Anytime',
+      additional_info:document.getElementById('fqMsg').value.trim(),
+      name:document.getElementById('fqName').value.trim(),
+      email:document.getElementById('fqEmail').value.trim(),
+      country:document.getElementById('fqCountry').value,
+      phone:(document.getElementById('fqDial').value||'')+' '+document.getElementById('fqPhone').value.trim()
+    };
+    var btn=form.querySelector('.fq-submit'); btn.disabled=true; btn.textContent='Se trimite...';
+    fetch('https://formspree.io/f/xojbkjyo',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){ return r.ok?r.json():Promise.reject(); })
+      .then(function(){ document.querySelectorAll('#fqForm .fq-block').forEach(function(b){b.hidden=true;}); document.getElementById('fqSuccess').hidden=false; document.getElementById('fqSuccess').scrollIntoView({behavior:'smooth',block:'center'}); })
+      .catch(function(){ btn.disabled=false; btn.textContent='Trimite \u2192';
+        var msg='Hello Andreea, I would like a private '+(trip==='cargo'?'cargo':'charter')+' quote. From '+payload.departing+' to '+payload.destination+' on '+payload.departure_date+'. '+payload.passengers_or_weight+'. Name: '+payload.name+', '+payload.email+', '+payload.phone+'.';
+        window.open('https://wa.me/971503372980?text='+encodeURIComponent(msg),'_blank'); });
+  });
+
+  // ---------- prefill (from homepage search) ----------
+  function setTimeDD(hiddenId,v){ var inp=document.getElementById(hiddenId); if(!inp||!v) return; var dd=inp.closest('.time-dd'); inp.value=v; var lbl=dd.querySelector('.time-val'); lbl.textContent=v; var tg=dd.querySelector('.time-trigger'); if(tg) tg.classList.add('has-val'); dd.querySelectorAll('.time-opt').forEach(function(o){ o.classList.toggle('sel',o.getAttribute('data-v')===v); }); }
+  window.fwaPrefill=function(state){ try{
+    if(!state) return;
+    if(state.trip){ fopts.forEach(function(b){ var on=b.getAttribute('data-trip')===state.trip; b.classList.toggle('active',on); }); var cargo=state.trip==='cargo'; document.getElementById('fqPaxLabel').innerHTML=(cargo?'Greutate':'Pasageri')+'<span class="req">*</span>'; }
+    if(state.pax) document.getElementById('fqPax').value=state.pax;
+    var L=state.legs||[];
+    if(L[0]){ if(L[0].from) document.getElementById('fqFrom').value=L[0].from; if(L[0].to) document.getElementById('fqTo').value=L[0].to; if(L[0].date) document.getElementById('fqDepDate').value=L[0].date; if(L[0].time) setTimeDD('fqDepTime',L[0].time); }
+    if(L[1]){ if(L[1].date) document.getElementById('fqRetDate').value=L[1].date; if(L[1].time) setTimeDD('fqRetTime',L[1].time); }
+  }catch(e){} };
+  // on load, consume stored search
+  try{ var raw=sessionStorage.getItem('fwa_quote'); if(raw){ window.fwaPrefill(JSON.parse(raw)); sessionStorage.removeItem('fwa_quote'); } }catch(e){}
+})();
+</script>
+<div class="pv-overlay" id="privacyModal" hidden>
+  <div class="pv-dialog" role="dialog" aria-modal="true" aria-label="Privacy Notice">
+    <button class="pv-close" type="button" aria-label="Close">&times;</button>
+    <div class="pv-content">
+<h2 class="pv-title">Politica de confidențialitate</h2>
+<p>Fly With Andreea</p>
+<p>Brokeraj de charter de jet privat</p>
+<p>Ultima actualizare: 25 iunie 2026</p>
+<h3>1. Despre această politică de confidențialitate</h3>
+<p>Confidențialitatea ta contează pentru noi. Această politică de confidențialitate explică modul în care Fly With Andreea colectează, utilizează, partajează și protejează datele tale personale când vizitezi site-ul nostru (flywithandreea.com), ne contactezi sau folosești serviciile noastre de brokeraj de charter de jet privat (fiecare, un „Serviciu”). Se aplică ori de câte ori interacționezi cu noi în legătură cu organizarea unui zbor.</p>
+<p>Fly With Andreea acționează ca broker de charter de jet privat. Acționăm ca intermediar între tine și operatorii aerieni care efectuează zborurile. Această politică poate fi completată cu declarații suplimentare furnizate în momentul colectării.</p>
+<p>Prelucrăm datele tale personale în conformitate cu Decretul-lege federal nr. 45 din 2021 privind protecția datelor personale (legea Emiratelor Arabe Unite privind protecția datelor personale, sau „PDPL”) și, acolo unde se aplică pentru clienții din Spațiul Economic European sau Regatul Unit, cu Regulamentul general privind protecția datelor al UE („GDPR”) și cu GDPR-ul Regatului Unit.</p>
+<p>Datele tale personale sunt orice informație care te identifică sau se referă la tine. Nu includ datele anonimizate astfel încât să nu mai poți fi identificat.</p>
+<h3>2. Cine suntem (operatorul de date)</h3>
+<p>Fly With Andreea este o activitate de brokeraj de charter de jet privat administrată de Andreea Vasilas ca întreprinzător individual, cu sediul în Dubai, Emiratele Arabe Unite. În sensul PDPL și GDPR, Andreea Vasilas, acționând sub numele Fly With Andreea, este operatorul de date responsabil de datele tale personale. Referințele la „noi” și „nostru” înseamnă Fly With Andreea.</p>
+<p>Atunci când un client ne furnizează datele personale ale unui pasager pentru a putea organiza un charter în numele său, acționăm conform instrucțiunilor clientului în privința acelor date și le prelucrăm doar în scopul organizării zborului.</p>
+<p>Contact pentru aspecte de confidențialitate:  andreea@flywithandreea.com  |  WhatsApp +971 50 337 2980</p>
+<h3>3. Ce date personale colectăm</h3>
+<h4>Clienți și clienți potențiali</h4>
+<p>Când ceri o ofertă, rezervi un charter, ne contactezi sau completezi un formular pe site-ul nostru, putem colecta:</p>
+<ul>
+<li>Date de identitate: nume, titlu, data nașterii, naționalitate și datele pașaportului sau ale altui document de călătorie.</li>
+<li>Date de contact: adresa de e-mail, numărul de telefon sau WhatsApp și adresa poștală.</li>
+<li>Date de rezervare: cerințele zborului, datele de călătorie, rutele, numărul de pasageri și solicitările speciale.</li>
+<li>Date de plată: informațiile necesare pentru procesarea avansurilor și plăților. Plățile cu cardul sunt gestionate prin procesatorul nostru de plăți (PayPal); nu stocăm numărul complet al cardului pe sistemele noastre.</li>
+<li>Date de comunicare: conținutul corespondenței tale cu noi.</li>
+</ul>
+<p>Colectăm aceste informații în principal pentru a executa contractul cu tine (organizarea charterului) și, acolo unde este relevant, pentru interesele noastre legitime, precum a răspunde solicitărilor, a preveni frauda și a asigura calitatea.</p>
+<h4>Date ale pasagerilor și categorii speciale</h4>
+<p>Pentru a organiza un zbor putem prelucra datele pasagerilor, inclusiv nume, date de naștere, date de pașaport și, acolo unde este relevant pentru zbor, informații sensibile precum cerințe de sănătate, mobilitate sau alimentare.</p>
+<p>În temeiul PDPL și GDPR, informațiile despre sănătate și cele similare constituie o categorie specială de date personale care necesită protecție suplimentară. Prelucrăm astfel de date doar atunci când este necesar pentru a-ți asigura siguranța și confortul înainte, în timpul și după un zbor, și doar cu consimțământul tău explicit. Furnizându-ne aceste informații, îți exprimi explicit consimțământul ca noi să le colectăm, să le folosim și să le partajăm cu operatorul aerian relevant și, acolo unde este necesar, cu autoritățile de reglementare sau de frontieră, în scopul operării zborului tău.</p>
+<h4>Vizitatorii site-ului</h4>
+<p>Când folosești site-ul nostru, putem colecta date tehnice precum adresa IP, tipul de dispozitiv și de browser și informații despre modul în care interacționezi cu site-ul. Folosim Google Analytics pentru a înțelege utilizarea site-ului și a ne îmbunătăți Serviciul. Cookie-urile de analiză sunt setate doar dacă ți-ai dat consimțământul prin bannerul nostru de cookie-uri. Pentru detalii, vezi Politica noastră de cookie-uri.</p>
+<h3>4. Cum colectăm datele tale personale</h3>
+<ul>
+<li>Direct de la tine: când completezi formularul de solicitare sau de ofertă pe site-ul nostru, ne scrii pe WhatsApp, ne trimiți un e-mail sau ne vorbești la telefon.</li>
+<li>De la un client care acționează în numele tău: de exemplu, când un asistent, un angajator sau un agent furnizează datele unui pasager pentru a organiza un charter.</li>
+<li>Automat: prin cookie-uri și tehnologii similare când folosești site-ul nostru, sub rezerva consimțământului tău.</li>
+<li>Din surse publice sau de la terți: pentru a verifica informații sau a preveni frauda, acolo unde legea permite.</li>
+</ul>
+<h3>5. Cum folosim datele tale și temeiul nostru legal</h3>
+<p>În temeiul PDPL și GDPR trebuie să avem un temei legal valabil pentru a prelucra datele tale. Ne bazăm pe următoarele:</p>
+<ul>
+<li>Executarea unui contract: pentru a furniza oferte, a organiza și confirma charterul, a procesa plățile și a livra Serviciul solicitat.</li>
+<li>Consimțământ: pentru a prelucra categorii speciale de date (precum informații de sănătate), a-ți trimite mesaje de marketing acolo unde este necesar și a seta cookie-uri neesențiale. Poți retrage consimțământul oricând.</li>
+<li>Interese legitime: pentru a răspunde solicitărilor, a ne îmbunătăți Serviciul, a ne securiza sistemele, a preveni frauda și a păstra evidențe, cu condiția ca aceste interese să nu prevaleze asupra drepturilor tale.</li>
+<li>Obligație legală: pentru a respecta legile aplicabile, inclusiv cerințele de aviație, control la frontieră, fiscalitate și combatere a spălării banilor.</li>
+</ul>
+<h3>6. Când te contactăm și marketing</h3>
+<p>Te putem contacta pentru a-ți gestiona solicitarea sau rezervarea, a răspunde corespondenței tale, a te informa despre modificări ale acestei politici și, acolo unde este permis, pentru a împărtăși oferte relevante precum zboruri empty-leg și disponibilitate de charter.</p>
+<p>Îți vom trimite mesaje de marketing doar atunci când avem dreptul în temeiul PDPL și GDPR, ceea ce înseamnă în general că ți-ai dat consimțământul sau ești un client existent, iar mesajul privește un Serviciu similar. Te poți dezabona oricând folosind linkul din orice mesaj de marketing sau contactându-ne la andreea@flywithandreea.com.</p>
+<h3>7. Cu cine partajăm datele tale personale</h3>
+<p>Cerem tuturor terților să respecte securitatea datelor tale personale și să le gestioneze legal. Putem partaja datele tale cu:</p>
+<ul>
+<li>Operatori aerieni și furnizori de servicii de aviație: pentru a organiza și opera zborul tău, inclusiv operatorul care efectuează charterul și, acolo unde este necesar, agenții de handling.</li>
+<li>Furnizorul de plăți: PayPal, pentru a procesa avansurile și plățile în siguranță.</li>
+<li>Furnizori de tehnologie: gazda site-ului nostru (Cloudflare), furnizorul de formulare (Formspree), furnizorul de CRM (gestionarea relațiilor cu clienții) și Google Analytics, care susțin funcționarea Serviciului nostru.</li>
+<li>Consilieri profesioniști: precum contabili și avocați, acolo unde este necesar.</li>
+<li>Autorități: control la frontieră, imigrări, autorități de aviație, autorități fiscale și organe de aplicare a legii, acolo unde legea o cere sau pentru a opera zborul tău.</li>
+<li>Transferuri de activitate: un terț care ar putea achiziționa sau fuziona cu activitatea noastră, caz în care datele tale ar continua să fie protejate conform unor termeni compatibili cu această politică.</li>
+</ul>
+<h3>8. Transferuri internaționale</h3>
+<p>Operăm din Emiratele Arabe Unite, iar furnizorii noștri și operatorii aerieni care îți organizează zborul pot fi situați în alte țări. Aceasta înseamnă că datele tale personale pot fi transferate în afara țării tale de reședință, inclusiv în afara EAU și a Spațiului Economic European.</p>
+<p>Atunci când transferăm date personale la nivel internațional, luăm măsuri pentru a ne asigura că primesc un nivel adecvat de protecție. În conformitate cu PDPL, transferurile transfrontaliere se fac acolo unde destinația asigură un nivel adecvat de protecție sau unde există garanții corespunzătoare ori consimțământul tău. Pentru transferurile de date privind clienții din SEE sau Regatul Unit, ne bazăm pe decizii de adecvare sau pe garanții corespunzătoare precum clauzele contractuale standard. Ne poți contacta pentru mai multe informații despre garanțiile pe care le folosim.</p>
+<h3>9. Cât timp păstrăm datele tale</h3>
+<p>Păstrăm datele tale personale doar atât timp cât este necesar pentru scopurile prezentate în această politică. Ca regulă generală, păstrăm evidențele clienților și rezervărilor până la șase ani de la data rezervării, pentru a respecta obligațiile legale, contabile și de reglementare și pentru a soluționa eventuale litigii. Când păstrarea nu mai este necesară, ștergem sau anonimizăm datele tale în mod sigur.</p>
+<p>Datele de marketing sunt păstrate până la dezabonare sau retragerea consimțământului. Categoriile speciale de date ale pasagerilor sunt păstrate doar atât timp cât este necesar pentru a opera zborul relevant și a respecta orice obligație legală, apoi sunt șterse.</p>
+<h3>10. Cum păstrăm datele tale în siguranță</h3>
+<p>Luăm măsuri tehnice și organizatorice adecvate pentru a proteja datele tale personale împotriva accesului neautorizat, alterării, divulgării, pierderii sau distrugerii. Printre acestea:</p>
+<ul>
+<li>Criptarea datelor în tranzit și acces la sisteme restricționat și protejat prin parolă.</li>
+<li>Controale de acces care limitează datele personale la cei care au nevoie de ele pentru a furniza Serviciul.</li>
+<li>Folosirea unor procesatori de încredere, obligați contractual să protejeze datele tale.</li>
+<li>Gestionarea sigură a plăților prin PayPal, în loc să stocăm noi înșine datele cardurilor.</li>
+</ul>
+<h3>11. Drepturile tale</h3>
+<p>Nu folosim datele tale personale pentru decizii automate sau profilare care produc efecte juridice ori similar semnificative fără intervenție umană.</p>
+<p>Sub rezerva legii aplicabile, ai dreptul să:</p>
+<ul>
+<li>Accesezi datele personale pe care le deținem despre tine și să obții o copie.</li>
+<li>Soliciți rectificarea datelor inexacte sau incomplete.</li>
+<li>Soliciți ștergerea datelor tale atunci când nu există un motiv legal de a continua prelucrarea.</li>
+<li>Te opui sau să soliciți restricționarea prelucrării în anumite circumstanțe.</li>
+<li>Soliciți transferul datelor tale către tine sau către un alt operator (portabilitatea datelor), acolo unde este aplicabil.</li>
+<li>Retragi consimțământul oricând, atunci când ne bazăm pe consimțământ. Aceasta nu afectează prelucrarea efectuată înainte de retragere.</li>
+</ul>
+<p>Pentru a exercita oricare dintre aceste drepturi, contactează-ne la andreea@flywithandreea.com. Vom răspunde în termenele stabilite de legea aplicabilă. Se pot aplica anumite excepții, pe care ți le vom explica acolo unde este relevant.</p>
+<p>Dacă te afli în EAU, poți depune și o plângere la UAE Data Office. Dacă te afli în SEE sau Regatul Unit, te poți adresa autorității locale de protecție a datelor. Am aprecia totuși ocazia de a-ți rezolva mai întâi nelămuririle.</p>
+<h3>12. Cookie-uri</h3>
+<p>Site-ul nostru folosește cookie-uri și tehnologii similare. Cookie-urile strict necesare sunt indispensabile funcționării site-ului. Cookie-urile de analiză (Google Analytics) sunt folosite doar dacă ți-ai dat consimțământul prin bannerul nostru de cookie-uri. Poți gestiona sau retrage consimțământul pentru cookie-uri oricând prin banner sau din setările browserului. Mai multe detalii sunt în Politica noastră de cookie-uri separată.</p>
+<h3>13. Modificări ale acestei politici de confidențialitate</h3>
+<p>Putem actualiza periodic această politică de confidențialitate pentru a reflecta schimbări în practicile noastre sau cerințe legale. Vom publica versiunea actualizată pe site-ul nostru, cu o dată revizuită și, acolo unde este cazul, te vom informa direct. Te încurajăm să consulți periodic această politică.</p>
+<h3>14. Cum ne contactezi</h3>
+<p>Pentru orice întrebare despre această politică de confidențialitate, pentru a-ți actualiza datele sau a-ți exercita drepturile, contactează-ne:</p>
+<p>Fly With Andreea</p>
+<p>E-mail: andreea@flywithandreea.com</p>
+<p>WhatsApp: +971 50 337 2980</p>
+<p>Site web: flywithandreea.com</p>
+<p>Locație: Dubai, Emiratele Arabe Unite</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var modal=document.getElementById('privacyModal'); if(!modal) return;
+  function open(e){ if(e) e.preventDefault(); modal.hidden=false; document.body.style.overflow='hidden'; var d=modal.querySelector('.pv-dialog'); if(d) d.scrollTop=0; }
+  function close(){ modal.hidden=true; document.body.style.overflow=''; }
+  document.querySelectorAll('.open-privacy').forEach(function(a){ a.addEventListener('click',open); });
+  modal.querySelector('.pv-close').addEventListener('click',close);
+  modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && !modal.hidden) close(); });
 })();
 </script>
 <script>/* nav-scroll v3 */
@@ -3113,30 +1598,6 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     lang.querySelectorAll(".tb-lang-opt").forEach(function(a){ a.addEventListener("click",function(e){ if(a.hasAttribute("data-soon")){ e.preventDefault(); a.innerHTML=a.getAttribute("data-lang").toUpperCase()+" \u2014 <span class=\"tb-soon\">coming soon</span>"; } }); });
     document.addEventListener("click",function(){ lang.classList.remove("open"); });
   }
-})();
-</script>
-<script>/* about-wow */
-(function(){
-  var root=document.querySelector('.about-stats'); if(!root) return;
-  function ease(t){ return 1-Math.pow(1-t,3); }
-  function countTo(el,to,suf,dur){ var s=null; function step(ts){ if(!s)s=ts; var p=Math.min((ts-s)/dur,1); el.textContent=Math.round(ease(p)*to)+(suf||''); if(p<1)requestAnimationFrame(step); else el.textContent=to+(suf||''); } requestAnimationFrame(step); }
-  function run(){
-    var fill=root.querySelector('.ab-tl-fill'), dot=root.querySelector('.ab-tl-dot');
-    if(fill) requestAnimationFrame(function(){ fill.style.width='100%'; if(dot) dot.style.left='100%'; });
-    var years=root.querySelectorAll('.ab-tl-years span');
-    [].forEach.call(years,function(y,i){ setTimeout(function(){ y.classList.add('on'); }, 250+i*(1700/Math.max(1,years.length))); });
-    var op=root.querySelector('[data-count]'); if(op) countTo(op, parseInt(op.getAttribute('data-count'),10), op.getAttribute('data-suffix')||'', 1400);
-    var cw=root.querySelector('.ab-countries');
-    if(cw){
-      var list=(cw.getAttribute('data-countries')||'').split('|').filter(Boolean);
-      var num=cw.querySelector('.ab-c-num'), nm=cw.querySelector('.ab-c-name'), cf=cw.querySelector('.ab-c-fill');
-      if(cf) requestAnimationFrame(function(){ cf.style.width='100%'; });
-      var total=list.length, dur=6900, s=null;
-      function step(ts){ if(!s)s=ts; var p=Math.min((ts-s)/dur,1); var idx=Math.min(total-1,Math.floor(ease(p)*total)); if(num) num.textContent=Math.round(ease(p)*total); if(nm&&list[idx]) nm.textContent=list[idx]; if(p<1) requestAnimationFrame(step); else { if(num)num.textContent=total; if(nm)nm.textContent=list[total-1]; } }
-      requestAnimationFrame(step);
-    }
-  }
-  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ run(); io.disconnect(); } }); },{threshold:0.25}); io.observe(root); } else { run(); }
 })();
 </script>
 </body>
