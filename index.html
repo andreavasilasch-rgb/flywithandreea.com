@@ -6,13 +6,13 @@
   <link rel="canonical" href="https://www.flywithandreea.com/">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
-  <meta property="og:title" content="Fly with Andreea — Private Jet Charter">
+  <meta property="og:title" content="Fly with Andreea · Private Jet Charter">
   <meta property="og:description" content="Private jet charter across Europe, the Middle East and Africa. 55-minute take-off. 450+ operators. 180 countries. One person. Always Andreea.">
   <meta property="og:image" content="https://www.flywithandreea.com/logo.png">
   <meta property="og:url" content="https://www.flywithandreea.com/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fly with Andreea — Private Jet Charter">
+  <meta name="twitter:title" content="Fly with Andreea · Private Jet Charter">
   <meta name="twitter:description" content="Private jet charter. Europe, Middle East, Africa. 55-minute take-off. Always Andreea.">
   <meta name="twitter:image" content="https://www.flywithandreea.com/logo.png">
   <script type="application/ld+json">
@@ -32,7 +32,7 @@
   </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fly with Andreea | Private Jet Charter — Europe, Middle East & Africa</title>
+<title>Fly with Andreea | Private Jet Charter · Europe, Middle East & Africa</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -86,7 +86,7 @@
   .nav-cta:hover { background: var(--gold-light); }
 
   /* HERO */
-  .hero { position: relative; height: 100vh; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  .hero { position: relative; height: 100vh; height: 100svh; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; overflow: hidden; }
   .hero-bg { background: url('hero-photo.webp') center/cover no-repeat; filter: brightness(0.45); }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,24,20,0.2) 0%, rgba(26,24,20,0) 40%, rgba(26,24,20,0.55) 100%); }
@@ -130,6 +130,7 @@
   .section-eyebrow { font-size: 11px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
   .section-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 300; line-height: 1.15; color: var(--ink); }
   .section-title em { font-style: italic; color: var(--gold); }
+  .section-title,.about-title,.exp-title,.routes-headline,.hiw-h2,.newsletter-left h2{ text-transform:uppercase; }
   .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .service-card { background: #F5F5F7; border-radius: 20px; padding: 44px 36px; border: 0.5px solid #E8E8ED; transition: border-color 0.3s, transform 0.3s; }
   .service-card:hover { border-color: var(--gold-light); transform: translateY(-3px); }
@@ -685,7 +686,7 @@ nav.scrolled .logo-on-light { display: inline-block; }
   #navbar.open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
   .nav-links{
     display:flex; flex-direction:column; gap:0; list-style:none;
-    position:fixed; top:0; right:0; height:100vh; width:min(80vw,320px);
+    position:fixed; top:0; right:0; height:100vh; height:100svh; width:min(80vw,320px);
     background:rgba(255,255,255,0.985); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
     padding:100px 26px 28px; box-shadow:-14px 0 44px rgba(0,0,0,0.18);
     transform:translateX(100%); transition:transform .34s ease; z-index:120;
@@ -747,8 +748,11 @@ nav.scrolled .logo-on-light { display: inline-block; }
 .leg:not(:first-child) .leg-remove{ visibility:visible; }
 .time-dd{ position:relative; }
 .time-trigger{ display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%; background:transparent; border:0; padding:0; font-family:var(--sans); font-size:15px; cursor:pointer; }
-.time-trigger .time-val{ color:var(--grey,#9b9b9b); }
+.time-trigger .time-val{ color:var(--grey-light); }
 .time-trigger.has-val .time-val{ color:var(--ink); }
+.leg-date::-webkit-datetime-edit{ color:var(--grey-light); }
+.leg-date.has-val::-webkit-datetime-edit{ color:var(--ink); }
+.leg-date::-webkit-calendar-picker-indicator{ opacity:.5; }
 .time-trigger svg{ flex-shrink:0; color:var(--grey,#9b9b9b); transition:transform .2s; }
 .time-dd.open .time-trigger svg{ transform:rotate(180deg); }
 .time-menu{ position:absolute; left:0; top:calc(100% + 12px); z-index:60; width:150px; max-height:264px; overflow-y:auto; background:#fff; border:0.5px solid var(--grey-light); border-radius:14px; box-shadow:0 18px 50px rgba(26,24,20,0.18); list-style:none; margin:0; padding:6px; display:none; }
@@ -902,6 +906,9 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 .about-section{ padding:62px 48px 40px !important; }
 .about-wa{ font-size:15px !important; padding:14px 28px !important; }
 .about-wa:hover{ transform:translateY(-1px); }
+.about-email{ display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--gold); box-shadow:inset 0 0 0 1px var(--gold); font-family:var(--sans); font-size:15px !important; font-weight:400; letter-spacing:-0.01em; padding:14px 28px !important; border-radius:40px; text-decoration:none; transition:background .2s,color .2s,box-shadow .2s,transform .2s; }
+.about-email svg{ width:15px; height:15px; flex-shrink:0; }
+.about-email:hover{ background:var(--gold); color:var(--white); box-shadow:inset 0 0 0 1px var(--gold); transform:translateY(-1px); }
 .about-read-more{ background:none; border:0; padding:0; margin-top:20px; font-family:var(--sans); font-size:13px; color:var(--gold-deep,#B8966B); letter-spacing:-0.01em; cursor:pointer; display:inline-flex; align-items:center; gap:5px; transition:gap .2s ease, color .2s ease; }
 .about-read-more:hover{ gap:9px; color:var(--gold); }
 .about-read-more-chevron{ display:inline-block; }
@@ -914,6 +921,100 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 .about-left{ display:flex; flex-direction:column; }
 .about-read-more{ margin-top:auto; align-self:flex-start; }
 @media (max-width:760px){ .about-left{ display:block; } .about-read-more{ margin-top:18px; } }
+
+/*FOOTER-NORM*/
+footer{padding:48px 0 28px;}
+footer .footer-inner{max-width:1100px;margin:0 auto;padding:0 24px 22px;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:flex-start;justify-content:space-between;gap:32px;border-bottom:0.5px solid var(--grey-light,#d2d2d7);}
+footer .footer-brand{flex:0 0 auto;max-width:200px;}
+footer .footer-logo-img{height:46px;width:auto;object-fit:contain;}
+footer .footer-tagline{font-size:12px;margin-top:8px;color:var(--grey,#86868b);}
+footer .footer-links{display:flex;flex-direction:row;flex-wrap:nowrap;gap:32px;align-items:flex-start;}
+footer .footer-col{min-width:0;}
+footer .footer-col h4{color:var(--gold,#CBAD91);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;margin-bottom:12px;}
+footer .footer-col a{display:block;white-space:nowrap;font-size:13px;margin-bottom:9px;color:var(--grey-dark,#5b5b5b);text-decoration:none;}
+footer .footer-bottom{max-width:1100px;margin:18px auto 0;padding:0 24px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;}
+footer .footer-copy{font-size:12px;color:var(--grey,#86868b);}
+footer .footer-legal{display:flex;gap:18px;}
+footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decoration:none;margin:0;}
+@media(max-width:680px){
+ footer .footer-inner{flex-direction:column;flex-wrap:wrap;gap:26px;}
+ footer .footer-links{flex-wrap:wrap;gap:22px 36px;}
+ footer .footer-col a{white-space:normal;}
+ footer .footer-bottom{flex-direction:column;text-align:center;gap:10px;}
+ footer .footer-legal a{margin:0 8px;}
+}
+
+/*TRUST-STRIP*/
+.trust-strip{background:var(--ink,#1D1D1F);color:#fff;padding:30px 24px;}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;}
+.trust-items{display:flex;flex-wrap:wrap;gap:34px;}
+.trust-items .ti{display:flex;flex-direction:column;gap:2px;}
+.trust-items .tn{font-family:var(--serif,Georgia,serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
+.trust-items .tl{font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.7);}
+.trust-cta{display:flex;gap:12px;}
+.trust-cta a{text-decoration:none;font-size:14px;font-weight:500;padding:11px 20px;border-radius:40px;white-space:nowrap;}
+.ts-call{background:var(--gold,#CBAD91);color:#1D1D1F;}
+.ts-wa{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);}
+.mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91);}
+@media(max-width:680px){.trust-inner{flex-direction:column;align-items:flex-start;}.trust-items{gap:20px 30px;}.trust-cta{width:100%;}.trust-cta a{flex:1;text-align:center;}}
+
+/*RESP-FIX*/
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+html,body{overflow-x:clip;}
+img,svg,video,canvas{max-width:100%;}
+a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.mcta{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));}
+@media(max-width:760px){
+  input,select,textarea{font-size:16px!important;}
+  .to-top{bottom:calc(84px + env(safe-area-inset-bottom,0px));}
+}
+
+/*NAV-CTA-FIX*/
+@media(max-width:820px){#navbar .nav-cta{display:none;}#navbar .nav-logo-img{height:40px;}}
+
+/*CTA-RESIZE*/
+@media(max-width:600px){
+  .cta{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .cta a{display:block;width:100%;max-width:320px;margin:0 auto;text-align:center;box-sizing:border-box;}
+  .closing .actions,.hero .actions{flex-direction:column;align-items:center;width:100%;gap:12px;}
+  .closing .actions .btn,.hero .actions .btn{display:block;width:100%;max-width:320px;margin:0 auto;text-align:center;box-sizing:border-box;}
+}
+
+/*CAPS-RULE*/
+.empty-route,.route-card-name{text-transform:uppercase;letter-spacing:.01em;}
+
+/* HOW IT WORKS (5-step) */
+.howitworks-section{background:#F5F5F7;padding:48px 48px;border-top:.5px solid var(--grey-light)}
+.hiw-inner{max-width:920px;margin:0 auto;text-align:center}
+.hiw-eyebrow{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hiw-h2{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);font-weight:300;line-height:1.2;color:var(--ink);margin:0 0 34px}
+.hiw-h2 em{font-style:italic;color:var(--gold)}
+.hiw-flow{display:flex;align-items:flex-start;justify-content:space-between;gap:0}
+.hiw-node{flex:1;position:relative;padding:0 6px}
+.hiw-node::before{content:"";position:absolute;top:16px;right:50%;width:100%;height:1px;background:var(--grey-light);z-index:0}
+.hiw-node:first-child::before{display:none}
+.hiw-num{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:33px;height:33px;border-radius:50%;border:.5px solid var(--gold);background:#F5F5F7;color:var(--gold);font-family:var(--serif);font-size:14px;font-weight:400;margin-bottom:14px}
+.hiw-label{font-family:var(--sans);font-weight:600;letter-spacing:.01em;font-size:14px;color:var(--ink);margin:0 0 5px}
+.hiw-desc{font-family:var(--sans);font-size:12px;font-weight:300;color:var(--grey-dark);line-height:1.5;margin:0}
+.hiw-foot{display:flex;align-items:center;justify-content:center;gap:10px 22px;margin-top:32px;flex-wrap:wrap}
+.hiw-foot-note{font-size:12.5px;font-weight:300;color:var(--grey-dark)}
+.hiw-foot-note b{color:var(--ink);font-weight:500}
+.hiw-foot-cta{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);text-decoration:none;padding:12px 28px;border-radius:999px}
+.hiw-foot-cta:hover{background:#333}
+@media(max-width:820px){.howitworks-section{padding:44px 34px}.hiw-node{padding:0 4px}.hiw-desc{font-size:11.5px}.hiw-node::before{top:15px}}
+@media(max-width:600px){.howitworks-section{padding:38px 26px}.hiw-h2{margin-bottom:24px}.hiw-flow{flex-direction:column;gap:0;max-width:340px;margin:0 auto;text-align:left}.hiw-node{flex:none;width:100%;display:flex;align-items:flex-start;gap:16px;padding:13px 0}.hiw-node::before{display:block;left:16px;top:34px;bottom:-13px;width:1px;height:auto;right:auto;background:var(--grey-light)}.hiw-node:first-child::before{display:block}.hiw-node:last-child::before{display:none}.hiw-num{margin-bottom:0;flex:0 0 33px}.hiw-label{margin:0 0 3px}.hiw-txt{padding-top:5px}}
+/* trust-symmetric */
+.trust-strip .trust-inner{justify-content:center}
+.trust-strip .trust-items{flex:1;justify-content:space-between;gap:24px 34px}
+@media(max-width:640px){.trust-strip .trust-items{justify-content:flex-start;gap:18px 26px}}
+/* mobile CTA bar */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
+.mcta.show{transform:translateY(0)}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta-quote{background:var(--gold,#CBAD91);color:#fff}
+.mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
+.mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+/* all-section-caps */.section-title,.fr-headline,.el-headline,.routes-headline,.exp-title,.about-title,.routes-qa-title,.gd-title,.hiw-h2,.newsletter-left h2,.block h2,.pv-title,.legal-body h2,.legal-body h3,.faq-left .section-title,.cat-h1,.hiw-title{text-transform:uppercase!important;}
 </style>
 <link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/">
 <link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/">
@@ -921,6 +1022,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 <link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/">
 <link rel="alternate" hreflang="ro" href="https://www.flywithandreea.com/ro/">
 <link rel="alternate" hreflang="es" href="https://www.flywithandreea.com/es/">
+<script src="/empty-legs-data.js"></script>
 </head>
 <body>
 <div class="topbar">
@@ -948,7 +1050,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     <li><a href="/#services">Services</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#extras">On board</a></li>
-    <li><a href="/airport-guide">Airport Guide</a></li>
+    <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>
   <a href="/#quote" class="nav-cta">Book now</a>
@@ -1094,7 +1196,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 </div>
         <div class="about-cta">
         <a href="https://wa.me/971503372980" class="about-wa" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Message Andreea</a>
-        <a href="mailto:andreea@flywithandreea.com" class="about-secondary">andreea@flywithandreea.com</a>
+        <a href="mailto:andreea@flywithandreea.com" class="about-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email Andreea</a>
       </div>
     </div>
   </div>
@@ -1102,6 +1204,23 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 
 
 <!-- SERVICES -->
+<section class="howitworks-section" id="how-it-works">
+  <div class="hiw-inner">
+    <div class="hiw-eyebrow">How it works</div>
+    <h2 class="hiw-h2">Five steps, <em>fully handled.</em></h2>
+    <div class="hiw-flow">
+      <div class="hiw-node"><div class="hiw-num">1</div><div class="hiw-txt"><h3 class="hiw-label">Enquire</h3><p class="hiw-desc">Your route, dates and party size. One message.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">2</div><div class="hiw-txt"><h3 class="hiw-label">We curate</h3><p class="hiw-desc">The right aircraft, matched to a vetted operator.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">3</div><div class="hiw-txt"><h3 class="hiw-label">Your quote</h3><p class="hiw-desc">One fixed, all-in price. Ready in minutes.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">4</div><div class="hiw-txt"><h3 class="hiw-label">We arrange</h3><p class="hiw-desc">Slots, crew, catering and transfers, all handled.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">5</div><div class="hiw-txt"><h3 class="hiw-label">Fly</h3><p class="hiw-desc">Arrive minutes before. You simply travel.</p></div></div>
+    </div>
+    <div class="hiw-foot">
+      <div class="hiw-foot-note"><b>Fixed, all-in pricing.</b> Vetted operators. 24/7 concierge. Worldwide.</div>
+      <a class="hiw-foot-cta" href="#quote">Request a quote &rsaquo;</a>
+    </div>
+  </div>
+</section>
 <section class="services-section" id="services">
   <div class="section-header">
     <h2 class="section-title">Everything taken care of.<br><em>Before you land.</em></h2>
@@ -1143,23 +1262,23 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   <div class="exp-bg" aria-hidden="true"></div>
   <div class="exp-inner">
     <div class="exp-content">
-      <!-- Fix 3: eyebrow is meaningful — aria-hidden removed -->
+      <!-- Fix 3: eyebrow is meaningful, aria-hidden removed -->
       <div class="exp-eyebrow">Included, on select routes</div>
       <h2 class="exp-title" itemprop="name">More comes with<br>your flight<br><em>than you think.</em></h2>
-      <p class="exp-body" itemprop="description">Private jet charter with Fly with Andreea includes complimentary concierge services on select routes across Europe, the Middle East, and Africa. Door-to-door transfers, champagne on board, fresh flowers in the cabin, gourmet catering — ask before you confirm to see what is already included at no extra cost.</p>
+      <p class="exp-body" itemprop="description">Private jet charter with Fly with Andreea includes complimentary concierge services on select routes across Europe, the Middle East, and Africa. Door-to-door transfers, champagne on board, fresh flowers in the cabin, gourmet catering, ask before you confirm to see what is already included at no extra cost.</p>
       <!-- SEO list: visually hidden, semantically present -->
       <ul class="exp-seo-list" aria-label="Included services on select routes">
         <li>Private airport transfers and door-to-tarmac pick-up</li>
         <li>Champagne and gourmet catering on board</li>
         <li>Fresh flowers arranged in the cabin before boarding</li>
-        <li>Pet-friendly private jet cabin — dogs, cats, birds welcome</li>
+        <li>Pet-friendly private jet cabin, dogs, cats, birds welcome</li>
         <li>24/7 dedicated concierge from booking to landing</li>
       </ul>
       <!-- Fix 5: no border-left, spacing separation only -->
       <blockquote class="exp-quote">
         <p>"Ask us before you confirm. What's waiting for you on your route might surprise you."</p>
       </blockquote>
-      <!-- Fix 6: frosted glass CTA — Apple dark-section standard -->
+      <!-- Fix 6: frosted glass CTA, Apple dark-section standard -->
       <a href="#quote" class="exp-cta"
         aria-label="Contact Fly with Andreea about included services on your route">Get in touch</a>
     </div>
@@ -1177,7 +1296,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <div class="extra-img" style="background-image:url('/extras/champagne-catering.jpg');"></div>
       <div class="extra-body">
         <div class="extra-title">Champagne & catering</div>
-        <div class="extra-desc">Your preferred champagne, chilled and waiting. Catering arranged to your exact brief — whether that's a light charcuterie, a full meal, or a birthday cake at 40,000 feet.</div>
+        <div class="extra-desc">Your preferred champagne, chilled and waiting. Catering arranged to your exact brief, whether that's a light charcuterie, a full meal, or a birthday cake at 40,000 feet.</div>
         <div class="extra-note">Available on request ›</div>
       </div>
     </div>
@@ -1185,7 +1304,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <div class="extra-img" style="background-image:url('/extras/fresh-flowers.jpg');"></div>
       <div class="extra-body">
         <div class="extra-title">Fresh flowers</div>
-        <div class="extra-desc">Roses, peonies, orchids — whichever you love. Arranged in the cabin before you board. A detail most people don't think to ask for. We do.</div>
+        <div class="extra-desc">Roses, peonies, orchids, whichever you love. Arranged in the cabin before you board. A detail most people don't think to ask for. We do.</div>
         <div class="extra-note">Ask about your route ›</div>
       </div>
     </div>
@@ -1193,7 +1312,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <div class="extra-img" style="background-image:url('/extras/pets-cabin.jpg');"></div>
       <div class="extra-body">
         <div class="extra-title">Pets in the cabin</div>
-        <div class="extra-desc">Dogs, cats, birds, even small reptiles. They travel beside you — not in cargo, not stressed, not separated. Just comfortable, the way it should be.</div>
+        <div class="extra-desc">Dogs, cats, birds, even small reptiles. They travel beside you, not in cargo, not stressed, not separated. Just comfortable, the way it should be.</div>
         <div class="extra-note">All sizes welcome ›</div>
       </div>
     </div>
@@ -1225,7 +1344,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <div class="extra-img" style="background-image:url('/extras/helicopter.jpg');"></div>
       <div class="extra-body">
         <div class="extra-title">Helicopter connections</div>
-        <div class="extra-desc">From the tarmac to the rooftop. We coordinate seamless helicopter transfers from private terminals into city centres — bypassing every road, every queue, every delay.</div>
+        <div class="extra-desc">From the tarmac to the rooftop. We coordinate seamless helicopter transfers from private terminals into city centres, bypassing every road, every queue, every delay.</div>
         <div class="extra-note">City-centre in minutes ›</div>
       </div>
     </div>
@@ -1233,7 +1352,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <div class="extra-img" style="background-image:url('/extras/yacht-villa.jpg');"></div>
       <div class="extra-body">
         <div class="extra-title">Yacht & villa connections</div>
-        <div class="extra-desc">Your jet lands. Your tender is waiting. We coordinate the full journey — private aviation to superyacht, villa arrival, or resort transfer — as a single, uninterrupted experience.</div>
+        <div class="extra-desc">Your jet lands. Your tender is waiting. We coordinate the full journey, private aviation to superyacht, villa arrival, or resort transfer, as a single, uninterrupted experience.</div>
         <div class="extra-note">Full journey managed ›</div>
       </div>
     </div>
@@ -1265,7 +1384,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <div class="extra-img" style="background-image:url('/extras/surprise-roses.jpg');"></div>
       <div class="extra-body">
         <div class="extra-title">Surprise & discretion</div>
-        <div class="extra-desc">Sometimes the journey itself is the gift. We manage every detail without revealing the destination — a surprise flight, arranged with complete discretion, from booking to boarding.</div>
+        <div class="extra-desc">Sometimes the journey itself is the gift. We manage every detail without revealing the destination, a surprise flight, arranged with complete discretion, from booking to boarding.</div>
         <div class="extra-note">Tell us the story ›</div>
       </div>
     </div>
@@ -1752,7 +1871,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     <div class="cat-panel-content">
       <div class="cat-panel-num">03</div>
       <div class="cat-panel-title">Pet-Friendly Flights</div>
-      <div class="cat-panel-desc">Your animals fly in the cabin with you. Dogs, cats, birds — all welcome on board.</div>
+      <div class="cat-panel-desc">Your animals fly in the cabin with you. Dogs, cats, birds, all welcome on board.</div>
       <a href="#quote" class="cat-panel-arrow">
         Book now
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1884,7 +2003,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         <div class="scroll-card-body">
           <div class="scroll-card-num">02</div>
           <h3 class="scroll-card-title">Transparent, All-Inclusive Pricing</h3>
-          <p class="scroll-card-desc">Our independent jet booking platform and in-house flight experts use advanced technology to secure the most competitive private jet prices. You pay only for what you need — no hidden fees, no commissions, complete transparency.</p>
+          <p class="scroll-card-desc">Our independent jet booking platform and in-house flight experts use advanced technology to secure the most competitive private jet prices. You pay only for what you need, no hidden fees, no commissions, complete transparency.</p>
           <a href="#quote" class="scroll-card-cta">Learn more ›</a>
         </div>
       </div>
@@ -1894,7 +2013,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         <div class="scroll-card-body">
           <div class="scroll-card-num">03</div>
           <h3 class="scroll-card-title">Pet-Friendly Private Jet Flights</h3>
-          <p class="scroll-card-desc">Travel comfortably with your pets — whether dogs, cats, birds, or even small reptiles. Our team has extensive experience organizing pet-friendly private jet charters, ensuring safety and comfort for every passenger on board.</p>
+          <p class="scroll-card-desc">Travel comfortably with your pets, whether dogs, cats, birds, or even small reptiles. Our team has extensive experience organizing pet-friendly private jet charters, ensuring safety and comfort for every passenger on board.</p>
           <a href="#quote" class="scroll-card-cta">Learn more ›</a>
         </div>
       </div>
@@ -1904,7 +2023,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         <div class="scroll-card-body">
           <div class="scroll-card-num">04</div>
           <h3 class="scroll-card-title">24/7 Global Coverage</h3>
-          <p class="scroll-card-desc">With 450+ operators across 180 countries and a 55-minute minimum take-off time, we are always ready. Wherever you need to go, we make it happen — fast, reliably, and with care.</p>
+          <p class="scroll-card-desc">With 450+ operators across 180 countries and a 55-minute minimum take-off time, we are always ready. Wherever you need to go, we make it happen, fast, reliably, and with care.</p>
           <a href="#quote" class="scroll-card-cta">Learn more ›</a>
         </div>
       </div>
@@ -2045,11 +2164,11 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       </div>
       <div class="qa-card">
         <div class="qa-q">Which airports work best?</div>
-        <div class="qa-a">Frankfurt's general aviation terminal sits 12 km from the city. Paris Le Bourget — Europe's busiest private aviation hub — offers seven FBOs and round-the-clock service. Both connect to their city centres by helicopter or ground transfer in under 20 minutes.</div>
+        <div class="qa-a">Frankfurt's general aviation terminal sits 12 km from the city. Paris Le Bourget, Europe's busiest private aviation hub, offers seven FBOs and round-the-clock service. Both connect to their city centres by helicopter or ground transfer in under 20 minutes.</div>
       </div>
       <div class="qa-card">
         <div class="qa-q">How long is the flight?</div>
-        <div class="qa-a">Roughly 50 to 60 minutes in the air. Add 15 minutes at each private terminal — no queues, no security theatre — and door-to-door is well under two hours.</div>
+        <div class="qa-a">Roughly 50 to 60 minutes in the air. Add 15 minutes at each private terminal, no queues, no security theatre, and door-to-door is well under two hours.</div>
       </div>
       <div class="qa-card">
         <div class="qa-q">Which aircraft fly this route most?</div>
@@ -2057,19 +2176,19 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       </div>
       <div class="qa-card">
         <div class="qa-q">Are there night flight restrictions?</div>
-        <div class="qa-a">Frankfurt Airport enforces a night ban roughly 11 PM to 5 AM. For late departures, Egelsbach (EDFE) — the dedicated general aviation hub south of the city — is the standard alternative, with more flexible hours for light and midsize jets.</div>
+        <div class="qa-a">Frankfurt Airport enforces a night ban roughly 11 PM to 5 AM. For late departures, Egelsbach (EDFE), the dedicated general aviation hub south of the city, is the standard alternative, with more flexible hours for light and midsize jets.</div>
       </div>
       <div class="qa-card">
         <div class="qa-q">Can I get a helicopter into Paris?</div>
-        <div class="qa-a">Yes. From Le Bourget, a helicopter transfer to Issy-les-Moulineaux Heliport puts you minutes from the Eiffel Tower and the central business district — typically 10 to 15 minutes in the air.</div>
+        <div class="qa-a">Yes. From Le Bourget, a helicopter transfer to Issy-les-Moulineaux Heliport puts you minutes from the Eiffel Tower and the central business district, typically 10 to 15 minutes in the air.</div>
       </div>
       <div class="qa-card">
         <div class="qa-q">What's the luggage allowance?</div>
-        <div class="qa-a">On a Phenom 300 or Citation CJ3, plan for six to eight standard suitcases plus cabin bags. Travelling with golf clubs or oversized equipment? A midsize jet or PC-12 — which has a dedicated large cargo door — is the practical choice.</div>
+        <div class="qa-a">On a Phenom 300 or Citation CJ3, plan for six to eight standard suitcases plus cabin bags. Travelling with golf clubs or oversized equipment? A midsize jet or PC-12, which has a dedicated large cargo door, is the practical choice.</div>
       </div>
       <div class="qa-card">
         <div class="qa-q">Can my pet fly with me?</div>
-        <div class="qa-a">Always. With the right health certificates in place, your dog, cat, or bird travels in the cabin beside you. Both Frankfurt and Le Bourget have designated pet entry points — the process is smooth and unhurried.</div>
+        <div class="qa-a">Always. With the right health certificates in place, your dog, cat, or bird travels in the cabin beside you. Both Frankfurt and Le Bourget have designated pet entry points, the process is smooth and unhurried.</div>
       </div>
       <div class="qa-card">
         <div class="qa-q">Do I need a visa for this route?</div>
@@ -2096,227 +2215,12 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   <div class="empty-filters">
     <button class="empty-filter active" data-cat="all">All routes</button>
     <button class="empty-filter" data-cat="europe">Europe</button>
-    <button class="empty-filter" data-cat="leisure">Leisure</button>
-    <button class="empty-filter" data-cat="longhaul">Long-haul</button>
+    <button class="empty-filter" data-cat="africa">Africa</button>
+    <button class="empty-filter" data-cat="asia">Asia</button>
+    <button class="empty-filter" data-cat="us">United States</button>
+    <button class="empty-filter" data-cat="transatlantic">Transatlantic</button>
   </div>
-  <div class="empty-grid" id="emptyGrid">
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Lugano%20to%20Figari%20on%20May%2025%20%28From%20%E2%82%AC3%2C200%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Lugano (LUG) → Figari (FSC)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 25</div>
-          <div class="empty-time">14:30 → 15:46</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €3,200</div>
-            <div class="empty-aircraft">Very Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:53%"></div></div><div class="empty-prob-pct">53%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Venice%20to%20Bordeaux%20on%20May%2025%20%28From%20%E2%82%AC6%2C800%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Venice (VCE) → Bordeaux (BOD)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 25</div>
-          <div class="empty-time">14:55 → 17:21</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €6,800</div>
-            <div class="empty-aircraft">Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:27%"></div></div><div class="empty-prob-pct">27%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Milan%20to%20Rome%20on%20May%2026%20%28From%20%E2%82%AC2%2C900%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Milan (LIN) → Rome (FCO)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 26</div>
-          <div class="empty-time">04:37 → 06:00</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €2,900</div>
-            <div class="empty-aircraft">Very Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:50%"></div></div><div class="empty-prob-pct">50%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Geneva%20to%20Cork%20on%20May%2026%20%28From%20%E2%82%AC7%2C400%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Geneva (GVA) → Cork (ORK)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 26</div>
-          <div class="empty-time">09:15 → 11:00</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €7,400</div>
-            <div class="empty-aircraft">Midsize Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:27%"></div></div><div class="empty-prob-pct">27%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Ibiza%20to%20Palma%20on%20May%2026%20%28From%20%E2%82%AC1%2C800%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Ibiza (IBZ) → Palma (PMI)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 26</div>
-          <div class="empty-time">12:40 → 13:20</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €1,800</div>
-            <div class="empty-aircraft">Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:38%"></div></div><div class="empty-prob-pct">38%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Milan%20to%20St%20Tropez%20on%20May%2026%20%28From%20%E2%82%AC4%2C100%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Milan (LIN) → St Tropez (LTT)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 26</div>
-          <div class="empty-time">06:15 → 07:26</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €4,100</div>
-            <div class="empty-aircraft">Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:43%"></div></div><div class="empty-prob-pct">43%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20London%20to%20Nice%20on%20May%2027%20%28From%20%E2%82%AC8%2C900%29.%20Please%20send%20more%20details." target="_blank" data-cat="longhaul">
-        <div class="empty-card-top">
-          <div class="empty-route">London (BQH) → Nice (NCE)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 27</div>
-          <div class="empty-time">08:00 → 10:15</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €8,900</div>
-            <div class="empty-aircraft">Midsize Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:27%"></div></div><div class="empty-prob-pct">27%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Zurich%20to%20Ibiza%20on%20May%2027%20%28From%20%E2%82%AC9%2C200%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Zurich (ZRH) → Ibiza (IBZ)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 27</div>
-          <div class="empty-time">11:30 → 13:45</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €9,200</div>
-            <div class="empty-aircraft">Large Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:21%"></div></div><div class="empty-prob-pct">21%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Paris%20to%20Mykonos%20on%20May%2028%20%28From%20%E2%82%AC11%2C400%29.%20Please%20send%20more%20details." target="_blank" data-cat="leisure">
-        <div class="empty-card-top">
-          <div class="empty-route">Paris (LBG) → Mykonos (JMK)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 28</div>
-          <div class="empty-time">09:00 → 12:30</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €11,400</div>
-            <div class="empty-aircraft">Large Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:58%"></div></div><div class="empty-prob-pct">58%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Rome%20to%20London%20on%20May%2028%20%28From%20%E2%82%AC10%2C800%29.%20Please%20send%20more%20details." target="_blank" data-cat="longhaul">
-        <div class="empty-card-top">
-          <div class="empty-route">Rome (FCO) → London (LCY)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 28</div>
-          <div class="empty-time">14:00 → 16:10</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €10,800</div>
-            <div class="empty-aircraft">Midsize Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:21%"></div></div><div class="empty-prob-pct">21%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Geneva%20to%20Dubrovnik%20on%20May%2029%20%28From%20%E2%82%AC7%2C600%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Geneva (GVA) → Dubrovnik (DBV)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 29</div>
-          <div class="empty-time">10:20 → 12:05</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €7,600</div>
-            <div class="empty-aircraft">Light Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:21%"></div></div><div class="empty-prob-pct">21%</div></div>
-      </a>
-      <a class="empty-card" href="https://wa.me/971503372980?text=Hi%20Andreea%2C%20I%27m%20interested%20in%20the%20empty%20leg%20Madrid%20to%20Paris%20on%20May%2029%20%28From%20%E2%82%AC8%2C300%29.%20Please%20send%20more%20details." target="_blank" data-cat="europe">
-        <div class="empty-card-top">
-          <div class="empty-route">Madrid (MAD) → Paris (LBG)</div>
-          <div class="empty-badge">Empty leg</div>
-        </div>
-        <div class="empty-meta">
-          <div class="empty-date">May 29</div>
-          <div class="empty-time">16:30 → 18:45</div>
-        </div>
-        <div class="empty-card-bottom">
-          <div>
-            <div class="empty-price">From €8,300</div>
-            <div class="empty-aircraft">Midsize Jet</div>
-          </div>
-          <div class="empty-cta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Ask on WhatsApp</div>
-        </div>
-        <div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:51%"></div></div><div class="empty-prob-pct">51%</div></div>
-      </a>
-  </div>
+  <div class="empty-grid" id="emptyGrid"></div>
   <div class="empty-bottom">
     <div class="empty-note">Prices are estimates and subject to confirmation. All legs subject to availability.</div>
     <a href="#quote" class="empty-all">Request a specific route ›</a>
@@ -2334,7 +2238,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     </div>
     <div>
       <form id="newsletterForm" action="https://formspree.io/f/xojbkjyo" method="POST" style="display:contents" novalidate>
-        <input type="hidden" name="_subject" value="Newsletter signup — Fly with Andreea">
+        <input type="hidden" name="_subject" value="Newsletter signup, Fly with Andreea">
         <input type="hidden" name="type" value="newsletter">
         <div class="newsletter-form">
           <input class="newsletter-input" id="nl-email" name="email" type="email" placeholder="Your email address" required>
@@ -2383,7 +2287,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       </div>
       <div class="t-card">
         <div class="t-stars"><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span><span class="t-star">★</span></div>
-        <div class="t-quote">"I travel with two dogs and a very specific idea of what comfort means. Andreea was the first broker who treated neither as a problem. Third flight now. Nothing has changed — in the best way."</div>
+        <div class="t-quote">"I travel with two dogs and a very specific idea of what comfort means. Andreea was the first broker who treated neither as a problem. Third flight now. Nothing has changed, in the best way."</div>
         <div class="t-footer">
           <div class="t-identity">
             <div class="t-name">S.M. · Private client</div>
@@ -2433,7 +2337,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         </div>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Private jet charter prices vary depending on the aircraft type, route, distance, and availability. A short European leg on a light jet can start from around €3,000–€6,000, while a transatlantic flight on an ultra-long-range jet may cost €80,000 or more. Contact us for a tailored quote — we always find the most competitive price with full transparency and no hidden fees.</div>
+        <div class="faq-answer-inner">Private jet charter prices vary depending on the aircraft type, route, distance, and availability. A short European leg on a light jet can start from around €3,000–€6,000, while a transatlantic flight on an ultra-long-range jet may cost €80,000 or more. Contact us for a tailored quote, we always find the most competitive price with full transparency and no hidden fees.</div>
       </div>
     </div>
     <div class="faq-item">
@@ -2444,7 +2348,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         </div>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Private jet check-in is seamless. You arrive at the private terminal (FBO) just 15–20 minutes before departure. There are no long queues, no public security lines — just a swift, discreet process before you board directly. We handle all the logistics so you simply arrive and fly.</div>
+        <div class="faq-answer-inner">Private jet check-in is seamless. You arrive at the private terminal (FBO) just 15–20 minutes before departure. There are no long queues, no public security lines, just a swift, discreet process before you board directly. We handle all the logistics so you simply arrive and fly.</div>
       </div>
     </div>
     <div class="faq-item">
@@ -2455,7 +2359,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         </div>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">We have access to over 4,000 aircraft worldwide, from Very Light Jets (4–5 passengers) ideal for short hops, to Large Jets and VIP Airliners for long-haul group travel. We'll recommend the right aircraft based on your route, group size, luggage, and budget — just tell us your needs.</div>
+        <div class="faq-answer-inner">We have access to over 4,000 aircraft worldwide, from Very Light Jets (4–5 passengers) ideal for short hops, to Large Jets and VIP Airliners for long-haul group travel. We'll recommend the right aircraft based on your route, group size, luggage, and budget, just tell us your needs.</div>
       </div>
     </div>
     <div class="faq-item">
@@ -2466,7 +2370,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         </div>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Absolutely. Pet-friendly flying is one of our specialities. Your dogs, cats, birds, or small reptiles fly in the cabin with you — not in cargo. Our team has extensive experience arranging comfortable, stress-free travel for animals of all kinds.</div>
+        <div class="faq-answer-inner">Absolutely. Pet-friendly flying is one of our specialities. Your dogs, cats, birds, or small reptiles fly in the cabin with you, not in cargo. Our team has extensive experience arranging comfortable, stress-free travel for animals of all kinds.</div>
       </div>
     </div>
     <div class="faq-item">
@@ -2488,7 +2392,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         </div>
       </div>
       <div class="faq-answer">
-        <div class="faq-answer-inner">Before you confirm your flight, always ask us what's included on your specific route. Depending on the journey, we may be able to arrange complimentary pick-up and drop-off transfers, champagne on board, gourmet catering, and fresh flowers in the cabin — at no extra cost.</div>
+        <div class="faq-answer-inner">Before you confirm your flight, always ask us what's included on your specific route. Depending on the journey, we may be able to arrange complimentary pick-up and drop-off transfers, champagne on board, gourmet catering, and fresh flowers in the cabin, at no extra cost.</div>
       </div>
     </div>
   </div>
@@ -2566,7 +2470,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <h2 class="section-title">Book your<br><em>next flight.</em></h2>
     </div>
     <form id="quoteForm" action="https://formspree.io/f/xojbkjyo" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="New flight request — Fly with Andreea">
+      <input type="hidden" name="_subject" value="New flight request, Fly with Andreea">
       <input type="hidden" name="_replyto" value="andreea@flywithandreea.com">
       <input type="hidden" name="_next" value="https://www.flywithandreea.com/#quote">
       <div class="form-grid">
@@ -2612,6 +2516,16 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 
 
 <!-- FOOTER -->
+<section class="trust-strip" aria-label="Why book with Fly with Andreea">
+  <div class="trust-inner">
+    <div class="trust-items">
+      <div class="ti"><span class="tn">450+</span><span class="tl">Vetted operators</span></div>
+      <div class="ti"><span class="tn">180</span><span class="tl">Countries served</span></div>
+      <div class="ti"><span class="tn">24/7</span><span class="tl">Concierge response</span></div>
+      <div class="ti"><span class="tn">Fixed</span><span class="tl">price quotes, no hidden fees</span></div>
+    </div>
+    </div>
+</section>
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -2633,17 +2547,18 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         <a href="/#quote">Contact</a>
       </div>
       <div class="footer-col"><h4>Contact</h4>
-        <a href="https://wa.me/971503372980" target="_blank">WhatsApp +971 50 337 2980</a>
-        <a href="mailto:andreea@flywithandreea.com">andreea@flywithandreea.com</a>
+        <a href="https://wa.me/971503372980" target="_blank">WhatsApp</a>
         <a href="https://www.instagram.com/" target="_blank">Instagram</a>
       </div>
     </div>
   </div>
+  <p class="footer-disclaimer" style="max-width:1100px;margin:0 auto 16px;padding:0 4px;font-size:11px;line-height:1.6;color:var(--grey,#86868B)">Fly with Andreea is an air charter broker and arranges flights with third-party AOC-certified operators. It does not own or operate aircraft.</p>
   <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 Fly with Andreea. All rights reserved.</p>
     <div class="footer-legal">
-      <a href="#">Privacy policy</a>
-      <a href="#">Terms of service</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="/terms">Terms of service</a>
+      <a href="/cookies">Cookie policy</a>
     </div>
   </div>
 </footer>
@@ -2741,23 +2656,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   }
 
 
-  (function() {
-    var filters = document.querySelectorAll('.empty-filter');
-    filters.forEach(function(f) {
-      f.addEventListener('click', function() {
-        filters.forEach(function(x) { x.classList.remove('active'); });
-        this.classList.add('active');
-        var cat = this.dataset.cat;
-        document.querySelectorAll('.empty-card').forEach(function(c) {
-          if (cat === 'all' || c.dataset.cat === cat) {
-            c.classList.remove('hidden');
-          } else {
-            c.classList.add('hidden');
-          }
-        });
-      });
-    });
-  })();
+  (function(){var grid=document.getElementById('emptyGrid');if(!grid||!window.EMPTY_LEGS)return;var legs=window.EMPTY_LEGS;var upd=document.querySelector('.empty-update');if(upd)upd.innerHTML='<div class="empty-update-dot"></div>Updated today · '+legs.length+' legs available';var WA='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>';function card(l){var msg=encodeURIComponent("Hi Andreea, I'd love to book the empty leg "+l.from+" to "+l.to+" on "+l.date+" (From "+l.price+"). Is it still available?");return '<a class="empty-card" href="https://wa.me/971503372980?text='+msg+'" target="_blank" rel="noopener">'+'<div class="empty-card-top"><div class="empty-route">'+l.from+' → '+l.to+'</div><div class="empty-badge">Empty leg</div></div>'+'<div class="empty-meta"><div class="empty-date">'+l.date+'</div><div class="empty-time">'+l.aircraft+'</div></div>'+'<div class="empty-card-bottom"><div><div class="empty-price">From '+l.price+'</div><div class="empty-aircraft">'+l.cat+' · '+l.seats+' seats</div></div><div class="empty-cta">'+WA+' Ask on WhatsApp</div></div>'+'<div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:'+(window.ELprob?window.ELprob(l):(l.prob||50))+'%"></div></div><div class="empty-prob-pct">'+(window.ELprob?window.ELprob(l):(l.prob||50))+'%</div></div>'+'</a>';}function render(cat){var list=cat==='all'?legs:legs.filter(function(l){return (l.tags||[]).indexOf(cat)>=0;});grid.innerHTML=list.slice(0,12).map(card).join('')||'<div style="grid-column:1/-1;color:var(--grey);font-family:var(--sans);font-size:14px;padding:20px 0">No empty legs in this category right now.</div>';}var fb=document.querySelectorAll('.empty-filter');fb.forEach(function(b){b.addEventListener('click',function(){fb.forEach(function(x){x.classList.remove('active');});this.classList.add('active');render(this.dataset.cat);});});render('all');})();
 
 
   // Subnav active state
@@ -2909,7 +2808,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         .then(function(routes) { showRoute(routes, userCountry); })
         .catch(function() {
           // Fallback: show first route if fetch fails (e.g. file:// protocol)
-          var fallback = [{"id":"paris-frankfurt","from_city":"Paris","to_city":"Frankfurt","from_country":"FR","to_country":"DE","trigger_countries":["FR","DE","BE","LU","NL","CH","IT","ES","AT","PL"],"badge":"Popular route","desc":"50 minutes. Germany's financial capital to France's business heart.","price_from":"€7,200","aircraft":"light jet","duration":"50–60 min","airports":"CDG / LBG → FRA","qa":[{"q":"How much does it cost?","a":"Paris to Frankfurt starts from around €7,200 on a light jet, rising to €16,500 for a larger cabin."},{"q":"How long is the flight?","a":"Roughly 50 to 60 minutes in the air. Add 15 minutes at each private terminal — door-to-door is well under two hours."},{"q":"Can my pet fly with me?","a":"Always. With the right health certificates, your dog, cat, or bird travels in the cabin beside you."}]}];
+          var fallback = [{"id":"paris-frankfurt","from_city":"Paris","to_city":"Frankfurt","from_country":"FR","to_country":"DE","trigger_countries":["FR","DE","BE","LU","NL","CH","IT","ES","AT","PL"],"badge":"Popular route","desc":"50 minutes. Germany's financial capital to France's business heart.","price_from":"€7,200","aircraft":"light jet","duration":"50–60 min","airports":"CDG / LBG → FRA","qa":[{"q":"How much does it cost?","a":"Paris to Frankfurt starts from around €7,200 on a light jet, rising to €16,500 for a larger cabin."},{"q":"How long is the flight?","a":"Roughly 50 to 60 minutes in the air. Add 15 minutes at each private terminal. Door-to-door is well under two hours."},{"q":"Can my pet fly with me?","a":"Always. With the right health certificates, your dog, cat, or bird travels in the cabin beside you."}]}];
           showRoute(fallback, userCountry);
         });
     }
@@ -2971,6 +2870,8 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   })();
 
 </script>
+<div class="mcta" aria-label="Quick actions"><a class="mcta-quote" href="/fastquote">Quote</a><a class="mcta-call" href="tel:+971503372980">Call</a><a class="mcta-wa" href="https://wa.me/971503372980"><svg viewBox="0 0 24 24" width="15" height="15" fill="#25D366" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.355l-.999 3.648 3.908-1.302zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg> WhatsApp</a></div>
+<script>(function(){var b=document.querySelector(".mcta");if(!b)return;function u(){if(window.scrollY>180)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",u,{passive:true});u();})();</script>
 </body>
 </html>
 
@@ -3037,7 +2938,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   document.addEventListener('click',closeAllTime);
   function initLeg(leg){
     leg.querySelectorAll('.ac-input').forEach(setupAC);
-    var dt=leg.querySelector('.leg-date'); if(dt){ try{ dt.min=new Date().toISOString().split('T')[0]; }catch(e){} }
+    var dt=leg.querySelector('.leg-date'); if(dt){ try{ dt.min=new Date().toISOString().split('T')[0]; }catch(e){} dt.classList.toggle('has-val',!!dt.value); dt.addEventListener('change',function(){ this.classList.toggle('has-val',!!this.value); }); }
     var dd=leg.querySelector('.time-dd'); if(dd) setupTime(dd);
   }
   legs.querySelectorAll('.leg').forEach(initLeg);

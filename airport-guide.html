@@ -137,7 +137,7 @@ a:hover{ color:var(--ink); }
 .search button{ display:grid; place-items:center; width:48px; height:48px; border:0; border-radius:50%; background:var(--gold); color:#fff; cursor:pointer; transition:background 0.25s ease; }
 .search button:hover{ background:var(--gold-deep); }
 .hero-art{ aspect-ratio:1; max-width:420px; margin-left:auto; }
-@media(max-width:860px){ .hero-grid{ grid-template-columns:1fr; } .hero-art{ display:none; } }
+@media(max-width:680px){ .hero-grid{ grid-template-columns:1fr; } .hero-art{ display:none; } }
 
 /* ---------- SECTION SHELL ---------- */
 .section{ padding:72px 0; border-bottom:0.5px solid var(--line); }
@@ -299,7 +299,7 @@ textarea.form-input{ resize:none; height:100px; }
   #navbar.open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
   .nav-links{
     display:flex; flex-direction:column; gap:0; list-style:none;
-    position:fixed; top:0; right:0; height:100vh; width:min(80vw,320px);
+    position:fixed; top:0; right:0; height:100vh; height:100svh; width:min(80vw,320px);
     background:rgba(255,255,255,0.985); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
     padding:100px 26px 28px; box-shadow:-14px 0 44px rgba(0,0,0,0.18);
     transform:translateX(100%); transition:transform .34s ease; z-index:120;
@@ -379,7 +379,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 }
 
 /* --- top utility bar (added) --- */
-.topbar{ position:fixed; top:0; left:0; right:0; z-index:95; height:40px; background:var(--ink,#1d1d1f); display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 24px; }
+.topbar{ position:fixed; top:0; left:0; right:0; z-index:110; height:40px; background:var(--ink,#1d1d1f); display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 24px; }
 #navbar{ top:40px !important; }
 .tb-search{ position:relative; display:flex; align-items:center; flex:1; max-width:440px; }
 .tb-ic{ position:absolute; left:11px; display:flex; color:rgba(255,255,255,0.6); }
@@ -404,6 +404,58 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 .tb-soon{ font-size:10px; color:var(--grey,#9b9b9b); text-transform:uppercase; letter-spacing:0.04em; }
 @media (max-width:600px){ .topbar{ padding:0 14px; gap:10px; } .tb-search{ max-width:none; } }
 body{ padding-top:40px; }
+
+/*FOOTER-NORM*/
+footer{padding:48px 0 28px;}
+footer .footer-inner{max-width:1100px;margin:0 auto;padding:0 24px 22px;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:flex-start;justify-content:space-between;gap:32px;border-bottom:0.5px solid var(--grey-light,#d2d2d7);}
+footer .footer-brand{flex:0 0 auto;max-width:200px;}
+footer .footer-logo-img{height:46px;width:auto;object-fit:contain;}
+footer .footer-tagline{font-size:12px;margin-top:8px;color:var(--grey,#86868b);}
+footer .footer-links{display:flex;flex-direction:row;flex-wrap:nowrap;gap:32px;align-items:flex-start;}
+footer .footer-col{min-width:0;}
+footer .footer-col h4{color:var(--gold,#CBAD91);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;margin-bottom:12px;}
+footer .footer-col a{display:block;white-space:nowrap;font-size:13px;margin-bottom:9px;color:var(--grey-dark,#5b5b5b);text-decoration:none;}
+footer .footer-bottom{max-width:1100px;margin:18px auto 0;padding:0 24px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;}
+footer .footer-copy{font-size:12px;color:var(--grey,#86868b);}
+footer .footer-legal{display:flex;gap:18px;}
+footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decoration:none;margin:0;}
+@media(max-width:680px){
+ footer .footer-inner{flex-direction:column;flex-wrap:wrap;gap:26px;}
+ footer .footer-links{flex-wrap:wrap;gap:22px 36px;}
+ footer .footer-col a{white-space:normal;}
+ footer .footer-bottom{flex-direction:column;text-align:center;gap:10px;}
+ footer .footer-legal a{margin:0 8px;}
+}
+
+/*RESP-FIX*/
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+html,body{overflow-x:clip;}
+img,svg,video,canvas{max-width:100%;}
+a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.mcta{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));}
+@media(max-width:760px){
+  input,select,textarea{font-size:16px!important;}
+  .to-top{bottom:calc(84px + env(safe-area-inset-bottom,0px));}
+}
+
+/*NAV-CTA-FIX*/
+@media(max-width:820px){#navbar .nav-cta{display:none;}#navbar .nav-logo-img{height:40px;}}
+
+/*CTA-RESIZE*/
+@media(max-width:600px){
+  .cta{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .cta a{display:block;width:100%;max-width:320px;margin:0 auto;text-align:center;box-sizing:border-box;}
+  .closing .actions,.hero .actions{flex-direction:column;align-items:center;width:100%;gap:12px;}
+  .closing .actions .btn,.hero .actions .btn{display:block;width:100%;max-width:320px;margin:0 auto;text-align:center;box-sizing:border-box;}
+}
+/* mobile CTA bar */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
+.mcta.show{transform:translateY(0)}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta-quote{background:var(--gold,#CBAD91);color:#fff}
+.mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
+.mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+/* all-section-caps */.section-title,.fr-headline,.el-headline,.routes-headline,.exp-title,.about-title,.routes-qa-title,.gd-title,.hiw-h2,.newsletter-left h2,.block h2,.pv-title,.legal-body h2,.legal-body h3,.faq-left .section-title,.cat-h1,.hiw-title{text-transform:uppercase!important;}
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Fly with Andreea airport guide?", "acceptedAnswer": {"@type": "Answer", "text": "It is a working reference for private travel, written by people who arrange these flights every day. Each entry sets out what matters before you fly: the airport's IATA and ICAO codes, runway lengths, elevation, opening hours, the private terminal, and the character of the destination. It exists so the only decision left to you is where you would like to go."}}, {"@type": "Question", "name": "Which airports does the guide cover?", "acceptedAnswer": {"@type": "Answer", "text": "The guide is built region by region, beginning with the Gulf. Today you will find the principal airports of the United Arab Emirates, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman. Further regions are added regularly. If an airport you need is not yet listed, our advisors already hold the detail and are glad to share it."}}, {"@type": "Question", "name": "What does each airport guide include?", "acceptedAnswer": {"@type": "Answer", "text": "Runways and elevation, the IATA and ICAO codes, opening hours and any curfew, the FBO and private terminal, ground handling, and how early to arrive. Each guide also covers the history and standing of the airport and the aircraft best suited to the routes it serves. Numbers are verified, and where an airport keeps its data private we say so plainly."}}, {"@type": "Question", "name": "Do you arrange flights to airports that are not yet in the guide?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fly with Andreea charters worldwide, to thousands of airports far beyond the published guides. The directory reflects what is written up so far, not where we can fly. Tell us your destination and we will confirm the right field, the right terminal, and the right aircraft."}}, {"@type": "Question", "name": "What is an FBO, and why does it matter?", "acceptedAnswer": {"@type": "Answer", "text": "An FBO, or fixed base operator, is the private terminal away from the main concourse. It is where you arrive minutes before departure, pass through a calm private lounge, and board directly, with security and immigration handled discreetly. Knowing which FBO serves an airport, and its hours, is often the difference between a seamless departure and a delay."}}, {"@type": "Question", "name": "How early should I arrive before a private flight?", "acceptedAnswer": {"@type": "Answer", "text": "Far less than for a commercial flight. Through a private terminal you typically arrive fifteen to thirty minutes before departure. For international departures the formalities are still completed, simply in a fraction of the time. We confirm the exact timing for each airport when we arrange your flight."}}, {"@type": "Question", "name": "Can you arrange a flight from any airport in the guide?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every airport listed is one we can fly from and into, subject to slots, permits, and crew. Open the airport for its full guide, then speak with us and we will shape the routing, aircraft, and schedule around your plans."}}, {"@type": "Question", "name": "How do you choose the right aircraft for my journey?", "acceptedAnswer": {"@type": "Answer", "text": "The ideal aircraft depends on three things: how far you are flying, how many are travelling, and the comfort you want for the time aloft. Light jets suit short regional hops, midsize and super-midsize aircraft handle medium legs with a full cabin, and heavy or ultra-long-range jets fly intercontinental sectors without a fuel stop. We curate the right class for each leg rather than the largest available."}}, {"@type": "Question", "name": "What does a private jet charter cost?", "acceptedAnswer": {"@type": "Answer", "text": "Charter is priced by the trip, shaped by aircraft category, flight time, positioning, airport fees, and crew. As a guide, a short light-jet hop sits in the lower thousands, while ultra-long-range intercontinental flights run well into five and six figures. Every quote is clear and all-in, so the figure you see is the figure you fly on."}}, {"@type": "Question", "name": "Do all airports operate around the clock?", "acceptedAnswer": {"@type": "Answer", "text": "No. Some major hubs run twenty-four hours a day, while others observe a night curfew or restrict movements at certain times. Each guide notes the operating hours and any curfew, and our advisors check both ends of a journey before confirming a departure time."}}, {"@type": "Question", "name": "Can you fly into smaller or remote airports?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes, and that is one of private aviation's quiet advantages. Many smaller fields, closer to your final destination, accept private aircraft where scheduled airlines do not. Where a runway length or handling limit applies, we match the aircraft to the airport so the trip stays comfortable and safe."}}, {"@type": "Question", "name": "How accurate is the information in the guides?", "acceptedAnswer": {"@type": "Answer", "text": "We work from publicly reported airport data and verify figures against more than one source. Operational details such as runway use, slots, and timing can change, so anything time-sensitive is confirmed in writing when we arrange your flight. Where an airport keeps its data private, we note it rather than guess."}}, {"@type": "Question", "name": "Can my pet travel with me?", "acceptedAnswer": {"@type": "Answer", "text": "In most cases, yes, and gladly. Well-behaved pets travel in the cabin beside you rather than in a hold. Each country sets its own rules on vaccinations, microchips, and paperwork, so we confirm the requirements for both ends of the journey in advance and handle the documentation."}}, {"@type": "Question", "name": "How far in advance should I book?", "acceptedAnswer": {"@type": "Answer", "text": "A confirmed aircraft can often be arranged within a few hours when one is positioned nearby, and same-day departures are routinely possible. Booking two to three days ahead gives the widest choice of aircraft and the most competitive pricing. For peak periods and major events, earlier is always better, and we are glad to hold options while your plans firm up."}}, {"@type": "Question", "name": "How do I reach Andreea?", "acceptedAnswer": {"@type": "Answer", "text": "The simplest way is WhatsApp on +971 50 337 2980, or by email at andreea@flywithandreea.com. Share your route, dates, and party size, and we return a clear, tailored quote with the right aircraft and a transparent price. The Fly with Andreea team is happy to shape everything around your plans, whenever you are ready."}}, {"@type": "Question", "name": "What is a private terminal?", "acceptedAnswer": {"@type": "Answer", "text": "A private terminal, or FBO, is a discreet building away from the main concourse, kept for private travel alone. You arrive by car, step into a quiet lounge, and board a short walk or drive across the apron. No public queues, no crowds, only a calm space built around your departure."}}, {"@type": "Question", "name": "How early should I arrive?", "acceptedAnswer": {"@type": "Answer", "text": "Fifteen to thirty minutes before departure is typical. For an international sector we may ask for a little more to complete formalities, yet you will still spend a fraction of the time a commercial terminal demands. We confirm the exact arrival time with your final details."}}, {"@type": "Question", "name": "What happens from car to cabin?", "acceptedAnswer": {"@type": "Answer", "text": "Your car is met at the door, your bags are taken, and you are shown straight into the lounge. Passport and security checks are handled discreetly while you settle, often without leaving your seat. When the aircraft is ready you are walked or driven to the steps and airborne within minutes."}}, {"@type": "Question", "name": "Is there still security and passport control?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and it is handled properly, simply away from the public eye. Immigration and security are completed at the private terminal by the same authorities, with no lines and no spectacle. The formalities are real, the experience is calm, and nothing is skipped."}}, {"@type": "Question", "name": "Can my car meet me on the ramp?", "acceptedAnswer": {"@type": "Answer", "text": "At many airports, yes. A chauffeured car can draw up beside the aircraft so you step from cabin to seat in moments, and the same on arrival. Where ramp access is restricted, the transfer takes place at the terminal door. We arrange the car and confirm what each airport allows."}}, {"@type": "Question", "name": "What is the lounge like?", "acceptedAnswer": {"@type": "Answer", "text": "Quiet, private, and comfortable, with seating, refreshments, and room to work or rest before you board. Many lounges offer a suite for your party alone. It is a place to pause for a few unhurried minutes, not somewhere to wait."}}, {"@type": "Question", "name": "Can I arrive by helicopter or connecting flight?", "acceptedAnswer": {"@type": "Answer", "text": "Often, yes. Several private terminals sit beside a helipad, and a helicopter can place you planeside in minutes from the city or a yacht. For onward private connections we coordinate the timing so one aircraft is ready as the other arrives."}}, {"@type": "Question", "name": "What about catering and onboard requests?", "acceptedAnswer": {"@type": "Answer", "text": "Catering is whatever you wish, from a light working breakfast to a full table, arranged to your taste and any dietary needs. Tell us your preferences and we handle the rest, along with any special requests for the cabin, so everything is in place before you board."}}, {"@type": "Question", "name": "How is my luggage handled?", "acceptedAnswer": {"@type": "Answer", "text": "Your bags are taken at the car and loaded directly, then returned within minutes of landing. Capacity follows the aircraft rather than a fixed allowance, so tell us what you are bringing and we size the cabin to suit, including golf clubs, skis, or oversized items."}}]}
@@ -412,7 +464,7 @@ body{ padding-top:40px; }
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.flywithandreea.com/"}, {"@type": "ListItem", "position": 2, "name": "Airport Guide", "item": "https://www.flywithandreea.com/airport-guide"}]}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "ItemList", "name": "Airport guides — Middle East and Europe", "numberOfItems": 39, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dubai (DXB) — Dubai International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/dubai-international-airport-dxb"}, {"@type": "ListItem", "position": 2, "name": "Dubai (DWC) — Al Maktoum International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 3, "name": "Abu Dhabi (AUH) — Zayed International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 4, "name": "Abu Dhabi (AZI) — Al Bateen Executive Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 5, "name": "Sharjah (SHJ) — Sharjah International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 6, "name": "Ras Al Khaimah (RKT) — Ras Al Khaimah International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 7, "name": "Fujairah (FJR) — Fujairah International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 8, "name": "Al Ain (AAN) — Al Ain International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 9, "name": "Riyadh (RUH) — King Khalid International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 10, "name": "Jeddah (JED) — King Abdulaziz International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 11, "name": "Dammam (DMM) — King Fahd International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 12, "name": "Madinah (MED) — Prince Mohammad Bin Abdulaziz International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 13, "name": "AlUla (ULH) — AlUla International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 14, "name": "Red Sea coast (RSI) — Red Sea International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 15, "name": "NEOM (NUM) — NEOM Bay Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 16, "name": "Abha (AHB) — Abha International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 17, "name": "Doha (DOH) — Hamad International Airport, Qatar", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 18, "name": "Muscat (MCT) — Muscat International Airport, Oman", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 19, "name": "Salalah (SLL) — Salalah International Airport, Oman", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 20, "name": "Muharraq (BAH) — Bahrain International Airport, Bahrain", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 21, "name": "Farwaniya (KWI) — Kuwait International Airport, Kuwait", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 22, "name": "Bucharest (OTP) — Henri Coanda International Airport, Romania", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 23, "name": "Bucharest (BBU) — Aurel Vlaicu International Airport, Baneasa, Romania", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 24, "name": "Cluj-Napoca (CLJ) — Cluj Avram Iancu International Airport, Romania", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 25, "name": "Timisoara (TSR) — Traian Vuia International Airport, Timisoara, Romania", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 26, "name": "Iasi (IAS) — Iasi International Airport, Romania", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 27, "name": "Sibiu (SBZ) — Sibiu International Airport, Romania", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 28, "name": "Rome (FCO) — Rome Fiumicino Leonardo da Vinci, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 29, "name": "Rome (CIA) — Rome Ciampino G. B. Pastine, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 30, "name": "Milan (MXP) — Milan Malpensa, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 31, "name": "Milan (LIN) — Milan Linate, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 32, "name": "Bergamo / Milan (BGY) — Milan Bergamo Orio al Serio, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 33, "name": "Venice (VCE) — Venice Marco Polo, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 34, "name": "Naples (NAP) — Naples Capodichino, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 35, "name": "Bologna (BLQ) — Bologna Guglielmo Marconi, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 36, "name": "Turin (TRN) — Turin Caselle Sandro Pertini, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 37, "name": "Florence (FLR) — Florence Amerigo Vespucci, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 38, "name": "Olbia (OLB) — Olbia Costa Smeralda, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}, {"@type": "ListItem", "position": 39, "name": "Catania (CTA) — Catania Fontanarossa, Italy", "url": "https://www.flywithandreea.com/airport-guide#airports"}]}
+{"@context": "https://schema.org", "@type": "ItemList", "name": "Airport guides — Middle East and Europe", "numberOfItems": 39, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dubai (DXB) — Dubai International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/dubai-international-airport-dxb"}, {"@type": "ListItem", "position": 2, "name": "Dubai (DWC) — Al Maktoum International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/al-maktoum-international-airport-dwc"}, {"@type": "ListItem", "position": 3, "name": "Abu Dhabi (AUH) — Zayed International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/zayed-international-airport-auh"}, {"@type": "ListItem", "position": 4, "name": "Abu Dhabi (AZI) — Al Bateen Executive Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/al-bateen-executive-airport-azi"}, {"@type": "ListItem", "position": 5, "name": "Sharjah (SHJ) — Sharjah International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/sharjah-international-airport-shj"}, {"@type": "ListItem", "position": 6, "name": "Ras Al Khaimah (RKT) — Ras Al Khaimah International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/ras-al-khaimah-international-airport-rkt"}, {"@type": "ListItem", "position": 7, "name": "Fujairah (FJR) — Fujairah International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/fujairah-international-airport-fjr"}, {"@type": "ListItem", "position": 8, "name": "Al Ain (AAN) — Al Ain International Airport, United Arab Emirates", "url": "https://www.flywithandreea.com/airports/al-ain-international-airport-aan"}, {"@type": "ListItem", "position": 9, "name": "Riyadh (RUH) — King Khalid International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/king-khalid-international-airport-ruh"}, {"@type": "ListItem", "position": 10, "name": "Jeddah (JED) — King Abdulaziz International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/king-abdulaziz-international-airport-jed"}, {"@type": "ListItem", "position": 11, "name": "Dammam (DMM) — King Fahd International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/king-fahd-international-airport-dmm"}, {"@type": "ListItem", "position": 12, "name": "Madinah (MED) — Prince Mohammad Bin Abdulaziz International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/prince-mohammad-bin-abdulaziz-international-airport-med"}, {"@type": "ListItem", "position": 13, "name": "AlUla (ULH) — AlUla International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/alula-international-airport-ulh"}, {"@type": "ListItem", "position": 14, "name": "Red Sea coast (RSI) — Red Sea International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/red-sea-international-airport-rsi"}, {"@type": "ListItem", "position": 15, "name": "NEOM (NUM) — NEOM Bay Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/neom-bay-airport-num"}, {"@type": "ListItem", "position": 16, "name": "Abha (AHB) — Abha International Airport, Saudi Arabia", "url": "https://www.flywithandreea.com/airports/abha-international-airport-ahb"}, {"@type": "ListItem", "position": 17, "name": "Doha (DOH) — Hamad International Airport, Qatar", "url": "https://www.flywithandreea.com/airports/hamad-international-airport-doh"}, {"@type": "ListItem", "position": 18, "name": "Muscat (MCT) — Muscat International Airport, Oman", "url": "https://www.flywithandreea.com/airports/muscat-international-airport-mct"}, {"@type": "ListItem", "position": 19, "name": "Salalah (SLL) — Salalah International Airport, Oman", "url": "https://www.flywithandreea.com/airports/salalah-airport-sll"}, {"@type": "ListItem", "position": 20, "name": "Muharraq (BAH) — Bahrain International Airport, Bahrain", "url": "https://www.flywithandreea.com/airports/bahrain-international-airport-bah"}, {"@type": "ListItem", "position": 21, "name": "Farwaniya (KWI) — Kuwait International Airport, Kuwait", "url": "https://www.flywithandreea.com/airports/kuwait-international-airport-kwi"}, {"@type": "ListItem", "position": 22, "name": "Bucharest (OTP) — Henri Coanda International Airport, Romania", "url": "https://www.flywithandreea.com/airports/bucharest-henri-coanda-airport-otp"}, {"@type": "ListItem", "position": 23, "name": "Bucharest (BBU) — Aurel Vlaicu International Airport, Baneasa, Romania", "url": "https://www.flywithandreea.com/airports/bucharest-baneasa-aurel-vlaicu-airport-bbu"}, {"@type": "ListItem", "position": 24, "name": "Cluj-Napoca (CLJ) — Cluj Avram Iancu International Airport, Romania", "url": "https://www.flywithandreea.com/airports/cluj-avram-iancu-international-airport-clj"}, {"@type": "ListItem", "position": 25, "name": "Timisoara (TSR) — Traian Vuia International Airport, Timisoara, Romania", "url": "https://www.flywithandreea.com/airports/timisoara-traian-vuia-airport-tsr"}, {"@type": "ListItem", "position": 26, "name": "Iasi (IAS) — Iasi International Airport, Romania", "url": "https://www.flywithandreea.com/airports/iasi-international-airport-ias"}, {"@type": "ListItem", "position": 27, "name": "Sibiu (SBZ) — Sibiu International Airport, Romania", "url": "https://www.flywithandreea.com/airports/sibiu-international-airport-sbz"}, {"@type": "ListItem", "position": 28, "name": "Rome (FCO) — Rome Fiumicino Leonardo da Vinci, Italy", "url": "https://www.flywithandreea.com/airports/rome-fiumicino-airport-fco"}, {"@type": "ListItem", "position": 29, "name": "Rome (CIA) — Rome Ciampino G. B. Pastine, Italy", "url": "https://www.flywithandreea.com/airports/rome-ciampino-airport-cia"}, {"@type": "ListItem", "position": 30, "name": "Milan (MXP) — Milan Malpensa, Italy", "url": "https://www.flywithandreea.com/airports/milan-malpensa-airport-mxp"}, {"@type": "ListItem", "position": 31, "name": "Milan (LIN) — Milan Linate, Italy", "url": "https://www.flywithandreea.com/airports/milan-linate-airport-lin"}, {"@type": "ListItem", "position": 32, "name": "Bergamo / Milan (BGY) — Milan Bergamo Orio al Serio, Italy", "url": "https://www.flywithandreea.com/airports/milan-bergamo-orio-al-serio-airport-bgy"}, {"@type": "ListItem", "position": 33, "name": "Venice (VCE) — Venice Marco Polo, Italy", "url": "https://www.flywithandreea.com/airports/venice-marco-polo-airport-vce"}, {"@type": "ListItem", "position": 34, "name": "Naples (NAP) — Naples Capodichino, Italy", "url": "https://www.flywithandreea.com/airports/naples-international-airport-nap"}, {"@type": "ListItem", "position": 35, "name": "Bologna (BLQ) — Bologna Guglielmo Marconi, Italy", "url": "https://www.flywithandreea.com/airports/bologna-guglielmo-marconi-airport-blq"}, {"@type": "ListItem", "position": 36, "name": "Turin (TRN) — Turin Caselle Sandro Pertini, Italy", "url": "https://www.flywithandreea.com/airports/turin-caselle-airport-trn"}, {"@type": "ListItem", "position": 37, "name": "Florence (FLR) — Florence Amerigo Vespucci, Italy", "url": "https://www.flywithandreea.com/airports/florence-amerigo-vespucci-airport-flr"}, {"@type": "ListItem", "position": 38, "name": "Olbia (OLB) — Olbia Costa Smeralda, Italy", "url": "https://www.flywithandreea.com/airports/olbia-costa-smeralda-airport-olb"}, {"@type": "ListItem", "position": 39, "name": "Catania (CTA) — Catania Fontanarossa, Italy", "url": "https://www.flywithandreea.com/airports/catania-fontanarossa-airport-cta"}]}
 </script>
 <link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/airport-guide">
 <link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/guida-aeroporti">
@@ -448,7 +500,7 @@ body{ padding-top:40px; }
     <li><a href="/#services">Services</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#extras">On board</a></li>
-    <li><a href="/airport-guide">Airport Guide</a></li>
+    <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>
   <a href="/#quote" class="nav-cta">Book now</a>
@@ -493,7 +545,7 @@ body{ padding-top:40px; }
   </div>
 </section>
 
-<!-- ===================== STEP 1 — GULF AIRPORTS ===================== -->
+<!-- ===================== STEP 1, GULF AIRPORTS ===================== -->
 <section class="section guide-dir" id="airports">
   <div class="wrap">
     <div class="gd-head">
@@ -515,7 +567,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">95.2M<small>passengers, record year</small></div><div class="ap-cta">Open guide &rarr;</div></div>
         <div class="ap-hook">Al Garhoud, minutes from Downtown Dubai and the DIFC.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="dwc omdw dubai dubai, united arab emirates al maktoum international airport al maktoum international airport (dwc) united arab emirates jebel ali, dubai south, approx. 37 km southwest of dubai">
+      <a class="ap-card" href="/airports/al-maktoum-international-airport-dwc" data-region="middle-east" data-q="dwc omdw dubai dubai, united arab emirates al maktoum international airport al maktoum international airport (dwc) united arab emirates jebel ali, dubai south, approx. 37 km southwest of dubai">
         <div class="ap-top"><h3 class="ap-name">Dubai <span>(DWC)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Al Maktoum International Airport, United Arab Emirates</div>
         <div class="ap-facts">ICAO OMDW &middot; Opened 2010 &middot; 1 runway</div>
@@ -523,7 +575,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4,500 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Jebel Ali, Dubai South, approx. 37 km southwest of Dubai.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="auh omaa abu dhabi abu dhabi, united arab emirates zayed international airport zayed international airport (auh) united arab emirates approx. 30 km from central abu dhabi">
+      <a class="ap-card" href="/airports/zayed-international-airport-auh" data-region="middle-east" data-q="auh omaa abu dhabi abu dhabi, united arab emirates zayed international airport zayed international airport (auh) united arab emirates approx. 30 km from central abu dhabi">
         <div class="ap-top"><h3 class="ap-name">Abu Dhabi <span>(AUH)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Zayed International Airport, United Arab Emirates</div>
         <div class="ap-facts">ICAO OMAA &middot; Opened 1982 &middot; 2 runways</div>
@@ -531,7 +583,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4,100 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 30 km from central Abu Dhabi.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="azi omad abu dhabi abu dhabi, united arab emirates al bateen executive airport al bateen executive airport (azi) united arab emirates abu dhabi island, approx. 12 km from the city centre">
+      <a class="ap-card" href="/airports/al-bateen-executive-airport-azi" data-region="middle-east" data-q="azi omad abu dhabi abu dhabi, united arab emirates al bateen executive airport al bateen executive airport (azi) united arab emirates abu dhabi island, approx. 12 km from the city centre">
         <div class="ap-top"><h3 class="ap-name">Abu Dhabi <span>(AZI)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Al Bateen Executive Airport, United Arab Emirates</div>
         <div class="ap-facts">ICAO OMAD &middot; Opened 1970 &middot; 1 runway</div>
@@ -539,7 +591,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3,000 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Abu Dhabi island, approx. 12 km from the city centre.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="shj omsj sharjah sharjah, united arab emirates sharjah international airport sharjah international airport (shj) united arab emirates approx. 10 km southeast of sharjah city">
+      <a class="ap-card" href="/airports/sharjah-international-airport-shj" data-region="middle-east" data-q="shj omsj sharjah sharjah, united arab emirates sharjah international airport sharjah international airport (shj) united arab emirates approx. 10 km southeast of sharjah city">
         <div class="ap-top"><h3 class="ap-name">Sharjah <span>(SHJ)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Sharjah International Airport, United Arab Emirates</div>
         <div class="ap-facts">ICAO OMSJ &middot; Opened 1977 &middot; 1 runway</div>
@@ -547,7 +599,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4,060 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 10 km southeast of Sharjah city.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="rkt omrk ras al khaimah ras al khaimah, united arab emirates ras al khaimah international airport ras al khaimah international airport (rkt) united arab emirates approx. 18-20 km south of ras al khaimah city, on digdaga road">
+      <a class="ap-card" href="/airports/ras-al-khaimah-international-airport-rkt" data-region="middle-east" data-q="rkt omrk ras al khaimah ras al khaimah, united arab emirates ras al khaimah international airport ras al khaimah international airport (rkt) united arab emirates approx. 18-20 km south of ras al khaimah city, on digdaga road">
         <div class="ap-top"><h3 class="ap-name">Ras Al Khaimah <span>(RKT)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Ras Al Khaimah International Airport, United Arab Emirates</div>
         <div class="ap-facts">ICAO OMRK &middot; Opened 1976 &middot; 1 runway</div>
@@ -555,7 +607,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3,760 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 18-20 km south of Ras Al Khaimah city, on Digdaga Road.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="fjr omfj fujairah fujairah, united arab emirates fujairah international airport fujairah international airport (fjr) united arab emirates fujairah, on the uae east coast (gulf of oman)">
+      <a class="ap-card" href="/airports/fujairah-international-airport-fjr" data-region="middle-east" data-q="fjr omfj fujairah fujairah, united arab emirates fujairah international airport fujairah international airport (fjr) united arab emirates fujairah, on the uae east coast (gulf of oman)">
         <div class="ap-top"><h3 class="ap-name">Fujairah <span>(FJR)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Fujairah International Airport, United Arab Emirates</div>
         <div class="ap-facts">ICAO OMFJ &middot; Opened 1987 &middot; 1 runway</div>
@@ -563,7 +615,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3,750 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Fujairah, on the UAE east coast (Gulf of Oman).</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="aan omal al ain al ain, abu dhabi, united arab emirates al ain international airport al ain international airport (aan) united arab emirates al ain, the inland &#x27;garden city&#x27; of the abu dhabi emirate">
+      <a class="ap-card" href="/airports/al-ain-international-airport-aan" data-region="middle-east" data-q="aan omal al ain al ain, abu dhabi, united arab emirates al ain international airport al ain international airport (aan) united arab emirates al ain, the inland &#x27;garden city&#x27; of the abu dhabi emirate">
         <div class="ap-top"><h3 class="ap-name">Al Ain <span>(AAN)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Al Ain International Airport, United Arab Emirates</div>
         <div class="ap-facts">ICAO OMAL &middot; Opened 1994 &middot; 1 runway</div>
@@ -571,7 +623,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4,000 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Al Ain, the inland &#x27;Garden City&#x27; of the Abu Dhabi emirate.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="ruh oerk riyadh riyadh, saudi arabia king khalid international airport king khalid international airport (ruh) saudi arabia approx. 35 km north of central riyadh">
+      <a class="ap-card" href="/airports/king-khalid-international-airport-ruh" data-region="middle-east" data-q="ruh oerk riyadh riyadh, saudi arabia king khalid international airport king khalid international airport (ruh) saudi arabia approx. 35 km north of central riyadh">
         <div class="ap-top"><h3 class="ap-name">Riyadh <span>(RUH)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">King Khalid International Airport, Saudi Arabia</div>
         <div class="ap-facts">ICAO OERK &middot; Opened 1983 &middot; 2 runways</div>
@@ -587,7 +639,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">50M+<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 19 km north of central Jeddah.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="dmm oedf dammam dammam, eastern province king fahd international airport king fahd international airport (dmm) saudi arabia approx. 20 km northwest of dammam">
+      <a class="ap-card" href="/airports/king-fahd-international-airport-dmm" data-region="middle-east" data-q="dmm oedf dammam dammam, eastern province king fahd international airport king fahd international airport (dmm) saudi arabia approx. 20 km northwest of dammam">
         <div class="ap-top"><h3 class="ap-name">Dammam <span>(DMM)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">King Fahd International Airport, Saudi Arabia</div>
         <div class="ap-facts">ICAO OEDF &middot; Opened 1999 &middot; 2 runways</div>
@@ -595,7 +647,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4,000 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 20 km northwest of Dammam.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="med oema madinah madinah (medina), al madinah province prince mohammad bin abdulaziz international airport prince mohammad bin abdulaziz international airport (med) saudi arabia approx. 15 km from central madinah">
+      <a class="ap-card" href="/airports/prince-mohammad-bin-abdulaziz-international-airport-med" data-region="middle-east" data-q="med oema madinah madinah (medina), al madinah province prince mohammad bin abdulaziz international airport prince mohammad bin abdulaziz international airport (med) saudi arabia approx. 15 km from central madinah">
         <div class="ap-top"><h3 class="ap-name">Madinah <span>(MED)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Prince Mohammad Bin Abdulaziz International Airport, Saudi Arabia</div>
         <div class="ap-facts">ICAO OEMA &middot; Opened 1974 &middot; 2 runways</div>
@@ -603,7 +655,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4,000 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 15 km from central Madinah.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="ulh oeao alula alula, al madinah province alula international airport alula international airport (ulh) saudi arabia approx. 35 km from alula&#x27;s heritage sites">
+      <a class="ap-card" href="/airports/alula-international-airport-ulh" data-region="middle-east" data-q="ulh oeao alula alula, al madinah province alula international airport alula international airport (ulh) saudi arabia approx. 35 km from alula&#x27;s heritage sites">
         <div class="ap-top"><h3 class="ap-name">AlUla <span>(ULH)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">AlUla International Airport, Saudi Arabia</div>
         <div class="ap-facts">ICAO OEAO &middot; Opened  &middot; 1 runway</div>
@@ -611,7 +663,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3,300 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 35 km from AlUla&#x27;s heritage sites.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="rsi oers red sea coast red sea coast, tabuk province red sea international airport red sea international airport (rsi) saudi arabia on the red sea coast, serving the red sea destination">
+      <a class="ap-card" href="/airports/red-sea-international-airport-rsi" data-region="middle-east" data-q="rsi oers red sea coast red sea coast, tabuk province red sea international airport red sea international airport (rsi) saudi arabia on the red sea coast, serving the red sea destination">
         <div class="ap-top"><h3 class="ap-name">Red Sea coast <span>(RSI)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Red Sea International Airport, Saudi Arabia</div>
         <div class="ap-facts">ICAO OERS &middot; Opened 2023 &middot; 1 runway</div>
@@ -619,7 +671,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3,700 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">On the Red Sea coast, serving the Red Sea destination.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="num oenn neom neom, tabuk province neom bay airport neom bay airport (num) saudi arabia northwest saudi arabia, serving the neom development">
+      <a class="ap-card" href="/airports/neom-bay-airport-num" data-region="middle-east" data-q="num oenn neom neom, tabuk province neom bay airport neom bay airport (num) saudi arabia northwest saudi arabia, serving the neom development">
         <div class="ap-top"><h3 class="ap-name">NEOM <span>(NUM)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">NEOM Bay Airport, Saudi Arabia</div>
         <div class="ap-facts">ICAO OENN &middot; Opened 2019 &middot; 1 runway</div>
@@ -627,7 +679,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3,750 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Northwest Saudi Arabia, serving the NEOM development.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="ahb oeab abha abha, asir province abha international airport abha international airport (ahb) saudi arabia between abha and khamis mushait, southwest saudi arabia">
+      <a class="ap-card" href="/airports/abha-international-airport-ahb" data-region="middle-east" data-q="ahb oeab abha abha, asir province abha international airport abha international airport (ahb) saudi arabia between abha and khamis mushait, southwest saudi arabia">
         <div class="ap-top"><h3 class="ap-name">Abha <span>(AHB)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Abha International Airport, Saudi Arabia</div>
         <div class="ap-facts">ICAO OEAB &middot; Opened  &middot; 1 runway</div>
@@ -635,7 +687,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">2.5M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Between Abha and Khamis Mushait, southwest Saudi Arabia.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="doh othh doha doha, qatar hamad international airport hamad international airport (doh) qatar approx. 15 km east of central doha">
+      <a class="ap-card" href="/airports/hamad-international-airport-doh" data-region="middle-east" data-q="doh othh doha doha, qatar hamad international airport hamad international airport (doh) qatar approx. 15 km east of central doha">
         <div class="ap-top"><h3 class="ap-name">Doha <span>(DOH)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Hamad International Airport, Qatar</div>
         <div class="ap-facts">ICAO OTHH &middot; Opened 2014 &middot; 2 runways</div>
@@ -643,7 +695,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">54.3M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 15 km east of central Doha.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="mct ooms muscat muscat (seeb), oman muscat international airport muscat international airport (mct) oman seeb, approx. 32 km from old muscat">
+      <a class="ap-card" href="/airports/muscat-international-airport-mct" data-region="middle-east" data-q="mct ooms muscat muscat (seeb), oman muscat international airport muscat international airport (mct) oman seeb, approx. 32 km from old muscat">
         <div class="ap-top"><h3 class="ap-name">Muscat <span>(MCT)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Muscat International Airport, Oman</div>
         <div class="ap-facts">ICAO OOMS &middot; Opened 1973 &middot; 2 runways</div>
@@ -651,7 +703,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">12.9M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Seeb, approx. 32 km from old Muscat.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="sll oosa salalah salalah, dhofar, oman salalah international airport salalah international airport (sll) oman approx. 14 km from salalah city">
+      <a class="ap-card" href="/airports/salalah-airport-sll" data-region="middle-east" data-q="sll oosa salalah salalah, dhofar, oman salalah international airport salalah international airport (sll) oman approx. 14 km from salalah city">
         <div class="ap-top"><h3 class="ap-name">Salalah <span>(SLL)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Salalah International Airport, Oman</div>
         <div class="ap-facts">ICAO OOSA &middot; Opened 1977 &middot; 1 runway</div>
@@ -659,7 +711,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4,000 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 14 km from Salalah city.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="bah obbi muharraq muharraq, bahrain bahrain international airport bahrain international airport (bah) bahrain on muharraq island, near manama">
+      <a class="ap-card" href="/airports/bahrain-international-airport-bah" data-region="middle-east" data-q="bah obbi muharraq muharraq, bahrain bahrain international airport bahrain international airport (bah) bahrain on muharraq island, near manama">
         <div class="ap-top"><h3 class="ap-name">Muharraq <span>(BAH)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Bahrain International Airport, Bahrain</div>
         <div class="ap-facts">ICAO OBBI &middot; Opened 1927 &middot; 1 runway</div>
@@ -667,7 +719,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">9.3M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">On Muharraq Island, near Manama.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="middle-east" data-q="kwi okbk farwaniya farwaniya, kuwait kuwait international airport kuwait international airport (kwi) kuwait approx. 15.5 km south of kuwait city">
+      <a class="ap-card" href="/airports/kuwait-international-airport-kwi" data-region="middle-east" data-q="kwi okbk farwaniya farwaniya, kuwait kuwait international airport kuwait international airport (kwi) kuwait approx. 15.5 km south of kuwait city">
         <div class="ap-top"><h3 class="ap-name">Farwaniya <span>(KWI)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Kuwait International Airport, Kuwait</div>
         <div class="ap-facts">ICAO OKBK &middot; Opened 1979 &middot; 2 runways</div>
@@ -675,7 +727,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">15.6M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 15.5 km south of Kuwait City.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="otp lrop bucharest bucharest (otopeni), romania henri coanda international airport henri coanda international airport (otp) romania otopeni, approx. 17 km north of central bucharest">
+      <a class="ap-card" href="/airports/bucharest-henri-coanda-airport-otp" data-region="europe" data-q="otp lrop bucharest bucharest (otopeni), romania henri coanda international airport henri coanda international airport (otp) romania otopeni, approx. 17 km north of central bucharest">
         <div class="ap-top"><h3 class="ap-name">Bucharest <span>(OTP)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Henri Coanda International Airport, Romania</div>
         <div class="ap-facts">ICAO LROP &middot; Opened 1969 &middot; 2 runways</div>
@@ -683,7 +735,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">17M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Otopeni, approx. 17 km north of central Bucharest.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="bbu lrbs bucharest bucharest (baneasa), romania aurel vlaicu international airport, baneasa aurel vlaicu international airport, baneasa (bbu) romania baneasa, approx. 8 km north of central bucharest">
+      <a class="ap-card" href="/airports/bucharest-baneasa-aurel-vlaicu-airport-bbu" data-region="europe" data-q="bbu lrbs bucharest bucharest (baneasa), romania aurel vlaicu international airport, baneasa aurel vlaicu international airport, baneasa (bbu) romania baneasa, approx. 8 km north of central bucharest">
         <div class="ap-top"><h3 class="ap-name">Bucharest <span>(BBU)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Aurel Vlaicu International Airport, Baneasa, Romania</div>
         <div class="ap-facts">ICAO LRBS &middot; Opened 1920 &middot; 1 runway</div>
@@ -691,7 +743,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3,200 m<small>longest runway</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Baneasa, approx. 8 km north of central Bucharest.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="clj lrcl cluj-napoca cluj-napoca, transylvania, romania cluj avram iancu international airport cluj avram iancu international airport (clj) romania approx. 6 km east of central cluj-napoca">
+      <a class="ap-card" href="/airports/cluj-avram-iancu-international-airport-clj" data-region="europe" data-q="clj lrcl cluj-napoca cluj-napoca, transylvania, romania cluj avram iancu international airport cluj avram iancu international airport (clj) romania approx. 6 km east of central cluj-napoca">
         <div class="ap-top"><h3 class="ap-name">Cluj-Napoca <span>(CLJ)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Cluj Avram Iancu International Airport, Romania</div>
         <div class="ap-facts">ICAO LRCL &middot; Opened 1932 &middot; 1 runway</div>
@@ -699,7 +751,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3.3M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 6 km east of central Cluj-Napoca.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="tsr lrtr timisoara timisoara, banat, romania traian vuia international airport, timisoara traian vuia international airport, timisoara (tsr) romania approx. 12 km northeast of timisoara">
+      <a class="ap-card" href="/airports/timisoara-traian-vuia-airport-tsr" data-region="europe" data-q="tsr lrtr timisoara timisoara, banat, romania traian vuia international airport, timisoara traian vuia international airport, timisoara (tsr) romania approx. 12 km northeast of timisoara">
         <div class="ap-top"><h3 class="ap-name">Timisoara <span>(TSR)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Traian Vuia International Airport, Timisoara, Romania</div>
         <div class="ap-facts">ICAO LRTR &middot; Opened 1935 &middot; 1 runway</div>
@@ -707,7 +759,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">1.3M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 12 km northeast of Timisoara.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="ias lria iasi iasi, moldavia, romania iasi international airport iasi international airport (ias) romania approx. 3 km from central iasi">
+      <a class="ap-card" href="/airports/iasi-international-airport-ias" data-region="europe" data-q="ias lria iasi iasi, moldavia, romania iasi international airport iasi international airport (ias) romania approx. 3 km from central iasi">
         <div class="ap-top"><h3 class="ap-name">Iasi <span>(IAS)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Iasi International Airport, Romania</div>
         <div class="ap-facts">ICAO LRIA &middot; Opened 1926 &middot; 1 runway</div>
@@ -715,7 +767,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">2.3M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 3 km from central Iasi.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="sbz lrsb sibiu sibiu, transylvania, romania sibiu international airport sibiu international airport (sbz) romania approx. 7 km west of central sibiu">
+      <a class="ap-card" href="/airports/sibiu-international-airport-sbz" data-region="europe" data-q="sbz lrsb sibiu sibiu, transylvania, romania sibiu international airport sibiu international airport (sbz) romania approx. 7 km west of central sibiu">
         <div class="ap-top"><h3 class="ap-name">Sibiu <span>(SBZ)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Sibiu International Airport, Romania</div>
         <div class="ap-facts">ICAO LRSB &middot; Opened 1943 &middot; 1 runway</div>
@@ -723,7 +775,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">0.57M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 7 km west of central Sibiu.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="fco lirf rome rome, lazio, italy rome fiumicino leonardo da vinci rome fiumicino leonardo da vinci (fco) italy fiumicino, approx. 30 km southwest of central rome">
+      <a class="ap-card" href="/airports/rome-fiumicino-airport-fco" data-region="europe" data-q="fco lirf rome rome, lazio, italy rome fiumicino leonardo da vinci rome fiumicino leonardo da vinci (fco) italy fiumicino, approx. 30 km southwest of central rome">
         <div class="ap-top"><h3 class="ap-name">Rome <span>(FCO)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Rome Fiumicino Leonardo da Vinci, Italy</div>
         <div class="ap-facts">ICAO LIRF &middot; Opened 1961 &middot; 4 runways</div>
@@ -731,7 +783,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">51M+<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Fiumicino, approx. 30 km southwest of central Rome.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="cia lira rome rome, lazio, italy rome ciampino g. b. pastine rome ciampino g. b. pastine (cia) italy ciampino, approx. 15 km southeast of central rome">
+      <a class="ap-card" href="/airports/rome-ciampino-airport-cia" data-region="europe" data-q="cia lira rome rome, lazio, italy rome ciampino g. b. pastine rome ciampino g. b. pastine (cia) italy ciampino, approx. 15 km southeast of central rome">
         <div class="ap-top"><h3 class="ap-name">Rome <span>(CIA)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Rome Ciampino G. B. Pastine, Italy</div>
         <div class="ap-facts">ICAO LIRA &middot; Opened 1916 &middot; 1 runway</div>
@@ -739,7 +791,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3.9M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Ciampino, approx. 15 km southeast of central Rome.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="mxp limc milan milan, lombardy, italy milan malpensa milan malpensa (mxp) italy approx. 49 km northwest of central milan">
+      <a class="ap-card" href="/airports/milan-malpensa-airport-mxp" data-region="europe" data-q="mxp limc milan milan, lombardy, italy milan malpensa milan malpensa (mxp) italy approx. 49 km northwest of central milan">
         <div class="ap-top"><h3 class="ap-name">Milan <span>(MXP)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Milan Malpensa, Italy</div>
         <div class="ap-facts">ICAO LIMC &middot; Opened 1948 &middot; 2 runways</div>
@@ -747,7 +799,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">31M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 49 km northwest of central Milan.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="lin liml milan milan, lombardy, italy milan linate milan linate (lin) italy approx. 7 km east of central milan">
+      <a class="ap-card" href="/airports/milan-linate-airport-lin" data-region="europe" data-q="lin liml milan milan, lombardy, italy milan linate milan linate (lin) italy approx. 7 km east of central milan">
         <div class="ap-top"><h3 class="ap-name">Milan <span>(LIN)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Milan Linate, Italy</div>
         <div class="ap-facts">ICAO LIML &middot; Opened 1937 &middot; 1 runway</div>
@@ -755,7 +807,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">10.6M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 7 km east of central Milan.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="bgy lime bergamo / milan bergamo / milan, lombardy, italy milan bergamo orio al serio milan bergamo orio al serio (bgy) italy approx. 45 km northeast of central milan, near bergamo">
+      <a class="ap-card" href="/airports/milan-bergamo-orio-al-serio-airport-bgy" data-region="europe" data-q="bgy lime bergamo / milan bergamo / milan, lombardy, italy milan bergamo orio al serio milan bergamo orio al serio (bgy) italy approx. 45 km northeast of central milan, near bergamo">
         <div class="ap-top"><h3 class="ap-name">Bergamo / Milan <span>(BGY)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Milan Bergamo Orio al Serio, Italy</div>
         <div class="ap-facts">ICAO LIME &middot; Opened 1937 &middot; 1 runway</div>
@@ -763,7 +815,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">17M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 45 km northeast of central Milan, near Bergamo.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="vce lipz venice venice, veneto, italy venice marco polo venice marco polo (vce) italy tessera, approx. 13 km north of venice">
+      <a class="ap-card" href="/airports/venice-marco-polo-airport-vce" data-region="europe" data-q="vce lipz venice venice, veneto, italy venice marco polo venice marco polo (vce) italy tessera, approx. 13 km north of venice">
         <div class="ap-top"><h3 class="ap-name">Venice <span>(VCE)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Venice Marco Polo, Italy</div>
         <div class="ap-facts">ICAO LIPZ &middot; Opened 1961 &middot; 2 runways</div>
@@ -771,7 +823,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">11.6M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Tessera, approx. 13 km north of Venice.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="nap lirn naples naples, campania, italy naples capodichino naples capodichino (nap) italy approx. 6 km northeast of central naples">
+      <a class="ap-card" href="/airports/naples-international-airport-nap" data-region="europe" data-q="nap lirn naples naples, campania, italy naples capodichino naples capodichino (nap) italy approx. 6 km northeast of central naples">
         <div class="ap-top"><h3 class="ap-name">Naples <span>(NAP)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Naples Capodichino, Italy</div>
         <div class="ap-facts">ICAO LIRN &middot; Opened 1910 &middot; 1 runway</div>
@@ -779,7 +831,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">13.2M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 6 km northeast of central Naples.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="blq lipe bologna bologna, emilia-romagna, italy bologna guglielmo marconi bologna guglielmo marconi (blq) italy approx. 6 km northwest of central bologna">
+      <a class="ap-card" href="/airports/bologna-guglielmo-marconi-airport-blq" data-region="europe" data-q="blq lipe bologna bologna, emilia-romagna, italy bologna guglielmo marconi bologna guglielmo marconi (blq) italy approx. 6 km northwest of central bologna">
         <div class="ap-top"><h3 class="ap-name">Bologna <span>(BLQ)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Bologna Guglielmo Marconi, Italy</div>
         <div class="ap-facts">ICAO LIPE &middot; Opened 1931 &middot; 1 runway</div>
@@ -787,7 +839,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">10.8M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 6 km northwest of central Bologna.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="trn limf turin turin, piedmont, italy turin caselle sandro pertini turin caselle sandro pertini (trn) italy caselle, approx. 16 km north of central turin">
+      <a class="ap-card" href="/airports/turin-caselle-airport-trn" data-region="europe" data-q="trn limf turin turin, piedmont, italy turin caselle sandro pertini turin caselle sandro pertini (trn) italy caselle, approx. 16 km north of central turin">
         <div class="ap-top"><h3 class="ap-name">Turin <span>(TRN)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Turin Caselle Sandro Pertini, Italy</div>
         <div class="ap-facts">ICAO LIMF &middot; Opened 1953 &middot; 1 runway</div>
@@ -795,7 +847,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">4.7M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Caselle, approx. 16 km north of central Turin.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="flr lirq florence florence, tuscany, italy florence amerigo vespucci florence amerigo vespucci (flr) italy peretola, approx. 5 km northwest of central florence">
+      <a class="ap-card" href="/airports/florence-amerigo-vespucci-airport-flr" data-region="europe" data-q="flr lirq florence florence, tuscany, italy florence amerigo vespucci florence amerigo vespucci (flr) italy peretola, approx. 5 km northwest of central florence">
         <div class="ap-top"><h3 class="ap-name">Florence <span>(FLR)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Florence Amerigo Vespucci, Italy</div>
         <div class="ap-facts">ICAO LIRQ &middot; Opened 1928 &middot; 1 runway</div>
@@ -803,7 +855,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3.5M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">Peretola, approx. 5 km northwest of central Florence.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="olb lieo olbia olbia, sardinia, italy olbia costa smeralda olbia costa smeralda (olb) italy approx. 4 km from central olbia">
+      <a class="ap-card" href="/airports/olbia-costa-smeralda-airport-olb" data-region="europe" data-q="olb lieo olbia olbia, sardinia, italy olbia costa smeralda olbia costa smeralda (olb) italy approx. 4 km from central olbia">
         <div class="ap-top"><h3 class="ap-name">Olbia <span>(OLB)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Olbia Costa Smeralda, Italy</div>
         <div class="ap-facts">ICAO LIEO &middot; Opened 1974 &middot; 1 runway</div>
@@ -811,7 +863,7 @@ body{ padding-top:40px; }
         <div class="ap-hero"><div class="ap-stat">3.9M<small>passengers a year</small></div><div class="ap-cta">Enquire &rarr;</div></div>
         <div class="ap-hook">approx. 4 km from central Olbia.</div>
       </a>
-      <a class="ap-card" href="#contact" data-region="europe" data-q="cta licc catania catania, sicily, italy catania fontanarossa catania fontanarossa (cta) italy approx. 5 km southwest of central catania">
+      <a class="ap-card" href="/airports/catania-fontanarossa-airport-cta" data-region="europe" data-q="cta licc catania catania, sicily, italy catania fontanarossa catania fontanarossa (cta) italy approx. 5 km southwest of central catania">
         <div class="ap-top"><h3 class="ap-name">Catania <span>(CTA)</span></h3><span class="ap-tag">Airport guide</span></div>
         <div class="ap-sub">Catania Fontanarossa, Italy</div>
         <div class="ap-facts">ICAO LICC &middot; Opened 1924 &middot; 2 runways</div>
@@ -947,17 +999,18 @@ body{ padding-top:40px; }
         <a href="/#quote">Contact</a>
       </div>
       <div class="footer-col"><h4>Contact</h4>
-        <a href="https://wa.me/971503372980" target="_blank">WhatsApp +971 50 337 2980</a>
-        <a href="mailto:andreea@flywithandreea.com">andreea@flywithandreea.com</a>
+        <a href="https://wa.me/971503372980" target="_blank">WhatsApp</a>
         <a href="https://www.instagram.com/" target="_blank">Instagram</a>
       </div>
     </div>
   </div>
+  <p class="footer-disclaimer" style="max-width:1100px;margin:0 auto 16px;padding:0 4px;font-size:11px;line-height:1.6;color:var(--grey,#86868B)">Fly with Andreea is an air charter broker and arranges flights with third-party AOC-certified operators. It does not own or operate aircraft.</p>
   <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 Fly with Andreea. All rights reserved.</p>
     <div class="footer-legal">
-      <a href="#">Privacy policy</a>
-      <a href="#">Terms of service</a>
+      <a href="/privacy">Privacy policy</a>
+      <a href="/terms">Terms of service</a>
+      <a href="/cookies">Cookie policy</a>
     </div>
   </div>
 </footer>
@@ -1073,5 +1126,7 @@ body{ padding-top:40px; }
   }
 })();
 </script>
+<div class="mcta" aria-label="Quick actions"><a class="mcta-quote" href="/fastquote">Quote</a><a class="mcta-call" href="tel:+971503372980">Call</a><a class="mcta-wa" href="https://wa.me/971503372980"><svg viewBox="0 0 24 24" width="15" height="15" fill="#25D366" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.355l-.999 3.648 3.908-1.302zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg> WhatsApp</a></div>
+<script>(function(){var b=document.querySelector(".mcta");if(!b)return;function u(){if(window.scrollY>180)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",u,{passive:true});u();})();</script>
 </body>
 </html>
