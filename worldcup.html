@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Cup 2026 Fan Vote — Predict Every Match | Fly with Andreea</title>
+<meta name="description" content="Pick your winner for every World Cup 2026 match and watch the Fly with Andreea crowd vote in real time. Backing a team? Fly private to the host cities.">
+<link rel="canonical" href="https://www.flywithandreea.com/worldcup">
+<meta property="og:title" content="World Cup 2026 Fan Vote — Predict Every Match | Fly with Andreea">
+<meta property="og:description" content="Pick your winner for every World Cup 2026 match, watch the crowd vote live, and charter a private jet to the host cities. Back your team, then fly to the match.">
+<meta property="og:image" content="https://www.flywithandreea.com/logo.png">
+<meta property="og:url" content="https://www.flywithandreea.com/worldcup">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="World Cup 2026 Fan Vote — Fly with Andreea">
+<meta name="twitter:description" content="Predict every World Cup 2026 match, vote live, and fly private to the host cities.">
+<meta name="twitter:image" content="https://www.flywithandreea.com/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{--gold:#CBAD91;--gold-deep:#B8966B;--ink:#1D1D1F;--paper:#f4f4f6;--card:#fff;--line:#e6e6ea;--grey:#8a8a90;--green:#37b06a;--blue:#3f74e0;--dark:#16161a;--sf:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sf);-webkit-font-smoothing:antialiased;line-height:1.5}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  a{text-decoration:none}
+  /* ===== Fly with Andreea header ===== */
+  header.fwa{background:var(--dark);color:#fff}
+  header.fwa .bar{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .fwa .logo{font-family:'Cinzel',serif;letter-spacing:.14em;font-size:15px;color:#fff}
+  .fwa nav{display:flex;gap:26px}
+  .fwa nav a{color:rgba(255,255,255,.82);font-size:13px;letter-spacing:.02em}
+  .fwa nav a:hover{color:var(--gold)}
+  .fwa .booknow{background:var(--gold);color:var(--ink);padding:9px 20px;border-radius:999px;font-size:13px;font-weight:600}
+  @media(max-width:820px){.fwa nav{display:none}}
+  /* ===== Hero ===== */
+  .hero{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;padding:26px 0}
+  @media(max-width:860px){.hero{grid-template-columns:1fr}}
+  .herocard{background:#fff;border-radius:22px;padding:40px 40px;display:flex;align-items:center;gap:24px;position:relative;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.05)}
+  .herocard::after{content:"";position:absolute;right:-40px;top:-40px;width:320px;height:320px;background:radial-gradient(closest-side,rgba(55,176,106,.10),transparent 70%)}
+  .herocard .txt{flex:1;position:relative;z-index:1}
+  .pill{display:inline-block;background:#f3eee7;color:var(--gold-deep);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
+  .herocard h1{font-weight:800;font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.05;margin:16px 0 14px;letter-spacing:-.01em}
+  .herocard p{color:var(--grey);max-width:440px;font-size:.98rem}
+  .wclogo{width:150px;height:150px;flex-shrink:0;position:relative;z-index:1;border-radius:16px;object-fit:contain;background:#faf7f2;display:flex;align-items:center;justify-content:center;text-align:center;font-family:'Cinzel',serif}
+  .wclogo .big{font-size:2.6rem;font-weight:600;color:var(--ink);line-height:1}
+  .wclogo .sm{font-size:.6rem;letter-spacing:.18em;color:var(--gold-deep);margin-top:6px}
+  @media(max-width:520px){.wclogo{display:none}}
+  .pulse{background:var(--dark);border-radius:22px;padding:22px;color:#fff;position:relative;overflow:hidden}
+  .pulse .ph{display:flex;align-items:center;gap:9px;font-weight:600;margin-bottom:14px}
+  .pulse .ph svg{color:var(--green)}
+  .pulse .row{display:flex;justify-content:space-between;align-items:center;background:#202027;border-radius:13px;padding:15px 18px;margin-bottom:10px;font-size:1rem}
+  .pulse .row .v{font-size:1.5rem;font-weight:700}
+  .pulse .stadium{height:120px;border-radius:13px;background-size:cover;background-position:center;margin-top:4px}
+  .live-dot{color:var(--green)}
+  /* ===== Tabs ===== */
+  .tabs{display:flex;justify-content:center;gap:10px;margin:16px 0 6px}
+  .tabs button{background:#fff;border:1px solid var(--line);color:var(--grey);padding:9px 24px;border-radius:999px;cursor:pointer;font-family:var(--sf);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+  .tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:600}
+  /* ===== Match cards (dxbinteract style) ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;padding:18px 0 6px}
+  .mc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 22px 20px;box-shadow:0 6px 24px rgba(0,0,0,.05)}
+  .mc-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .rnd{font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:var(--ink)}
+  .time{background:#f3eee7;color:var(--ink);font-weight:600;font-size:13px;padding:8px 16px;border-radius:10px}
+  .qpill{display:inline-block;background:var(--dark);color:#fff;font-weight:700;font-size:15px;padding:12px 20px;border-radius:14px;margin-bottom:20px}
+  .mc-teams{display:flex;align-items:stretch;gap:10px}
+  .tbox{flex:1;border:1.5px solid var(--line);border-radius:16px;padding:16px 10px 14px;text-align:center;cursor:pointer;transition:.18s;background:#fff}
+  .tbox:hover{border-color:var(--gold)}
+  .tbox.pick{border-color:var(--gold);background:#fdfaf5}
+  .tbox .flag{font-size:2.2rem;line-height:1;display:block;margin-bottom:8px}
+  .tbox .nm{font-weight:700;font-size:1.05rem;margin-bottom:10px}
+  .radio{width:22px;height:22px;border:2px solid #cfcfd6;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;transition:.18s}
+  .pick .radio{border-color:var(--gold)}
+  .pick .radio::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--gold)}
+  .vsmid{display:flex;align-items:center;color:var(--grey);font-size:12px;letter-spacing:.15em;font-weight:600}
+  .draw{display:flex;align-items:center;gap:12px;justify-content:center;border:1.5px dashed var(--line);border-radius:14px;padding:14px;margin-top:12px;cursor:pointer;color:var(--ink);font-weight:600;transition:.18s}
+  .draw:hover{border-color:var(--gold)}
+  .draw.pick{border-style:solid;border-color:var(--gold);background:#fdfaf5}
+  .draw .radio{margin:0}
+  .bars{margin-top:18px;display:flex;flex-direction:column;gap:11px}
+  .brow{display:grid;grid-template-columns:52px 1fr 48px;align-items:center;gap:12px}
+  .brow .bl{color:var(--grey);font-weight:600;font-size:.9rem}
+  .btrack{height:12px;background:#eeeef2;border-radius:999px;overflow:hidden}
+  .bfill{height:100%;border-radius:999px;width:0;transition:width .6s cubic-bezier(.2,.7,.2,1)}
+  .brow .bp{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .share{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f6f5f8;border-radius:14px;padding:14px 16px;margin-top:18px}
+  .share b{font-size:.95rem}.share .q{color:var(--gold-deep);font-weight:600}
+  .sbtn{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:var(--ink);border:0;cursor:pointer;padding:11px 20px;border-radius:999px;font-weight:600;font-size:.9rem}
+  .sbtn:hover{background:var(--gold-deep)}
+  .book{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:12px;background:var(--dark);color:#fff;border-radius:14px;padding:14px;font-weight:600;font-size:.92rem;transition:.2s}
+  .book:hover{background:#000}
+  .book .ic{color:var(--gold)}
+  .mc-foot{display:flex;justify-content:space-between;color:var(--grey);font-size:12.5px;margin-top:16px}
+  .final .score{font-weight:800;font-size:1.5rem;color:var(--ink)}
+  .ft-badge{color:var(--green);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  /* footer */
+  footer.fwa{background:var(--dark);color:#fff;margin-top:34px;padding:40px 0 26px}
+  footer.fwa .cols{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between}
+  footer.fwa .tag{font-family:'Cinzel',serif;letter-spacing:.08em;margin-bottom:10px}
+  footer.fwa h4{color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+  footer.fwa a{display:block;color:rgba(255,255,255,.7);font-size:14px;margin-bottom:8px}
+  footer.fwa a:hover{color:#fff}
+  .disc{color:rgba(255,255,255,.4);font-size:11.5px;margin-top:26px;border-top:1px solid #2a2a30;padding-top:18px}
+  .disc a{color:rgba(255,255,255,.55);display:inline;margin:0 8px}
+  .note{text-align:center;color:#a6a6ac;font-size:11.5px;padding:8px 0 4px}
+
+  /* ===== Homepage-style cinematic hero ===== */
+  .wc-hero{position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;min-height:540px}
+  .wc-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04)}
+  .wc-hero .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,15,.5) 0%,rgba(12,12,15,.72) 55%,rgba(12,12,15,.9) 100%)}
+  .wc-hero .inner{position:relative;z-index:2;max-width:860px;padding:76px 22px}
+  .wc-hero .eyebrow{color:var(--gold);font-size:12px;letter-spacing:.3em;text-transform:uppercase}
+  .wc-hero h1{font-family:'Cinzel',serif;font-weight:500;font-size:clamp(2.2rem,6vw,4.1rem);line-height:1.08;margin:20px 0 18px;letter-spacing:.01em}
+  .wc-hero h1 em{font-style:italic;color:var(--gold);font-weight:400}
+  .wc-hero .sub{color:rgba(255,255,255,.76);max-width:620px;margin:0 auto;font-size:1.05rem;line-height:1.7}
+  .wc-stats{display:flex;justify-content:center;flex-wrap:wrap;margin:38px auto 0;max-width:720px;border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15)}
+  .wc-stats .st{flex:1;min-width:130px;padding:22px 10px}
+  .wc-stats .st+.st{border-left:1px solid rgba(255,255,255,.15)}
+  .wc-stats .n{font-family:'Cinzel',serif;font-size:2rem;font-weight:500;line-height:1}
+  .wc-stats .l{color:rgba(255,255,255,.62);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-top:7px}
+  .wc-stats .live{color:var(--green)}
+
+  /* topbar + search */
+  .fwa .topbar{background:#0e0e11;border-bottom:1px solid #232329}
+  .fwa .tbrow{display:flex;align-items:center;gap:16px;height:52px}
+  .backhome{color:rgba(255,255,255,.72);font-size:12.5px;white-space:nowrap}
+  .backhome:hover{color:var(--gold)}
+  .tsearch{flex:1;display:flex;align-items:center;gap:9px;background:#1c1c22;border:1px solid #2c2c34;border-radius:999px;padding:9px 16px;max-width:520px}
+  .tsearch svg{color:#8a8a90;flex-shrink:0}
+  .tsearch input{flex:1;background:transparent;border:0;color:#fff;font-size:13px;outline:none}
+  .tsearch input::placeholder{color:#8a8a90}
+  .lang{color:rgba(255,255,255,.8);font-size:12.5px;letter-spacing:.06em;white-space:nowrap}
+  /* FAQ */
+  .faq{padding:12px 0 8px}
+  .faq h2{font-family:'Cinzel',serif;font-weight:500;font-size:clamp(1.5rem,3.6vw,2.2rem);text-align:center;margin:24px 0 6px}
+  .faq .lead{text-align:center;color:var(--grey);max-width:600px;margin:0 auto 22px}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  .faq summary{list-style:none;cursor:pointer;padding:17px 20px;font-weight:600;font-size:1rem;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--gold-deep);font-size:1.4rem;font-weight:400;flex-shrink:0}
+  .faq details[open] summary::after{content:"–"}
+  .faq details[open] summary{color:var(--ink)}
+  .faq .ans{padding:0 20px 18px;color:var(--grey);font-size:.96rem;line-height:1.7}
+  /* sticky mobile CTA bar */
+  body{padding-bottom:64px}
+  .mcta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:10px;padding:10px 14px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .mcta a{flex:1;text-align:center;padding:13px 8px;border-radius:999px;font-weight:600;font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:7px}
+  .mcta .q{background:var(--gold);color:var(--ink)}
+  .mcta .c{border:1px solid #d5d5db;color:var(--ink)}
+  .mcta .w{border:1px solid #37b06a;color:#1c8f4f}
+  /* scroll to top */
+  .totop{position:fixed;right:18px;bottom:78px;z-index:59;width:46px;height:46px;border-radius:50%;background:var(--dark);color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.28);opacity:0;pointer-events:none;transition:.25s}
+  .totop.show{opacity:1;pointer-events:auto}
+  .totop:hover{background:#000}
+</style>
+</head>
+<body>
+
+<header class="fwa">
+  <div class="topbar"><div class="wrap tbrow">
+    <a class="backhome" href="/">&lsaquo; Back to Fly with Andreea</a>
+    <form class="tsearch" action="/" method="get" onsubmit="location.href='/';return false;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" name="q" placeholder="Search destinations, airports, FAQs…" aria-label="Search">
+    </form>
+    <span class="lang">&#127760; EN</span>
+  </div></div>
+  <div class="wrap bar">
+    <a class="logo" href="/">FLY WITH ANDREEA</a>
+    <nav>
+      <a href="/#services">Services</a><a href="/#experience">Experience</a><a href="/#extras">On board</a>
+      <a href="/airport-guide">Airport Guide</a><a href="/empty-legs">Empty Legs</a><a href="/#quote">Contact</a>
+    </nav>
+    <a class="booknow" href="/#quote">Book now</a>
+  </div>
+</header>
+
+<section class="wc-hero">
+  <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1700&q=80')"></div>
+  <div class="ov"></div>
+  <div class="inner">
+    <div class="eyebrow">World Cup Fan Vote &middot; 2026</div>
+    <h1>Support your team.<br><em>Predict every match.</em></h1>
+    <p class="sub">Pick your winner before kick-off and watch how the Fly with Andreea crowd is voting in real time. Change your pick anytime before the match starts, then come back to see who called it right.</p>
+    <div class="wc-stats">
+      <div class="st"><div class="n">48</div><div class="l">Teams</div></div>
+      <div class="st"><div class="n">104</div><div class="l">Matches</div></div>
+      <div class="st"><div class="n">16</div><div class="l">Host cities</div></div>
+      <div class="st"><div class="n live">&#9679; Live</div><div class="l">Voting</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="tabs"><button id="tabVote" class="on">Voting</button><button id="tabRes">Results</button></div>
+  <p style="max-width:760px;margin:6px auto 2px;text-align:center;color:var(--grey);font-size:.96rem;line-height:1.7">Predict every fixture of the <strong>FIFA World Cup 2026</strong> across the United States, Canada and Mexico, from the Round of 32 to the Final on 19 July. Back your team, watch the crowd vote in real time, and when you are ready to be there, <a href="/#quote" style="color:var(--gold-deep);font-weight:600">charter a private jet</a> to any host city, browse <a href="/empty-legs" style="color:var(--gold-deep);font-weight:600">empty-leg deals</a>, or explore the <a href="/airport-guide" style="color:var(--gold-deep);font-weight:600">airport guide</a>.</p>
+  <div id="grid" class="grid"></div>
+  <div class="note">2026 FIFA World Cup knockout stage · voting is anonymous, one changeable vote per match · not affiliated with FIFA.</div>
+</div>
+
+<div class="wrap"><section class="faq"><h2>Private jets to the World Cup. <span style="color:var(--gold-deep)">Answered.</span></h2><p class="lead">Everything you need to know about flying private to the 2026 matches. If your question is not here, we are one message away.</p><details><summary>Can you fly me to a specific World Cup match city on short notice?</summary><div class="ans">Yes. With 450+ operators worldwide and a 55-minute minimum take-off, we routinely arrange same-day and next-day flights to the host cities across the USA, Canada and Mexico. Message us the fixture and we confirm an aircraft fast.</div></details><details><summary>Which airports serve the World Cup 2026 host cities?</summary><div class="ans">Every host city has strong private-aviation options, often several. New York (Teterboro), Los Angeles (Van Nuys), Miami (Opa-locka), Dallas, Atlanta, Toronto, Vancouver, Mexico City and more. We pick the airport closest to your stadium and hotel and handle the slots.</div></details><details><summary>How far in advance should I book a jet for a World Cup match?</summary><div class="ans">Booking two to three days ahead gives the widest choice of aircraft, especially around big fixtures when demand spikes. That said, we can often confirm within a few hours when an aircraft is positioned nearby.</div></details><details><summary>Can you arrange a same-day return after a match?</summary><div class="ans">Absolutely. Fly in for kick-off and back out the same night. We plan crew duty and slots around the final whistle, including extra time, so a late finish never leaves you stranded.</div></details><details><summary>Can a group or corporate box travel together on one jet?</summary><div class="ans">Yes. From a midsize cabin for a small party to a VIP airliner for a full corporate group, we match the aircraft to your numbers so everyone flies together, on your schedule.</div></details><details><summary>What does a private jet to a World Cup match cost?</summary><div class="ans">Charter is priced by the trip: aircraft category, distance, positioning and airport fees. A short domestic hop on a light jet starts in the low thousands; larger cabins and longer legs rise from there. We quote all-in with no hidden fees.</div></details><details><summary>Can I follow my team through the knockout rounds on private jets?</summary><div class="ans">Yes, and many clients do. Tell us your team and we build a flexible plan that moves with the bracket, city to city, all the way to the final on 19 July, adjusting as fixtures are confirmed.</div></details><details><summary>Do you handle travel across all three host countries?</summary><div class="ans">Yes. The 2026 tournament spans the USA, Canada and Mexico. We coordinate cross-border private flights, customs and immigration at private terminals, so you move between countries smoothly.</div></details><details><summary>Can I bring flags, banners and fan gear on board?</summary><div class="ans">Of course. Private cabins are generous with space, and there is no commercial baggage queue. Bring your flags, drums and colours, we will make sure it all travels with you.</div></details><details><summary>How close to the stadium can we land?</summary><div class="ans">Usually very close. Most host cities have a dedicated business-aviation airport minutes from the stadium, and we arrange the ground transfer so you go from cabin to your seat with no queues.</div></details><details><summary>Can you coordinate ground transfers from the airport to the stadium?</summary><div class="ans">Yes. Door-to-tarmac and tarmac-to-stadium transfers are part of the service, chauffeured cars, or a helicopter into the city centre on match day when time is tight.</div></details><details><summary>Can my pet travel with me to the games?</summary><div class="ans">In most cases, yes. Well-behaved pets fly in the cabin beside you rather than in cargo. We confirm the entry requirements for each host country in advance and handle the paperwork.</div></details><details><summary>What happens if the match time changes or goes to extra time?</summary><div class="ans">We build in flexibility. Because you are on a private schedule, a later kick-off, extra time or penalties simply shifts your departure, we hold the aircraft and re-time the slot for you.</div></details><details><summary>Can you arrange a helicopter transfer into the city on match day?</summary><div class="ans">Yes. From the private terminal we can connect a helicopter straight into the city centre or close to the stadium, bypassing match-day traffic entirely.</div></details><details><summary>Do you offer empty-leg deals around the tournament?</summary><div class="ans">Yes. Repositioning flights appear throughout the tournament and can be a fraction of standard charter price. Tell us your route and dates and we will alert you the moment a matching empty leg is listed.</div></details><details><summary>Can you fly late at night after evening kick-offs?</summary><div class="ans">Yes. Most host-city private terminals operate around the clock. Evening kick-offs and late finishes are no problem, we confirm operating hours and crew duty for your exact fixture.</div></details><details><summary>How many passengers can travel together?</summary><div class="ans">Anywhere from four on a very light jet to fifty on a VIP airliner. Tell us your group size and luggage and we match the right cabin, so nobody is left behind.</div></details><details><summary>Can you cater a celebration on board after a win?</summary><div class="ans">Yes. Champagne, your preferred catering and a cabin set for the occasion, we arrange it in advance so the celebration starts the moment you board.</div></details><details><summary>Do I need a visa to travel between host countries?</summary><div class="ans">Requirements depend on your nationality and the countries you are crossing. Share your passport details early and we will confirm what you need for the USA, Canada or Mexico before you fly.</div></details><details><summary>How do I book a jet for a specific fixture?</summary><div class="ans">Tap “Book a flight for this match” on any fixture card, it opens a pre-filled WhatsApp message with the game, date and time. Add your passenger count and luggage, send it, and Andreea takes care of the rest.</div></details></section></div>
+
+<footer class="fwa"><div class="wrap">
+  <div class="cols">
+    <div style="max-width:230px"><div class="tag">FLY WITH ANDREEA</div><div style="color:rgba(255,255,255,.6);font-size:13px">Private jet charter. Worldwide.</div></div>
+    <div><h4>Services</h4><a href="/#services">On-demand charter</a><a href="/#services">Group flights</a><a href="/#extras">Pet-friendly travel</a></div>
+    <div><h4>Company</h4><a href="/#about">About Andreea</a><a href="/#fleet-sec">Fleet</a><a href="/airport-guide">Airport Guide</a></div>
+    <div><h4>Contact</h4><a href="https://wa.me/971503372980">WhatsApp</a><a href="/#quote">Request a quote</a></div>
+  </div>
+  <div class="disc">Fly with Andreea is an air charter broker and arranges flights with third-party AOC-certified operators. It does not own or operate aircraft. Not affiliated with or endorsed by FIFA. © 2026 Fly with Andreea.
+    <div style="margin-top:8px"><a href="/privacy">Privacy policy</a><a href="/terms">Terms of service</a><a href="/cookies">Cookie policy</a></div>
+  </div>
+</div></footer>
+
+<script>
+var API_BASE = ""; // set to your deployed vote Worker URL to enable real shared voting
+
+// status: final | open (teams known, vote) | tbd (teams not yet decided)
+var MATCHES=[
+ // ---- Round of 32 (results) ----
+ {id:'r32-esp-aut',stage:'Round of 32',venue:'AT&T Stadium, Dallas',city:'Dallas',date:'2 July',time:'',status:'final',a:{n:'Spain',ab:'ESP',f:'🇪🇸'},b:{n:'Austria',ab:'AUT',f:'🇦🇹'},score:[3,0]},
+ {id:'r32-usa-bih',stage:'Round of 32',venue:'SoFi Stadium, Los Angeles',city:'Los Angeles',date:'1 July',time:'',status:'final',a:{n:'USA',ab:'USA',f:'🇺🇸'},b:{n:'Bosnia',ab:'BIH',f:'🇧🇦'},score:[2,0]},
+ {id:'r32-eng-cod',stage:'Round of 32',venue:'Lincoln Financial Field, Philadelphia',city:'Philadelphia',date:'1 July',time:'',status:'final',a:{n:'England',ab:'ENG',f:'🏴󠁧󠁢󠁥󠁮󠁧󠁿'},b:{n:'DR Congo',ab:'COD',f:'🇨🇩'},score:[2,1]},
+ {id:'r32-bel-sen',stage:'Round of 32',venue:'Mercedes-Benz Stadium, Atlanta',city:'Atlanta',date:'1 July',time:'',status:'final',a:{n:'Belgium',ab:'BEL',f:'🇧🇪'},b:{n:'Senegal',ab:'SEN',f:'🇸🇳'},score:[3,2]},
+ // ---- Round of 32 (open to vote) ----
+ {id:'r32-por-cro',stage:'Round of 32',venue:'MetLife Stadium, New York',city:'New York',date:'2 July',time:'18:00',status:'open',a:{n:'Portugal',ab:'POR',f:'🇵🇹'},b:{n:'Croatia',ab:'CRO',f:'🇭🇷'}},
+ {id:'r32-sui-alg',stage:'Round of 32',venue:'BC Place, Vancouver',city:'Vancouver',date:'2 July',time:'21:00',status:'open',a:{n:'Switzerland',ab:'SUI',f:'🇨🇭'},b:{n:'Algeria',ab:'ALG',f:'🇩🇿'}},
+ {id:'r32-aus-egy',stage:'Round of 32',venue:'Lumen Field, Seattle',city:'Seattle',date:'3 July',time:'14:00',status:'open',a:{n:'Australia',ab:'AUS',f:'🇦🇺'},b:{n:'Egypt',ab:'EGY',f:'🇪🇬'}},
+ {id:'r32-arg-cpv',stage:'Round of 32',venue:'Hard Rock Stadium, Miami',city:'Miami',date:'3 July',time:'18:00',status:'open',a:{n:'Argentina',ab:'ARG',f:'🇦🇷'},b:{n:'Cape Verde',ab:'CPV',f:'🇨🇻'}},
+ {id:'r32-col-gha',stage:'Round of 32',venue:'BMO Field, Toronto',city:'Toronto',date:'3 July',time:'21:30',status:'open',a:{n:'Colombia',ab:'COL',f:'🇨🇴'},b:{n:'Ghana',ab:'GHA',f:'🇬🇭'}},
+ // ---- Round of 16 (July 4-7) ----
+ {id:'r16-1',stage:'Round of 16',venue:'Philadelphia',city:'Philadelphia',date:'4 July',time:'16:00',status:'tbd'},
+ {id:'r16-2',stage:'Round of 16',venue:'Houston',city:'Houston',date:'4 July',time:'20:00',status:'tbd'},
+ {id:'r16-3',stage:'Round of 16',venue:'Los Angeles',city:'Los Angeles',date:'5 July',time:'16:00',status:'tbd'},
+ {id:'r16-4',stage:'Round of 16',venue:'Seattle',city:'Seattle',date:'5 July',time:'20:00',status:'tbd'},
+ {id:'r16-5',stage:'Round of 16',venue:'Atlanta',city:'Atlanta',date:'6 July',time:'16:00',status:'tbd'},
+ {id:'r16-6',stage:'Round of 16',venue:'Dallas',city:'Dallas',date:'6 July',time:'20:00',status:'tbd'},
+ {id:'r16-7',stage:'Round of 16',venue:'Mexico City',city:'Mexico City',date:'7 July',time:'16:00',status:'tbd'},
+ {id:'r16-8',stage:'Round of 16',venue:'Vancouver',city:'Vancouver',date:'7 July',time:'20:00',status:'tbd'},
+ // ---- Quarter-finals (July 9-11) ----
+ {id:'qf-1',stage:'Quarter-final',venue:'Boston',city:'Boston',date:'9 July',time:'16:00',status:'tbd'},
+ {id:'qf-2',stage:'Quarter-final',venue:'Los Angeles',city:'Los Angeles',date:'9 July',time:'20:00',status:'tbd'},
+ {id:'qf-3',stage:'Quarter-final',venue:'Kansas City',city:'Kansas City',date:'11 July',time:'16:00',status:'tbd'},
+ {id:'qf-4',stage:'Quarter-final',venue:'Miami',city:'Miami',date:'11 July',time:'20:00',status:'tbd'},
+ // ---- Semi-finals (July 14-15) ----
+ {id:'sf-1',stage:'Semi-final',venue:'AT&T Stadium, Dallas',city:'Dallas',date:'14 July',time:'20:00',status:'tbd'},
+ {id:'sf-2',stage:'Semi-final',venue:'Mercedes-Benz Stadium, Atlanta',city:'Atlanta',date:'15 July',time:'20:00',status:'tbd'},
+ // ---- Third place + Final ----
+ {id:'tp',stage:'Third-place play-off',venue:'Hard Rock Stadium, Miami',city:'Miami',date:'18 July',time:'20:00',status:'tbd'},
+ {id:'final',stage:'Final',venue:'MetLife Stadium, New York/New Jersey',city:'New York',date:'19 July',time:'20:00',status:'tbd'}
+];
+var DEMO={'r32-por-cro':{Portugal:44,Draw:2,Croatia:15},'r32-sui-alg':{Switzerland:35,Draw:0,Algeria:25},'r32-aus-egy':{Australia:19,Draw:4,Egypt:22},'r32-arg-cpv':{Argentina:71,Draw:5,'Cape Verde':9},'r32-col-gha':{Colombia:38,Draw:7,Ghana:18}};
+var TALLIES={};
+function voterId(){var k='fwa_voter',v=localStorage.getItem(k);if(!v){v=Date.now().toString(36)+Math.random().toString(36).slice(2,10);localStorage.setItem(k,v);}return v;}
+function myPicks(){try{return JSON.parse(localStorage.getItem('fwa_picks')||'{}');}catch(e){return{};}}
+function savePick(m,t){var p=myPicks();p[m]=t;localStorage.setItem('fwa_picks',JSON.stringify(p));}
+function counts(m){var t=TALLIES[m.id]||{};return[t[m.a.n]||0,t['Draw']||0,t[m.b.n]||0];}
+function pcts(m){var c=counts(m),tot=c[0]+c[1]+c[2];if(!tot)return[[0,0,0],0];return[[Math.round(c[0]/tot*100),Math.round(c[1]/tot*100),Math.round(c[2]/tot*100)],tot];}
+function bookText(m){
+  var game = m.status==='tbd' ? (m.stage+' · '+m.city) : (m.a.n+' - '+m.b.n);
+  return "I want to book a flight for the\nGame: "+game+"\nDate: "+m.date+"\nTime: "+(m.time||'')+"\nPax: \nLuggage: ";
+}
+function bookLink(m){return 'https://wa.me/971503372980?text='+encodeURIComponent(bookText(m));}
+function shareMsg(m,voted){
+  if(voted===m.a.n) return '<b>'+m.a.n+'</b> to beat '+m.b.n+'. <span class="q">Prove me wrong.</span>';
+  if(voted===m.b.n) return '<b>'+m.b.n+'</b> to beat '+m.a.n+'. <span class="q">Prove me wrong.</span>';
+  if(voted==='Draw') return '<b>'+m.a.n+'</b> and <b>'+m.b.n+'</b> to share it. <span class="q">Prove me wrong.</span>';
+  return '<b>'+m.a.ab+' vs '+m.b.ab+'</b>, <span class="q">who\'s your pick?</span>';
+}
+
+function card(m){
+  var el=document.createElement('div');
+  if(m.status==='tbd'){
+    el.className='mc';
+    el.innerHTML='<div class="mc-top"><span class="rnd">'+m.stage+'</span><span class="time">'+m.date+(m.time?' · '+m.time:'')+'</span></div>'
+     +'<div class="mc-teams"><div class="tbox"><span class="flag">🏆</span><div class="nm" style="color:#b6b6be">TBD</div></div><div class="vsmid">VS</div><div class="tbox"><span class="flag">🏆</span><div class="nm" style="color:#b6b6be">TBD</div></div></div>'
+     +'<div style="text-align:center;color:var(--grey);font-size:13px;margin-top:14px">Teams confirmed after the previous round</div>'
+     +'<a class="book" href="'+bookLink(m)+'"><span class="ic">✈</span> Book a flight for this match</a>'
+     +'<div class="mc-foot"><span>Fixture</span><span>'+m.venue+'</span></div>';
+    return el;
+  }
+  var picks=myPicks(),voted=picks[m.id];el.className='mc'+(m.status==='final'?' final':'');
+  if(m.status==='final'){
+    el.innerHTML='<div class="mc-top"><span class="rnd">'+m.stage+'</span><span class="ft-badge">Full time</span></div>'
+     +'<div class="mc-teams"><div class="tbox"><span class="flag">'+m.a.f+'</span><div class="nm">'+m.a.n+'</div><div class="score">'+m.score[0]+'</div></div>'
+     +'<div class="vsmid">–</div><div class="tbox"><span class="flag">'+m.b.f+'</span><div class="nm">'+m.b.n+'</div><div class="score">'+m.score[1]+'</div></div></div>'
+     +'<a class="book" href="'+bookLink(m)+'"><span class="ic">✈</span> Book a flight to the next round</a>'
+     +'<div class="mc-foot"><span>Result</span><span>'+m.venue+'</span></div>';
+    return el;
+  }
+  var pp=pcts(m),p=pp[0],tot=pp[1];
+  function tbox(side){var d=m[side],isP=voted===d.n;return '<div class="tbox'+(isP?' pick':'')+'" data-v="'+d.n+'"><span class="flag">'+d.f+'</span><div class="nm">'+d.n+'</div><div class="radio"></div></div>';}
+  function brow(lbl,w,color){return '<div class="brow"><span class="bl">'+lbl+'</span><div class="btrack"><div class="bfill" style="width:'+w+'%;background:'+color+'"></div></div><span class="bp">'+w+'%</span></div>';}
+  el.innerHTML='<div class="mc-top"><span class="rnd">'+m.stage+'</span><span class="time">'+m.date+(m.time?' · '+m.time:'')+'</span></div>'
+   +'<div class="qpill">Who\'s going to win?</div>'
+   +'<div class="mc-teams">'+tbox('a')+'<div class="vsmid">VS</div>'+tbox('b')+'</div>'
+   +'<div class="draw'+(voted==='Draw'?' pick':'')+'" data-v="Draw"><div class="radio"></div> Draw, they split the points</div>'
+   +'<div class="bars">'+brow(m.a.ab,p[0],'var(--gold)')+brow('Draw',p[1],'#d3d3da')+brow(m.b.ab,p[2],'#33333b')+'</div>'
+   +'<div class="share"><span>'+shareMsg(m,voted)+'</span><button class="sbtn">◈ Share</button></div>'
+   +'<a class="book" href="'+bookLink(m)+'"><span class="ic">✈</span> Book a flight for this match</a>'
+   +'<div class="mc-foot"><span>'+(tot?tot+' votes':'Be the first to vote')+'</span><span>'+m.venue+'</span></div>';
+  el.querySelectorAll('[data-v]').forEach(function(n){n.onclick=function(){vote(m,n.getAttribute('data-v'));};});
+  var sb=el.querySelector('.sbtn');if(sb)sb.onclick=function(){var txt=m.a.ab+' vs '+m.b.ab+' — vote on Fly with Andreea';var url=location.origin+'/worldcup';if(navigator.share){navigator.share({title:'World Cup Fan Vote',text:txt,url:url}).catch(function(){});}else if(navigator.clipboard){navigator.clipboard.writeText(url);sb.textContent='✓ Copied';setTimeout(function(){sb.innerHTML='◈ Share';},1500);}};
+  return el;
+}
+function renderList(which){var g=document.getElementById('grid');g.innerHTML='';MATCHES.filter(function(m){return which==='res'?m.status==='final':m.status!=='final';}).forEach(function(m){g.appendChild(card(m));});}
+function curTab(){return document.getElementById('tabRes').classList.contains('on')?'res':'vote';}
+function vote(m,choice){savePick(m.id,choice);
+  if(!API_BASE){var t=TALLIES[m.id]||{Draw:0};t[choice]=(t[choice]||0)+1;TALLIES[m.id]=t;renderList(curTab());return;}
+  fetch(API_BASE+'/api/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({voter:voterId(),match:m.id,team:choice})}).then(function(r){return r.json();}).then(function(d){if(d&&d.teams)TALLIES[m.id]=d.teams;renderList(curTab());}).catch(function(){renderList(curTab());});
+}
+function init(){Object.keys(DEMO).forEach(function(id){TALLIES[id]=Object.assign({},DEMO[id]);});renderList('vote');
+  if(API_BASE)fetch(API_BASE+'/api/tally-all').then(function(r){return r.json();}).then(function(d){if(d&&typeof d==='object'){Object.keys(d).forEach(function(id){TALLIES[id]=d[id];});renderList(curTab());}}).catch(function(){});}
+document.getElementById('tabVote').onclick=function(){this.classList.add('on');document.getElementById('tabRes').classList.remove('on');renderList('vote');};
+document.getElementById('tabRes').onclick=function(){this.classList.add('on');document.getElementById('tabVote').classList.remove('on');renderList('res');};
+init();
+</script>
+
+<div class="mcta">
+  <a class="q" href="/#quote">Quote</a>
+  <a class="c" href="tel:+971503372980">Call</a>
+  <a class="w" href="https://wa.me/971503372980"><svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg> WhatsApp</a>
+</div>
+<button class="totop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 15l-6-6-6 6"/></svg></button>
+<script>window.addEventListener('scroll',function(){var b=document.querySelector('.totop');if(b)b.classList.toggle('show',window.scrollY>500);});</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can you fly me to a specific World Cup match city on short notice?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. With 450+ operators worldwide and a 55-minute minimum take-off, we routinely arrange same-day and next-day flights to the host cities across the USA, Canada and Mexico. Message us the fixture and we confirm an aircraft fast."}}, {"@type": "Question", "name": "Which airports serve the World Cup 2026 host cities?", "acceptedAnswer": {"@type": "Answer", "text": "Every host city has strong private-aviation options, often several. New York (Teterboro), Los Angeles (Van Nuys), Miami (Opa-locka), Dallas, Atlanta, Toronto, Vancouver, Mexico City and more. We pick the airport closest to your stadium and hotel and handle the slots."}}, {"@type": "Question", "name": "How far in advance should I book a jet for a World Cup match?", "acceptedAnswer": {"@type": "Answer", "text": "Booking two to three days ahead gives the widest choice of aircraft, especially around big fixtures when demand spikes. That said, we can often confirm within a few hours when an aircraft is positioned nearby."}}, {"@type": "Question", "name": "Can you arrange a same-day return after a match?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. Fly in for kick-off and back out the same night. We plan crew duty and slots around the final whistle, including extra time, so a late finish never leaves you stranded."}}, {"@type": "Question", "name": "Can a group or corporate box travel together on one jet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. From a midsize cabin for a small party to a VIP airliner for a full corporate group, we match the aircraft to your numbers so everyone flies together, on your schedule."}}, {"@type": "Question", "name": "What does a private jet to a World Cup match cost?", "acceptedAnswer": {"@type": "Answer", "text": "Charter is priced by the trip: aircraft category, distance, positioning and airport fees. A short domestic hop on a light jet starts in the low thousands; larger cabins and longer legs rise from there. We quote all-in with no hidden fees."}}, {"@type": "Question", "name": "Can I follow my team through the knockout rounds on private jets?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and many clients do. Tell us your team and we build a flexible plan that moves with the bracket, city to city, all the way to the final on 19 July, adjusting as fixtures are confirmed."}}, {"@type": "Question", "name": "Do you handle travel across all three host countries?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The 2026 tournament spans the USA, Canada and Mexico. We coordinate cross-border private flights, customs and immigration at private terminals, so you move between countries smoothly."}}, {"@type": "Question", "name": "Can I bring flags, banners and fan gear on board?", "acceptedAnswer": {"@type": "Answer", "text": "Of course. Private cabins are generous with space, and there is no commercial baggage queue. Bring your flags, drums and colours, we will make sure it all travels with you."}}, {"@type": "Question", "name": "How close to the stadium can we land?", "acceptedAnswer": {"@type": "Answer", "text": "Usually very close. Most host cities have a dedicated business-aviation airport minutes from the stadium, and we arrange the ground transfer so you go from cabin to your seat with no queues."}}, {"@type": "Question", "name": "Can you coordinate ground transfers from the airport to the stadium?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Door-to-tarmac and tarmac-to-stadium transfers are part of the service, chauffeured cars, or a helicopter into the city centre on match day when time is tight."}}, {"@type": "Question", "name": "Can my pet travel with me to the games?", "acceptedAnswer": {"@type": "Answer", "text": "In most cases, yes. Well-behaved pets fly in the cabin beside you rather than in cargo. We confirm the entry requirements for each host country in advance and handle the paperwork."}}, {"@type": "Question", "name": "What happens if the match time changes or goes to extra time?", "acceptedAnswer": {"@type": "Answer", "text": "We build in flexibility. Because you are on a private schedule, a later kick-off, extra time or penalties simply shifts your departure, we hold the aircraft and re-time the slot for you."}}, {"@type": "Question", "name": "Can you arrange a helicopter transfer into the city on match day?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. From the private terminal we can connect a helicopter straight into the city centre or close to the stadium, bypassing match-day traffic entirely."}}, {"@type": "Question", "name": "Do you offer empty-leg deals around the tournament?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Repositioning flights appear throughout the tournament and can be a fraction of standard charter price. Tell us your route and dates and we will alert you the moment a matching empty leg is listed."}}, {"@type": "Question", "name": "Can you fly late at night after evening kick-offs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Most host-city private terminals operate around the clock. Evening kick-offs and late finishes are no problem, we confirm operating hours and crew duty for your exact fixture."}}, {"@type": "Question", "name": "How many passengers can travel together?", "acceptedAnswer": {"@type": "Answer", "text": "Anywhere from four on a very light jet to fifty on a VIP airliner. Tell us your group size and luggage and we match the right cabin, so nobody is left behind."}}, {"@type": "Question", "name": "Can you cater a celebration on board after a win?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Champagne, your preferred catering and a cabin set for the occasion, we arrange it in advance so the celebration starts the moment you board."}}, {"@type": "Question", "name": "Do I need a visa to travel between host countries?", "acceptedAnswer": {"@type": "Answer", "text": "Requirements depend on your nationality and the countries you are crossing. Share your passport details early and we will confirm what you need for the USA, Canada or Mexico before you fly."}}, {"@type": "Question", "name": "How do I book a jet for a specific fixture?", "acceptedAnswer": {"@type": "Answer", "text": "Tap \u201cBook a flight for this match\u201d on any fixture card, it opens a pre-filled WhatsApp message with the game, date and time. Add your passenger count and luggage, send it, and Andreea takes care of the rest."}}]}</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.flywithandreea.com/"}, {"@type": "ListItem", "position": 2, "name": "World Cup 2026 Fan Vote", "item": "https://www.flywithandreea.com/worldcup"}]}</script>
+</body>
+</html>

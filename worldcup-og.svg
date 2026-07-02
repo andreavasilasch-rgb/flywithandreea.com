@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16161a"/><stop offset="1" stop-color="#0b0b0e"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="82%" cy="30%" r="45%">
+      <stop offset="0" stop-color="#CBAD91" stop-opacity="0.22"/><stop offset="1" stop-color="#CBAD91" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#CBAD91"/>
+  <text x="80" y="150" fill="#CBAD91" font-family="Arial, sans-serif" font-size="26" letter-spacing="8">WORLD CUP FAN VOTE · 2026</text>
+  <text x="78" y="270" fill="#ffffff" font-size="88" font-weight="500">Support your team.</text>
+  <text x="78" y="370" fill="#CBAD91" font-size="88" font-weight="500" font-style="italic">Predict every match.</text>
+  <text x="80" y="452" fill="#b9b9c0" font-family="Arial, sans-serif" font-size="30">Vote live · Fly private to the host cities · USA · Canada · Mexico</text>
+  <text x="80" y="565" fill="#ffffff" font-size="40" letter-spacing="6">FLY WITH ANDREEA</text>
+  <g transform="translate(1010,520)" stroke="#CBAD91" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M0 40 L80 40 M40 0 L40 80"/>
+  </g>
+</svg>
