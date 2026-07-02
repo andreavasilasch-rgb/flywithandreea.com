@@ -4,22 +4,16 @@
   <meta name="description" content="Private jet charter across Europe, the Middle East and Africa. 55-minute take-off, 450+ operators, 180 countries. Reservar with Fly with Andreea.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.flywithandreea.com/es/">
-<link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/">
-<link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/">
-<link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/">
-<link rel="alternate" hreflang="ro" href="https://www.flywithandreea.com/ro/">
-<link rel="alternate" hreflang="es" href="https://www.flywithandreea.com/es/">
-<link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/">
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/favicon.png">
-  <meta property="og:title" content="Fly with Andreea — Charter de jet privado">
+  <meta property="og:title" content="Fly with Andreea · Charter de jet privado">
   <meta property="og:description" content="Charter de jet privado por Europa, Oriente Medio y África. Despegue en 55 minutos. Más de 450 operadores. 180 países. Una persona. Siempre Andreea.">
   <meta property="og:image" content="https://www.flywithandreea.com/logo.png">
   <meta property="og:url" content="https://www.flywithandreea.com/es/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Fly with Andreea — Charter de jet privado">
+  <meta name="twitter:title" content="Fly with Andreea · Charter de jet privado">
   <meta name="twitter:description" content="Private jet charter. Europe, Middle East, Africa. 55-minute take-off. Always Andreea.">
   <meta name="twitter:image" content="https://www.flywithandreea.com/logo.png">
   <script type="application/ld+json">
@@ -39,7 +33,7 @@
   </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fly with Andreea | Charter de jet privado — Europa, Oriente Medio y África</title>
+<title>Fly with Andreea | Charter de jet privado · Europa, Oriente Medio y África</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -93,7 +87,7 @@
   .nav-cta:hover { background: var(--gold-light); }
 
   /* HERO */
-  .hero { position: relative; height: 100vh; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  .hero { position: relative; height: 100vh; height: 100svh; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; overflow: hidden; }
   .hero-bg { background: url('/hero-photo.webp') center/cover no-repeat; filter: brightness(0.45); }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,24,20,0.2) 0%, rgba(26,24,20,0) 40%, rgba(26,24,20,0.55) 100%); }
@@ -137,6 +131,7 @@
   .section-eyebrow { font-size: 11px; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
   .section-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 300; line-height: 1.15; color: var(--ink); }
   .section-title em { font-style: italic; color: var(--gold); }
+  .section-title,.about-title,.exp-title,.routes-headline,.hiw-h2,.newsletter-left h2{ text-transform:uppercase; }
   .services-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .service-card { background: #F5F5F7; border-radius: 20px; padding: 44px 36px; border: 0.5px solid #E8E8ED; transition: border-color 0.3s, transform 0.3s; }
   .service-card:hover { border-color: var(--gold-light); transform: translateY(-3px); }
@@ -692,7 +687,7 @@ nav.scrolled .logo-on-light { display: inline-block; }
   #navbar.open .nav-toggle span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
   .nav-links{
     display:flex; flex-direction:column; gap:0; list-style:none;
-    position:fixed; top:0; right:0; height:100vh; width:min(80vw,320px);
+    position:fixed; top:0; right:0; height:100vh; height:100svh; width:min(80vw,320px);
     background:rgba(255,255,255,0.985); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
     padding:100px 26px 28px; box-shadow:-14px 0 44px rgba(0,0,0,0.18);
     transform:translateX(100%); transition:transform .34s ease; z-index:120;
@@ -754,8 +749,11 @@ nav.scrolled .logo-on-light { display: inline-block; }
 .leg:not(:first-child) .leg-remove{ visibility:visible; }
 .time-dd{ position:relative; }
 .time-trigger{ display:flex; align-items:center; justify-content:space-between; gap:8px; width:100%; background:transparent; border:0; padding:0; font-family:var(--sans); font-size:15px; cursor:pointer; }
-.time-trigger .time-val{ color:var(--grey,#9b9b9b); }
+.time-trigger .time-val{ color:var(--grey-light); }
 .time-trigger.has-val .time-val{ color:var(--ink); }
+.leg-date::-webkit-datetime-edit{ color:var(--grey-light); }
+.leg-date.has-val::-webkit-datetime-edit{ color:var(--ink); }
+.leg-date::-webkit-calendar-picker-indicator{ opacity:.5; }
 .time-trigger svg{ flex-shrink:0; color:var(--grey,#9b9b9b); transition:transform .2s; }
 .time-dd.open .time-trigger svg{ transform:rotate(180deg); }
 .time-menu{ position:absolute; left:0; top:calc(100% + 12px); z-index:60; width:150px; max-height:264px; overflow-y:auto; background:#fff; border:0.5px solid var(--grey-light); border-radius:14px; box-shadow:0 18px 50px rgba(26,24,20,0.18); list-style:none; margin:0; padding:6px; display:none; }
@@ -909,6 +907,9 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 .about-section{ padding:62px 48px 40px !important; }
 .about-wa{ font-size:15px !important; padding:14px 28px !important; }
 .about-wa:hover{ transform:translateY(-1px); }
+.about-email{ display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--gold); box-shadow:inset 0 0 0 1px var(--gold); font-family:var(--sans); font-size:15px !important; font-weight:400; letter-spacing:-0.01em; padding:14px 28px !important; border-radius:40px; text-decoration:none; transition:background .2s,color .2s,box-shadow .2s,transform .2s; }
+.about-email svg{ width:15px; height:15px; flex-shrink:0; }
+.about-email:hover{ background:var(--gold); color:var(--white); box-shadow:inset 0 0 0 1px var(--gold); transform:translateY(-1px); }
 .about-read-more{ background:none; border:0; padding:0; margin-top:20px; font-family:var(--sans); font-size:13px; color:var(--gold-deep,#B8966B); letter-spacing:-0.01em; cursor:pointer; display:inline-flex; align-items:center; gap:5px; transition:gap .2s ease, color .2s ease; }
 .about-read-more:hover{ gap:9px; color:var(--gold); }
 .about-read-more-chevron{ display:inline-block; }
@@ -921,12 +922,85 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 .about-left{ display:flex; flex-direction:column; }
 .about-read-more{ margin-top:auto; align-self:flex-start; }
 @media (max-width:760px){ .about-left{ display:block; } .about-read-more{ margin-top:18px; } }
+
+/*FOOTER-NORM*/
+footer{padding:48px 0 28px;}
+footer .footer-inner{max-width:1100px;margin:0 auto;padding:0 24px 22px;display:flex;flex-direction:row;flex-wrap:nowrap;align-items:flex-start;justify-content:space-between;gap:32px;border-bottom:0.5px solid var(--grey-light,#d2d2d7);}
+footer .footer-brand{flex:0 0 auto;max-width:200px;}
+footer .footer-logo-img{height:46px;width:auto;object-fit:contain;}
+footer .footer-tagline{font-size:12px;margin-top:8px;color:var(--grey,#86868b);}
+footer .footer-links{display:flex;flex-direction:row;flex-wrap:nowrap;gap:32px;align-items:flex-start;}
+footer .footer-col{min-width:0;}
+footer .footer-col h4{color:var(--gold,#CBAD91);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap;margin-bottom:12px;}
+footer .footer-col a{display:block;white-space:nowrap;font-size:13px;margin-bottom:9px;color:var(--grey-dark,#5b5b5b);text-decoration:none;}
+footer .footer-bottom{max-width:1100px;margin:18px auto 0;padding:0 24px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:12px;}
+footer .footer-copy{font-size:12px;color:var(--grey,#86868b);}
+footer .footer-legal{display:flex;gap:18px;}
+footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decoration:none;margin:0;}
+@media(max-width:680px){
+ footer .footer-inner{flex-direction:column;flex-wrap:wrap;gap:26px;}
+ footer .footer-links{flex-wrap:wrap;gap:22px 36px;}
+ footer .footer-col a{white-space:normal;}
+ footer .footer-bottom{flex-direction:column;text-align:center;gap:10px;}
+ footer .footer-legal a{margin:0 8px;}
+}
+
+/*RESP-FIX*/
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+html,body{overflow-x:clip;}
+img,svg,video,canvas{max-width:100%;}
+a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.mcta{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));}
+@media(max-width:760px){
+  input,select,textarea{font-size:16px!important;}
+  .to-top{bottom:calc(84px + env(safe-area-inset-bottom,0px));}
+}
+
+/*NAV-CTA-FIX*/
+@media(max-width:820px){#navbar .nav-cta{display:none;}#navbar .nav-logo-img{height:40px;}}
+
+/*CTA-RESIZE*/
+@media(max-width:600px){
+  .cta{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .cta a{display:block;width:100%;max-width:320px;margin:0 auto;text-align:center;box-sizing:border-box;}
+  .closing .actions,.hero .actions{flex-direction:column;align-items:center;width:100%;gap:12px;}
+  .closing .actions .btn,.hero .actions .btn{display:block;width:100%;max-width:320px;margin:0 auto;text-align:center;box-sizing:border-box;}
+}
+/* HOW IT WORKS (5-step) */
+.howitworks-section{background:#F5F5F7;padding:48px 48px;border-top:.5px solid var(--grey-light)}
+.hiw-inner{max-width:920px;margin:0 auto;text-align:center}
+.hiw-eyebrow{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.hiw-h2{font-family:var(--serif);font-size:clamp(20px,2.4vw,28px);font-weight:300;line-height:1.2;color:var(--ink);margin:0 0 34px}
+.hiw-h2 em{font-style:italic;color:var(--gold)}
+.hiw-flow{display:flex;align-items:flex-start;justify-content:space-between;gap:0}
+.hiw-node{flex:1;position:relative;padding:0 6px}
+.hiw-node::before{content:"";position:absolute;top:16px;right:50%;width:100%;height:1px;background:var(--grey-light);z-index:0}
+.hiw-node:first-child::before{display:none}
+.hiw-num{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:33px;height:33px;border-radius:50%;border:.5px solid var(--gold);background:#F5F5F7;color:var(--gold);font-family:var(--serif);font-size:14px;font-weight:400;margin-bottom:14px}
+.hiw-label{font-family:var(--sans);font-weight:600;letter-spacing:.01em;font-size:14px;color:var(--ink);margin:0 0 5px}
+.hiw-desc{font-family:var(--sans);font-size:12px;font-weight:300;color:var(--grey-dark);line-height:1.5;margin:0}
+.hiw-foot{display:flex;align-items:center;justify-content:center;gap:10px 22px;margin-top:32px;flex-wrap:wrap}
+.hiw-foot-note{font-size:12.5px;font-weight:300;color:var(--grey-dark)}
+.hiw-foot-note b{color:var(--ink);font-weight:500}
+.hiw-foot-cta{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--ink);text-decoration:none;padding:12px 28px;border-radius:999px}
+.hiw-foot-cta:hover{background:#333}
+@media(max-width:820px){.howitworks-section{padding:44px 34px}.hiw-node{padding:0 4px}.hiw-desc{font-size:11.5px}.hiw-node::before{top:15px}}
+@media(max-width:600px){.howitworks-section{padding:38px 26px}.hiw-h2{margin-bottom:24px}.hiw-flow{flex-direction:column;gap:0;max-width:340px;margin:0 auto;text-align:left}.hiw-node{flex:none;width:100%;display:flex;align-items:flex-start;gap:16px;padding:13px 0}.hiw-node::before{display:block;left:16px;top:34px;bottom:-13px;width:1px;height:auto;right:auto;background:var(--grey-light)}.hiw-node:first-child::before{display:block}.hiw-node:last-child::before{display:none}.hiw-num{margin-bottom:0;flex:0 0 33px}.hiw-label{margin:0 0 3px}.hiw-txt{padding-top:5px}}
+/* mobile CTA bar */
+.mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
+.mcta.show{transform:translateY(0)}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta-quote{background:var(--gold,#CBAD91);color:#fff}
+.mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
+.mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+/* all-section-caps */.section-title,.fr-headline,.el-headline,.routes-headline,.exp-title,.about-title,.routes-qa-title,.gd-title,.hiw-h2,.newsletter-left h2,.block h2,.pv-title,.legal-body h2,.legal-body h3,.faq-left .section-title,.cat-h1,.hiw-title{text-transform:uppercase!important;}
 </style>
 <link rel="alternate" hreflang="en" href="https://www.flywithandreea.com/">
 <link rel="alternate" hreflang="it" href="https://www.flywithandreea.com/it/">
-<link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/">
 <link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/">
 <link rel="alternate" hreflang="ro" href="https://www.flywithandreea.com/ro/">
+<link rel="alternate" hreflang="es" href="https://www.flywithandreea.com/es/">
+<link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/">
 </head>
 <body>
 <div class="topbar">
@@ -1100,7 +1174,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 </div>
         <div class="about-cta">
         <a href="https://wa.me/971503372980" class="about-wa" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.118 1.528 5.847L.057 23.885l6.186-1.443A11.943 11.943 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.663-.523-5.176-1.433l-.371-.22-3.674.857.896-3.567-.242-.384A9.959 9.959 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Escribir a Andreea</a>
-        <a href="mailto:andreea@flywithandreea.com" class="about-secondary">andreea@flywithandreea.com</a>
+        <a href="mailto:andreea@flywithandreea.com" class="about-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email Andreea</a>
       </div>
     </div>
   </div>
@@ -1108,6 +1182,24 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 
 
 <!-- SERVICES -->
+<section class="howitworks-section" id="how-it-works">
+  <div class="hiw-inner">
+    <div class="hiw-eyebrow">Cómo funciona</div>
+    <h2 class="hiw-h2">Cinco pasos, <em>todo resuelto.</em></h2>
+    <div class="hiw-flow">
+      <div class="hiw-node"><div class="hiw-num">1</div><div class="hiw-txt"><h3 class="hiw-label">Consulta</h3><p class="hiw-desc">Tu ruta, las fechas y los pasajeros. Un mensaje.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">2</div><div class="hiw-txt"><h3 class="hiw-label">Seleccionamos</h3><p class="hiw-desc">La aeronave adecuada, con un operador verificado.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">3</div><div class="hiw-txt"><h3 class="hiw-label">Tu presupuesto</h3><p class="hiw-desc">Un precio único, todo incluido. En minutos.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">4</div><div class="hiw-txt"><h3 class="hiw-label">Organizamos</h3><p class="hiw-desc">Slots, tripulación, catering y traslados, todo resuelto.</p></div></div>
+      <div class="hiw-node"><div class="hiw-num">5</div><div class="hiw-txt"><h3 class="hiw-label">Vuela</h3><p class="hiw-desc">Llega minutos antes. Tú solo viajas.</p></div></div>
+    </div>
+    <div class="hiw-foot">
+      <div class="hiw-foot-note"><b>Precio fijo, todo incluido.</b> Operadores verificados. Concierge 24/7. En todo el mundo.</div>
+      <a class="hiw-foot-cta" href="#quote">Solicitar presupuesto &rsaquo;</a>
+    </div>
+  </div>
+</section>
+
 <section class="services-section" id="services">
   <div class="section-header">
     <h2 class="section-title">Todo resuelto.<br><em>Antes de aterrizar.</em></h2>
@@ -1149,7 +1241,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   <div class="exp-bg" aria-hidden="true"></div>
   <div class="exp-inner">
     <div class="exp-content">
-      <!-- Fix 3: eyebrow is meaningful — aria-hidden removed -->
+      <!-- Fix 3: eyebrow is meaningful, aria-hidden removed -->
       <div class="exp-eyebrow">Incluido, en rutas seleccionadas</div>
       <h2 class="exp-title" itemprop="name">Tu vuelo ofrece<br>mucho más<br><em>de lo que crees.</em></h2>
       <p class="exp-body" itemprop="description">El charter de jet privado con Fly with Andreea incluye servicios de conserjería sin coste en rutas seleccionadas por Europa, Oriente Medio y África. Traslados puerta a puerta, champán a bordo, flores frescas en cabina, catering gourmet: pregunta antes de confirmar para descubrir lo que ya está incluido, sin coste adicional.</p>
@@ -1165,7 +1257,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <blockquote class="exp-quote">
         <p>«Pregúntanos antes de confirmar. Lo que te espera en tu ruta podría sorprenderte.»</p>
       </blockquote>
-      <!-- Fix 6: frosted glass CTA — Apple dark-section standard -->
+      <!-- Fix 6: frosted glass CTA, Apple dark-section standard -->
       <a href="#quote" class="exp-cta"
         aria-label="Contact Fly with Andreea about included services on your route">Contáctanos</a>
     </div>
@@ -2340,7 +2432,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     </div>
     <div>
       <form id="newsletterForm" action="https://formspree.io/f/xojbkjyo" method="POST" style="display:contents" novalidate>
-        <input type="hidden" name="_subject" value="Newsletter signup — Fly with Andreea">
+        <input type="hidden" name="_subject" value="Newsletter signup, Fly with Andreea">
         <input type="hidden" name="type" value="newsletter">
         <div class="newsletter-form">
           <input class="newsletter-input" id="nl-email" name="email" type="email" placeholder="Tu dirección de email" required>
@@ -2572,7 +2664,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <h2 class="section-title">Reserva tu<br><em>próximo vuelo.</em></h2>
     </div>
     <form id="quoteForm" action="https://formspree.io/f/xojbkjyo" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="New flight request — Fly with Andreea">
+      <input type="hidden" name="_subject" value="New flight request, Fly with Andreea">
       <input type="hidden" name="_replyto" value="andreea@flywithandreea.com">
       <input type="hidden" name="_next" value="https://www.flywithandreea.com/#quote">
       <div class="form-grid">
@@ -2639,17 +2731,18 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
         <a href="/es/#quote">Contacto</a>
       </div>
       <div class="footer-col"><h4>Contacto</h4>
-        <a href="https://wa.me/971503372980" target="_blank">WhatsApp +971 50 337 2980</a>
-        <a href="mailto:andreea@flywithandreea.com">andreea@flywithandreea.com</a>
+        <a href="https://wa.me/971503372980" target="_blank">WhatsApp</a>
         <a href="https://www.instagram.com/" target="_blank">Instagram</a>
       </div>
     </div>
   </div>
+  <p class="footer-disclaimer" style="max-width:1100px;margin:0 auto 16px;padding:0 4px;font-size:11px;line-height:1.6;color:var(--grey,#86868B)">Fly with Andreea es un bróker de vuelos chárter y organiza vuelos con operadores externos certificados (AOC). No posee ni opera aeronaves.</p>
   <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 Fly with Andreea. Todos los derechos reservados.</p>
     <div class="footer-legal">
-      <a href="#">Política de privacidad</a>
-      <a href="#">Términos del servicio</a>
+      <a href="/privacy">Política de privacidad</a>
+      <a href="/terms">Términos del servicio</a>
+      <a href="/cookies">Política de cookies</a>
     </div>
   </div>
 </footer>
@@ -2977,6 +3070,8 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   })();
 
 </script>
+<div class="mcta" aria-label="Acciones rápidas"><a class="mcta-quote" href="/fastquote">Presupuesto</a><a class="mcta-call" href="tel:+971503372980">Llamar</a><a class="mcta-wa" href="https://wa.me/971503372980"><svg viewBox="0 0 24 24" width="15" height="15" fill="#25D366" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.59 5.355l-.999 3.648 3.908-1.302zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/></svg> WhatsApp</a></div>
+<script>(function(){var b=document.querySelector(".mcta");if(!b)return;function u(){if(window.scrollY>180)b.classList.add("show");else b.classList.remove("show");}window.addEventListener("scroll",u,{passive:true});u();})();</script>
 </body>
 </html>
 
@@ -3043,7 +3138,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
   document.addEventListener('click',closeAllTime);
   function initLeg(leg){
     leg.querySelectorAll('.ac-input').forEach(setupAC);
-    var dt=leg.querySelector('.leg-date'); if(dt){ try{ dt.min=new Date().toISOString().split('T')[0]; }catch(e){} }
+    var dt=leg.querySelector('.leg-date'); if(dt){ try{ dt.min=new Date().toISOString().split('T')[0]; }catch(e){} dt.classList.toggle('has-val',!!dt.value); dt.addEventListener('change',function(){ this.classList.toggle('has-val',!!this.value); }); }
     var dd=leg.querySelector('.time-dd'); if(dd) setupTime(dd);
   }
   legs.querySelectorAll('.leg').forEach(initLeg);
