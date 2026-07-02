@@ -1,6 +1,6 @@
 {
   // Standalone Worker for the World Cup fan-vote API. Deploy separately from the main site.
-  "name": "flywithandreea-worldcup",
+  "name": "flywithandreea",
   "main": "worker.js",
   "compatibility_date": "2025-05-01",
   "d1_databases": [
