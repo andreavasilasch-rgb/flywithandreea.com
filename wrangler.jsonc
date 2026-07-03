@@ -1,13 +1,15 @@
 {
-  // Standalone Worker for the World Cup fan-vote API. Deploy separately from the main site.
-  "name": "flywithandreea-worldcup",
-  "main": "worker.js",
+  // MAIN SITE config — serves flywithandreea.com as a static site.
+  // This REPLACES the wrong (World Cup) wrangler.jsonc in your repo root.
+  "name": "flywithandreea",
   "compatibility_date": "2025-05-01",
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "flywithandreea-worldcup-votes",
-      "database_id": "76d9ab21-a2e3-4181-b82a-29a895252983"
-    }
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "routes": [
+    { "pattern": "flywithandreea.com", "custom_domain": true },
+    { "pattern": "www.flywithandreea.com", "custom_domain": true }
   ]
 }
