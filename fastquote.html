@@ -86,9 +86,9 @@
   .nav-cta:hover { background: var(--gold-light); }
 
   /* HERO */
-  .hero { position: relative; height: 100vh; height: 100svh; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  .hero { position: relative; height: auto; min-height: 340px; padding: 118px 0 62px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; overflow: hidden; }
-  .hero-bg { background: url('hero-photo.webp') center/cover no-repeat; filter: brightness(0.45); }
+  .hero-bg { background: url('hero-photo.webp') center 38%/cover no-repeat; filter: brightness(0.42); }
   .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(26,24,20,0.2) 0%, rgba(26,24,20,0) 40%, rgba(26,24,20,0.55) 100%); }
   .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 24px; animation: fadeUp 1.2s ease 0.3s both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -96,7 +96,7 @@
   .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 28px; height: 0.5px; background: var(--gold-light); }
   .hero h1 { font-family: var(--serif); font-size: clamp(40px, 7vw, 72px); font-weight: 300; line-height: 1.05; color: var(--white); margin-bottom: 20px; }
   .hero h1 em { font-style: italic; color: var(--gold-light); }
-  .hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; margin-bottom: 44px; line-height: 1.7; }
+  .hero-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; margin-bottom: 0; line-height: 1.7; }
   .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .btn-primary { background: var(--gold); color: var(--white); font-family: var(--sans); font-size: 15px; font-weight: 400; letter-spacing: -0.01em; padding: 14px 28px; border-radius: 40px; border: none; cursor: pointer; transition: background 0.2s, transform 0.15s; text-decoration: none; display: inline-block; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
@@ -779,7 +779,7 @@ nav.scrolled .logo-on-light { display: inline-block; }
 
 /* --- fast quote form (refined) --- */
 .fq-sec{ background:var(--paper-2,#F5F5F7); padding:84px 0; }
-.fq-wrap{ max-width:980px; }
+.fq-wrap{ max-width:980px; margin:0 auto; padding:0 24px; }
 .fq-head{ text-align:left; margin-bottom:44px; }
 .fq-head .eyebrow{ font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:14px; }
 .fq-title{ font-family:var(--serif); font-weight:300; font-size:clamp(30px,4.4vw,48px); line-height:1.1; margin:0 0 18px; letter-spacing:0.01em; text-transform:uppercase; }
@@ -1032,7 +1032,6 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
     <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>
-  <a href="/#quote" class="nav-cta">Book now</a>
   <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
@@ -1042,13 +1041,9 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
   <div class="hero-overlay"></div>
   <div class="hero-content">
     
-    <h1 class="hero-h1">Private jet charter.<br><em>Worldwide.</em></h1>
-    <p class="hero-sub">55-minute take-off. 450 operators. 180 countries.</p>
-    <div class="hero-btns">
-      <a href="#fastquote" class="btn-primary">Book now</a>
-      <a href="/#services" class="btn-ghost">Explore</a>
-    </div>
-  </div>
+    <h1 class="hero-h1">A firm quote.<br><em>In four steps.</em></h1>
+    <p class="hero-sub">Tell me the route, the dates and the party size. I reply with one fixed, all-in price. No obligation.</p>
+</div>
 </section>
 
 
@@ -1137,7 +1132,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
           </div>
           <div class="fq-field">
             <label>Departure date<span class="req">*</span></label>
-            <input class="fq-input" id="fqDepDate" type="date">
+            <input type="hidden" id="fqDepDate"><input class="fq-input" id="fqDepDateShow" type="text" placeholder="Select a date" data-iso="fqDepDate" data-fwa-cal data-months="January,February,March,April,May,June,July,August,September,October,November,December" data-dow="M,T,W,T,F,S,S" data-times="Anytime,Morning,Afternoon,Evening" data-timelab="Preferred time" data-done="Done">
             <div class="fq-err">This field is required</div>
           </div>
           <div class="fq-field">
@@ -1146,7 +1141,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
           </div>
           <div class="fq-field">
             <label>Return date <span class="opt">(optional)</span></label>
-            <input class="fq-input" id="fqRetDate" type="date">
+            <input type="hidden" id="fqRetDate"><input class="fq-input" id="fqRetDateShow" type="text" placeholder="Select a date" data-iso="fqRetDate" data-after="fqDepDate" data-fwa-cal data-months="January,February,March,April,May,June,July,August,September,October,November,December" data-dow="M,T,W,T,F,S,S" data-times="Anytime,Morning,Afternoon,Evening" data-timelab="Preferred time" data-done="Done">
           </div>
           <div class="fq-field">
             <label>Return time <span class="opt">(optional)</span></label>
@@ -1655,5 +1650,8 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
   }
 })();
 </script>
+<script src="/fwa-calendar.js" defer></script>
+<script src="/sticky-cta.js" defer></script>
+<script src="/aircraft-trail.js" defer></script>
 </body>
 </html>
