@@ -128,14 +128,39 @@ footer{background:var(--paper-warm);color:var(--ink);padding:40px 0 24px;border-
 .reveal{opacity:0;transform:translateY(22px)}.reveal.in{opacity:1;transform:none;transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero .eyebrow,.hero h1,.hero .lede,.hero .cta{animation:none;opacity:1;transform:none}.btn.p::after{display:none}.hero-glow{display:none}}
 
-.topbar{background:var(--dark)}.tb{display:flex;align-items:center;gap:16px;height:50px}.search-tb{flex:1;max-width:560px;display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.10);border:.5px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 16px}.search-tb svg{color:rgba(255,255,255,.7);flex:none}.search-tb input{flex:1;background:transparent;border:0;color:#fff;font-size:13px;outline:none}.search-tb input::placeholder{color:rgba(255,255,255,.6)}.langs{position:relative;font-size:12px}.langs .cur{display:flex;align-items:center;gap:7px;cursor:pointer;color:#fff;background:none;border:0;font-size:12px;letter-spacing:.04em;font-family:inherit}.langs .cur svg{width:15px;height:15px;opacity:.85}.langs .cur .cv{color:rgba(255,255,255,.55);font-size:10px}.langs .menu{position:absolute;right:0;top:calc(100% + 10px);background:#1f1f26;border:.5px solid rgba(255,255,255,.14);border-radius:12px;padding:6px;display:none;min-width:150px;z-index:70;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}.langs.open .menu{display:block}.langs .menu a{display:block;padding:9px 12px;border-radius:8px;color:rgba(255,255,255,.8);font-size:13px}.langs .menu a:hover{background:rgba(255,255,255,.08);color:#fff}.langs .menu a.on{color:var(--gold)}</style></head><body>
-<div class="topbar"><div class="wrap tb">
-  <form class="search-tb" onsubmit="location.href='/en/private-jet?q='+encodeURIComponent(this.querySelector('input').value);return false;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><input placeholder="Search destinations, airports, FAQs"></form>
-  <div class="langs" id="langs"><button class="cur" id="langBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span>English</span><span class="cv">&#9662;</span></button><div class="menu"><a href="/about-andreea" class="on">English</a><a href="/it/about-andreea">Italiano</a><a href="/es/about-andreea">Español</a><a href="/fr/about-andreea">Français</a><a href="/ro/about-andreea">Română</a></div></div>
-</div></div>
-<header><div class="wrap nav">
-  <a class="brand" href="/"><img src="/logo.png" alt="Fly with Andreea"></a>
-  <nav class="mainnav"><a href="/#services">Services</a><a href="/airport-guide">Airport Guide</a><a href="/empty-legs">Empty Legs</a><a href="/en/private-jet">Routes</a><a href="/#quote">Contact</a></nav>
+.topbar{background:var(--dark)}.tb{display:flex;align-items:center;gap:16px;height:50px}.search-tb{flex:1;max-width:560px;display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.10);border:.5px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 16px}.search-tb svg{color:rgba(255,255,255,.7);flex:none}.search-tb input{flex:1;background:transparent;border:0;color:#fff;font-size:13px;outline:none}.search-tb input::placeholder{color:rgba(255,255,255,.6)}.langs{position:relative;font-size:12px}.langs .cur{display:flex;align-items:center;gap:7px;cursor:pointer;color:#fff;background:none;border:0;font-size:12px;letter-spacing:.04em;font-family:inherit}.langs .cur svg{width:15px;height:15px;opacity:.85}.langs .cur .cv{color:rgba(255,255,255,.55);font-size:10px}.langs .menu{position:absolute;right:0;top:calc(100% + 10px);background:#1f1f26;border:.5px solid rgba(255,255,255,.14);border-radius:12px;padding:6px;display:none;min-width:150px;z-index:70;box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}.langs.open .menu{display:block}.langs .menu a{display:block;padding:9px 12px;border-radius:8px;color:rgba(255,255,255,.8);font-size:13px}.langs .menu a:hover{background:rgba(255,255,255,.08);color:#fff}.langs .menu a.on{color:var(--gold)}</style><link rel="stylesheet" href="/fwa-header.css">
+</head><body>
+<div class="topbar">
+  <div class="tb-search">
+    <span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+    <input type="text" id="tbSearch" placeholder="Search destinations, airports, FAQs…" autocomplete="off" aria-label="Search the site">
+    <div class="tb-results" id="tbResults"></div>
+  </div>
+  <div class="tb-lang" id="tbLang">
+    <button type="button" class="tb-lang-btn" aria-haspopup="true" aria-expanded="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span class="lng">EN</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="tb-lang-menu">
+      <a class="tb-lang-opt active" href="/" data-lang="en">English</a>
+      <a class="tb-lang-opt" href="/it/" data-lang="it">Italiano</a>
+      <a class="tb-lang-opt" href="/ro/" data-lang="ro">Română</a>
+      <a class="tb-lang-opt" href="/fr/" data-lang="fr">Français</a>
+      <a class="tb-lang-opt" href="/es/" data-lang="es">Español</a>
+    </div>
+  </div>
+</div>
+
+
+<nav id="navbar">
+  <a href="/" class="nav-logo"><img src="/logo-full.png" alt="Fly with Andreea" class="nav-logo-img logo-on-dark"><img src="/logo-nav.png" alt="Fly with Andreea" class="nav-logo-img logo-on-light"></a>
+  <ul class="nav-links">
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/#experience">Experience</a></li>
+    <li><a href="/#extras">On board</a></li>
+    <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
+    <li><a href="/#quote">Contact</a></li>
+  </ul>
+  <a href="/#quote" class="nav-cta">Request a quote</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+</nav>
   <a class="booknow" href="/#quote">Book now</a>
 </div></header>
 <section class="hero"><div class="hero-glow" id="glow"></div><div class="wrap">
@@ -194,6 +219,8 @@ footer{background:var(--paper-warm);color:var(--ink);padding:40px 0 24px;border-
   </div>
   <div class="disc"><div>Fly with Andreea is an air charter broker and arranges flights with third-party AOC-certified operators. It does not own or operate aircraft.<br>&copy; 2026 Fly with Andreea. All rights reserved.</div><div class="legal"><a href="/privacy">Privacy policy</a><a href="/terms">Terms of service</a><a href="/cookies">Cookie policy</a></div></div>
 </div></footer>
+<script src="/search-index.js" defer></script>
+<script src="/fwa-header.js" defer></script>
 <script src="/sticky-cta.js" defer></script>
 <script>
 (function(){var lb=document.getElementById('langBtn'),lw=document.getElementById('langs');
