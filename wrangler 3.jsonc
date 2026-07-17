@@ -1,0 +1,15 @@
+{
+  // MAIN SITE config — serves flywithandreea.com as a static site.
+  // This REPLACES the wrong (World Cup) wrangler.jsonc in your repo root.
+  "name": "flywithandreea",
+  "compatibility_date": "2025-05-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "routes": [
+    { "pattern": "flywithandreea.com", "custom_domain": true },
+    { "pattern": "www.flywithandreea.com", "custom_domain": true }
+  ]
+}
