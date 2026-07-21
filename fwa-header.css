@@ -50,8 +50,8 @@ nav.scrolled .nav-logo-img { filter: none; }
 /* --- canonical header v3 (added) --- */
 .nav-logo{ display:flex; align-items:center; }
 .nav-logo-img{ height:44px; width:auto; object-fit:contain; filter:none; }
-#navbar.scrolled .logo-on-dark{ display:none; }
 #navbar .logo-on-light{ display:none; }
+#navbar.scrolled .logo-on-dark{ display:none; }
 #navbar.scrolled .logo-on-light{ display:inline-block; }
 #navbar:not(.scrolled){ background:linear-gradient(180deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0) 100%); }
 #navbar .nav-links a{ color:rgba(255,255,255,0.85); text-transform:none; }
