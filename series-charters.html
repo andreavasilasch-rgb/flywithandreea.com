@@ -18,7 +18,7 @@
 <meta name="twitter:description" content="Repeating flight programmes on a fixed schedule for operators and organisations, arranged end to end by a dedicated broker.">
 <meta name="twitter:image" content="https://www.flywithandreea.com/extras/door-to-tarmac.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.flywithandreea.com/"},{"@type":"ListItem","position":2,"name":"Series Charters","item":"https://www.flywithandreea.com/series-charters"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Series Charter","name":"Series Charters","areaServed":"Worldwide","provider":{"@type":"Organization","name":"Fly with Andreea","url":"https://www.flywithandreea.com/","logo":"https://www.flywithandreea.com/logo.png"},"description":"Repeating series of charter flights on a fixed schedule, arranged for operators and organisations by a dedicated personal broker.","offers":{"@type":"Offer","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.flywithandreea.com/series-charters"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a series charter?","acceptedAnswer":{"@type":"Answer","text":"A series charter is a run of flights on the same route to a fixed schedule, arranged and managed as one programme, for example a season of tour departures or a recurring block of movements. Planning the whole series up front means every departure runs to the same standard on consistent aircraft."}},{"@type":"Question","name":"Who uses series charters?","acceptedAnswer":{"@type":"Answer","text":"Tour operators, travel companies and organisations that need repeating, dependable flights on a route, whether that is a holiday programme or a regular corporate movement. A series gives them guaranteed capacity and a single commercial agreement rather than booking flight by flight."}},{"@type":"Question","name":"Can capacity change across the series?","acceptedAnswer":{"@type":"Answer","text":"Yes. Aircraft can be matched to demand across the programme, so quieter and busier dates are each served with the right capacity. Andreea plans this with you so the series stays efficient across its full run."}},{"@type":"Question","name":"How is a series charter priced?","acceptedAnswer":{"@type":"Answer","text":"A series is priced as a programme, with clear all-in pricing agreed up front for the full run of flights, which is typically more efficient than pricing each departure alone. Andreea sets out the terms so the whole season is predictable to budget."}},{"@type":"Question","name":"How far ahead should a series be planned?","acceptedAnswer":{"@type":"Answer","text":"Series programmes are best planned well in advance to secure aircraft, crews and airport slots across every date in the run. Early planning also locks in consistent aircraft, which matters for a programme that must look and feel the same on every departure."}},{"@type":"Question","name":"Are series charter flights safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every departure is operated by a vetted operator holding a valid AOC and meeting strict international safety standards, with consistent standards across the programme. Andreea manages the series while certified operators retain operational control of the flights."}}]}</script>
@@ -41,8 +41,8 @@
     --off-white: #F5F5F7;  /* Apple's section background — exact hex */
     --warm-grey: #E8E8ED;  /* Apple's subtle panel / input bg */
 
-    --serif: 'Cinzel', Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    --serif:'Cinzel',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -937,7 +937,7 @@ footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decora
 .trust-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;}
 .trust-items{display:flex;flex-wrap:wrap;gap:34px;}
 .trust-items .ti{display:flex;flex-direction:column;gap:2px;}
-.trust-items .tn{font-family:var(--serif,Georgia,serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
+.trust-items .tn{font-family:var(--serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
 .trust-items .tl{font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.7);}
 .trust-cta{display:flex;gap:12px;}
 .trust-cta a{text-decoration:none;font-size:14px;font-weight:500;padding:11px 20px;border-radius:40px;white-space:nowrap;}
@@ -998,7 +998,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /* mobile CTA bar */
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
 .mcta.show{transform:translateY(0)}
-.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
 .mcta-quote{background:var(--gold,#CBAD91);color:#fff}
 .mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
 .mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -1157,6 +1157,8 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
     <li><a href="/#services">Services</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#extras">On board</a></li>
+<li><a href="/fleet">Fleet</a></li>
+<li><a href="/frequent-routes">Routes</a></li>
     <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>

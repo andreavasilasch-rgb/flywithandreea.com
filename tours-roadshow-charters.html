@@ -18,7 +18,7 @@
 <meta name="twitter:description" content="Dedicated aircraft for tours and roadshows on demanding multi-city schedules, arranged end to end by a dedicated broker.">
 <meta name="twitter:image" content="https://www.flywithandreea.com/extras/luggage.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.flywithandreea.com/"},{"@type":"ListItem","position":2,"name":"Tours & Roadshow Charters","item":"https://www.flywithandreea.com/tours-roadshow-charters"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Tour & Roadshow Charter","name":"Tours & Roadshow Charters","areaServed":"Worldwide","provider":{"@type":"Organization","name":"Fly with Andreea","url":"https://www.flywithandreea.com/","logo":"https://www.flywithandreea.com/logo.png"},"description":"Charter for tours and roadshows on demanding multi-city schedules, arranged end to end by a dedicated personal broker.","offers":{"@type":"Offer","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.flywithandreea.com/tours-roadshow-charters"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a tour or roadshow charter?","acceptedAnswer":{"@type":"Answer","text":"A tour or roadshow charter is a dedicated aircraft that moves a group between multiple cities on its own schedule, holding together a demanding itinerary that scheduled flights would break. It suits live tours and productions as well as business roadshows with tight, back-to-back dates."}},{"@type":"Question","name":"Can you handle tight, changing schedules?","acceptedAnswer":{"@type":"Answer","text":"Yes. Andreea plans demanding multi-city itineraries around the schedule of each day and adapts as dates and venues shift, using private terminals to keep turnarounds fast. A dedicated aircraft means the group is never left waiting on a scheduled connection."}},{"@type":"Question","name":"Who travels on these charters?","acceptedAnswer":{"@type":"Answer","text":"Bands, productions and their crews on live tours, and corporate or investor teams on roadshows, often with equipment travelling alongside. Andreea sizes the aircraft to the party and its kit so everyone and everything moves together."}},{"@type":"Question","name":"Can you land close to each venue or meeting?","acceptedAnswer":{"@type":"Answer","text":"Charter can use airfields closer to venues and city centres than scheduled services allow, cutting ground time between dates. Andreea plans the routing around the itinerary so each leg lands where it needs to."}},{"@type":"Question","name":"How is a tour charter priced?","acceptedAnswer":{"@type":"Answer","text":"A tour is priced as a programme, clear and all-in, confirmed before you commit, which is more predictable than booking each leg separately. Andreea sets out the full itinerary cost so the production or roadshow can budget with confidence."}},{"@type":"Question","name":"Are tour and roadshow flights safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every leg is operated by a vetted operator holding a valid AOC and meeting strict international safety standards, flown by crews within their duty limits across a busy schedule. Andreea manages the tour while certified operators retain operational control."}}]}</script>
@@ -41,8 +41,8 @@
     --off-white: #F5F5F7;  /* Apple's section background — exact hex */
     --warm-grey: #E8E8ED;  /* Apple's subtle panel / input bg */
 
-    --serif: 'Cinzel', Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    --serif:'Cinzel',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -937,7 +937,7 @@ footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decora
 .trust-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;}
 .trust-items{display:flex;flex-wrap:wrap;gap:34px;}
 .trust-items .ti{display:flex;flex-direction:column;gap:2px;}
-.trust-items .tn{font-family:var(--serif,Georgia,serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
+.trust-items .tn{font-family:var(--serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
 .trust-items .tl{font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.7);}
 .trust-cta{display:flex;gap:12px;}
 .trust-cta a{text-decoration:none;font-size:14px;font-weight:500;padding:11px 20px;border-radius:40px;white-space:nowrap;}
@@ -998,7 +998,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /* mobile CTA bar */
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
 .mcta.show{transform:translateY(0)}
-.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
 .mcta-quote{background:var(--gold,#CBAD91);color:#fff}
 .mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
 .mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -1157,6 +1157,8 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
     <li><a href="/#services">Services</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#extras">On board</a></li>
+<li><a href="/fleet">Fleet</a></li>
+<li><a href="/frequent-routes">Routes</a></li>
     <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>

@@ -42,20 +42,20 @@
   --radius-pill: 40px;
   --radius-card: 20px;
   --maxw: 1120px;
-  --serif:'Cinzel',Georgia,serif;
+  --serif:'Cinzel',serif;
   --white:#FFFFFF;
   --grey:#86868B;
   --grey-dark:#6E6E73;
   --grey-light:#D2D2D7;
   --gold-light:#D6B89C;
-  --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',sans-serif;
 }
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
 body{
   background:var(--paper);
   color:var(--text);
-  font-family:-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family:var(--sans);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
@@ -451,7 +451,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /* mobile CTA bar */
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
 .mcta.show{transform:translateY(0)}
-.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
 .mcta-quote{background:var(--gold,#CBAD91);color:#fff}
 .mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
 .mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -506,6 +506,8 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
     <li><a href="/#services">Services</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#extras">On board</a></li>
+<li><a href="/fleet">Fleet</a></li>
+<li><a href="/frequent-routes">Routes</a></li>
     <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>

@@ -18,7 +18,7 @@
 <meta name="twitter:description" content="Rapid charter of aircraft to move people and aid where they are needed, arranged around the clock by a dedicated broker.">
 <meta name="twitter:image" content="https://www.flywithandreea.com/extras/medical.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.flywithandreea.com/"},{"@type":"ListItem","position":2,"name":"Emergency Response Charters","item":"https://www.flywithandreea.com/emergency-response-charters"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Emergency Response Charter","name":"Emergency Response Charters","areaServed":"Worldwide","provider":{"@type":"Organization","name":"Fly with Andreea","url":"https://www.flywithandreea.com/","logo":"https://www.flywithandreea.com/logo.png"},"description":"Rapid charter of aircraft for emergency response — moving teams, personnel and aid quickly, arranged 24/7 by a dedicated personal broker.","offers":{"@type":"Offer","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.flywithandreea.com/emergency-response-charters"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is an emergency response charter?","acceptedAnswer":{"@type":"Answer","text":"An emergency response charter is the rapid hire of an aircraft to move response teams, personnel or supplies when a situation cannot wait. It is built around speed and coordination, sourcing a suitable aircraft and arranging clearances so help reaches where it is needed as fast as possible."}},{"@type":"Question","name":"How quickly can an emergency response flight be arranged?","acceptedAnswer":{"@type":"Answer","text":"Andreea works around the clock to source aircraft and clearances as fast as possible, and because charter departs from private terminals it avoids much of the delay of scheduled travel. Actual timing depends on aircraft availability, crew duty limits and the overflight and landing permissions required."}},{"@type":"Question","name":"What can you move on a response flight?","acceptedAnswer":{"@type":"Answer","text":"Response and relief teams, personnel, and supplies or equipment, matched to a suitable aircraft, from a jet for people to a freighter for cargo. Andreea assesses what needs to move and sources the right type for the mission."}},{"@type":"Question","name":"Can you reach difficult or remote locations?","acceptedAnswer":{"@type":"Answer","text":"Yes. Charter can use airfields closer to where help is needed, including remote destinations served only by turboprops or shorter-runway aircraft. Andreea matches the aircraft to the airfield and coordinates the permissions and ground handling."}},{"@type":"Question","name":"How is an emergency charter priced?","acceptedAnswer":{"@type":"Answer","text":"Pricing is clear and all-in for the movement, confirmed as quickly as the situation allows so a decision can be made without delay. Andreea handles the commercial side at speed so the focus stays on the response."}},{"@type":"Question","name":"Are emergency response flights safe and compliant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every flight is operated by a vetted operator holding a valid AOC and meeting strict international safety standards, even under time pressure. Andreea never compromises on the operator, and the certified operator retains operational control of the flight."}}]}</script>
@@ -41,8 +41,8 @@
     --off-white: #F5F5F7;  /* Apple's section background — exact hex */
     --warm-grey: #E8E8ED;  /* Apple's subtle panel / input bg */
 
-    --serif: 'Cinzel', Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    --serif:'Cinzel',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -937,7 +937,7 @@ footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decora
 .trust-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;}
 .trust-items{display:flex;flex-wrap:wrap;gap:34px;}
 .trust-items .ti{display:flex;flex-direction:column;gap:2px;}
-.trust-items .tn{font-family:var(--serif,Georgia,serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
+.trust-items .tn{font-family:var(--serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
 .trust-items .tl{font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.7);}
 .trust-cta{display:flex;gap:12px;}
 .trust-cta a{text-decoration:none;font-size:14px;font-weight:500;padding:11px 20px;border-radius:40px;white-space:nowrap;}
@@ -998,7 +998,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /* mobile CTA bar */
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
 .mcta.show{transform:translateY(0)}
-.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
 .mcta-quote{background:var(--gold,#CBAD91);color:#fff}
 .mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
 .mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -1157,6 +1157,8 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
     <li><a href="/#services">Services</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#extras">On board</a></li>
+<li><a href="/fleet">Fleet</a></li>
+<li><a href="/frequent-routes">Routes</a></li>
     <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>

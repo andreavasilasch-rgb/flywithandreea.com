@@ -18,7 +18,7 @@
 <meta name="twitter:description" content="Private charter where pets travel in the cabin beside you, arranged end to end by a dedicated broker.">
 <meta name="twitter:image" content="https://www.flywithandreea.com/extras/pets-cabin.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.flywithandreea.com/"},{"@type":"ListItem","position":2,"name":"Pet-Friendly Flights","item":"https://www.flywithandreea.com/pet-friendly-flights"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Pet-Friendly Charter","name":"Pet-Friendly Flights","areaServed":"Worldwide","provider":{"@type":"Organization","name":"Fly with Andreea","url":"https://www.flywithandreea.com/","logo":"https://www.flywithandreea.com/logo.png"},"description":"Private jet charter arranged so pets travel in the cabin with their owners, coordinated end to end by a dedicated personal broker.","offers":{"@type":"Offer","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://www.flywithandreea.com/pet-friendly-flights"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can my pet really travel in the cabin?","acceptedAnswer":{"@type":"Answer","text":"Yes. On a private charter your pet travels in the cabin beside you for the whole flight rather than in a cargo hold, which is calmer and safer for the animal. Cabin travel is subject to the destination's entry rules, and Andreea arranges a pet-friendly aircraft where your companion stays in sight throughout."}},{"@type":"Question","name":"What paperwork does my pet need to fly?","acceptedAnswer":{"@type":"Answer","text":"Requirements vary by country and typically include up-to-date rabies and other vaccinations, a microchip, and a pet passport or official health certificate, with some routes requiring additional documentation. Andreea helps you understand exactly what your route needs so nothing is missed on the day of travel."}},{"@type":"Question","name":"Is there a limit on the size or number of pets?","acceptedAnswer":{"@type":"Answer","text":"It depends on the aircraft cabin, and Andreea matches you to a jet that comfortably fits your companions, whether that is one dog or several animals. Larger or multiple pets simply influence the cabin size chosen for the flight."}},{"@type":"Question","name":"Which animals can travel on a private jet?","acceptedAnswer":{"@type":"Answer","text":"Dogs and cats travel most commonly, and many other companion animals can be arranged with the right documentation and cabin. Tell Andreea what you are travelling with and she confirms the aircraft and the entry requirements for your destination."}},{"@type":"Question","name":"How much does a pet-friendly charter cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the route and aircraft and is fixed and all-in before you book, and because the pet travels in the cabin there is usually no separate per-animal airline fee. Andreea confirms any specifics for your flight so the quote is clear."}},{"@type":"Question","name":"Are pet-friendly private flights safe for animals?","acceptedAnswer":{"@type":"Answer","text":"Yes. Flights are operated by vetted, AOC-certified operators, and travelling in a quiet private cabin lets you keep your companion calm, hydrated and in sight, avoiding the stress of a hold or a busy terminal. It is one of the gentlest ways to move a pet."}}]}</script>
@@ -41,8 +41,8 @@
     --off-white: #F5F5F7;  /* Apple's section background — exact hex */
     --warm-grey: #E8E8ED;  /* Apple's subtle panel / input bg */
 
-    --serif: 'Cinzel', Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    --serif:'Cinzel',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -937,7 +937,7 @@ footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decora
 .trust-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;}
 .trust-items{display:flex;flex-wrap:wrap;gap:34px;}
 .trust-items .ti{display:flex;flex-direction:column;gap:2px;}
-.trust-items .tn{font-family:var(--serif,Georgia,serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
+.trust-items .tn{font-family:var(--serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
 .trust-items .tl{font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.7);}
 .trust-cta{display:flex;gap:12px;}
 .trust-cta a{text-decoration:none;font-size:14px;font-weight:500;padding:11px 20px;border-radius:40px;white-space:nowrap;}
@@ -998,7 +998,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /* mobile CTA bar */
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
 .mcta.show{transform:translateY(0)}
-.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
 .mcta-quote{background:var(--gold,#CBAD91);color:#fff}
 .mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
 .mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -1157,6 +1157,8 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
     <li><a href="/#services">Services</a></li>
     <li><a href="/#experience">Experience</a></li>
     <li><a href="/#extras">On board</a></li>
+<li><a href="/fleet">Fleet</a></li>
+<li><a href="/frequent-routes">Routes</a></li>
     <li><a href="/airport-guide">Airport Guide</a></li><li><a href="/empty-legs">Empty Legs</a></li>
     <li><a href="/#quote">Contact</a></li>
   </ul>

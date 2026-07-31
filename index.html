@@ -33,7 +33,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fly with Andreea | Private Jet Charter · Europe, Middle East & Africa</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -53,8 +53,8 @@
     --off-white: #F5F5F7;  /* Apple's section background — exact hex */
     --warm-grey: #E8E8ED;  /* Apple's subtle panel / input bg */
 
-    --serif: 'Cinzel', Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    --serif:'Cinzel',serif;
+    --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',sans-serif;
   }
 
   html { scroll-behavior: smooth; }
@@ -949,7 +949,7 @@ footer .footer-legal a{font-size:12px;color:var(--grey-dark,#5b5b5b);text-decora
 .trust-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;}
 .trust-items{display:flex;flex-wrap:wrap;gap:34px;}
 .trust-items .ti{display:flex;flex-direction:column;gap:2px;}
-.trust-items .tn{font-family:var(--serif,Georgia,serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
+.trust-items .tn{font-family:var(--serif);font-size:21px;color:var(--gold,#CBAD91);line-height:1;}
 .trust-items .tl{font-size:12px;letter-spacing:.03em;color:rgba(255,255,255,.7);}
 .trust-cta{display:flex;gap:12px;}
 .trust-cta a{text-decoration:none;font-size:14px;font-weight:500;padding:11px 20px;border-radius:40px;white-space:nowrap;}
@@ -1010,7 +1010,7 @@ a,button{-webkit-tap-highlight-color:rgba(0,0,0,0);}
 /* mobile CTA bar */
 .mcta{position:fixed;left:0;right:0;bottom:0;z-index:118;display:flex;gap:10px;align-items:center;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));background:rgba(255,255,255,0.97);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:0.5px solid var(--grey-light,#D2D2D7);box-shadow:0 -6px 18px rgba(0,0,0,0.10);transform:translateY(120%);transition:transform .3s ease}
 .mcta.show{transform:translateY(0)}
-.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans,sans-serif);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
+.mcta a{flex:1;text-align:center;text-decoration:none;font-family:var(--sans);font-size:14px;font-weight:500;padding:13px 0;border-radius:40px}
 .mcta-quote{background:var(--gold,#CBAD91);color:#fff}
 .mcta-call{background:#fff;color:var(--ink,#1D1D1F)!important;border:1px solid var(--gold,#CBAD91)}
 .mcta-wa{background:#fff;color:var(--ink,#1D1D1F);border:1px solid #25D366;display:inline-flex;align-items:center;justify-content:center;gap:6px}
@@ -1106,6 +1106,8 @@ input,textarea,select{max-width:100%}
     <li><a href="./#services">Services</a></li>
     <li><a href="./#experience">Experience</a></li>
     <li><a href="./#extras">On board</a></li>
+<li><a href="./fleet">Fleet</a></li>
+<li><a href="./frequent-routes">Routes</a></li>
     <li><a href="./airport-guide">Airport Guide</a></li><li><a href="./empty-legs">Empty Legs</a></li>
     <li><a href="./#quote">Contact</a></li>
   </ul>
@@ -1188,7 +1190,7 @@ input,textarea,select{max-width:100%}
 #time-now{background:#1e1e24 linear-gradient(180deg,#1b1b21,#25252d 46%,#1b1b21);position:relative;overflow:hidden;border-top:1px solid rgba(203,173,145,.22);border-bottom:1px solid rgba(203,173,145,.22)}
 #time-now::before{content:"";position:absolute;left:50%;top:50%;width:660px;height:270px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(203,173,145,.16),transparent 72%);animation:tnGlow 7s ease-in-out infinite;pointer-events:none}
 #time-now::after{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;background:linear-gradient(180deg,transparent,rgba(250,250,251,.05));pointer-events:none}
-.tn2{position:relative;max-width:740px;margin:0 auto;padding:36px 24px 30px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;animation:tnRise .9s cubic-bezier(.2,.7,.2,1) both}
+.tn2{position:relative;max-width:740px;margin:0 auto;padding:36px 24px 30px;font-family:var(--sans);animation:tnRise .9s cubic-bezier(.2,.7,.2,1) both}
 .tn2-inner{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .tn2-clock{flex:1;text-align:center;min-width:0}
 .tn2-lbl{color:#CBAD91;font-size:10px;letter-spacing:.30em;text-transform:uppercase}
@@ -1611,310 +1613,703 @@ input,textarea,select{max-width:100%}
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
     </button>
     <div class="jetfinder-track" id="jfTrack">
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-phenom-100.png" alt="Embraer Phenom 100" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 100</div>
-      <div class="jet-thumb-maker">Embraer · Very Light</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-phenom-100-e.png" alt="Embraer Phenom 100E" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 100E</div>
-      <div class="jet-thumb-maker">Embraer · Very Light</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-phenom-100-ev.png" alt="Embraer Phenom 100EV" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 100EV</div>
-      <div class="jet-thumb-maker">Embraer · Very Light</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-phenom-300.png" alt="Embraer Phenom 300" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 300</div>
-      <div class="jet-thumb-maker">Embraer · Light Jet</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-phenom-300-e.png" alt="Embraer Phenom 300E" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Phenom 300E</div>
-      <div class="jet-thumb-maker">Embraer · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-praetor-500.png" alt="Embraer Praetor 500" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Praetor 500</div>
-      <div class="jet-thumb-maker">Embraer · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-praetor-600.png" alt="Embraer Praetor 600" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Praetor 600</div>
-      <div class="jet-thumb-maker">Embraer · Super Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-legacy-450.png" alt="Embraer Legacy 450" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 450</div>
-      <div class="jet-thumb-maker">Embraer · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-legacy-500.png" alt="Embraer Legacy 500" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 500</div>
-      <div class="jet-thumb-maker">Embraer · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-legacy-600.png" alt="Embraer Legacy 600" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 600</div>
-      <div class="jet-thumb-maker">Embraer · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-legacy-650.png" alt="Embraer Legacy 650" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Legacy 650</div>
-      <div class="jet-thumb-maker">Embraer · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/embraer-lineage-1000.png" alt="Embraer Lineage 1000" loading="lazy"></div>
-      <div class="jet-thumb-name">Embraer Lineage 1000</div>
-      <div class="jet-thumb-maker">Embraer · VIP Airliner</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-g350.png" alt="Gulfstream G350" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G350</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-g450.png" alt="Gulfstream G450" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G450</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-g500.png" alt="Gulfstream G500" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G500</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-g550.png" alt="Gulfstream G550" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G550</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-g650.png" alt="Gulfstream G650" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G650</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-g700.png" alt="Gulfstream G700" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream G700</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-      <div class="jet-thumb-badge">New</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-ii.png" alt="Gulfstream II" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream II</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-iii.png" alt="Gulfstream III" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream III</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-iv.png" alt="Gulfstream IV" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream IV</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-iv-sp.png" alt="Gulfstream IV-SP" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream IV-SP</div>
-      <div class="jet-thumb-maker">Gulfstream · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/gulfstream-v.png" alt="Gulfstream V" loading="lazy"></div>
-      <div class="jet-thumb-name">Gulfstream V</div>
-      <div class="jet-thumb-maker">Gulfstream · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-31a.png" alt="Bombardier Learjet 31A" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 31A</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-35.png" alt="Bombardier Learjet 35" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 35</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-40xr.png" alt="Bombardier Learjet 40XR" loading="lazy"></div>
+    <a class="jet-thumb" href="/en/fleet/cessna/caravan" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-caravan.png" alt="Cessna Caravan" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Caravan</div>
+      <div class="jet-thumb-maker">Cessna &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-mustang" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-mustang.png" alt="Citation Mustang" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation Mustang</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj1-plus" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj1-plus.png" alt="Cessna Citation CJ1+" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation CJ1+</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj.png" alt="Citation CJ" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation CJ</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj1" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj1.png" alt="Citation CJ1" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation CJ1</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-ii" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-ii.png" alt="Citation II" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation II</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-m2" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-m2.png" alt="Citation M2" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation M2</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj2" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj2.png" alt="Citation CJ2" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation CJ2</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-ultra" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-ultra.png" alt="Citation Ultra" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation Ultra</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-encore" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-encore.png" alt="Cessna Citation Encore" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation Encore</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-excel" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-excel.png" alt="Cessna Citation Excel" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation Excel</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-xls" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-xls.png" alt="Citation XLS" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation XLS</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj2-plus" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj2-plus.png" alt="Citation CJ2+" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation CJ2+</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-bravo" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-bravo.png" alt="Cessna Citation Bravo" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation Bravo</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-encore-plus" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-encore-plus.png" alt="Cessna Citation Encore+" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation Encore+</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj3-plus" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj3-plus.png" alt="Cessna Citation CJ3+" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation CJ3+</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj3" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj3.png" alt="Citation CJ3" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation CJ3</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-xls-gen-2" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-xls-gen-2.png" alt="Cessna Citation XLS Gen 2" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation XLS Gen 2</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-xls-plus" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-xls-plus.png" alt="Citation XLS+" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation XLS+</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj4-gen2" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj4-gen2.png" alt="Cessna Citation CJ4 Gen2" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation CJ4 Gen2</div>
+      <div class="jet-thumb-maker">Cessna &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-cj4" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-cj4.png" alt="Citation CJ4" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation CJ4</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-vii" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-vii.png" alt="Cessna Citation VII" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation VII</div>
+      <div class="jet-thumb-maker">Cessna &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-iii" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-iii.png" alt="Citation III / VI / VII" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation III / VI / VII</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-iii" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-iii.png" alt="Cessna Citation III" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation III</div>
+      <div class="jet-thumb-maker">Cessna &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-vi" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-vi.png" alt="Cessna Citation VI" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation VI</div>
+      <div class="jet-thumb-maker">Cessna &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-latitude" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-latitude.png" alt="Citation Latitude" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation Latitude</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-sovereign" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-sovereign.png" alt="Citation Sovereign" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation Sovereign</div>
+      <div class="jet-thumb-maker">Cessna &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-sovereign-plus" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-sovereign-plus.png" alt="Cessna Citation Sovereign+" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation Sovereign+</div>
+      <div class="jet-thumb-maker">Cessna &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-x" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-x.png" alt="Citation X" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Citation X</div>
+      <div class="jet-thumb-maker">Cessna &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cessna/citation-longitude" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cessna-citation-longitude.png" alt="Cessna Citation Longitude" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Cessna Citation Longitude</div>
+      <div class="jet-thumb-maker">Cessna &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-31" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-31.png" alt="Learjet 31" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 31</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-31a" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-31a.png" alt="Learjet 31A" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 31A</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-40xr" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-40xr.png" alt="Bombardier Learjet 40XR" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
       <div class="jet-thumb-name">Bombardier Learjet 40XR</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-45xr.png" alt="Bombardier Learjet 45XR" loading="lazy"></div>
+      <div class="jet-thumb-maker">Bombardier &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-45xr" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-45xr.png" alt="Bombardier Learjet 45XR" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
       <div class="jet-thumb-name">Bombardier Learjet 45XR</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-55.png" alt="Bombardier Learjet 55" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 55</div>
-      <div class="jet-thumb-maker">Bombardier · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-60.png" alt="Bombardier Learjet 60" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Learjet 60</div>
-      <div class="jet-thumb-maker">Bombardier · Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-75.png" alt="Bombardier Learjet 75" loading="lazy"></div>
+      <div class="jet-thumb-maker">Bombardier &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-55" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-55.png" alt="Learjet 55" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 55</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-40" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-40.png" alt="Learjet 40" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 40</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-75" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-75.png" alt="Bombardier Learjet 75" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
       <div class="jet-thumb-name">Bombardier Learjet 75</div>
-      <div class="jet-thumb-maker">Bombardier · Light Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-300.png" alt="Bombardier Challenger 300" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 300</div>
-      <div class="jet-thumb-maker">Bombardier · Super Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-350.png" alt="Bombardier Challenger 350" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 350</div>
-      <div class="jet-thumb-maker">Bombardier · Super Midsize</div>
-      <div class="jet-thumb-badge">Popular</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-3500.png" alt="Bombardier Challenger 3500" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 3500</div>
-      <div class="jet-thumb-maker">Bombardier · Super Midsize</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-601.png" alt="Bombardier Challenger 601" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 601</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-604.png" alt="Bombardier Challenger 604" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 604</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-605.png" alt="Bombardier Challenger 605" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 605</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-650.png" alt="Bombardier Challenger 650" loading="lazy"></div>
+      <div class="jet-thumb-maker">Bombardier &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-35" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-35.png" alt="Learjet 35" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 35</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-35a" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-35a.png" alt="Learjet 35A" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 35A</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-45" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-45.png" alt="Learjet 45" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 45</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-60xr" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-60xr.png" alt="Bombardier Learjet 60XR" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Bombardier Learjet 60XR</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/learjet-60" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-learjet-60.png" alt="Learjet 60" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Learjet 60</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/challenger-850" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-850.png" alt="Challenger 850" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Challenger 850</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/challenger-300" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-300.png" alt="Challenger 300" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Challenger 300</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/challenger-350" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-350.png" alt="Challenger 350" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Challenger 350</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/challenger-3500" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-3500.png" alt="Challenger 3500" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Challenger 3500</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/challenger-650" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-650.png" alt="Bombardier Challenger 650" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
       <div class="jet-thumb-name">Bombardier Challenger 650</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-800.png" alt="Bombardier Challenger 800" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 800</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-850.png" alt="Bombardier Challenger 850" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Challenger 850</div>
-      <div class="jet-thumb-maker">Bombardier · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-global-5000.png" alt="Bombardier Global 5000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 5000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-global-6000.png" alt="Bombardier Global 6000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 6000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-global-7000.png" alt="Bombardier Global 7000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 7000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-global-7500.png" alt="Bombardier Global 7500" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 7500</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-      <div class="jet-thumb-badge">New</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-global-8000.png" alt="Bombardier Global 8000" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global 8000</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-global-express.png" alt="Bombardier Global Express" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global Express</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/bombardier-global-express-xrs.png" alt="Bombardier Global Express XRS" loading="lazy"></div>
-      <div class="jet-thumb-name">Bombardier Global Express XRS</div>
-      <div class="jet-thumb-maker">Bombardier · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-50.png" alt="Dassault Falcon 50" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 50</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-50ex.png" alt="Dassault Falcon 50EX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 50EX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-900b.png" alt="Dassault Falcon 900B" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900B</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-900dx.png" alt="Dassault Falcon 900DX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900DX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-900ex.png" alt="Dassault Falcon 900EX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900EX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-900lx.png" alt="Dassault Falcon 900LX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 900LX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000s.png" alt="Dassault Falcon 2000S" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000S</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000ex.png" alt="Dassault Falcon 2000EX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000EX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000ex-easy.png" alt="Dassault Falcon 2000EX EASy" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000EX EASy</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000lx.png" alt="Dassault Falcon 2000LX" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 2000LX</div>
-      <div class="jet-thumb-maker">Dassault · Large Jet</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-7x.png" alt="Dassault Falcon 7X" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 7X</div>
-      <div class="jet-thumb-maker">Dassault · Ultra Long</div>
-    </div>
-    <div class="jet-thumb">
-      <div class="jet-thumb-img"><img src="jets/dassault-falcon-8x.png" alt="Dassault Falcon 8X" loading="lazy"></div>
-      <div class="jet-thumb-name">Dassault Falcon 8X</div>
-      <div class="jet-thumb-maker">Dassault · Ultra Long</div>
-      <div class="jet-thumb-badge">New</div>
-    </div>
+      <div class="jet-thumb-maker">Bombardier &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/challenger-605" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-605.png" alt="Challenger 605" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Challenger 605</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/challenger-604" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-challenger-604.png" alt="Challenger 604" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Challenger 604</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/global-5000" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-global-5000.png" alt="Global 5000" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Global 5000</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/global-express" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-global-express.png" alt="Global Express" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Global Express</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/global-6000" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-global-6000.png" alt="Global 6000" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Global 6000</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/global-express-xrs" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-global-express-xrs.png" alt="Global Express XRS" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Global Express XRS</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/global-6500" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-global-6500.png" alt="Global 6500" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Global 6500</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/bombardier/global-7500" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/bombardier-global-7500.png" alt="Global 7500" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Global 7500</div>
+      <div class="jet-thumb-maker">Bombardier &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/phenom-100e" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-phenom-100e.png" alt="Embraer Phenom 100E" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Embraer Phenom 100E</div>
+      <div class="jet-thumb-maker">Embraer &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/phenom-100ev" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-phenom-100ev.png" alt="Embraer Phenom 100EV" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Embraer Phenom 100EV</div>
+      <div class="jet-thumb-maker">Embraer &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/phenom-100" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-phenom-100.png" alt="Phenom 100" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Phenom 100</div>
+      <div class="jet-thumb-maker">Embraer &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/erj-145-lr" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-erj-145-lr.png" alt="Embraer ERJ-145 LR" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Embraer ERJ-145 LR</div>
+      <div class="jet-thumb-maker">Embraer &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/erj-135-lr" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-erj-135-lr.png" alt="Embraer ERJ-135 LR" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Embraer ERJ-135 LR</div>
+      <div class="jet-thumb-maker">Embraer &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/phenom-300e" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-phenom-300e.png" alt="Embraer Phenom 300E" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Embraer Phenom 300E</div>
+      <div class="jet-thumb-maker">Embraer &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/phenom-300" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-phenom-300.png" alt="Phenom 300" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Phenom 300</div>
+      <div class="jet-thumb-maker">Embraer &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/legacy-450" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-legacy-450.png" alt="Legacy 450" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Legacy 450</div>
+      <div class="jet-thumb-maker">Embraer &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/legacy-500" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-legacy-500.png" alt="Legacy 500" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Legacy 500</div>
+      <div class="jet-thumb-maker">Embraer &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/praetor-500" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-praetor-500.png" alt="Embraer Praetor 500" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Embraer Praetor 500</div>
+      <div class="jet-thumb-maker">Embraer &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/legacy-600" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-legacy-600.png" alt="Legacy 600" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Legacy 600</div>
+      <div class="jet-thumb-maker">Embraer &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/legacy-650" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-legacy-650.png" alt="Legacy 650" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Legacy 650</div>
+      <div class="jet-thumb-maker">Embraer &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/praetor-600" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-praetor-600.png" alt="Praetor 600" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Praetor 600</div>
+      <div class="jet-thumb-maker">Embraer &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/embraer/lineage-1000" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/embraer-lineage-1000.png" alt="Embraer Lineage 1000" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Embraer Lineage 1000</div>
+      <div class="jet-thumb-maker">Embraer &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/400" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-400.png" alt="Hawker 400" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 400</div>
+      <div class="jet-thumb-maker">Hawker &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/400xp" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-400xp.png" alt="Hawker 400XP" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 400XP</div>
+      <div class="jet-thumb-maker">Hawker &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/700" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-700.png" alt="Hawker 700" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 700</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/700a" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-700a.png" alt="Hawker 700A" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 700A</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/800" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-800.png" alt="Hawker 800" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 800</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/800a" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-800a.png" alt="Hawker 800A" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 800A</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/850xp" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-850xp.png" alt="Hawker 850XP" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 850XP</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/750" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-750.png" alt="Hawker 750" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 750</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/900xp" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-900xp.png" alt="Hawker 900XP" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 900XP</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/800xp" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-800xp.png" alt="Hawker 800XP" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 800XP</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/1000" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-1000.png" alt="Hawker 1000" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 1000</div>
+      <div class="jet-thumb-maker">Hawker &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/hawker/4000" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/hawker-4000.png" alt="Hawker 4000" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Hawker 4000</div>
+      <div class="jet-thumb-maker">Hawker &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-50" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-50.png" alt="Falcon 50" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 50</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-2000" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000.png" alt="Falcon 2000" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 2000</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-50ex" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-50ex.png" alt="Falcon 50EX" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 50EX</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-2000s" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000s.png" alt="Falcon 2000S" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 2000S</div>
+      <div class="jet-thumb-maker">Dassault &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-2000ex" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000ex.png" alt="Falcon 2000EX" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 2000EX</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-2000lx" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000lx.png" alt="Falcon 2000LX" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 2000LX</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-2000lxs" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-2000lxs.png" alt="Falcon 2000LXS" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 2000LXS</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-900" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-900.png" alt="Falcon 900" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 900</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-900lx" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-900lx.png" alt="Falcon 900LX" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 900LX</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-7x" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-7x.png" alt="Falcon 7X" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 7X</div>
+      <div class="jet-thumb-maker">Dassault &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/dassault/falcon-8x" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/dassault-falcon-8x.png" alt="Falcon 8X" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Falcon 8X</div>
+      <div class="jet-thumb-maker">Dassault &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g100" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g100.png" alt="Gulfstream G100" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G100</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g150" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g150.png" alt="Gulfstream G150" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G150</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g200" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g200.png" alt="Gulfstream G200" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G200</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Super Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g280" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g280.png" alt="Gulfstream G280" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G280</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g-iv" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g-iv.png" alt="Gulfstream G-IV" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G-IV</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g-ivsp" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g-ivsp.png" alt="Gulfstream G-IVSP" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G-IVSP</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g450" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g450.png" alt="Gulfstream G450" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G450</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g500" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g500.png" alt="Gulfstream G500" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G500</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Heavy</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g550" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g550.png" alt="Gulfstream G550" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G550</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g650" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g650.png" alt="Gulfstream G650" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G650</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/gulfstream/g700" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/gulfstream-g700.png" alt="Gulfstream G700" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Gulfstream G700</div>
+      <div class="jet-thumb-maker">Gulfstream &middot; Ultra Long</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/airbus/acj320" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/airbus-acj320.png" alt="Airbus ACJ320" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Airbus ACJ320</div>
+      <div class="jet-thumb-maker">Airbus &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/airbus/acj318-elite" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/airbus-acj318-elite.png" alt="Airbus ACJ318 Elite" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Airbus ACJ318 Elite</div>
+      <div class="jet-thumb-maker">Airbus &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/airbus/acj319" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/airbus-acj319.png" alt="Airbus ACJ319" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Airbus ACJ319</div>
+      <div class="jet-thumb-maker">Airbus &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/airbus/acj320neo" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/airbus-acj320neo.png" alt="Airbus ACJ320neo" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Airbus ACJ320neo</div>
+      <div class="jet-thumb-maker">Airbus &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/airbus/acj319neo" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/airbus-acj319neo.png" alt="ACJ319neo" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">ACJ319neo</div>
+      <div class="jet-thumb-maker">Airbus &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/airbus/acj330" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/airbus-acj330.png" alt="Airbus ACJ330" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Airbus ACJ330</div>
+      <div class="jet-thumb-maker">Airbus &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/beechcraft/beechjet-400" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/beechcraft-beechjet-400.png" alt="Beechjet 400" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Beechjet 400</div>
+      <div class="jet-thumb-maker">Beechcraft &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/beechcraft/beechjet-400a" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/beechcraft-beechjet-400a.png" alt="Beechjet 400A" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Beechjet 400A</div>
+      <div class="jet-thumb-maker">Beechcraft &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/beechcraft/king-air-200" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/beechcraft-king-air-200.png" alt="King Air 200" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">King Air 200</div>
+      <div class="jet-thumb-maker">Beechcraft &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/beechcraft/king-air-260" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/beechcraft-king-air-260.png" alt="King Air 260" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">King Air 260</div>
+      <div class="jet-thumb-maker">Beechcraft &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/piaggio/avanti" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/piaggio-avanti.png" alt="Piaggio Avanti" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Piaggio Avanti</div>
+      <div class="jet-thumb-maker">Piaggio &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/piaggio/avanti-ii" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/piaggio-avanti-ii.png" alt="Piaggio Avanti II" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Piaggio Avanti II</div>
+      <div class="jet-thumb-maker">Piaggio &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/piaggio/avanti-ii-p180" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/piaggio-avanti-ii-p180.png" alt="Piaggio Avanti II P.180" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Piaggio Avanti II P.180</div>
+      <div class="jet-thumb-maker">Piaggio &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/piaggio/avanti-p180" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/piaggio-avanti-p180.png" alt="Piaggio Avanti P.180" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Piaggio Avanti P.180</div>
+      <div class="jet-thumb-maker">Piaggio &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/pilatus/pc-12" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/pilatus-pc-12.png" alt="Pilatus PC-12" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Pilatus PC-12</div>
+      <div class="jet-thumb-maker">Pilatus &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/pilatus/pc-12-ngx" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/pilatus-pc-12-ngx.png" alt="Pilatus PC-12 NGX" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Pilatus PC-12 NGX</div>
+      <div class="jet-thumb-maker">Pilatus &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/pilatus/pc-12-47e" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/pilatus-pc-12-47e.png" alt="Pilatus PC-12/47E (NG)" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Pilatus PC-12/47E (NG)</div>
+      <div class="jet-thumb-maker">Pilatus &middot; Turboprop</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/pilatus/pc-24" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/pilatus-pc-24.png" alt="Pilatus PC-24" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Pilatus PC-24</div>
+      <div class="jet-thumb-maker">Pilatus &middot; Midsize</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/boeing/bbj3-737-900er" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/boeing-bbj3-737-900er.png" alt="BBJ3 Boeing 737-900ER" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">BBJ3 Boeing 737-900ER</div>
+      <div class="jet-thumb-maker">Boeing &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/boeing/bbj2-737-800" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/boeing-bbj2-737-800.png" alt="BBJ2 Boeing 737-800" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">BBJ2 Boeing 737-800</div>
+      <div class="jet-thumb-maker">Boeing &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/boeing/bbj-737-700" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/boeing-bbj-737-700.png" alt="BBJ Boeing 737-700" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">BBJ Boeing 737-700</div>
+      <div class="jet-thumb-maker">Boeing &middot; VIP Airliner</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/eclipse/500" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/eclipse-500.png" alt="Eclipse 500" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Eclipse 500</div>
+      <div class="jet-thumb-maker">Eclipse &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/eclipse/550" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/eclipse-550.png" alt="Eclipse 550" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Eclipse 550</div>
+      <div class="jet-thumb-maker">Eclipse &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/eclipse/total-eclipse" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/eclipse-total-eclipse.png" alt="Total Eclipse" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Total Eclipse</div>
+      <div class="jet-thumb-maker">Eclipse &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/honda/hondajet" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/honda-hondajet.png" alt="HondaJet" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">HondaJet</div>
+      <div class="jet-thumb-maker">HondaJet &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/honda/hondajet-elite" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/honda-hondajet-elite.png" alt="HondaJet Elite" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">HondaJet Elite</div>
+      <div class="jet-thumb-maker">HondaJet &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/nextant/400xti" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/nextant-400xti.png" alt="Nextant 400XTi" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Nextant 400XTi</div>
+      <div class="jet-thumb-maker">Nextant &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/nextant/xt" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/nextant-xt.png" alt="Nextant XT" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Nextant XT</div>
+      <div class="jet-thumb-maker">Nextant &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/raytheon/premier-1" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/raytheon-premier-1.png" alt="Raytheon Premier 1" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Raytheon Premier 1</div>
+      <div class="jet-thumb-maker">Raytheon &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/raytheon/premier-1a" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/raytheon-premier-1a.png" alt="Raytheon Premier 1A" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Raytheon Premier 1A</div>
+      <div class="jet-thumb-maker">Raytheon &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/adam/700" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/adam-700.png" alt="Adam 700" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Adam 700</div>
+      <div class="jet-thumb-maker">Adam &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/cirrus/vision-sf50" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/cirrus-vision-sf50.png" alt="Vision SF50" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Vision SF50</div>
+      <div class="jet-thumb-maker">Cirrus &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/diamond/d-jet" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/diamond-d-jet.png" alt="D-Jet" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">D-Jet</div>
+      <div class="jet-thumb-maker">Diamond &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/grob/spn" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/grob-spn.png" alt="Grob SPn" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">Grob SPn</div>
+      <div class="jet-thumb-maker">Grob &middot; Light Jet</div>
+    </a>
+    <a class="jet-thumb" href="/en/fleet/piper/piperjet" style="text-decoration:none">
+      <div class="jet-thumb-img"><img src="jets/piper-piperjet.png" alt="PiperJet" loading="lazy" onerror="this.style.display=&quot;none&quot;"></div>
+      <div class="jet-thumb-name">PiperJet</div>
+      <div class="jet-thumb-maker">Piper &middot; Light Jet</div>
+    </a>
     </div>
     <button class="jetfinder-next" id="jfNext" aria-label="Next">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
     </button>
   </div>
   <div class="jetfinder-cta">
-    <span class="jetfinder-cta-text">58 aircraft. 4 manufacturers.</span>
+    <span class="jetfinder-cta-text">138 aircraft. 20 manufacturers.</span>
     <a href="#quote">Request any aircraft ›</a>
   </div>
 </section>
