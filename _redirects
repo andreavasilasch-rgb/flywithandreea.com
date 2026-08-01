@@ -1,5 +1,7 @@
 # Cloudflare Pages redirects
-/home           /               301
-/charter        /               301
-/fleet          /aircraft-catalogue.html    301
-/aircraft       /aircraft-catalogue.html    301
+/home                     /        301
+/charter                  /        301
+# Old aircraft catalogue is replaced by the new /fleet page
+/aircraft                 /fleet   301
+/aircraft-catalogue       /fleet   301
+/aircraft-catalogue.html  /fleet   301
