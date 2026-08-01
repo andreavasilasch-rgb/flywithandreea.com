@@ -1,7 +1,7 @@
 /* Fly with Andreea — Empty legs listing (filters + pagination). Reads window.EMPTY_LEGS. */
 (function(){
   function init(){
-    var legs=(window.EMPTY_LEGS||[]).slice();
+    var legs=(window.EMPTY_LEGS||[]).slice();/* hide empty legs whose departure date is before today (visitor local date) */var _t=new Date();var _tsk=_t.getFullYear()*10000+(_t.getMonth()+1)*100+_t.getDate();legs=legs.filter(function(l){return (l.sk||0)>=_tsk;});
     var grid=document.getElementById('elGrid'); if(!grid)return;
     var PAGE=24, shown=PAGE;
     var MN=['','gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
