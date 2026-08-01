@@ -120,13 +120,13 @@ nav.scrolled .nav-links a{color:var(--grey-dark)}
 .ac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
 .ac-card{background:transparent;border:none;display:flex;flex-direction:column;transition:transform .3s;text-decoration:none}
 .ac-card:hover{transform:translateY(-6px)}
-.ac-img{background:radial-gradient(110% 82% at 50% 48%,rgba(255,255,255,.78) 0%,rgba(255,255,255,.34) 44%,rgba(255,255,255,0) 72%);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;padding:14px 16px 8px}
+.ac-img{background:radial-gradient(110% 82% at 50% 48%,rgba(255,255,255,.78) 0%,rgba(255,255,255,.34) 44%,rgba(255,255,255,0) 72%);height:130px;flex:0 0 130px;min-height:0;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:14px 16px 8px}
 .ac-img img{max-height:100%;max-width:100%;width:auto;object-fit:contain;filter:drop-shadow(0 7px 10px rgba(64,64,70,.14))}
 .ac-info{background:#fff;border:.5px solid var(--grey-light);border-radius:18px;overflow:hidden;box-shadow:0 12px 30px -10px rgba(26,24,20,.14);flex:1;display:flex;flex-direction:column;transition:box-shadow .3s,border-color .3s}
 .ac-card:hover .ac-info{box-shadow:0 20px 46px -12px rgba(26,24,20,.22);border-color:var(--gold)}
 .ac-body{padding:16px 20px 8px;flex:1;display:flex;flex-direction:column}
 .ac-man{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:5px}
-.ac-name{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin:0 0 16px;line-height:1.15;text-transform:uppercase;letter-spacing:.02em}
+.ac-name{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin:0 0 16px;line-height:1.15;text-transform:uppercase;letter-spacing:.02em;min-height:41px}
 .ac-stats{display:flex;margin-top:auto;border-top:.5px solid var(--gold-pale);padding-top:13px}
 .ac-stats span{flex:1;display:flex;flex-direction:column;gap:2px;border-right:.5px solid var(--grey-light);padding-right:8px}
 .ac-stats span:last-child{border-right:none}
