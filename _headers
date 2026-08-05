@@ -1,18 +1,19 @@
-# Cloudflare Pages headers
-/*
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-
-/hero-bg.mp4
-  Cache-Control: public, max-age=31536000, immutable
-
-/routes.json
-  Cache-Control: public, max-age=3600
-
-/logo.png
-  Cache-Control: public, max-age=86400
-
-/favicon.png
-  Cache-Control: public, max-age=86400
+# Long-lived cache for static assets (safe: HTML is not matched, so pages update instantly)
+/jets/*
+  Cache-Control: public, max-age=2592000
+/extras/*
+  Cache-Control: public, max-age=2592000
+/*.png
+  Cache-Control: public, max-age=2592000
+/*.webp
+  Cache-Control: public, max-age=2592000
+/*.jpg
+  Cache-Control: public, max-age=2592000
+/*.jpeg
+  Cache-Control: public, max-age=2592000
+/*.svg
+  Cache-Control: public, max-age=2592000
+/*.css
+  Cache-Control: public, max-age=2592000
+/*.js
+  Cache-Control: public, max-age=2592000
