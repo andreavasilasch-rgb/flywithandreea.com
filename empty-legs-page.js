@@ -3,7 +3,7 @@
   function init(){
     var legs=(window.EMPTY_LEGS||[]).slice();/* hide empty legs whose departure date is before today (visitor local date) */var _t=new Date();var _tsk=_t.getFullYear()*10000+(_t.getMonth()+1)*100+_t.getDate();legs=legs.filter(function(l){return (l.sk||0)>=_tsk;});
     var grid=document.getElementById('elGrid'); if(!grid)return;
-    var PAGE=24, shown=PAGE;
+    var PAGE=1000, shown=PAGE;
     var MN=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     var price=function(l){return parseInt(String(l.price).replace(/[^0-9]/g,''),10)||0;};
     var ym=function(l){return Math.floor((l.sk||0)/100);};
