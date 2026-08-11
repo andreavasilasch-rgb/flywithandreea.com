@@ -1,3 +1,10 @@
+# Empty-leg inventory changes weekly, so browsers must revalidate it quickly.
+# These specific rules must stay ABOVE the generic /*.js rule below.
+/empty-legs-data.js
+  Cache-Control: public, max-age=300, must-revalidate
+/empty-legs-page.js
+  Cache-Control: public, max-age=1800, must-revalidate
+
 # Long-lived cache for static assets (safe: HTML is not matched, so pages update instantly)
 /jets/*
   Cache-Control: public, max-age=2592000
