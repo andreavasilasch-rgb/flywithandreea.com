@@ -1,4 +1,7 @@
-/* Fly with Andreea — Empty legs listing (filters + pagination). Reads window.EMPTY_LEGS. */
+/* Fly with Andreea - Empty legs listing (filters + pagination). Reads window.EMPTY_LEGS.
+   ASCII only. The euro sign, the arrow, the middle dot and the infinity mark are
+   written as \uXXXX escapes so this file cannot be mis-decoded whatever charset
+   the server sends. The price label reads "to" rather than an en dash. */
 (function(){
   function init(){
     var legs=(window.EMPTY_LEGS||[]).slice();/* hide empty legs whose departure date is before today (visitor local date) */var _t=new Date();var _tsk=_t.getFullYear()*10000+(_t.getMonth()+1)*100+_t.getDate();legs=legs.filter(function(l){return (l.sk||0)>=_tsk;});
@@ -26,9 +29,9 @@
     function card(l){var pr=ELp(l);
       var msg=encodeURIComponent("Hi Andreea, I'd love to book the empty leg "+l.from+" to "+l.to+" on "+l.date+" (From "+l.price+"). Is it still available?");
       return '<a class="empty-card" href="https://wa.me/971503372980?text='+msg+'" target="_blank" rel="noopener">'
-       +'<div class="empty-card-top"><div class="empty-route">'+l.from+' → '+l.to+'</div><div class="empty-badge">Empty leg</div></div>'
+       +'<div class="empty-card-top"><div class="empty-route">'+l.from+' \u2192 '+l.to+'</div><div class="empty-badge">Empty leg</div></div>'
        +'<div class="empty-meta"><div class="empty-date">'+l.date+'</div><div class="empty-time">'+l.aircraft+'</div></div>'
-       +'<div class="empty-card-bottom"><div><div class="empty-price">From '+l.price+'</div><div class="empty-aircraft">'+l.cat+' · '+l.seats+' seats</div></div><div class="empty-cta">'+WA+' Ask on WhatsApp</div></div>'
+       +'<div class="empty-card-bottom"><div><div class="empty-price">From '+l.price+'</div><div class="empty-aircraft">'+l.cat+' \u00b7 '+l.seats+' seats</div></div><div class="empty-cta">'+WA+' Ask on WhatsApp</div></div>'
        +'<div class="empty-prob"><div class="empty-prob-label">Confirmation probability</div><div class="empty-prob-bar-wrap"><div class="empty-prob-bar" style="width:'+pr+'%"></div></div><div class="empty-prob-pct">'+pr+'%</div></div>'
        +'</a>';
     }
@@ -39,7 +42,7 @@
       var r=REGIONS.filter(function(x){return x[0]===state.region;})[0];L('region',state.region==='all'?'Region':r[1],state.region!=='all');
       var n=catsActive().length;L('jets',n?'Aircraft ('+n+')':'Aircraft',n>0);
       L('when',state.month==='all'?'When':(MN[state.month%100]+' '+Math.floor(state.month/100)),state.month!=='all');
-      var t='Price';if(state.min!=null||state.max!=null)t=(state.min!=null?'€'+state.min:'€0')+'–'+(state.max!=null?'€'+state.max:'∞');L('price',t,state.min!=null||state.max!=null);
+      var t='Price';if(state.min!=null||state.max!=null)t=(state.min!=null?'\u20ac'+state.min:'\u20ac0')+' to '+(state.max!=null?'\u20ac'+state.max:'\u221e');L('price',t,state.min!=null||state.max!=null);
       var so=SORTS.filter(function(x){return x[0]===state.sort;})[0];L('sort',state.sort==='soon'?'Sort':so[1],state.sort!=='soon');
     }
     function render(){
