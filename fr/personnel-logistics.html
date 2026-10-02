@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/fr/personnel-logistics", "name": "Logistique du Personnel | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/luggage.jpg", "width": 736, "height": 1308}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/fr/personnel-logistics", "name": "Logistique du Personnel | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/luggage.jpg", "width": 736, "height": 1308}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bon à savoir</div><h2 class="section-title">Logistique du Personnel<br><em>: questions fréquentes</em></h2></div><div class="faq-list"><details><summary>Qu'est-ce que l'affrètement pour la logistique du personnel ?</summary><p>C'est le déplacement régulier et planifié d'une main-d'oeuvre, équipages, équipes de quart ou personnel de projet, sur des appareils affrétés plutôt que des vols réguliers. Il donne à une exploitation un rythme fiable, avec des équipes qui arrivent ensemble et à l'heure.</p></details><details><summary>Pouvez-vous gérer un programme de rotation régulier ?</summary><p>Oui. Andreea organise des déplacements ponctuels d'équipes ou un programme continu de rotations sur un horaire fixe et répété, construit sur vos quarts.</p></details><details><summary>Combien de personnes pouvez-vous déplacer ?</summary><p>De petites équipes sur un midsize jet à de grands groupes sur un VIP airliner, l'appareil étant adapté à vos effectifs. Andreea dimensionne l'appareil à chaque déplacement.</p></details><details><summary>Pouvez-vous atteindre des sites isolés ?</summary><p>Oui. L'affrètement peut utiliser des aéroports plus proches de vos sites que les vols réguliers, y compris des lieux isolés desservis uniquement par turbopropulseurs ou appareils à piste courte.</p></details><details><summary>Comment le prix d'un programme est-il calculé ?</summary><p>Par déplacement ou par programme, convenu à l'avance et fixe et tout compris, pour un budget prévisible. Andreea établit les conditions clairement, sans frais cachés.</p></details><details><summary>Les vols de logistique du personnel sont-ils sûrs ?</summary><p>Oui. Chaque vol est opéré par un opérateur vérifié titulaire d'un AOC conforme aux normes internationales les plus strictes. Andreea organise le programme en tant que courtier tandis que l'opérateur certifié conserve le contrôle opérationnel.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Demander un devis</div><h2 class="section-title">Votre prochain vol est<br><em>à un message</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nom</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>T&eacute;l&eacute;phone / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

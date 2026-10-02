@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/emergency-response", "name": "Răspuns de Urgență | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/medical.jpg", "width": 720, "height": 479}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/emergency-response", "name": "Răspuns de Urgență | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/medical.jpg", "width": 720, "height": 479}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bine de știut</div><h2 class="section-title">Răspuns de Urgență:<br><em>întrebări frecvente</em></h2></div><div class="faq-list"><details><summary>Ce urgențe acoperiți?</summary><p>Situații care necesită mutarea rapidă și sigură a echipelor sau resurselor, de la răspuns operațional la securitate și gestionarea crizelor.</p></details><details><summary>În cât timp puteți răspunde?</summary><p>Andreea lucrează non-stop pentru a găsi aeronave și autorizații cât mai curând, folosind terminalele private pentru a evita întârzierile zborului regulat.</p></details><details><summary>Mutările sunt gestionate cu siguranță și discreție?</summary><p>Da. Mutările sensibile se organizează cu discreție și control, coordonate cu echipele dumneavoastră de securitate.</p></details><details><summary>Puteți ajunge în locuri dificile sau izolate?</summary><p>Da. Charterul poate folosi aeroporturi mai apropiate de situație, inclusiv locuri izolate sau restricționate.</p></details><details><summary>Cum se calculează prețul?</summary><p>Prețul este clar și totul inclus, confirmat cât de repede permite situația.</p></details><details><summary>Sunt sigure și conforme zborurile?</summary><p>Da. Chiar și sub presiune, fiecare zbor este operat de un operator verificat, titular al unui AOC conform celor mai stricte standarde internaționale.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Cere o ofertă</div><h2 class="section-title">Următorul tău zbor este<br><em>la un mesaj distanță</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nume</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefon / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

@@ -666,7 +666,7 @@
 
   .hero-tagline { font-family: var(--serif); font-size: clamp(15px, 2vw, 22px); font-weight: 300; letter-spacing: 0.15em; color: var(--gold-light); text-transform: uppercase; margin-bottom: 12px; }
 </style>
-</head>
+<style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 
 <nav id="navbar">
@@ -2156,7 +2156,7 @@
       <p>New legs added daily. Subscribers hear first.</p>
     </div>
     <div>
-      <form id="newsletterForm" action="https://formspree.io/f/xojbkjyo" method="POST" style="display:contents" novalidate>
+      <form id="newsletterForm" style="display:contents" novalidate data-endpoint="https://formspree.io/f/xojbkjyo" onsubmit="return false">
         <input type="hidden" name="_subject" value="Newsletter signup — Fly with Andreea">
         <input type="hidden" name="type" value="newsletter">
         <div class="newsletter-form">
@@ -2388,7 +2388,7 @@
     <div class="section-header">
       <h2 class="section-title">Book your<br><em>next flight.</em></h2>
     </div>
-    <form id="quoteForm" action="https://formspree.io/f/xojbkjyo" method="POST" novalidate>
+    <form id="quoteForm" novalidate data-endpoint="https://formspree.io/f/xojbkjyo" onsubmit="return false">
       <input type="hidden" name="_subject" value="New flight request — Fly with Andreea">
       <input type="hidden" name="_replyto" value="andreea@flywithandreea.com">
       <input type="hidden" name="_next" value="https://www.flywithandreea.com/#quote">
@@ -2668,7 +2668,7 @@
         });
         if (res.ok) {
           form.querySelector('.form-grid').style.display = 'none';
-          btn.style.display = 'none';
+          btn.textContent = 'Sent'; btn.disabled = true; btn.classList.add('sent');
           document.getElementById('quoteNote').style.display = 'none';
           document.getElementById('quoteSuccess').style.display = 'block';
         } else {
@@ -2708,7 +2708,7 @@
         });
         if (res.ok) {
           document.getElementById('nlNote').style.display = 'none';
-          document.querySelector('.newsletter-form').style.display = 'none';
+          btn.textContent = 'Sent'; btn.disabled = true; btn.classList.add('sent');
           document.getElementById('nlSuccess').style.display = 'block';
         } else {
           btn.textContent = 'Subscribe';

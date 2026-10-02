@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/group-charter", "name": "Zboruri de Grup | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/aviation-hero.webp", "width": 1920, "height": 900}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/group-charter", "name": "Zboruri de Grup | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/aviation-hero.webp", "width": 1920, "height": 900}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bine de știut</div><h2 class="section-title">Zboruri de Grup:<br><em>întrebări frecvente</em></h2></div><div class="faq-list"><details><summary>Care este numărul minim pentru un zbor de grup?</summary><p>Nu există un minim fix. Orice grup care călătorește împreună poate închiria o aeronavă; Andreea adaptează aeronava efectivelor dumneavoastră, fie că sunteți opt sau optzeci de persoane.</p></details><details><summary>Se pot gestiona puncte de plecare diferite?</summary><p>Da. Andreea poate organiza preluări sau legături astfel încât un grup care pleacă din mai multe locuri să ajungă totuși împreună.</p></details><details><summary>Cât costă un zbor de grup?</summary><p>Închiriați aeronava întreagă pentru un preț fix totul inclus confirmat înainte de rezervare, în loc să plătiți pe loc, ceea ce este adesea eficient pentru grupuri mari. Prețul depinde de aeronavă, rută și calendar, iar Andreea îl stabilește clar, fără costuri ascunse.</p></details><details><summary>Se pot organiza catering, branding și cabină?</summary><p>Da. Cateringul, amenajarea cabinei și, pe aeronavele mai mari, elemente de branding se organizează în funcție de scopul călătoriei, fie un zbor de lucru, fie o sărbătoare.</p></details><details><summary>Cu cât timp înainte să rezerv un zbor de grup?</summary><p>Cu cât mai devreme, cu atât mai bine pentru grupuri mari, date de vârf și aeronave anume, deși Andreea poate adesea organiza zboruri de grup în timp scurt. Anticiparea asigură aeronava ideală, sloturile și echipajul.</p></details><details><summary>Sunt sigure zborurile de grup?</summary><p>Da. Fiecare zbor este operat de un operator verificat, titular al unui AOC conform celor mai stricte standarde internaționale de siguranță și mentenanță. Andreea selectează operatorul, în timp ce acesta păstrează controlul operațional.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Cere o ofertă</div><h2 class="section-title">Următorul tău zbor este<br><em>la un mesaj distanță</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nume</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefon / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

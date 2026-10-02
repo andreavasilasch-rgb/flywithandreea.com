@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/private-jet-packages", "name": "Călătorii cu Jet Privat & Escapade de Lux | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/butler-service.jpg", "width": 736, "height": 1308}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/private-jet-packages", "name": "Călătorii cu Jet Privat & Escapade de Lux | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/butler-service.jpg", "width": 736, "height": 1308}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bine de știut</div><h2 class="section-title">Călătorii de Lux:<br><em>întrebări frecvente</em></h2></div><div class="faq-list"><details><summary>Ce este o călătorie cu jet privat?</summary><p>O călătorie combină zborul privat cu serviciile la sol, transferuri, sejururi, iahturi, vile și experiențe, orchestrate ca un singur traseu fără cusur.</p></details><details><summary>Puteți organiza toată călătoria, nu doar zborul?</summary><p>Da. Andreea poate organiza împreună zborul și partea la sol, de la mașina care vă așteaptă pe pistă la vila de la celălalt capăt, astfel încât să aveți un singur interlocutor. Funcționează cel mai bine cu un charter, unde zborul și solul se orchestrează ca unul.</p></details><details><summary>Ce tip de călătorii organizați?</summary><p>Ocazii speciale, sărbători, escapade la schi și pe insule, city break-uri și itinerarii la comandă construite în jurul a ceea ce doriți.</p></details><details><summary>Cât costă o călătorie cu jet privat?</summary><p>Costul depinde de zbor și de serviciile la sol, iar totul se cotează clar înainte de orice angajament, charterul fiind fix și totul inclus.</p></details><details><summary>Cu cât timp înainte să planific o călătorie?</summary><p>Cu cât mai devreme, cu atât mai bine pentru sejururi și experiențe de autor, deși Andreea poate organiza o călătorie completă în timp scurt.</p></details><details><summary>O singură persoană gestionează totul?</summary><p>Da. Andreea este interlocutorul dumneavoastră unic și discret pentru toată călătoria. Fiecare zbor este operat de un operator verificat, titular al unui AOC.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Cere o ofertă</div><h2 class="section-title">Următorul tău zbor este<br><em>la un mesaj distanță</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nume</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefon / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/airlines", "name": "Soluzioni per Compagnie Aeree | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/door-to-tarmac.jpeg", "width": 1100, "height": 1885}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/airlines", "name": "Soluzioni per Compagnie Aeree | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/door-to-tarmac.jpeg", "width": 1100, "height": 1885}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Buono a sapersi</div><h2 class="section-title">Compagnie Aeree:<br><em>domande frequenti</em></h2></div><div class="faq-list"><details><summary>Che cos'e l'ACMI o wet lease?</summary><p>ACMI sta per Aircraft, Crew, Maintenance and Insurance, un wet lease in cui un operatore fornisce un aeromobile completo di equipaggio per operare le rotte di un'altra compagnia. Consente di aggiungere capacita in fretta, e Andreea individua operatori adeguati.</p></details><details><summary>Quali soluzioni per compagnie organizzate?</summary><p>Capacita aggiuntiva, sub-charter e supporto per coprire disservizi, picchi e ammanchi, mantenendo il programma intatto e i passeggeri in movimento.</p></details><details><summary>Quanto rapidamente si reperisce capacita?</summary><p>Andreea lavora per individuare aeromobili adeguati in fretta quando un programma e a rischio, attingendo a una rete di oltre 450 operatori. I tempi dipendono dalla disponibilita di aeromobili ed equipaggi e dalle approvazioni normative richieste.</p></details><details><summary>Gestite i termini commerciali?</summary><p>Si. Termini commerciali chiari sono concordati in anticipo per ogni accordo, singolo sub-charter o blocco di voli, ed esposti con trasparenza.</p></details><details><summary>Gli accordi sono riservati?</summary><p>Si. I vuoti di capacita e gli accordi commerciali tra vettori sono sensibili, e Andreea li gestisce con piena discrezione.</p></details><details><summary>Gli aeromobili sono sicuri e conformi?</summary><p>Si. Ogni operatore e selezionato e titolare di AOC in regola con i piu severi standard internazionali di sicurezza, e ogni lease o sub-charter segue le approvazioni normative richieste. Il vettore operante mantiene il controllo operativo dei voli.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Richiedi un preventivo</div><h2 class="section-title">Il tuo prossimo volo e<br><em>a un messaggio di distanza</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nome</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

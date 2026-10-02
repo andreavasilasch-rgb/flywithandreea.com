@@ -1131,7 +1131,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-</head>
+<style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1206,7 +1206,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bine de știut</div><h2 class="section-title">Călătorii Private:<br><em>întrebări frecvente</em></h2></div><div class="faq-list"><details><summary>Ce este charterul pentru călătorie privată?</summary><p>Un charter organizat în jurul unei persoane sau familii, după propriile orare și în deplină confidențialitate, cu un broker care se ocupă de fiecare detaliu.</p></details><details><summary>Organizați toată călătoria?</summary><p>Da. Andreea poate gestiona doar zborul sau toată călătoria, coordonând transferuri cu șofer, sejururi și experiențe alături de charter.</p></details><details><summary>Pot călători familia și animalele?</summary><p>Da. Membrii familiei și animalele călătoresc în cabină, iar călătoria se organizează în jurul tuturor, inclusiv regulile de intrare prevăzute pentru un animal.</p></details><details><summary>Călătoria este discretă?</summary><p>Da. Fiecare călătorie se organizează în deplină confidențialitate, de la primul mesaj la ultimul detaliu, și este gestionată personal de Andreea.</p></details><details><summary>Cum se calculează prețul?</summary><p>Charterul este la preț fix și totul inclus, confirmat înainte de rezervare, iar fiecare serviciu la sol se cotează clar.</p></details><details><summary>Sunt sigure zborurile pentru călătorii private?</summary><p>Da. Fiecare zbor este operat de un operator verificat, titular al unui AOC conform celor mai stricte standarde internaționale.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Cere o ofertă</div><h2 class="section-title">Următorul tău zbor este<br><em>la un mesaj distanță</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nume</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefon / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1315,7 +1315,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

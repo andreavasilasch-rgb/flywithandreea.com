@@ -950,7 +950,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
 <link rel="alternate" hreflang="x-default" href="https://www.flywithandreea.com/fastquote">
 <link rel="alternate" hreflang="ro" href="https://www.flywithandreea.com/ro/oferta-rapida">
 <link rel="alternate" hreflang="es" href="https://www.flywithandreea.com/es/presupuesto-rapido">
-</head>
+<style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1056,7 +1056,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
       <div class="fq-steps"><span class="fq-step active" data-s="1">1. Détails du voyage</span><span class="fq-sep">&rsaquo;</span><span class="fq-step" data-s="3">2. Coordonnées</span></div>
       <div class="fq-note">Les champs marqués d'un <span class="req">*</span> sont obligatoires.</div>
     </div>
-    <form id="fqForm" novalidate>
+    <form id="fqForm" novalidate onsubmit="return false">
       <div class="fq-block" data-step="1">
         <div class="fq-grid">
           <div class="fq-field">
@@ -1436,7 +1436,7 @@ footer .footer-legal a:hover{ color:var(--gold,#CBAD91); }
     var btn=form.querySelector('.fq-submit'); btn.disabled=true; btn.textContent='Envoi...';
     fetch('https://formspree.io/f/xojbkjyo',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(payload)})
       .then(function(r){ return r.ok?r.json():Promise.reject(); })
-      .then(function(){ document.querySelectorAll('#fqForm .fq-block').forEach(function(b){b.hidden=true;}); document.getElementById('fqSuccess').hidden=false; document.getElementById('fqSuccess').scrollIntoView({behavior:'smooth',block:'center'}); })
+      .then(function(){ document.querySelectorAll('#fqForm .fq-block').forEach(function(b){b.hidden=true;}); btn.textContent='Sent'; btn.classList.add('sent'); document.getElementById('fqSuccess').hidden=false; document.getElementById('fqSuccess').scrollIntoView({behavior:'smooth',block:'center'}); })
       .catch(function(){ btn.disabled=false; btn.textContent='Envoyer \u2192';
         var msg='Hello Andreea, I would like a private '+(trip==='cargo'?'cargo':'charter')+' quote. From '+payload.departing+' to '+payload.destination+' on '+payload.departure_date+'. '+payload.passengers_or_weight+'. Name: '+payload.name+', '+payload.email+', '+payload.phone+'.';
         window.open('https://wa.me/971503372980?text='+encodeURIComponent(msg),'_blank'); });

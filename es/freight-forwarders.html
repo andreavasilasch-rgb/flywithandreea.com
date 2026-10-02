@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/freight-forwarders", "name": "Fletamento para Transitarios | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/luggage.jpg", "width": 736, "height": 1308}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/freight-forwarders", "name": "Fletamento para Transitarios | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/luggage.jpg", "width": 736, "height": 1308}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Conviene saber</div><h2 class="section-title">Transitarios: preguntas frecuentes</h2></div><div class="faq-list"><details><summary>¿Cómo apoyan a los transitarios?</summary><p>Encontrando aviones dedicados y coordinando los fletamentos para los envíos de sus clientes, como socio detrás de su servicio.</p></details><details><summary>¿Gestionan cargas urgentes y complejas?</summary><p>Sí, carga time-critical (incluida AOG), fuera de gálibo y especializada o regulada, cada una asociada a un cargo adecuado.</p></details><details><summary>¿Coordinan handling y documentos?</summary><p>Sí. Handling en tierra, carga, trincaje y documentación se coordinan como parte del fletamento.</p></details><details><summary>¿El apoyo está disponible 24/7?</summary><p>Sí. Andreea está localizable para los envíos urgentes de los clientes a cualquier hora.</p></details><details><summary>¿Cómo se calcula el precio?</summary><p>El precio es claro y todo incluido por movimiento, presupuestándose un avión dedicado en su conjunto en lugar de por kilo.</p></details><details><summary>¿Son seguros y conformes los vuelos?</summary><p>Sí. Cada vuelo lo opera un operador verificado titular de un AOC conforme a las normas internacionales de seguridad y handling más estrictas.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Solicitar un presupuesto</div><h2 class="section-title">Su próximo vuelo está<br><em>a un mensaje</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nombre</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Tel&eacute;fono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/private-jet-packages", "name": "Pacchetti Jet Privato & Viaggi di Lusso | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/surprise-roses.jpg", "width": 1179, "height": 2138}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/private-jet-packages", "name": "Pacchetti Jet Privato & Viaggi di Lusso | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/surprise-roses.jpg", "width": 1179, "height": 2138}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Buono a sapersi</div><h2 class="section-title">Pacchetti di Lusso:<br><em>domande frequenti</em></h2></div><div class="faq-list"><details><summary>Che cos'e un pacchetto jet privato?</summary><p>Un pacchetto combina il volo privato con le prestazioni a terra, trasferimenti, soggiorni, yacht, ville ed esperienze, pianificate come un unico viaggio continuo.</p></details><details><summary>Puoi pianificare tutto il viaggio, non solo il volo?</summary><p>Si. Andreea puo organizzare insieme il volo e la parte a terra, cosi tratti con un unico referente per l'intero viaggio. Funziona al meglio insieme a un charter, dove volo e terra si pianificano come uno.</p></details><details><summary>Che tipo di viaggi organizzate?</summary><p>Occasioni speciali, celebrazioni, fughe sulla neve e sulle isole, city break e itinerari su misura costruiti attorno a cio che desideri. Che sia un traguardo da celebrare o una fuga d'autore, Andreea compone ogni elemento attorno al motivo del viaggio.</p></details><details><summary>Quanto costa un pacchetto jet privato?</summary><p>Il costo dipende dal volo e dalle prestazioni a terra, e tutto e quotato con chiarezza prima di ogni impegno, con il charter fisso e tutto incluso. Poiche e pianificato come un unico viaggio, vedi il quadro completo anziche fatture separate.</p></details><details><summary>Con quanto anticipo pianificare un pacchetto?</summary><p>Prima e, meglio e per soggiorni ed esperienze d'autore, anche se Andreea puo organizzare un intero viaggio con breve preavviso. Pianificare per tempo assicura l'aeromobile ideale e il meglio delle prestazioni a terra.</p></details><details><summary>Gestisce tutto una sola persona?</summary><p>Si. Andreea e il tuo unico referente riservato per l'intero viaggio, dal primo messaggio all'ultimo dettaglio. Ogni volo e operato da un operatore selezionato e titolare di AOC.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Richiedi un preventivo</div><h2 class="section-title">Il tuo prossimo volo e<br><em>a un messaggio di distanza</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nome</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

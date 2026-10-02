@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/events", "name": "Charter pentru Evenimente | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/special-occasions.jpg", "width": 808, "height": 632}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/events", "name": "Charter pentru Evenimente | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/special-occasions.jpg", "width": 808, "height": 632}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bine de știut</div><h2 class="section-title">Charter pentru Evenimente:<br><em>întrebări frecvente</em></h2></div><div class="faq-list"><details><summary>Ce este un charter pentru evenimente?</summary><p>Este un transport aerian coordonat care livrează invitați, echipe sau VIP-uri la o ocazie anume, de la o finală sportivă sau un festival la un summit sau o sărbătoare privată.</p></details><details><summary>Pentru ce evenimente organizați zboruri?</summary><p>Evenimente sportive și finale, festivaluri, ocazii de firmă, summituri și sărbători private, oriunde un grup trebuie să ajungă împreună.</p></details><details><summary>Puteți muta grupuri mari de hospitality?</summary><p>Da. De la un grup mic într-un jet la un grup mare într-un VIP airliner, cu aeronava adaptată efectivelor dumneavoastră și zborurile sincronizate cu evenimentul.</p></details><details><summary>Se pot sincroniza zborurile cu programul evenimentului?</summary><p>Da. Andreea planifică zboruri și transferuri în jurul programului zilei, astfel încât sosirile să lase loc ocaziei, iar plecările să se adapteze la încheierea acesteia.</p></details><details><summary>Cum se calculează prețul?</summary><p>Prețul este clar și totul inclus pentru mutare, confirmat înainte de orice angajament, acoperind aeronavă, echipaj și serviciu standard.</p></details><details><summary>Sunt sigure zborurile pentru evenimente?</summary><p>Da. Fiecare zbor este operat de un operator verificat, titular al unui AOC conform celor mai stricte standarde internaționale, cu echipaje experimentate.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Cere o ofertă</div><h2 class="section-title">Următorul tău zbor este<br><em>la un mesaj distanță</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nume</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefon / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

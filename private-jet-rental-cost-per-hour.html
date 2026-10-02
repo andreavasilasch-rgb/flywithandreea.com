@@ -1129,7 +1129,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<style>.kr-track::-webkit-scrollbar{height:6px}.kr-track::-webkit-scrollbar-thumb{background:#e6e2dc;border-radius:3px}.kr-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(29,29,31,.09);border-color:#CBAD91!important}.kr-card,.kr-card *{text-decoration:none!important}</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/private-jet-rental-cost-per-hour", "name": "Private Jet Rental Cost Per Hour: From $1,800 (2026)", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/helicopter.jpeg", "width": 736, "height": 1308}}</script></head>
+<style>.kr-track::-webkit-scrollbar{height:6px}.kr-track::-webkit-scrollbar-thumb{background:#e6e2dc;border-radius:3px}.kr-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(29,29,31,.09);border-color:#CBAD91!important}.kr-card,.kr-card *{text-decoration:none!important}</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/private-jet-rental-cost-per-hour", "name": "Private Jet Rental Cost Per Hour: From $1,800 (2026)", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/helicopter.jpeg", "width": 736, "height": 1308}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1367,7 +1367,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Our services</div><h2 class="section-title">More ways Andreea<br><em>can fly you</em></h2></div>
 <div class="svcgrid"><a class="svccard" href="/executive-airliners"><div class="svccard-img" style="background-image:url('/extras/card-executive-airliners.png')"></div><div class="svccard-body"><h3>Executive Airliners</h3><p>Large-cabin jets with stand-up comfort and full galleys.</p><span class="more">Learn more &rarr;</span></div></a><a class="svccard" href="/vip-airliners"><div class="svccard-img" style="background-image:url('/extras/card-vip-airliners.jpeg')"></div><div class="svccard-body"><h3>VIP Airliners</h3><p>Airliner-size cabins configured for private travel.</p><span class="more">Learn more &rarr;</span></div></a><a class="svccard" href="/group-charter"><div class="svccard-img" style="background-image:url('/extras/card-group-charter.png')"></div><div class="svccard-body"><h3>Group Charter</h3><p>One aircraft for your whole team, event or party.</p><span class="more">Learn more &rarr;</span></div></a><a class="svccard" href="/pet-friendly-flights"><div class="svccard-img" style="background-image:url('/extras/card-pet-friendly-flights.png')"></div><div class="svccard-body"><h3>Pet-Friendly Flights</h3><p>Your companion travels in the cabin, beside you.</p><span class="more">Learn more &rarr;</span></div></a><a class="svccard" href="/empty-legs"><div class="svccard-img" style="background-image:url('/extras/card-empty-legs.jpg')"></div><div class="svccard-body"><h3>Empty Legs</h3><p>Repositioning flights at a fraction of the price.</p><span class="more">Learn more &rarr;</span></div></a><a class="svccard" href="/private-jet-packages"><div class="svccard-img" style="background-image:url('/extras/card-private-jet-packages.png')"></div><div class="svccard-body"><h3>Luxury Packages</h3><p>Milestones and getaways planned end to end.</p><span class="more">Learn more &rarr;</span></div></a></div></div></section>
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Request a quote</div><h2 class="section-title">Your next flight is<br><em>one message away</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div><label>Your name</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>From</label><input name="from" placeholder="Departure city or airport"></div>
@@ -1468,7 +1468,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

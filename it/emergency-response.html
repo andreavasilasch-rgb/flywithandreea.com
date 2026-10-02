@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/emergency-response", "name": "Risposta alle Emergenze | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/medical.jpg", "width": 720, "height": 479}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/emergency-response", "name": "Risposta alle Emergenze | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/medical.jpg", "width": 720, "height": 479}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Buono a sapersi</div><h2 class="section-title">Risposta alle Emergenze:<br><em>domande frequenti</em></h2></div><div class="faq-list"><details><summary>Quali emergenze coprite?</summary><p>Situazioni che richiedono lo spostamento rapido e sicuro di team o risorse, dalla risposta operativa alla sicurezza alla gestione delle crisi.</p></details><details><summary>Quanto rapidamente potete rispondere?</summary><p>Andreea lavora 24 ore su 24 per individuare aeromobili e autorizzazioni il piu velocemente possibile, usando terminal privati per evitare i ritardi del volo di linea. I tempi dipendono dalla posizione dell'aeromobile, dai limiti di servizio dell'equipaggio e dalle autorizzazioni richieste.</p></details><details><summary>Gli spostamenti sono gestiti in sicurezza e con discrezione?</summary><p>Si. Gli spostamenti sensibili sono pianificati con discrezione e controllo, coordinati con i tuoi team di sicurezza e riservati.</p></details><details><summary>Potete raggiungere localita difficili o remote?</summary><p>Si. Il charter puo usare scali piu vicini alla situazione, comprese localita remote o ristrette, con l'aeromobile adatto allo scalo.</p></details><details><summary>Come viene calcolato il prezzo?</summary><p>Il prezzo e chiaro e tutto incluso, confermato con la rapidita che la situazione consente cosi da decidere in fretta.</p></details><details><summary>I voli sono sicuri e conformi?</summary><p>Si. Anche sotto pressione, ogni volo e operato da un operatore selezionato titolare di AOC in regola con i piu severi standard internazionali. L'operatore certificato mantiene il controllo operativo.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Richiedi un preventivo</div><h2 class="section-title">Il tuo prossimo volo e<br><em>a un messaggio di distanza</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nome</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

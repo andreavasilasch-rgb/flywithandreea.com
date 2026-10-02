@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/pet-friendly-flights", "name": "Zboruri Pet-Friendly | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/pets-cabin.jpg", "width": 1199, "height": 1671}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/pet-friendly-flights", "name": "Zboruri Pet-Friendly | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/pets-cabin.jpg", "width": 1199, "height": 1671}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bine de știut</div><h2 class="section-title">Zboruri Pet-Friendly:<br><em>întrebări frecvente</em></h2></div><div class="faq-list"><details><summary>Poate animalul meu să călătorească chiar în cabină?</summary><p>Da. Într-un charter privat, animalele călătoresc în cabină cu dumneavoastră pe tot parcursul zborului, nu în cală, ceea ce este mai liniștit și mai sigur pentru animal. Călătoria în cabină este supusă regulilor de intrare ale destinației, iar Andreea organizează o aeronavă în care însoțitorul rămâne la vedere.</p></details><details><summary>Ce documente îi trebuie animalului meu?</summary><p>Cerințele variază de la o țară la alta și includ de obicei vaccinuri la zi împotriva rabiei și altele, un cip și un pașaport sau certificat de sănătate, unele rute cerând documente suplimentare. Andreea vă ajută să înțelegeți exact ce este necesar pentru ruta dumneavoastră.</p></details><details><summary>Există o limită de mărime sau număr de animale?</summary><p>Depinde de cabina aeronavei, iar Andreea vă îndrumă către un jet care găzduiește confortabil însoțitorii dumneavoastră, fie un câine, fie mai multe animale. Animalele mai mari sau mai numeroase influențează pur și simplu mărimea cabinei alese.</p></details><details><summary>Ce animale pot călători cu jet privat?</summary><p>Câini și pisici cel mai adesea, iar mulți alți însoțitori pot fi organizați cu documentele și cabina potrivite. Spuneți-i Andreei cu ce călătoriți, iar ea confirmă aeronava și cerințele de intrare ale destinației.</p></details><details><summary>Cât costă un charter pet-friendly?</summary><p>Prețul depinde de rută și aeronavă și este fix și totul inclus înainte de rezervare, iar întrucât animalul călătorește în cabină de obicei nu există un supliment per animal. Andreea confirmă fiecare detaliu pentru zborul dumneavoastră.</p></details><details><summary>Sunt sigure zborurile pet-friendly pentru animale?</summary><p>Da. Zborurile sunt operate de operatori verificați, titulari ai unui AOC, iar călătoria într-o cabină privată și liniștită vă permite să vă țineți însoțitorul calm, hidratat și la vedere, evitând stresul unei cale sau al unui terminal aglomerat. Este unul dintre cele mai blânde moduri de a muta un animal.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Cere o ofertă</div><h2 class="section-title">Următorul tău zbor este<br><em>la un mesaj distanță</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nume</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefon / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

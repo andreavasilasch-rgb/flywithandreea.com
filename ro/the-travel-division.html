@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/the-travel-division", "name": "The Travel Division | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/fresh-flowers.jpg", "width": 736, "height": 1193}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/ro/the-travel-division", "name": "The Travel Division | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/fresh-flowers.jpg", "width": 736, "height": 1193}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bine de știut</div><h2 class="section-title">The Travel Division:<br><em>întrebări frecvente</em></h2></div><div class="faq-list"><details><summary>Ce face The Travel Division?</summary><p>Organizează tot ce înconjoară zborul, hoteluri, vile, transferuri, restaurante și itinerarii complete, coordonate cu charterul dumneavoastră. Transformă o călătorie într-un singur itinerar orchestrat de o persoană.</p></details><details><summary>Puteți rezerva hoteluri și transferuri pe lângă jet?</summary><p>Da. Andreea orchestrează împreună zborul privat și partea la sol, astfel încât cazările, transferurile ușă-pistă și rezervările să fie coordonate cu charterul dumneavoastră.</p></details><details><summary>Trebuie să închiriez un zbor pentru a-l folosi?</summary><p>The Travel Division funcționează cel mai bine cu un charter, unde zborul și solul se orchestrează ca unul, dar Andreea poate și consilia și organiza partea la sol a unei călătorii.</p></details><details><summary>Ce tip de călătorii susține?</summary><p>Atât de afaceri, cât și de relaxare: itinerarii de firmă în mai multe orașe în jurul întâlnirilor și călătorii de relaxare construite pe sejururi, gastronomie și experiențe.</p></details><details><summary>Cum se calculează prețul?</summary><p>Serviciile se cotează clar înainte de orice angajament, charterul fiind fix și totul inclus, astfel încât să știți mereu cât va costa o călătorie.</p></details><details><summary>Cu cine am de-a face pe parcursul călătoriei?</summary><p>Andreea este interlocutorul dumneavoastră unic și discret pentru toată călătoria. Zborurile sunt operate de operatori verificați, titulari ai unui AOC.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Cere o ofertă</div><h2 class="section-title">Următorul tău zbor este<br><em>la un mesaj distanță</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nume</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefon / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

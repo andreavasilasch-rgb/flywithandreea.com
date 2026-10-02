@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/vip-airliners", "name": "VIP Airliners | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/champagne-catering.jpg", "width": 1199, "height": 1335}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/vip-airliners", "name": "VIP Airliners | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/champagne-catering.jpg", "width": 1199, "height": 1335}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Conviene saber</div><h2 class="section-title">VIP Airliners:<br><em>preguntas frecuentes</em></h2></div><div class="faq-list"><details><summary>¿Qué es un VIP airliner?</summary><p>Un VIP airliner es un airliner de gran tamaño acondicionado como cabina privada, con salón delantero, oficina o zona de conferencias, suites con cama y aseos privados en lugar de los asientos de línea. Aporta el volumen de un avión comercial al vuelo privado, ideal para grandes grupos en rutas largas.</p></details><details><summary>¿Cuántos pasajeros acoge un VIP airliner?</summary><p>Normalmente de 15 a 50 pasajeros con confort, y más en configuración de alta densidad, según la disposición. Andreea adapta el fuselaje y la disposición a su grupo, para que toda la comitiva viaje junta con espacio para trabajar, comer y descansar.</p></details><details><summary>¿Son adecuados los VIP airliners para el largo radio?</summary><p>Sí. Muchos son aviones ultra-long-range con suites, duchas y galleys completas, pensados para viajes intercontinentales donde el descanso cuenta, y su autonomía permite a menudo enlaces sin escala que un jet más pequeño tendría que interrumpir. Andreea confirma la autonomía y la cabina para su ruta.</p></details><details><summary>¿Puede configurarse la cabina para nuestro grupo?</summary><p>Las disposiciones varían según el avión, de salones y zonas de conferencias a suites privadas, y elementos del acondicionamiento y del servicio pueden a menudo adaptarse al objeto del viaje. Andreea encuentra un avión cuya configuración corresponda a cómo viaja el grupo.</p></details><details><summary>¿Cuánto cuesta alquilar un VIP airliner?</summary><p>El precio refleja el tamaño del avión, la ruta y la duración, y es fijo y todo incluido antes de cualquier compromiso. Un VIP airliner cuesta más que un business jet por su escala y tripulación, pero repartido entre un grupo numeroso es a menudo la forma más práctica de mover a todos juntos.</p></details><details><summary>¿Son seguros los vuelos en VIP airliner?</summary><p>Sí. Cada vuelo lo opera un operador verificado titular de un AOC conforme a las normas internacionales de seguridad más estrictas, con tripulaciones habilitadas en el tipo. Andreea organiza el charter como bróker mientras el operador certificado conserva el control operativo.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Solicitar un presupuesto</div><h2 class="section-title">Su próximo vuelo está<br><em>a un mensaje</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nombre</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Tel&eacute;fono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

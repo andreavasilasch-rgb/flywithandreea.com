@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/oil-gas-industry", "name": "Fletamento para Petróleo y Gas | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/aviation-hero.webp", "width": 1920, "height": 900}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/oil-gas-industry", "name": "Fletamento para Petróleo y Gas | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/aviation-hero.webp", "width": 1920, "height": 900}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Conviene saber</div><h2 class="section-title">Petróleo y Gas:<br><em>preguntas frecuentes</em></h2></div><div class="faq-list"><details><summary>¿Qué fletamentos de petróleo y gas organizan?</summary><p>Relevos de tripulaciones y movimientos de equipos a sitios y lugares remotos, de la logística de apoyo offshore a las rotaciones onshore.</p></details><details><summary>¿Pueden alcanzar sitios energéticos remotos?</summary><p>Sí. El charter puede usar aeropuertos cercanos a los sitios que los vuelos regulares no cubren, con turbohélices robustos para pistas cortas o no preparadas.</p></details><details><summary>¿Pueden gestionar un programa de rotación regular?</summary><p>Sí, de movimientos puntuales a una rotación continua y fiable, planificada sobre sus turnos.</p></details><details><summary>¿Mueven tripulaciones y equipos?</summary><p>Sí. Personal en aviones de pasajeros y herramientas, piezas o equipos en el avión adecuado.</p></details><details><summary>¿Cómo se calcula el precio?</summary><p>El precio es por movimiento o por programa, claro y todo incluido, acordado por adelantado.</p></details><details><summary>¿Son seguros y conformes los vuelos?</summary><p>Sí. Cada vuelo lo opera un operador verificado titular de un AOC conforme a las normas internacionales más estrictas.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Solicitar un presupuesto</div><h2 class="section-title">Su próximo vuelo está<br><em>a un mensaje</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nombre</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Tel&eacute;fono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

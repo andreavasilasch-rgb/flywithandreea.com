@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/automotive", "name": "Fletamento para el Sector de Automoción | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/door-to-tarmac.jpeg", "width": 1100, "height": 1885}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/automotive", "name": "Fletamento para el Sector de Automoción | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/door-to-tarmac.jpeg", "width": 1100, "height": 1885}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Conviene saber</div><h2 class="section-title">Automoción: preguntas frecuentes</h2></div><div class="faq-list"><details><summary>¿Qué fletamentos de automoción organizan?</summary><p>Movimientos de personal clave entre plantas, y piezas time-critical para mantener la producción en marcha.</p></details><details><summary>¿Pueden responder con poca antelación?</summary><p>Sí. Cuando una parada de línea o un plazo de lanzamiento está en riesgo, Andreea trabaja para organizar un fletamento deprisa.</p></details><details><summary>¿Pueden alcanzar plantas y proveedores directamente?</summary><p>El charter puede usar aeropuertos más cercanos a las plantas que las líneas, reduciendo el tiempo en tierra.</p></details><details><summary>¿Mueven tanto personal como piezas?</summary><p>Sí. Directivos e ingenieros en aviones de pasajeros, y componentes time-critical en el cargo adecuado o en cabina.</p></details><details><summary>¿Cómo se calcula el precio?</summary><p>El precio es claro y todo incluido por movimiento, confirmado por adelantado.</p></details><details><summary>¿Son seguros y conformes los vuelos?</summary><p>Sí. Cada vuelo lo opera un operador verificado titular de un AOC conforme a las normas internacionales más estrictas.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Solicitar un presupuesto</div><h2 class="section-title">Su próximo vuelo está<br><em>a un mensaje</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nombre</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Tel&eacute;fono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/sports", "name": "Charter per lo Sport | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/aviation-hero.webp", "width": 1920, "height": 900}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/it/sports", "name": "Charter per lo Sport | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/aviation-hero.webp", "width": 1920, "height": 900}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Buono a sapersi</div><h2 class="section-title">Sport: domande frequenti</h2></div><div class="faq-list"><details><summary>Quali charter sportivi organizzate?</summary><p>Spostamenti di squadre, staff e attrezzature verso partite, eventi e tornei, cosi le squadre viaggiano insieme e arrivano pronte a rendere. Il charter tiene le squadre sui propri orari, evitando i check-in anticipati e le coincidenze che il volo di linea impone su un calendario fitto.</p></details><details><summary>Potete coprire un'intera stagione o un torneo?</summary><p>Si. Una stagione o un torneo puo essere organizzato come un unico programma affidabile di spostamenti, con aeromobili coerenti e prezzi prevedibili su ogni partita. Andreea pianifica il programma attorno al calendario con largo anticipo.</p></details><details><summary>Squadra e attrezzatura possono viaggiare insieme?</summary><p>Si, su un solo aeromobile abbinato al gruppo e al materiale, cosi giocatori, staff tecnico e medico e attrezzatura si muovono insieme su un solo orario. Viaggiare come uno mantiene intatta la preparazione.</p></details><details><summary>I voli possono essere programmati sulle partite?</summary><p>Si. Andreea pianifica la trasferta attorno al fischio d'inizio e al recupero, usando terminal privati per un imbarco rapido, cosi le squadre arrivano riposate e ripartono subito dopo la gara.</p></details><details><summary>Come viene calcolato il prezzo di un charter sportivo?</summary><p>Il prezzo e chiaro e tutto incluso per spostamento o come programma stagionale, confermato in anticipo cosi il club puo pianificare il budget con sicurezza, senza costi nascosti.</p></details><details><summary>I voli per le squadre sono sicuri?</summary><p>Si. Ogni volo e operato da un operatore selezionato titolare di AOC in regola con i piu severi standard internazionali di sicurezza e manutenzione, con equipaggi esperti. Andreea organizza il charter mentre l'operatore certificato mantiene il controllo operativo.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Richiedi un preventivo</div><h2 class="section-title">Il tuo prossimo volo e<br><em>a un messaggio di distanza</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nome</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Telefono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

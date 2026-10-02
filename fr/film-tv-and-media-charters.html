@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/fr/film-tv-and-media-charters", "name": "Affrètement pour Cinéma, TV & Médias | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/clouds-bg.jpg", "width": 1600, "height": 1000}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/fr/film-tv-and-media-charters", "name": "Affrètement pour Cinéma, TV & Médias | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/clouds-bg.jpg", "width": 1600, "height": 1000}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bon à savoir</div><h2 class="section-title">Cinéma,<br><em>TV & Médias : questions fréquentes</em></h2></div><div class="faq-list"><details><summary>Quels affrètements de production organisez-vous ?</summary><p>Déplacements de casting, d'équipe et de matériel entre les lieux sur des programmes exigeants.</p></details><details><summary>Les affrètements s'adaptent-ils aux changements de programme ?</summary><p>Oui. Andreea planifie la flexibilité qu'exige une production et s'adapte au fil des lieux, dates et plans de travail.</p></details><details><summary>Pouvez-vous transporter caméras, rigs et matériel ?</summary><p>Oui, aux côtés de l'équipe ou sur des appareils dédiés là où le volume ou la sensibilité l'exigent.</p></details><details><summary>Pouvez-vous atteindre des lieux de tournage isolés ?</summary><p>L'affrètement peut utiliser des aéroports plus proches du plateau que les lignes, y compris des lieux isolés.</p></details><details><summary>Comment le prix est-il calculé ?</summary><p>Le prix est clair et tout compris par déplacement, confirmé à l'avance.</p></details><details><summary>Les affrètements de production sont-ils sûrs ?</summary><p>Oui. Chaque vol est opéré par un opérateur vérifié titulaire d'un AOC conforme aux normes internationales les plus strictes.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Demander un devis</div><h2 class="section-title">Votre prochain vol est<br><em>à un message</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nom</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>T&eacute;l&eacute;phone / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

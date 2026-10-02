@@ -420,7 +420,7 @@ body{ padding-top:40px; }
 <link rel="alternate" hreflang="fr" href="https://www.flywithandreea.com/fr/guide-aeroports">
 <link rel="alternate" hreflang="ro" href="https://www.flywithandreea.com/ro/ghidul-aeroporturilor">
 <link rel="alternate" hreflang="es" href="https://www.flywithandreea.com/es/guia-de-aeropuertos">
-</head>
+<style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -879,7 +879,7 @@ body{ padding-top:40px; }
     <div class="section-header">
       <h2 class="section-title">Prenota il tuo<br><em>prossimo volo.</em></h2>
     </div>
-    <form id="quoteForm" action="https://formspree.io/f/xojbkjyo" method="POST" novalidate>
+    <form id="quoteForm" novalidate data-endpoint="https://formspree.io/f/xojbkjyo" onsubmit="return false">
       <input type="hidden" name="_subject" value="New flight request - Fly with Andreea">
       <input type="hidden" name="_replyto" value="andreea@flywithandreea.com">
       <input type="hidden" name="_next" value="https://www.flywithandreea.com/airport-guide">
@@ -1006,9 +1006,9 @@ body{ padding-top:40px; }
     ['q-name','q-contact','q-from','q-to'].forEach(function(id){var el=document.getElementById(id); if(el&&!el.value.trim()){el.classList.add('error');ok=false;}});
     if(!ok) return;
     var btn=document.getElementById('quoteSubmit'); if(btn){btn.disabled=true;btn.textContent='Sending...';}
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    fetch(form.dataset.endpoint,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){
-        if(r.ok){ ['.form-grid','#quoteSubmit','#quoteNote'].forEach(function(sel){var el=form.querySelector(sel); if(el)el.style.display='none';}); var s=document.getElementById('quoteSuccess'); if(s)s.style.display='block'; }
+        if(r.ok){ if(btn){btn.textContent='Sent';btn.disabled=true;btn.classList.add('sent');} ['.form-grid','#quoteNote'].forEach(function(sel){var el=form.querySelector(sel); if(el)el.style.display='none';}); var s=document.getElementById('quoteSuccess'); if(s)s.style.display='block'; }
         else { if(btn){btn.disabled=false;btn.textContent='Continue';} window.location.href='https://wa.me/971503372980'; }
       })
       .catch(function(){ if(btn){btn.disabled=false;btn.textContent='Continue';} window.location.href='https://wa.me/971503372980'; });

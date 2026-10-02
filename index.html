@@ -1079,7 +1079,7 @@ input,textarea,select{max-width:100%}
 @media (hover:none),(pointer:coarse){#fwa-glow-canvas{display:none}}
 @media (prefers-reduced-motion:reduce){#fwa-glow-canvas{display:none}}
 </style>
-</head>
+<style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1466,7 +1466,7 @@ input,textarea,select{max-width:100%}
       <p>New legs added daily. Subscribers hear first.</p>
     </div>
     <div>
-      <form id="newsletterForm" action="https://formspree.io/f/xojbkjyo" method="POST" style="display:contents" novalidate>
+      <form id="newsletterForm" style="display:contents" novalidate data-endpoint="https://formspree.io/f/xojbkjyo" onsubmit="return false">
         <input type="hidden" name="_subject" value="Newsletter signup, Fly with Andreea">
         <input type="hidden" name="type" value="newsletter">
         <div class="newsletter-form">
@@ -2877,7 +2877,7 @@ input,textarea,select{max-width:100%}
       <h2 class="section-title">Your next flight is<br><em>one conversation away.</em></h2>
       <p class="form-note" style="max-width:540px;margin:14px auto 0">Tell me your route and I will send a firm, all-in price. No commitment, no obligation.</p>
     </div>
-    <form id="quoteForm" action="https://formspree.io/f/xojbkjyo" method="POST" novalidate>
+    <form id="quoteForm" novalidate data-endpoint="https://formspree.io/f/xojbkjyo" onsubmit="return false">
       <input type="hidden" name="_subject" value="New flight request, Fly with Andreea">
       <input type="hidden" name="_next" value="https://www.flywithandreea.com/#quote">
       <div class="form-grid">
@@ -3176,7 +3176,7 @@ input,textarea,select{max-width:100%}
         });
         if (res.ok) {
           form.querySelector('.form-grid').style.display = 'none';
-          btn.style.display = 'none';
+          btn.textContent = 'Sent'; btn.disabled = true; btn.classList.add('sent');
           document.getElementById('quoteNote').style.display = 'none';
           document.getElementById('quoteSuccess').style.display = 'block';
         } else {
@@ -3216,7 +3216,7 @@ input,textarea,select{max-width:100%}
         });
         if (res.ok) {
           document.getElementById('nlNote').style.display = 'none';
-          document.querySelector('.newsletter-form').style.display = 'none';
+          btn.textContent = 'Sent'; btn.disabled = true; btn.classList.add('sent');
           document.getElementById('nlSuccess').style.display = 'block';
         } else {
           btn.textContent = 'Subscribe';

@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/fr/private-travel", "name": "Voyages Privés | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/surprise-roses.jpg", "width": 1179, "height": 2138}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/fr/private-travel", "name": "Voyages Privés | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/surprise-roses.jpg", "width": 1179, "height": 2138}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1202,7 +1202,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Bon à savoir</div><h2 class="section-title">Voyages Privés :<br><em>questions fréquentes</em></h2></div><div class="faq-list"><details><summary>Qu'est-ce que l'affrètement pour voyage privé ?</summary><p>Un affrètement organisé autour d'un individu ou d'une famille, selon ses propres horaires et en toute confidentialité, avec un courtier qui veille à chaque détail.</p></details><details><summary>Organisez-vous tout le voyage ?</summary><p>Oui. Andreea peut gérer le seul vol ou tout le voyage, coordonnant transferts avec chauffeur, séjours et expériences aux côtés de l'affrètement.</p></details><details><summary>Famille et animaux peuvent-ils voyager ?</summary><p>Oui. Proches et animaux voyagent en cabine, et le voyage est organisé autour de chacun, y compris les règles d'entrée prévues pour un animal.</p></details><details><summary>Le voyage est-il discret ?</summary><p>Oui. Chaque voyage est organisé en toute confidentialité, du premier message au dernier détail, et géré en personne par Andreea.</p></details><details><summary>Comment le prix est-il calculé ?</summary><p>L'affrètement est à prix fixe et tout compris, confirmé avant la réservation, et chaque prestation au sol est chiffrée clairement.</p></details><details><summary>Les vols pour voyages privés sont-ils sûrs ?</summary><p>Oui. Chaque vol est opéré par un opérateur vérifié titulaire d'un AOC conforme aux normes internationales les plus strictes.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Demander un devis</div><h2 class="section-title">Votre prochain vol est<br><em>à un message</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nom</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>T&eacute;l&eacute;phone / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1311,7 +1311,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/tours-roadshow-charters", "name": "Charter para Giras & Roadshows | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/helicopter.jpeg", "width": 736, "height": 1308}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/tours-roadshow-charters", "name": "Charter para Giras & Roadshows | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/helicopter.jpeg", "width": 736, "height": 1308}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Conviene saber</div><h2 class="section-title">Giras & Roadshows:<br><em>preguntas frecuentes</em></h2></div><div class="faq-list"><details><summary>¿Qué es un charter para gira o roadshow?</summary><p>Es un avión dedicado que mueve a un grupo entre varias ciudades según sus propios horarios, sosteniendo un itinerario exigente que los vuelos regulares romperían.</p></details><details><summary>¿Pueden gestionar horarios ajustados y cambiantes?</summary><p>Sí. Andreea planifica itinerarios multiciudad exigentes en torno al programa de cada día y se adapta al variar fechas y recintos, usando las terminales privadas para rotaciones rápidas.</p></details><details><summary>¿Quién viaja en estos charters?</summary><p>Grupos, producciones y sus equipos en giras en directo, y equipos de empresa o de inversores en roadshows, a menudo con material.</p></details><details><summary>¿Pueden aterrizar cerca de cada recinto o cita?</summary><p>El charter puede usar aeropuertos más cercanos a los recintos y centros de las ciudades que los vuelos regulares, reduciendo el tiempo en tierra entre etapas.</p></details><details><summary>¿Cómo se calcula el precio de una gira?</summary><p>Una gira se presupuesta como un programa, claro y todo incluido, confirmado antes de cualquier compromiso, más previsible que reservar cada etapa por separado.</p></details><details><summary>¿Son seguros los vuelos para giras y roadshows?</summary><p>Sí. Cada etapa la opera un operador verificado titular de un AOC conforme a las normas internacionales más estrictas, con tripulaciones dentro de sus límites de servicio.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Solicitar un presupuesto</div><h2 class="section-title">Su próximo vuelo está<br><em>a un mensaje</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nombre</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Tel&eacute;fono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 

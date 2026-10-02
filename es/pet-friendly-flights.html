@@ -1132,7 +1132,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .prose .lead{font-size:17.5px;line-height:1.75;color:var(--ink-2);font-weight:300;margin-bottom:22px}
 </style>
 
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/pet-friendly-flights", "name": "Vuelos Pet-Friendly | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/pets-cabin.jpg", "width": 1199, "height": 1671}}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/es/pet-friendly-flights", "name": "Vuelos Pet-Friendly | Fly with Andreea", "primaryImageOfPage": {"@type": "ImageObject", "contentUrl": "https://www.flywithandreea.com/extras/pets-cabin.jpg", "width": 1199, "height": 1671}}</script><style>.sent,button.sent{background:#2F6B4F!important;border-color:#2F6B4F!important;color:#fff!important;opacity:1!important;cursor:default!important}</style></head>
 <body>
 <div class="topbar">
   <div class="tb-search">
@@ -1324,7 +1324,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 <section class="svc alt"><div class="svc-in"><div class="section-header"><div class="section-eyebrow">Conviene saber</div><h2 class="section-title">Vuelos Pet-Friendly:<br><em>preguntas frecuentes</em></h2></div><div class="faq-list"><details><summary>¿Puede mi mascota viajar realmente en cabina?</summary><p>Sí. En un charter privado, las mascotas viajan en cabina con usted durante todo el vuelo en lugar de en bodega, lo que es más tranquilo y seguro para el animal. El viaje en cabina está sujeto a las normas de entrada del destino, y Andreea organiza un avión donde el compañero permanece a la vista.</p></details><details><summary>¿Qué documentos necesita mi mascota?</summary><p>Los requisitos varían por país e incluyen normalmente vacunas al día contra la rabia y otras, un microchip y un pasaporte o certificado sanitario, con algunas rutas que exigen documentos adicionales. Andreea le ayuda a entender exactamente qué hace falta para su ruta.</p></details><details><summary>¿Hay límite de tamaño o número de mascotas?</summary><p>Depende de la cabina del avión, y Andreea le orienta hacia un jet que acoja cómodamente a sus compañeros, sea un perro o varios animales. Animales más grandes o numerosos influyen simplemente en el tamaño de la cabina elegida.</p></details><details><summary>¿Qué animales pueden viajar en jet privado?</summary><p>Perros y gatos con mayor frecuencia, y muchos otros compañeros pueden organizarse con los documentos y la cabina adecuados. Indique a Andreea con qué viaja y ella confirma el avión y los requisitos de entrada del destino.</p></details><details><summary>¿Cuánto cuesta un charter pet-friendly?</summary><p>El precio depende de la ruta y el avión y es fijo y todo incluido antes de reservar, y como la mascota viaja en cabina normalmente no hay suplemento por animal. Andreea confirma cada detalle para su vuelo.</p></details><details><summary>¿Son seguros los vuelos pet-friendly para los animales?</summary><p>Sí. Los vuelos los operan operadores verificados titulares de un AOC, y viajar en una cabina privada y tranquila le permite mantener a su compañero relajado, hidratado y a la vista, evitando el estrés de una bodega o una terminal abarrotada. Es una de las formas más suaves de mover una mascota.</p></details></div></div></section>
 
 <section class="svc" id="quote"><div class="svc-in"><div class="book"><div class="section-header"><div class="section-eyebrow">Solicitar un presupuesto</div><h2 class="section-title">Su próximo vuelo está<br><em>a un mensaje</em></h2></div>
-  <form id="qf"><div class="fgrid">
+  <form id="qf" onsubmit="return false"><div class="fgrid">
     <div class="full"><label>Nombre</label><input name="name" required></div>
     <div><label>Email</label><input type="email" name="email" required></div>
     <div><label>Tel&eacute;fono / WhatsApp</label><input type="tel" name="phone" required placeholder="+971 50 000 0000" pattern="[+]?[0-9][0-9\s().\-]{6,19}" title="Enter a valid phone number, for example +971 50 000 0000"></div>
@@ -1433,7 +1433,7 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 (function(){var f=document.getElementById('qf');if(!f)return;
 f.addEventListener('submit',function(e){e.preventDefault();var d=new FormData(f);
 fetch('https://formspree.io/f/xojbkjyo',{method:'POST',body:d,headers:{'Accept':'application/json'}})
-.then(function(r){if(r.ok){f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
+.then(function(r){if(r.ok){var sb=f.querySelector('button[type="submit"],.fsub,button');if(sb){sb.textContent='Sent';sb.disabled=true;sb.classList.add('sent');}f.reset();document.getElementById('fok').style.display='block';}else{alert('Something went wrong. Please WhatsApp +971 50 337 2980.');}})
 .catch(function(){alert('Something went wrong. Please WhatsApp +971 50 337 2980.');});});})();
 </script>
 
