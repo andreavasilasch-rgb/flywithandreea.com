@@ -427,7 +427,7 @@ footer .footer-legal a:hover{color:var(--ink)}
 <a href="/cookies">Cookie policy</a>
 </div>
 </div>
-</footer><script>(function(){var f=document.getElementById('qf');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('.fsub');b.textContent='Sending...';b.disabled=true;fetch(f.dataset.endpoint,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){b.textContent='Sent';b.disabled=true;b.classList.add('sent');document.getElementById('fok').style.display='block';}else{b.textContent='Try again';b.disabled=false;}}).catch(function(){b.textContent='Try again';b.disabled=false;});});})();</script><script src="/fwa-calendar.js" defer></script>
+</footer><script>(function(){var f=document.getElementById('qf');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('.fsub');b.textContent='Sending...';b.disabled=true;fetch(f.dataset.endpoint,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'}}).then(function(r){if(r.ok){b.textContent='Sent';b.disabled=true;b.classList.add('sent');var ok=document.getElementById('fok');if(ok)ok.style.display='block';}else{b.textContent='Try again';b.disabled=false;}}).catch(function(){b.textContent='Try again';b.disabled=false;});});})();</script><script src="/fwa-calendar.js" defer></script>
 <script src="/search-index.js" defer></script>
 <script src="/fwa-header.js" defer></script>
 <script src="/sticky-cta.js" defer></script><script src="/aircraft-trail.js" defer></script></body></html>
