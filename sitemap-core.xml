@@ -724,4 +724,14 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url><loc>https://www.flywithandreea.com/airports/brest-bretagne-airport-bes</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/lorient-south-brittany-airport-lrt</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/lille-lesquin-airport-lil</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/grosseto-airport-grs</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/pantelleria-airport-pnl</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/aosta-corrado-gex-airport-aot</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/chambery-savoie-airport-cmf</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/salerno-costa-damalfi-airport-qsr</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/strasbourg-entzheim-airport-sxb</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.flywithandreea.com/airports/suceava-airport-scv</loc><lastmod>2026-10-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
