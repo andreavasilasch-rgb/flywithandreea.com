@@ -1151,6 +1151,15 @@ nav#navbar .nav-cta{white-space:nowrap;flex-shrink:0}
 .cg-b b{display:block;font-family:'Cinzel',serif;font-size:1.25rem;margin-bottom:6px}
 .cg-b span{font-size:.85rem;color:rgba(29,29,31,.62);line-height:1.6}
 @media(max-width:700px){.cg-table{font-size:.84rem}.cg-table .cg-n{display:none}}
+/* cargo charter flights, stacked lead paragraphs */
+/* .svc-lead carries margin-top:-30px so a single lead paragraph tucks under
+   its section title. A second one in the same section inherits that and
+   climbs into the paragraph above it. Only consecutive ones are changed, so
+   the first in every section, on every page, behaves exactly as before. */
+.svc-lead + .svc-lead{ margin-top:22px; }
+.svc-lead a{ color:var(--gold-deep,#A9876A); text-decoration:none;
+  border-bottom:1px solid rgba(169,135,106,.45); }
+.svc-lead a:hover{ color:var(--ink,#1D1D1F); border-bottom-color:currentColor; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://www.flywithandreea.com/cargo-charter-flights", "name": "Air Cargo Charter: Aircraft, Payloads and What It Costs", "description": "Air cargo charter explained: full and part charter, freighter payloads from 5 to 120 tonnes, what drives the price, and how fast an urgent shipment can move.", "datePublished": "2026-10-14", "dateModified": "2026-10-14"}</script></head>
 <body>
