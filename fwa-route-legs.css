@@ -1,0 +1,35 @@
+/* Fly with Andreea, the empty leg row on a route page.
+ *
+ * Only the row. The card itself comes from fwa-legs.css, which both this and
+ * the empty legs page load, so there is one card and not two that drift.
+ */
+
+/* The row was a horizontal scroller: the panel, then the cards, sliding off the
+   right edge. That hid every leg after the first. It becomes 2 columns instead,
+   the panel at the width it was built for and the cards wrapping beside it, so
+   nothing is off screen. */
+.fl-row{display:grid;gap:16px;grid-template-columns:340px minmax(0,1fr);
+  align-items:stretch;overflow:visible}
+.fl-row > .el-watch{flex:none}
+@media(max-width:1040px){.fl-row{grid-template-columns:1fr}}
+
+/* Beside the panel the card has roughly 820px rather than the full 1180, so it
+   uses the narrower proportions it already switches to on a small laptop. Same
+   card, same parts, nothing truncated. Below 1040 the panel moves above the
+   cards and they get the width back. */
+@media(min-width:1041px){
+  .fl-row .fl-list .fl-leg-main{grid-template-columns:168px minmax(0,1fr) 162px}
+}
+
+/* The price watch panel is left entirely alone. It keeps its own markup and its
+   own rules from the page's stylesheet, so nothing here touches .el-watch. */
+
+/* ----------------------------------------------------------- nothing today */
+.fl-nolive{border:.5px dashed var(--grey-light);border-radius:var(--radius);
+  padding:26px 22px;background:var(--white)}
+.fl-nolive p{margin:0;font-size:var(--t-body);line-height:1.6;color:var(--grey-dark);
+  max-width:46ch}
+
+/* the old row's own rules are left alone; this wins on specificity where they
+   overlap, and the old markup is replaced wholesale anyway */
+.el-nolive .fl-list{grid-template-columns:1fr}

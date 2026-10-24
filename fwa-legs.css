@@ -1,0 +1,613 @@
+/* Fly with Andreea, the leg card. Built by build_shared.py, do not edit by hand. */
+/* The empty legs page and every route page draw their cards from this file. */
+
+:root{
+  --gold:#CBAD91; --gold-dk:#D6B89C; --gold-pale:#F0E6D8;
+  --grey:#86868B; --grey-dark:#6E6E73; --grey-light:#D2D2D7;
+  --ink:#1D1D1F; --ink-2:#3A3A3C;
+  --off-white:#F5F5F7; --warm-grey:#E8E8ED; --white:#FFF;
+  --sans:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',sans-serif;
+  --serif:'Cinzel',serif;
+  --pad:22px; --radius:20px;
+  /* the quote form: one inset for every side of it, one set of sizes */
+  --qpad:30px; --qbox:16px;
+  --q-title:17px; --q-tot:16px; --q-body:14px; --q-soft:13px;
+}
+@media(max-width:600px){:root{--pad:14px;--radius:16px;
+  --qpad:20px; --qbox:14px;
+  --q-title:15px; --q-tot:14px; --q-body:13px; --q-soft:12px}}
+/* ------------------------------------------------------------- type scale
+ * 4 sizes on a card, not 8. Everything below picks one of these.
+ *   city   the route, the thing being scanned for
+ *   price  the second anchor, same family as the city
+ *   body   dates, aircraft, links, the button
+ *   label  anything in capitals: codes, durations, captions
+ * The half pixel sizes that had crept in, 13.5 beside 13 and 9.5 beside 9,
+ * read as carelessness rather than hierarchy, so they are gone.
+ */
+:root{
+  --t-city:19px; --t-price:22px; --t-body:13px; --t-soft:12px; --t-label:10px;
+}
+@media(max-width:700px){
+  :root{--t-city:16px; --t-price:17px; --t-body:12px; --t-soft:11px; --t-label:9px}
+}
+
+/* the resets the card needs, kept off everything else on the page */
+.fwa-legs *,.fwa-legs *::before,.fwa-legs *::after{box-sizing:border-box}
+.fwa-legs img,.fwa-legs svg{max-width:100%}
+.fwa-legs button{font-family:inherit}
+body.fl-lock{overflow:hidden}
+
+/* =================================================================== results */
+.fl-results{padding:22px 0 10px;min-height:40vh}
+.fl-leg{background:var(--white);border:.5px solid var(--grey-light);border-radius:var(--radius);
+  overflow:hidden;margin:0 0 10px;transition:border-color .18s,box-shadow .18s;cursor:pointer}
+.fl-leg:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.fl-leg:hover{border-color:var(--gold);box-shadow:0 16px 40px -22px rgba(29,29,31,.32)}
+.fl-leg-main{display:grid;grid-template-columns:218px 1fr 176px;
+  grid-template-areas:"gal mid rail"}
+/* The card is as tall as a fifth of whatever room is left under the toolbar,
+   so 5 always fit, on a short laptop as well as a tall desktop. The script
+   measures the toolbar and writes --legh. The clamp keeps it sane either way. */
+.fl-leg{height:var(--legh,145px)}
+.fl-leg-main{height:100%}
+@media(max-width:700px){.fl-leg-main{grid-template-rows:1fr auto}}
+.fl-gal{grid-area:gal}.fl-mid{grid-area:mid}.fl-rail{grid-area:rail}
+/* tablets keep all 3 columns, just narrower, so the card stays one band tall */
+@media(max-width:1040px){.fl-leg-main{grid-template-columns:168px 1fr 162px}}
+/* phones: the card stacks. Picture across the top, then the route, the date,
+   the aircraft and the price, then the 2 actions side by side. */
+@media(max-width:700px){
+  .fl-leg{height:auto}
+  .fl-leg-main{grid-template-columns:1fr;grid-template-areas:"gal" "mid" "rail";
+    grid-template-rows:auto auto auto}
+}
+.fl-gal{position:relative;background:var(--off-white);min-height:0;overflow:hidden;
+  height:100%}
+@media(max-width:700px){.fl-gal{min-height:0}}
+.fl-gal-track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.fl-gal-track::-webkit-scrollbar{display:none}
+.fl-gal-slide{flex:0 0 100%;scroll-snap-align:center;position:relative;height:100%}
+.fl-gal-slide svg,.fl-gal-slide img{width:100%;height:100%;display:block;object-fit:cover;
+  position:absolute;inset:0}
+/* a photograph at 450 by 237 in a slot that can be 218 by 145 or 760 by 420:
+   object-fit keeps the aircraft in frame rather than stretching it */
+.fl-gal-slide img{background:var(--off-white)}
+.fl-fav{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;
+  border:0;background:rgba(255,255,255,.92);cursor:pointer;display:flex;align-items:center;
+  justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.16)}
+.fl-fav svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:1.9}
+.fl-fav.fl-on svg{fill:var(--gold);stroke:var(--gold-dk)}
+.fl-gal-cap{position:absolute;left:11px;bottom:11px;background:rgba(29,29,31,.76);
+  color:var(--white);font:600 var(--t-label)/1 var(--sans);letter-spacing:.14em;
+  text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.fl-gal-n{position:absolute;right:11px;bottom:11px;background:rgba(29,29,31,.76);
+  color:var(--white);font:600 var(--t-label)/1 var(--sans);letter-spacing:.06em;
+  padding:6px 9px;border-radius:999px}
+.fl-gal-ar{position:absolute;top:50%;transform:translateY(-50%);width:32px;height:32px;
+  border-radius:50%;border:0;background:rgba(255,255,255,.93);cursor:pointer;display:flex;
+  align-items:center;justify-content:center;opacity:0;transition:opacity .16s;
+  box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.fl-gal:hover .fl-gal-ar{opacity:1}
+@media(hover:none){.fl-gal-ar{display:none}}
+.fl-gal-ar.fl-l{left:9px}.fl-gal-ar.fl-r{right:9px}
+.fl-gal-ar svg{width:15px;height:15px;fill:none;stroke:var(--ink);stroke-width:2.2}
+.fl-gal-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:12px;display:flex;gap:4px}
+.fl-gal-dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5)}
+.fl-gal-dots i.fl-on{background:#fff;width:13px;border-radius:3px}
+
+.fl-mid{padding:11px 18px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px}
+@media(max-width:600px){.fl-mid{padding:13px var(--pad)}}
+.fl-tags{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+/* The 3 tags are one family: white, outlined, told apart by the edge alone.
+   Gold for what the page is, ink for the urgent one, grey for the quiet one. */
+.fl-tag{font:600 10px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;padding:6px 10px;
+  border-radius:999px;border:1px solid var(--grey-light);background:var(--white);
+  color:var(--grey-dark)}
+.fl-tag.fl-hot{background:var(--white);border-color:var(--gold);color:var(--ink-2)}
+.fl-tag.fl-soon{background:var(--white);border-color:var(--ink);color:var(--ink)}
+/* ---------------------------------------------------------------- the route
+ * 3 columns, 3 rows. Both sides share the rows, so the code, the city and
+ * the country sit on the same 3 baselines however long the words are.
+ * Nothing wraps: a name too long for its column is cut with an ellipsis and
+ * kept in full in the title, which is what makes the 2 sides symmetrical.
+ */
+.fl-route{display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(76px,1.05fr) minmax(0,1fr);
+  grid-template-rows:auto auto auto;
+  column-gap:12px;row-gap:0;align-items:center}
+.fl-r-code,.fl-r-city,.fl-r-sub{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fl-r-code{grid-row:1;font:600 var(--t-label)/1.5 var(--sans);letter-spacing:.15em;
+  color:var(--grey)}
+.fl-r-city{grid-row:2;font:400 var(--t-city)/1.3 var(--serif);letter-spacing:-.01em;
+  color:var(--ink)}
+.fl-r-sub{grid-row:3;font:400 var(--t-soft)/1.45 var(--sans);color:var(--grey)}
+.fl-r-code.fl-a,.fl-r-city.fl-a,.fl-r-sub.fl-a{grid-column:1;text-align:left}
+.fl-r-code.fl-b,.fl-r-city.fl-b,.fl-r-sub.fl-b{grid-column:3;text-align:right}
+.fl-r-mid{grid-column:2;grid-row:1/4;align-self:center}
+
+.fl-line{position:relative;height:20px}
+.fl-line .fl-bar2{position:absolute;top:50%;left:0;right:0;height:1px;background:var(--grey-light)}
+.fl-line .fl-dot{position:absolute;top:50%;width:5px;height:5px;border-radius:50%;background:var(--gold);
+  transform:translateY(-50%)}
+.fl-line .fl-dot.fl-a{left:0}.fl-line .fl-dot.fl-b{right:0}
+.fl-line .fl-pl{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--white);
+  padding:0 7px;color:var(--gold);display:flex}
+.fl-line .fl-pl svg{width:14px;height:14px;fill:currentColor}
+.fl-dur{text-align:center;font:600 var(--t-label)/1.3 var(--sans);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--grey-dark);margin-top:2px}
+.fl-dur span{white-space:nowrap}
+@media(max-width:560px){
+  .fl-dur span{display:block}
+  .fl-dur .fl-sep{display:none}
+  .fl-dur span+span{margin-top:2px;color:var(--grey)}
+}
+
+/* -------------------------------------------------------------- the 1 line
+ * Date, aircraft, cabin and the link, separated by dots rather than rules. */
+.fl-meta{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding-top:8px;
+  border-top:.5px solid var(--warm-grey);font:400 var(--t-body)/1.35 var(--sans);
+  color:var(--grey);min-width:0}
+.fl-meta b{font-weight:600;color:var(--ink)}
+.fl-meta .fl-m1{color:var(--ink-2)}
+.fl-meta .fl-m2{color:var(--ink)}
+.fl-dotsep{width:3px;height:3px;border-radius:50%;background:var(--grey-light);flex:none}
+.fl-flexi{display:none;font:600 var(--t-label)/1 var(--sans);letter-spacing:.13em;
+  text-transform:uppercase;padding:6px 10px;border-radius:999px;
+  border:1px solid var(--grey-light);background:var(--white);color:var(--grey-dark);
+  white-space:nowrap}
+.fl-btn.fl-ghost{display:none}
+@media(max-width:700px){
+  .fl-flexi{display:inline-block}
+  .fl-btn.fl-ghost{display:block;border-color:var(--grey-light);color:var(--ink-2)}
+  .fl-btn.fl-ghost:hover{background:var(--white);border-color:var(--gold);color:var(--gold)}
+}
+@media(max-width:760px){
+  .fl-meta{font-size:var(--t-body);gap:7px}
+  .fl-meta .fl-m3{width:100%}
+}
+.fl-facts{display:flex;flex-wrap:wrap;gap:12px 26px;margin:17px 0 0;padding-top:15px;
+  border-top:.5px solid var(--warm-grey)}
+.fl-facts div{min-width:0}
+.fl-facts dt{font:600 10px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;
+  color:var(--grey);margin:0 0 4px}
+.fl-facts dd{margin:0;font-size:14px;color:var(--ink-2)}
+.fl-facts dd b{font-weight:600;color:var(--ink)}
+.fl-amen{display:flex;gap:13px;margin:13px 0 0;flex-wrap:wrap}
+.fl-am{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--grey-dark)}
+.fl-am svg{width:13px;height:13px;fill:var(--gold)}
+
+/* White, like the rest of the card. The hairline on the left is what keeps
+   it reading as its own column now that the tint has gone. */
+/* Centred, so the price, the caption and the button all share one axis.
+   Right aligned text above a full width button left the button sticking out
+   past the ragged edge of short words like the figures do. */
+.fl-rail{background:var(--white);border-left:.5px solid var(--warm-grey);
+  padding:10px 16px;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;gap:9px}
+/* A fixed box rather than a minimum, so a figure and the words price on
+   request leave the button on the same line down the whole page. */
+.fl-price{font:400 var(--t-price)/1.1 var(--serif);letter-spacing:-.015em;color:var(--ink);
+  height:26px;display:flex;align-items:center;justify-content:center}
+.fl-price.fl-ask{font-size:var(--t-city);color:var(--ink-2);white-space:nowrap}
+/* the caption under the figure, a label rather than body text */
+.fl-per{font:400 var(--t-label)/1.2 var(--sans);letter-spacing:.02em;color:var(--grey);
+  margin-top:5px}
+.fl-rail .fl-money{display:contents}
+@media(max-width:700px){
+  /* the picture leads */
+  .fl-gal{aspect-ratio:4/3;height:auto}
+  .fl-gal-cap{left:12px;bottom:12px}
+  .fl-gal-n{right:12px;bottom:12px;left:auto}
+  .fl-fav{top:12px;right:12px;width:36px;height:36px}
+  .fl-fav svg{width:17px;height:17px}
+
+  .fl-mid{padding:16px var(--pad) 0;gap:0}
+  .fl-route{column-gap:12px}
+  .fl-r-code,.fl-r-sub{display:revert}
+  .fl-r-city{font-size:20px}
+  .fl-line{height:18px}
+  .fl-dur{font-size:var(--t-label);letter-spacing:.1em;margin-top:2px;line-height:1.3}
+  .fl-dur span{display:inline}
+  .fl-dur .fl-sep{display:inline}
+  .fl-dur span+span{margin-top:0;color:inherit}
+
+  /* the date gets its own row, with the flexible pill on the right */
+  .fl-meta{margin-top:14px;padding:13px 0;border-top:.5px solid var(--warm-grey);
+    border-bottom:.5px solid var(--warm-grey);font-size:14px;color:var(--ink-2);
+    display:grid;grid-template-columns:1fr auto;gap:10px 8px;white-space:normal}
+  .fl-meta .fl-m1{grid-column:1;grid-row:1;font-size:14px}
+  .fl-meta .fl-m2{grid-column:1;grid-row:2;font-size:15px;color:var(--ink)}
+  .fl-meta .fl-m3{grid-column:1;grid-row:3;font-size:13px;color:var(--grey);display:block}
+  .fl-meta .fl-flexi{grid-column:2;grid-row:1;justify-self:end}
+  .fl-meta .fl-dotsep{display:none}
+
+  /* the price sits beside the aircraft, then the 2 buttons */
+  .fl-rail{grid-area:rail;border-left:0;border-top:0;background:var(--white);
+    flex-direction:column;align-items:stretch;text-align:left;
+    padding:0 var(--pad) 16px;gap:14px}
+  .fl-rail .fl-money{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+  .fl-price{height:auto;justify-content:flex-start;font-size:26px}
+  .fl-per{margin-top:3px}
+  .fl-rail .fl-acts{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+  .fl-rail .fl-btn{min-height:46px;font-size:var(--t-body);padding:12px}
+}
+/* The button: white, gold hairline, gold label, soft rectangle. It fills the
+   price column so the whole block shares one left and one right edge. */
+.fl-btn{display:block;width:100%;text-align:center;padding:9px 12px;
+  border-radius:10px;border:1px solid var(--gold);cursor:pointer;
+  font:600 var(--t-body)/1 var(--sans);letter-spacing:.01em;
+  background:var(--white);color:var(--gold);text-decoration:none;
+  transition:background .16s,color .16s;min-height:32px}
+.fl-btn:hover{background:var(--gold);color:var(--white)}
+/* the quieter one beside it, used in the route preview footer */
+.fl-btn-g{display:block;width:100%;text-align:center;padding:9px 12px;border-radius:10px;
+  border:1px solid var(--grey-light);cursor:pointer;font:600 var(--t-body)/1 var(--sans);
+  background:var(--white);color:var(--ink-2);text-decoration:none;
+  transition:border-color .16s,color .16s;min-height:32px}
+.fl-btn-g:hover{border-color:var(--gold);color:var(--gold)}
+/* View and Ask Andreea are buttons, not links: they open a panel on this page
+   rather than going anywhere. As links they were 160 crawlable self links
+   reading "View" and "Ask Andreea". A button needs its own reset because it
+   does not inherit the page font. */
+button.fl-btn,button.fl-btn-g{font-family:var(--sans);-webkit-appearance:none;
+  appearance:none;margin:0}
+.fl-rail .fl-acts{width:100%}
+/* the one at the end of the form stays filled, it is the end of the journey */
+.fl-btn.fl-dark{background:var(--gold);border-color:var(--gold);color:var(--white)}
+.fl-btn.fl-dark:hover{background:var(--gold-dk);border-color:var(--gold-dk)}
+
+
+/* grid view: 2 up, the gallery on top */
+.fl-grid-view #list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fl-grid-view .fl-leg{margin:0}
+.fl-grid-view .fl-leg-main{grid-template-columns:1fr}
+.fl-grid-view .fl-gal{grid-row:auto;min-height:0;aspect-ratio:16/9;max-height:250px}
+.fl-grid-view .fl-gal-slide{min-height:0}
+.fl-grid-view .fl-rail{grid-column:auto;border-left:0;border-top:.5px solid var(--grey-light);
+  flex-direction:row;align-items:center}
+.fl-grid-view .fl-rail .fl-acts{flex:none;min-width:150px}
+@media(max-width:1040px){.fl-grid-view #list{grid-template-columns:1fr}}
+
+/* ---------------------------------------------- the card, anywhere else
+ * Squeezing this card into a third of the width broke it: city names cut to
+ * a letter and an ellipsis, the aircraft line wrapping mid phrase, Book now
+ * splitting across 2 lines. So it does not get squeezed. Wherever the card
+ * appears, on the home page or beside the price watch on a route page, it is
+ * the same wide card in a single column, which is the layout it was drawn
+ * for. Below 700px it stacks, by the same rules as the listing.
+ */
+/* The home page grid it replaces is a 3 column rule of the same weight, and it
+   is declared in the page head while this arrives at the end of the body. Same
+   weight plus later would be enough, but a page can always move its styles, so
+   this carries the section class too and wins outright. */
+.fl-list,.fwa-legs .fl-list{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.fl-list .fl-leg,.fwa-legs .fl-list .fl-leg{margin:0}
+
+/* --------------------------------------------------- the card with no photo
+ * Many legs arrive without pictures of the aircraft. Rather than a grey box
+ * where the photograph should be, the picture column is simply not there. Every
+ * other part is identical and in the same place, so the 2 kinds sit in one list
+ * without the eye catching on the difference. The height falls from 145 to 88
+ * because the picture was the only thing asking for the rest.
+ */
+/* The height is not set here. A fixed 88px cut the aircraft line off the bottom
+   and sliced Book now in half, because the words underneath a card do not get
+   shorter just because the picture went. The card takes the height its own
+   content needs, which lands near 100px against 145 for the photo card. */
+.fl-leg.fl-nopic{height:auto}
+/* 3 columns still, the first one narrow: the heart stands where the photograph
+   stood. Tried over the card, where it sat on a city name, and in the price
+   column, where it sat on the price. This is the only place on the card that is
+   its own. */
+.fl-nopic .fl-leg-main{grid-template-columns:46px minmax(0,1fr) 176px;
+  grid-template-areas:"fav mid rail"}
+@media(max-width:1040px){.fl-nopic .fl-leg-main{grid-template-columns:42px minmax(0,1fr) 162px}}
+.fl-nopic .fl-mid{padding:11px 20px 11px 0;gap:5px;justify-content:center}
+.fl-nopic .fl-meta{padding-top:7px}
+.fl-nopic .fl-rail{padding:11px 16px}
+
+.fl-fav.fl-solo{grid-area:fav;position:static;align-self:center;justify-self:center;
+  width:30px;height:30px;background:none;box-shadow:none;border-radius:50%;
+  transition:background .16s}
+.fl-fav.fl-solo:hover{background:var(--off-white)}
+.fl-fav.fl-solo svg{width:16px;height:16px;stroke:var(--grey-light)}
+.fl-fav.fl-solo:hover svg{stroke:var(--gold)}
+.fl-fav.fl-solo.fl-on svg{fill:var(--gold);stroke:var(--gold-dk)}
+
+@media(max-width:700px){
+  /* Stacked, and the heart keeps its own column rather than moving to the top
+     corner, because on this card the top corner is the destination airport and
+     the heart sat straight on top of it. The price and the 2 buttons run the
+     full width underneath, as they do on the photo card. */
+  .fl-nopic .fl-leg-main{grid-template-columns:minmax(0,1fr);
+    grid-template-areas:"fav" "mid" "rail";grid-template-rows:auto auto auto}
+  .fl-nopic .fl-mid{padding:4px var(--pad) 0;gap:0}
+  .fl-nopic .fl-rail{padding:0 var(--pad) 16px}
+  /* A 375px screen has no width to spare for a column beside the route: giving
+     the heart one cut Kuwait City to Kuwai... So it takes a short band across
+     the top instead, in the place the photograph occupies on the other card. */
+  .fl-fav.fl-solo{grid-area:fav;justify-self:end;align-self:start;
+    margin:10px var(--pad) 0 0;width:34px;height:34px}
+  .fl-fav.fl-solo svg{width:18px;height:18px}
+}
+
+.fl-none{text-align:center;padding:70px 20px;color:var(--grey-dark)}
+.fl-none h3{font:400 24px/1.2 var(--serif);color:var(--ink);margin:0 0 8px}
+.fl-more{display:block;margin:10px auto 60px;padding:14px 34px;border-radius:999px;
+  border:.5px solid var(--grey-light);background:var(--white);font:600 14px/1 var(--sans);
+  color:var(--ink);cursor:pointer;min-height:44px}
+.fl-more:hover{border-color:var(--gold)}
+
+
+/* =================================================================== modals
+ * The site carries 3 things pinned to the bottom of the window: the Quote,
+ * Email, Call, WhatsApp bar at 9000, the back to top ring at 9001 and the chat
+ * bubble at 9100. A modal at 110 opened underneath all of them, which is why
+ * Request this flight and the price on the preview were sliced off. The sheet
+ * sits above them now, and while it is open they are out of the way entirely,
+ * because a form is a single task and nothing else should be competing with it.
+ */
+.fl-modal{position:fixed;inset:0;z-index:9200;display:none;align-items:flex-start;
+  justify-content:center;padding:34px 18px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.fl-modal.fl-on{display:flex}
+body.fl-lock .fwa-cta,
+body.fl-lock .fwa-top,
+body.fl-lock .fwac-b{display:none !important}
+.fl-modal-bg{position:fixed;inset:0;background:rgba(29,29,31,.5);backdrop-filter:blur(3px)}
+.fl-sheetbox{position:relative;background:var(--white);border-radius:22px;width:100%;
+  max-width:1000px;overflow:hidden;box-shadow:0 40px 90px -40px rgba(0,0,0,.55);
+  animation:rise .3s cubic-bezier(.3,.8,.3,1)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media(max-width:700px){
+  .fl-modal{padding:0;align-items:stretch}
+  .fl-sheetbox{border-radius:0;max-width:none;min-height:100dvh}
+}
+.fl-mx{position:absolute;top:14px;right:14px;z-index:5;width:38px;height:38px;border-radius:50%;
+  border:0;background:rgba(255,255,255,.94);cursor:pointer;display:flex;align-items:center;
+  justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.22)}
+.fl-mx svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:2.2}
+
+/* detail */
+/* The photographs come in at about 1.9 to 1, much wider than a normal frame.
+ * A 4 by 3 slot was cutting 30% off the width, which is where the nose and the
+ * tail of the aircraft are. The preview is where somebody is actually looking
+ * at the aircraft, so the slot is the shape of the pictures: nothing cropped,
+ * and no empty band either. The small picture on the card still crops, which
+ * is what a thumbnail is for. */
+.fl-d-top{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+@media(max-width:760px){.fl-d-top{grid-template-columns:1fr}}
+.fl-d-gal{background:var(--off-white);position:relative;aspect-ratio:1.9/1;
+  min-height:0}
+@media(max-width:760px){.fl-d-gal{aspect-ratio:1.9/1}}
+/* with no photographs the route takes the slot, so it gets the frame rather
+   than a border of its own inside one */
+.fl-d-top.fl-nopic .fl-d-gal{background:var(--off-white)}
+.fl-d-top.fl-nopic .fl-mapwrap{border:0;border-radius:0;margin:0;height:100%}
+.fl-d-top.fl-nopic .fl-mapwrap svg,.fl-d-top.fl-nopic .fl-mapwrap .fl-mapimg{height:100%;object-fit:cover}
+.fl-d-info{padding:30px 30px 26px}
+@media(max-width:600px){.fl-d-info{padding:22px var(--pad)}}
+.fl-route-big{margin:16px 0 0;column-gap:16px}
+.fl-route-big .fl-r-city{font-size:24px}
+.fl-route-big .fl-r-sub{font-size:13px}
+.fl-d-strip{display:flex;gap:0;border-top:.5px solid var(--warm-grey);margin-top:20px;padding-top:18px}
+.fl-d-strip div{flex:1;min-width:0}
+/* the date is the longest of the 4, and a date range longer still, so it is
+   given the room rather than wrapping while Timing sits beside it half empty */
+.fl-d-strip div:first-child{flex:1.6}
+.fl-d-strip dd{text-wrap:pretty}
+.fl-d-strip dt{font:600 10px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;
+  color:var(--grey);margin:0 0 5px}
+.fl-d-strip dd{margin:0;font-size:15px;color:var(--ink)}
+.fl-d-body{padding:0 30px 30px}
+@media(max-width:600px){.fl-d-body{padding:0 var(--pad) 26px}}
+.fl-d-h{font:600 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  margin:30px 0 13px}
+.fl-mapwrap{position:relative;border-radius:14px;overflow:hidden;border:.5px solid var(--grey-light);
+  background:#F5F5F7}
+.fl-mapwrap svg,.fl-mapwrap .fl-mapimg{display:block;width:100%;height:auto}
+/* the real map lies over the drawn one, so if it fails to load the drawn one
+   is already there rather than a broken picture appearing */
+.fl-maplayer{display:block;position:relative}
+.fl-maplayer .fl-mapimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* The aircraft at the half way point, turned to face the destination. It is
+   drawn here rather than baked into the picture so it stays crisp and so the
+   page can move it when the map is zoomed. The position is in the picture's
+   own 760 by 420 coordinates, scaled to whatever size the slot ends up. */
+.fl-mapplane{position:absolute;z-index:2;width:26px;height:26px;display:flex;
+  align-items:center;justify-content:center;pointer-events:none}
+/* no disc behind it. A soft white halo instead, which keeps the gold readable
+   over a dark coastline without putting a shape on the map. */
+.fl-mapplane svg{width:22px;height:22px;fill:var(--gold);display:block;
+  filter:drop-shadow(0 0 2px rgba(255,255,255,.95))
+         drop-shadow(0 1px 2px rgba(29,29,31,.18))}
+
+.fl-mapzoom{position:absolute;z-index:3;right:10px;bottom:10px;display:flex;
+  flex-direction:column;gap:1px;border-radius:9px;overflow:hidden;
+  box-shadow:0 2px 10px rgba(29,29,31,.22)}
+.fl-mapzoom button{width:32px;height:32px;border:0;cursor:pointer;display:flex;
+  align-items:center;justify-content:center;background:rgba(255,255,255,.96);
+  transition:background .14s}
+.fl-mapzoom button:hover:not(:disabled){background:var(--gold-pale)}
+.fl-mapzoom button:disabled{opacity:.4;cursor:default}
+.fl-mapzoom svg{width:14px;height:14px;fill:none;stroke:var(--ink);stroke-width:2.2;
+  stroke-linecap:round}
+.fl-map-badge{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.94);
+  font:600 11px/1 var(--sans);color:var(--ink);padding:7px 11px;border-radius:999px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.fl-spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:15px 22px;margin:0}
+.fl-spec dt{font:600 10px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--grey);
+  margin:0 0 5px}
+.fl-spec dd{margin:0;font-size:15px}
+/* ------------------------------------------------------- in this cabin
+ * What the Amenities column says about that particular aircraft, in the
+ * preview only. It never touches the card, so no card changes height.
+ * Quieter than the Included list above it, because Included is what the
+ * price buys and this is the detail of one cabin.
+ */
+.fl-amen{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0}
+.fl-amen li{font-size:13px;line-height:1;color:var(--grey-dark);
+  border:.5px solid var(--grey-light);border-radius:999px;padding:7px 12px;
+  background:var(--white)}
+@media(max-width:600px){.fl-amen li{font-size:12px;padding:6px 10px}}
+
+.fl-inc{list-style:none;margin:0;padding:0;columns:2;column-gap:26px}
+@media(max-width:600px){.fl-inc{columns:1}}
+.fl-inc li{display:flex;gap:9px;font-size:15px;color:var(--ink-2);padding:7px 0;
+  break-inside:avoid}
+.fl-inc svg{width:15px;height:15px;flex:none;margin-top:3px;fill:var(--gold)}
+.fl-caveat{font-size:14px;line-height:1.65;color:var(--grey-dark);margin:18px 0 0;padding:15px 17px;
+  background:var(--off-white);border-radius:12px}
+.fl-d-foot{position:sticky;bottom:0;background:rgba(255,255,255,.95);
+  backdrop-filter:saturate(180%) blur(14px);border-top:.5px solid var(--warm-grey);
+  padding:14px 30px;display:flex;align-items:center;gap:16px;
+  padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+@media(max-width:600px){.fl-d-foot{padding:12px var(--pad);
+  padding-bottom:calc(12px + env(safe-area-inset-bottom))}}
+.fl-d-foot .fl-acts{display:flex;gap:9px;flex:1;justify-content:flex-end}
+.fl-d-foot .fl-btn,.fl-d-foot .fl-btn-g{width:auto;padding-left:26px;padding-right:26px;margin-top:0}
+@media(max-width:600px){.fl-d-foot .fl-acts{flex-direction:column;gap:7px}
+  .fl-d-foot .fl-btn,.fl-d-foot .fl-btn-g{width:100%}}
+
+.fl-d-p{margin:0;font-size:15px;line-height:1.7;color:var(--ink-2)}
+@media(max-width:600px){.fl-d-p{font-size:14px}}
+
+/* ------------------------------------------------------------- request form
+ * Three bands: a title bar that stays put, a body that scrolls, and a foot that
+ * carries the price and the one action. Everything inside the scrolling body
+ * starts on the same left edge, --qpad, so the eye has one margin to follow.
+ */
+.fl-qsheet{display:flex;flex-direction:column;max-width:560px;
+  max-height:calc(100dvh - 68px);overflow:hidden}
+@media(max-width:700px){.fl-qsheet{max-width:none;height:100dvh;max-height:none;min-height:0}}
+
+.fl-qbar{flex:none;display:flex;align-items:center;gap:8px;padding:12px var(--qpad);
+  border-bottom:.5px solid var(--warm-grey);background:var(--white)}
+.fl-qbar h2{flex:1;margin:0;text-align:center;font:600 16px/1.3 var(--sans);
+  letter-spacing:-.01em;color:var(--ink)}
+.fl-qback{flex:none;width:36px;height:36px;border-radius:50%;border:0;background:none;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .16s}
+.fl-qback:hover{background:var(--off-white)}
+.fl-qback svg{width:19px;height:19px;fill:none;stroke:var(--ink);stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.fl-qx svg{width:16px;height:16px}
+
+.fl-qscroll{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:0 0 22px}
+
+.fl-qtrip{display:flex;gap:13px;align-items:center;margin:var(--qpad);
+  padding:12px;border-radius:14px;background:var(--off-white)}
+.fl-qthumb{flex:none;width:68px;height:68px;border-radius:11px;overflow:hidden;
+  background:var(--warm-grey);display:block}
+.fl-qthumb svg{width:100%;height:100%;display:block}
+.fl-qtripT{min-width:0}
+.fl-qcodes{font:600 var(--t-label)/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grey);margin-bottom:5px}
+.fl-qroute{font:400 var(--q-title)/1.25 var(--serif);color:var(--ink);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fl-qarrow{color:var(--gold);font-family:var(--sans)}
+.fl-qac{margin-top:4px;font-size:var(--q-soft);color:var(--grey-dark);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+.fl-qrow{display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px var(--qpad);border-top:.5px solid var(--warm-grey)}
+.fl-qrow > div:first-child{min-width:0}
+.fl-qlab{display:block;font:600 var(--t-label)/1 var(--sans);letter-spacing:.14em;
+  text-transform:uppercase;color:var(--grey);margin-bottom:7px}
+.fl-qval{font:400 var(--q-tot)/1.35 var(--sans);font-weight:600;color:var(--ink)}
+.fl-qsep{color:var(--grey-light)}
+.fl-qval .fl-qsep + *{font-weight:400}
+.fl-qnote{margin:5px 0 0;font-size:var(--q-soft);color:var(--grey-dark);line-height:1.5}
+
+.fl-step{flex:none;display:flex;align-items:center;gap:4px}
+.fl-step button{width:38px;height:38px;border-radius:50%;border:.5px solid var(--grey-light);
+  background:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:border-color .16s}
+.fl-step button:hover:not(:disabled){border-color:var(--gold)}
+.fl-step button:disabled{opacity:.38;cursor:default}
+.fl-step button svg{width:15px;height:15px;fill:none;stroke:var(--ink);stroke-width:2;
+  stroke-linecap:round}
+.fl-step input{width:34px;border:0;outline:0;background:none;text-align:center;
+  font:600 var(--q-tot)/1 var(--sans);color:var(--ink);padding:0}
+
+.fl-qsec{padding:18px var(--qpad) 4px;border-top:.5px solid var(--warm-grey)}
+.fl-qsub{margin:-3px 0 14px;font-size:var(--q-soft);color:var(--grey-dark)}
+/* with no line of explanation under it the section label needs the gap itself */
+.fl-qsec > .fl-qlab{margin-bottom:14px}
+.fl-qsec > .fl-qlab + .fl-qsub{margin-top:-11px}
+
+.fl-qbreak{flex:none;border-top:.5px solid var(--warm-grey);background:var(--off-white);
+  padding:14px var(--qpad)}
+.fl-qfoot{flex:none;display:flex;align-items:center;gap:14px;
+  padding:12px var(--qpad) calc(12px + env(safe-area-inset-bottom));
+  border-top:.5px solid var(--warm-grey);background:var(--white)}
+.fl-qmoney{flex:none;min-width:0}
+.fl-qprice{font:400 var(--t-price)/1.1 var(--serif);letter-spacing:-.015em;color:var(--ink)}
+.fl-qprice.fl-ask{font-size:var(--q-tot);color:var(--ink-2)}
+.fl-qdet{display:block;margin-top:3px;padding:0;border:0;background:none;cursor:pointer;
+  font:400 var(--q-soft)/1.2 var(--sans);color:var(--grey-dark);
+  text-decoration:underline;text-underline-offset:3px}
+.fl-qdet:hover{color:var(--gold)}
+.fl-qfoot .fl-btn{flex:1;width:auto;min-height:48px;font-size:var(--q-body)}
+
+/* quote form, the older pieces still used by the route alert and the thank you */
+.fl-q-head{padding:28px var(--qpad) 20px;border-bottom:.5px solid var(--warm-grey)}
+.fl-q-head h2{font:400 26px/1.2 var(--serif);letter-spacing:-.02em;margin:8px 0 6px}
+.fl-q-head p{margin:0;color:var(--grey-dark);font-size:15px}
+.fl-q-grid{display:grid;grid-template-columns:1fr 320px}
+@media(max-width:820px){.fl-q-grid{grid-template-columns:1fr}}
+.fl-q-form{padding:24px var(--qpad) 28px}
+.fl-q-side{background:var(--off-white);border-left:.5px solid var(--grey-light);
+  padding:24px var(--qpad)}
+@media(max-width:820px){.fl-q-side{border-left:0;border-top:.5px solid var(--grey-light);order:-1}}
+@media(max-width:600px){
+  .fl-q-head{padding:22px var(--qpad) 16px}
+  .fl-q-head h2{font-size:22px}
+  .fl-q-head p{font-size:14px}
+  .fl-q-form{padding:18px var(--qpad) 24px}
+  .fl-q-side{padding:18px var(--qpad)}
+}
+.fl-field{margin:0 0 15px}
+.fl-field label{display:block;font:600 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grey);margin:0 0 7px}
+.fl-field input,.fl-field textarea,.fl-field select{width:100%;border:.5px solid var(--grey-light);
+  border-radius:12px;padding:13px 14px;font:400 15px/1.4 var(--sans);color:var(--ink);outline:0;
+  background:var(--white);min-height:48px;-webkit-appearance:none;appearance:none}
+.fl-field input:focus,.fl-field textarea:focus,.fl-field select:focus{border-color:var(--gold)}
+.fl-field textarea{min-height:92px;resize:vertical}
+.fl-field .fl-cnt{text-align:right;font-size:var(--q-soft);color:var(--grey);margin-top:5px}
+.fl-two{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+@media(max-width:480px){.fl-two{grid-template-columns:1fr}}
+.fl-locked{background:var(--off-white);color:var(--ink-2)}
+.fl-lockrow{display:flex;align-items:center;gap:8px;font-size:var(--q-soft);color:var(--grey);
+  margin:-8px 0 16px}
+.fl-lockrow svg{width:12px;height:12px;fill:var(--grey)}
+.fl-q-sum{background:var(--white);border:.5px solid var(--grey-light);border-radius:14px;
+  padding:var(--qbox)}
+.fl-q-sum .fl-qr{font:400 var(--q-title)/1.3 var(--serif);margin:0 0 4px}
+.fl-q-sum .fl-qd{font-size:var(--q-soft);color:var(--grey-dark)}
+.fl-q-sum hr{border:0;border-top:.5px solid var(--warm-grey);margin:14px 0}
+.fl-q-line{display:flex;justify-content:space-between;gap:12px;font-size:var(--q-body);
+  color:var(--ink-2);padding:4px 0}
+.fl-q-line span:last-child{text-align:right}
+.fl-q-line.fl-tot{font-weight:600;color:var(--ink);font-size:var(--q-tot)}
+.fl-q-assure{list-style:none;margin:16px 0 0;padding:0}
+.fl-qscroll .fl-q-assure{margin:4px var(--qpad) 0;padding-top:16px;
+  border-top:.5px solid var(--warm-grey)}
+.fl-qscroll .fl-q-note{margin:14px var(--qpad) 0}
+.fl-q-assure li{display:flex;gap:9px;font-size:var(--q-body);color:var(--ink-2);
+  padding:7px 0;line-height:1.5}
+.fl-q-assure svg{width:15px;height:15px;flex:none;margin-top:2px;fill:var(--gold)}
+.fl-q-note{font-size:var(--q-soft);color:var(--grey);line-height:1.6;margin:16px 0 0}
+.fl-q-done{text-align:center;padding:60px 30px}
+.fl-q-done .fl-tick{width:58px;height:58px;border-radius:50%;background:var(--gold-pale);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.fl-q-done .fl-tick svg{width:26px;height:26px;fill:var(--ink-2)}
+.fl-q-done h2{font:400 26px/1.2 var(--serif);margin:0 0 8px}
+.fl-q-done p{color:var(--grey-dark);font-size:15px;margin:0 auto;max-width:44ch}
+@media(max-width:600px){.fl-q-done{padding:48px var(--qpad)}
+  .fl-q-done h2{font-size:22px}
+  .fl-q-done p{font-size:14px}}
