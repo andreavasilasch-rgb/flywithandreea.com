@@ -2189,8 +2189,17 @@ function mapHTML(l, w, h){
   return '<span class="maplayer" data-map="' + l.id + '"'
     + ' data-w="' + w + '" data-h="' + h + '" data-step="0">'
     + mapSVG(l, w, h, view)
+    /* Loaded at once, never lazily.
+     *
+     * A lazy picture waits until the browser decides it is near the view.
+     * This one is built inside the preview while the preview is still
+     * hidden, and that decision is then never revisited: the map stayed
+     * deferred for as long as the panel was open and the drawn fallback
+     * showed instead, which is why the preview looked as though it had no
+     * map in it. It is 1 picture, asked for only when somebody opens a
+     * flight, so there was nothing to defer in the first place. */
     + '<img class="mapimg" src="' + esc(src) + '" alt="' + esc(l.fc)
-    + ' to ' + esc(l.tc) + '" loading="lazy" decoding="async"'
+    + ' to ' + esc(l.tc) + '" loading="eager" decoding="async"'
     + ' onerror="this.remove()">'
     + '<span class="mapplane" style="left:' + p.x + '%;top:' + p.y + '%;'
     + 'transform:translate(-50%,-50%) rotate(' + p.deg + 'deg)">'
