@@ -65,15 +65,24 @@ body.fl-lock{overflow:hidden}
 .fl-gal{position:relative;background:var(--off-white);min-height:0;overflow:hidden;
   height:100%}
 @media(max-width:700px){.fl-gal{min-height:0}}
+/* pan-x: the gallery takes a sideways drag and lets a vertical one through
+   to whatever is scrolling behind it. Without this a finger that starts on
+   the photograph moves nothing at all. */
 .fl-gal-track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;
+  touch-action:pan-x;overscroll-behavior-x:contain;
   scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
 .fl-gal-track::-webkit-scrollbar{display:none}
 .fl-gal-slide{flex:0 0 100%;scroll-snap-align:center;position:relative;height:100%}
-.fl-gal-slide svg,.fl-gal-slide img{width:100%;height:100%;display:block;object-fit:cover;
+.fl-gal-slide svg,.fl-gal-slide img{width:100%;height:100%;display:block;
   position:absolute;inset:0}
-/* a photograph at 450 by 237 in a slot that can be 218 by 145 or 760 by 420:
-   object-fit keeps the aircraft in frame rather than stretching it */
-.fl-gal-slide img{background:var(--off-white)}
+.fl-gal-slide svg{object-fit:cover}
+/* The photographs are about 1.9 to 1 and the slot on a card is nearer 1.2
+   to 1, so filling it cut roughly a third off each end: the nose off one
+   aircraft and the tail off the next. The whole photograph is shown
+   instead, centred, with the page's own off white behind it where the
+   shapes do not agree. Nothing of the aircraft is lost. */
+.fl-gal-slide img{object-fit:contain;object-position:center;
+  background:var(--off-white)}
 .fl-fav{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;
   border:0;background:rgba(255,255,255,.92);cursor:pointer;display:flex;align-items:center;
   justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.16)}
@@ -259,16 +268,12 @@ button.fl-btn,button.fl-btn-g{font-family:var(--sans);-webkit-appearance:none;
 .fl-btn.fl-dark:hover{background:var(--gold-dk);border-color:var(--gold-dk)}
 
 
-/* grid view: 2 up, the gallery on top */
-.fl-grid-view #list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fl-grid-view .fl-leg{margin:0}
-.fl-grid-view .fl-leg-main{grid-template-columns:1fr}
-.fl-grid-view .fl-gal{grid-row:auto;min-height:0;aspect-ratio:16/9;max-height:250px}
-.fl-grid-view .fl-gal-slide{min-height:0}
-.fl-grid-view .fl-rail{grid-column:auto;border-left:0;border-top:.5px solid var(--grey-light);
-  flex-direction:row;align-items:center}
-.fl-grid-view .fl-rail .fl-acts{flex:none;min-width:150px}
-@media(max-width:1040px){.fl-grid-view #list{grid-template-columns:1fr}}
+/* The grid view rules lived here and have been taken out, along with the
+ * toggle on the empty legs page. Nothing on a route or home page ever
+ * switched them on, so they were dead weight carrying a real fault: the
+ * card names its 3 parts "gal mid rail" and these set the columns to 1
+ * without redefining those names, which put the price rail where the
+ * photograph belongs and crushed the route. */
 
 /* ---------------------------------------------- the card, anywhere else
  * Squeezing this card into a third of the width broke it: city names cut to
@@ -349,8 +354,13 @@ button.fl-btn,button.fl-btn-g{font-family:var(--sans);-webkit-appearance:none;
  * sits above them now, and while it is open they are out of the way entirely,
  * because a form is a single task and nothing else should be competing with it.
  */
+/* The panel is the thing that scrolls, and nothing behind it. pan-y says a
+   vertical drag belongs to this box, which stops the gallery across the top
+   from swallowing the gesture, and contain stops the scroll handing over to
+   the page when it reaches the end. */
 .fl-modal{position:fixed;inset:0;z-index:9200;display:none;align-items:flex-start;
-  justify-content:center;padding:34px 18px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  justify-content:center;padding:34px 18px;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
 .fl-modal.fl-on{display:flex}
 body.fl-lock .fwa-cta,
 body.fl-lock .fwa-top,
@@ -363,6 +373,8 @@ body.fl-lock .fwac-b{display:none !important}
 @media(max-width:700px){
   .fl-modal{padding:0;align-items:stretch}
   .fl-sheetbox{border-radius:0;max-width:none;min-height:100dvh}
+  /* the foot is stuck to the bottom, so the last rows need room to clear it */
+  .fl-d-body{padding-bottom:30px}
 }
 .fl-mx{position:absolute;top:14px;right:14px;z-index:5;width:38px;height:38px;border-radius:50%;
   border:0;background:rgba(255,255,255,.94);cursor:pointer;display:flex;align-items:center;
@@ -502,6 +514,7 @@ body.fl-lock .fwac-b{display:none !important}
   padding:12px;border-radius:14px;background:var(--off-white)}
 .fl-qthumb{flex:none;width:68px;height:68px;border-radius:11px;overflow:hidden;
   background:var(--warm-grey);display:block}
+.fl-qthumb img{width:100%;height:100%;object-fit:cover;display:block}
 .fl-qthumb svg{width:100%;height:100%;display:block}
 .fl-qtripT{min-width:0}
 .fl-qcodes{font:600 var(--t-label)/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;

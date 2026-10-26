@@ -171,12 +171,18 @@
    * one carrying photographs, then whichever came first. Nothing is thrown away
    * silently in a way that could lose the only priced copy.
    */
-  /* A leg stays up for the whole of its departure day and is gone the next
-   * morning. A repositioning flight at 07:00 can still be sold at 06:00, so
-   * dropping it at midnight the night before would throw away real business,
-   * and keeping it the day after would show a flight that has gone. The page
-   * works this out from today, every time it loads, so a file uploaded on
-   * Monday is still honest on Friday without being uploaded again.
+  /* The list starts tomorrow. Today has gone.
+   *
+   * A leg used to stay up for the whole of its departure day, on the
+   * reasoning that a 07:00 repositioning can still be sold at 06:00. In
+   * practice it cannot: the enquiry has to be read, the operator has to
+   * confirm the leg is still free, and the passenger has to reach the
+   * terminal. A flight leaving in a few hours is an enquiry that ends in an
+   * apology, so same day flights are not offered at all.
+   *
+   * The page works this out from today, every time it loads, so a file
+   * uploaded on Monday is still honest on Friday without being uploaded
+   * again.
    */
   function todayKey(){
     var n = new Date();
@@ -184,7 +190,7 @@
   }
   function flown(legs){
     var t = todayKey();
-    return legs.filter(function (l) { return (l.sk || 0) >= t; });
+    return legs.filter(function (l) { return (l.sk || 0) > t; });
   }
 
   /* days to departure is worked out here rather than carried in the file,
@@ -415,8 +421,12 @@
     return '<span class="fl-maplayer" data-map="' + l.id + '"'
       + ' data-w="' + w + '" data-h="' + h + '" data-step="0">'
       + mapSVG(l, w, h, view)
+      /* Loaded at once, never lazily. The map is built inside the preview
+         while the preview is still hidden, so a lazy picture is deferred
+         and never reconsidered: it stayed blank for as long as the panel
+         was open. It is 1 picture, and only when somebody opens a flight. */
       + '<img class="fl-mapimg" src="' + esc(src) + '" alt="' + esc(l.fc)
-      + ' to ' + esc(l.tc) + '" loading="lazy" decoding="async"'
+      + ' to ' + esc(l.tc) + '" loading="eager" decoding="async"'
       + ' onerror="this.remove()">'
       + '<span class="fl-mapplane" style="left:' + p.x + '%;top:' + p.y + '%;'
       + 'transform:translate(-50%,-50%) rotate(' + p.deg + 'deg)">'
@@ -871,7 +881,9 @@
      + '<form class="fl-qscroll" id="fwa_qForm" onsubmit="return false">'
 
      + '<div class="fl-qtrip">'
-     + '<span class="fl-qthumb">' + ART.ext1 + '</span>'
+     /* no thumbnail. It was a drawing on a grey square for every leg, and a
+        photograph on only some of them, so the strip changed shape from card
+        to card for no reason. The route and the aircraft say it. */
      + '<div class="fl-qtripT">'
      + '<div class="fl-qcodes">' + esc(l.f) + ' &middot; ' + esc(l.t) + '</div>'
      + '<div class="fl-qroute">' + esc(l.fc) + ' <span class="fl-qarrow">&#8594;</span> ' + esc(l.tc)
@@ -979,9 +991,30 @@
    * reference to the sheet is asked whether it exists first. The same file then
    * runs unchanged in both places. */
   function on(m){ return !!m && m.classList.contains('fl-on'); }
-  function open(m){ m.classList.add('fl-on'); document.body.classList.add('fl-lock'); }
+  /* Locking the page behind a panel.
+   *
+   * Hiding the body's overflow does nothing on an iPhone: the page keeps
+   * scrolling under the panel, and because the finger is moving the page
+   * rather than the panel, the preview feels frozen. Pinning the body at the
+   * position it was at is the only thing that holds, and the scroll position
+   * has to be put back afterwards or the page jumps to the top on close.
+   */
+  var lockedAt = 0;
+  function lockPage(){
+    if (document.body.classList.contains('fl-lock')) return;
+    lockedAt = window.scrollY || window.pageYOffset || 0;
+    document.body.style.top = '-' + lockedAt + 'px';
+    document.body.classList.add('fl-lock');
+  }
+  function open(m){ lockPage(); m.classList.add('fl-on'); }
+  function unlock(){
+    if (!document.body.classList.contains('fl-lock')) return;
+    document.body.classList.remove('fl-lock');
+    document.body.style.top = '';
+    window.scrollTo(0, lockedAt);
+  }
   function shut(m){ m.classList.remove('fl-on');
-    if (!on(detailM) && !on(quoteM)) document.body.classList.remove('fl-lock'); }
+    if (!on(detailM) && !on(quoteM)) unlock(); }
   function openDetail(id){
     var l = byId(id); if (!l) return;
     detailBox.innerHTML = detailHTML(l); open(detailM); detailBox.scrollTop = 0;
