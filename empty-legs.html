@@ -70,7 +70,9 @@
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--white);color:var(--ink);font:400 17px/1.6 var(--sans);
   -webkit-font-smoothing:antialiased;overflow-x:hidden}
-body.lock{overflow:hidden}
+/* the page is pinned where it was, not merely told not to scroll, because
+   an iPhone ignores the second and keeps moving the page under the panel */
+body.lock{position:fixed;left:0;right:0;width:100%;overflow:hidden}
 img,svg{max-width:100%}
 button{font-family:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
@@ -237,15 +239,24 @@ button{font-family:inherit}
 .gal{position:relative;background:var(--off-white);min-height:0;overflow:hidden;
   height:100%}
 @media(max-width:700px){.gal{min-height:0}}
+/* pan-x: the gallery takes a sideways drag and lets a vertical one through
+   to whatever is scrolling behind it. Without this a finger that starts on
+   the photograph moves nothing at all. */
 .gal-track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;
+  touch-action:pan-x;overscroll-behavior-x:contain;
   scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
 .gal-track::-webkit-scrollbar{display:none}
 .gal-slide{flex:0 0 100%;scroll-snap-align:center;position:relative;height:100%}
-.gal-slide svg,.gal-slide img{width:100%;height:100%;display:block;object-fit:cover;
+.gal-slide svg,.gal-slide img{width:100%;height:100%;display:block;
   position:absolute;inset:0}
-/* a photograph at 450 by 237 in a slot that can be 218 by 145 or 760 by 420:
-   object-fit keeps the aircraft in frame rather than stretching it */
-.gal-slide img{background:var(--off-white)}
+.gal-slide svg{object-fit:cover}
+/* The photographs are about 1.9 to 1 and the slot on a card is nearer 1.2
+   to 1, so filling it cut roughly a third off each end: the nose off one
+   aircraft and the tail off the next. The whole photograph is shown
+   instead, centred, with the page's own off white behind it where the
+   shapes do not agree. Nothing of the aircraft is lost. */
+.gal-slide img{object-fit:contain;object-position:center;
+  background:var(--off-white)}
 .fav{position:absolute;top:10px;right:10px;z-index:3;width:34px;height:34px;border-radius:50%;
   border:0;background:rgba(255,255,255,.92);cursor:pointer;display:flex;align-items:center;
   justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.16)}
@@ -605,8 +616,13 @@ button.fl-btn,button.fl-btn-g{font-family:var(--sans);-webkit-appearance:none;
  * sits above them now, and while it is open they are out of the way entirely,
  * because a form is a single task and nothing else should be competing with it.
  */
+/* The panel is the thing that scrolls, and nothing behind it. pan-y says a
+   vertical drag belongs to this box, which stops the gallery across the top
+   from swallowing the gesture, and contain stops the scroll handing over to
+   the page when it reaches the end. */
 .modal{position:fixed;inset:0;z-index:9200;display:none;align-items:flex-start;
-  justify-content:center;padding:34px 18px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  justify-content:center;padding:34px 18px;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
 .modal.on{display:flex}
 body.lock .fwa-cta,
 body.lock .fwa-top,
@@ -619,6 +635,8 @@ body.lock .fwac-b{display:none !important}
 @media(max-width:700px){
   .modal{padding:0;align-items:stretch}
   .sheetbox{border-radius:0;max-width:none;min-height:100dvh}
+  /* the foot is stuck to the bottom, so the last rows need room to clear it */
+  .d-body{padding-bottom:30px}
 }
 .mx{position:absolute;top:14px;right:14px;z-index:5;width:38px;height:38px;border-radius:50%;
   border:0;background:rgba(255,255,255,.94);cursor:pointer;display:flex;align-items:center;
@@ -758,6 +776,7 @@ body.lock .fwac-b{display:none !important}
   padding:12px;border-radius:14px;background:var(--off-white)}
 .qthumb{flex:none;width:68px;height:68px;border-radius:11px;overflow:hidden;
   background:var(--warm-grey);display:block}
+.qthumb img{width:100%;height:100%;object-fit:cover;display:block}
 .qthumb svg{width:100%;height:100%;display:block}
 .qtripT{min-width:0}
 .qcodes{font:600 var(--t-label)/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;
@@ -2579,6 +2598,7 @@ function render(){
     list.innerHTML = '<div class="none"><h3>Nothing on that search.</h3>'
       + '<p>Tell Andreea the route you want and she will watch for it.</p></div>';
     document.getElementById('moreBtn').hidden = true;
+    window.dispatchEvent(new Event('fwa:redrawn'));
     return;
   }
   list.innerHTML = rows.slice(0, shown).map(cardHTML).join('');
@@ -2593,6 +2613,9 @@ function render(){
   /* the mix of cards with and without photographs decides how tall the ones
      with photographs can be, so it is worked out after every draw, not once */
   if (window.fitFive) window.fitFive();
+  /* said out loud so the bottom of the list can drop any wait it was in the
+     middle of: a filter or a sort has moved the ground under it */
+  window.dispatchEvent(new Event('fwa:redrawn'));
 }
 
 
@@ -2698,7 +2721,9 @@ function quoteHTML(l){
    + '<form class="qscroll" id="fwa_qForm" onsubmit="return false">'
 
    + '<div class="qtrip">'
-   + '<span class="qthumb">' + ART.ext1 + '</span>'
+   /* no thumbnail. It was a drawing on a grey square for every leg, and a
+      photograph on only some of them, so the strip changed shape from card
+      to card for no reason. The route and the aircraft say it. */
    + '<div class="qtripT">'
    + '<div class="qcodes">' + esc(l.f) + ' &middot; ' + esc(l.t) + '</div>'
    + '<div class="qroute">' + esc(l.fc) + ' <span class="qarrow">&#8594;</span> ' + esc(l.tc)
@@ -2805,9 +2830,30 @@ function byId(id){ for (var i = 0; i < L.length; i++) if (L[i].id === id) return
  * reference to the sheet is asked whether it exists first. The same file then
  * runs unchanged in both places. */
 function on(m){ return !!m && m.classList.contains('on'); }
-function open(m){ m.classList.add('on'); document.body.classList.add('lock'); }
+/* Locking the page behind a panel.
+ *
+ * Hiding the body's overflow does nothing on an iPhone: the page keeps
+ * scrolling under the panel, and because the finger is moving the page
+ * rather than the panel, the preview feels frozen. Pinning the body at the
+ * position it was at is the only thing that holds, and the scroll position
+ * has to be put back afterwards or the page jumps to the top on close.
+ */
+var lockedAt = 0;
+function lockPage(){
+  if (document.body.classList.contains('lock')) return;
+  lockedAt = window.scrollY || window.pageYOffset || 0;
+  document.body.style.top = '-' + lockedAt + 'px';
+  document.body.classList.add('lock');
+}
+function open(m){ lockPage(); m.classList.add('on'); }
+function unlock(){
+  if (!document.body.classList.contains('lock')) return;
+  document.body.classList.remove('lock');
+  document.body.style.top = '';
+  window.scrollTo(0, lockedAt);
+}
 function shut(m){ m.classList.remove('on');
-  if (!on(detailM) && !on(quoteM)) document.body.classList.remove('lock'); }
+  if (!on(detailM) && !on(quoteM)) unlock(); }
 function openDetail(id){
   var l = byId(id); if (!l) return;
   detailBox.innerHTML = detailHTML(l); open(detailM); detailBox.scrollTop = 0;
@@ -2815,6 +2861,7 @@ function openDetail(id){
 }
 function openQuote(id){
   var l = byId(id); if (!l) return;
+  var a = ac(l);                 /* the cabin, needed again when the form is sent */
   quoteBox.className = 'sheetbox qsheet';
   quoteBox.innerHTML = quoteHTML(l); open(quoteM); quoteM.scrollTop = 0;
   var msg = document.getElementById('fwa_qMsg'), len = document.getElementById('fwa_qLen');
@@ -2847,15 +2894,90 @@ function openQuote(id){
     det.textContent = openNow ? 'Hide details' : 'Price details';
   });
 
-  document.getElementById('fwa_qSend').addEventListener('click', function () {
+  /* Sending the request.
+   *
+   * The form used to show the thank you screen and stop there: nothing left
+   * the browser, so no enquiry ever reached Andreea. It now posts to the same
+   * Formspree endpoint the home page and the fast quote form already use, so
+   * an empty leg request arrives in the same inbox as everything else.
+   *
+   * Every field is named and copied one at a time. Nothing is spread or
+   * looped out of the leg, so an operator name or a registration cannot
+   * reach the payload even if one were ever added to the data file.
+   */
+  var sendBtn = document.getElementById('fwa_qSend');
+  /* The send button sits in the footer rather than inside the form, so
+     pressing Enter in a field would otherwise do nothing at all. The form's
+     own submit is still stopped from navigating; it is routed to the button
+     instead, so the keyboard and the thumb do the same thing. */
+  document.getElementById('fwa_qForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!sendBtn.disabled) sendBtn.click();
+  });
+  sendBtn.addEventListener('click', function () {
     var ok = ['fwa_fName','fwa_lName','fwa_qEmail','fwa_qPhone'].every(function (k) {
       var el = document.getElementById(k);
       if (!el.value.trim()) { el.style.borderColor = 'var(--gold-dk)'; el.focus(); return false; }
       el.style.borderColor = ''; return true;
     });
     if (!ok) return;
-    quoteBox.className = 'sheetbox';
-    quoteBox.innerHTML = doneHTML(l);
+
+    var first = document.getElementById('fwa_fName').value.trim();
+    var last = document.getElementById('fwa_lName').value.trim();
+    var email = document.getElementById('fwa_qEmail').value.trim();
+    var phone = document.getElementById('fwa_qPhone').value.trim();
+    var back = document.getElementById('fwa_qBack').value;
+    var note = document.getElementById('fwa_qMsg').value.trim();
+    var seatsNow = document.getElementById('fwa_qSeats').value;
+    var route = l.fc + ' to ' + l.tc;
+    var when = dateSpan(l) + (l.time ? ', ' + l.time : '');
+
+    var payload = {
+      _subject: 'Empty leg request: ' + route,
+      request: 'Empty leg',
+      route: route,
+      airports: l.f + ' to ' + l.t,
+      departure: when,
+      date_is_flexible: l.flex ? 'Yes, the operator may move it' : 'No, fixed with the quote',
+      aircraft: a.t,
+      passengers: seatsNow + ' of ' + a.pax,
+      price: l.price ? money(l.price) : 'Price on request',
+      name: first + ' ' + last,
+      email: email,
+      phone: phone,
+      preferred_reply: back,
+      additional_info: note,
+      leg_reference: l.id,
+      page: 'https://www.flywithandreea.com/empty-legs#leg-' + l.id
+    };
+
+    sendBtn.disabled = true;
+    var said = sendBtn.textContent;
+    sendBtn.textContent = 'Sending...';
+
+    fetch('https://formspree.io/f/xojbkjyo', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function (r) {
+      return r.ok ? r.json() : Promise.reject(r);
+    }).then(function () {
+      quoteBox.className = 'sheetbox';
+      quoteBox.innerHTML = doneHTML(l);
+    })['catch'](function () {
+      /* The same fallback the fast quote form uses. A request that cannot be
+         posted goes to WhatsApp rather than being lost, and the button comes
+         back so she can also simply try again. */
+      sendBtn.disabled = false;
+      sendBtn.textContent = said;
+      var msg = 'Hello Andreea, I would like this empty leg. '
+        + route + ' (' + l.f + ' to ' + l.t + ') on ' + when + '. '
+        + a.t + ', ' + seatsNow + ' passengers. '
+        + (l.price ? money(l.price) : 'Price on request') + '. '
+        + 'Name: ' + first + ' ' + last + ', ' + email + ', ' + phone + '.'
+        + (note ? ' ' + note : '');
+      window.open('https://wa.me/971503372980?text=' + encodeURIComponent(msg), '_blank');
+    });
   });
 }
 document.addEventListener('click', function (e) {
@@ -2886,10 +3008,12 @@ document.addEventListener('keydown', function (e) {
 
 /* ------------------------------------------------------------ filter sheet */
 var sheet = document.getElementById('fwaSheet'), scrim = document.getElementById('scrim');
+/* the filter sheet locks and unlocks the page the same way the panels do,
+   so the 2 cannot leave the body pinned between them */
 function openSheet(){ sheet.classList.add('on'); scrim.classList.add('on');
-  document.body.classList.add('lock'); }
+  lockPage(); }
 function closeSheet(){ sheet.classList.remove('on'); scrim.classList.remove('on');
-  document.body.classList.remove('lock'); }
+  if (!on(detailM) && !on(quoteM)) unlock(); }
 document.getElementById('fBtn').addEventListener('click', openSheet);
 document.getElementById('sheetX').addEventListener('click', closeSheet);
 document.getElementById('sheetCancel').addEventListener('click', closeSheet);
@@ -3242,10 +3366,61 @@ fitFive();
 window.addEventListener('resize', fitFive);
 window.addEventListener('orientationchange', function () { setTimeout(fitFive, 220); });
 
-document.getElementById('moreBtn').addEventListener('click', function () {
-  shown += PAGE; render();
-  window.scrollBy({ top: 120, behavior: 'smooth' });
-});
+var moreBtn = document.getElementById('moreBtn');
+
+function showMore(scroll){
+  /* the button is hidden the moment there is nothing left, so it is the
+     one thing worth asking */
+  if (moreBtn.hidden) return;
+  shown += PAGE;
+  render();
+  if (scroll) window.scrollBy({ top: 120, behavior: 'smooth' });
+}
+
+moreBtn.addEventListener('click', function () { showMore(true); });
+
+/* ------------------------------------------------- reaching the bottom
+ *
+ * Somebody who has read to the end of the 8 and stayed there wants more
+ * flights, so the next 8 arrive on their own after 2 seconds, with no
+ * button to find and no jump: the page simply grows beneath what they are
+ * already reading.
+ *
+ * Somebody who flies past the button on the way to the sections below
+ * wants the sections below. If they leave before the 2 seconds are up the
+ * timer is dropped and nothing loads, so the page does not keep growing
+ * under them and pushing what they were heading for further away.
+ *
+ * The button stays exactly where it is and still works on a tap, for
+ * anyone who would rather ask than wait, and for anything that does not
+ * run an observer.
+ */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  var WAIT = 2000;
+  var timer = null;
+
+  function stop(){ if (timer) { clearTimeout(timer); timer = null; } }
+
+  var watcher = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !moreBtn.hidden) {
+        if (!timer) timer = setTimeout(function () {
+          timer = null;
+          /* still there, and still something to show */
+          if (!moreBtn.hidden) showMore(false);
+        }, WAIT);
+      } else {
+        stop();
+      }
+    });
+  }, { threshold: 0.9 });
+
+  watcher.observe(moreBtn);
+
+  /* a redraw from a filter or a sort starts the wait over */
+  window.addEventListener('fwa:redrawn', stop);
+}());
 
 /* ------------------------------------------- keeping the page's own word
  *
@@ -3521,7 +3696,7 @@ openFromHash();
    "name": "Empty Leg Private Jet Flights from €1,450 | Fly with Andreea",
    "description": "79 empty leg private jet flights across 80 airports in 43 countries, updated daily.",
    "inLanguage": "en",
-   "dateModified": "2026-10-25",
+   "dateModified": "2026-10-26",
    "isPartOf": {
     "@type": "WebSite",
     "@id": "https://www.flywithandreea.com/#site",
