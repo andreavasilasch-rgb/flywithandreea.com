@@ -4,22 +4,18 @@
  * the empty legs page load, so there is one card and not two that drift.
  */
 
-/* The row was a horizontal scroller: the panel, then the cards, sliding off the
-   right edge. That hid every leg after the first. It becomes 2 columns instead,
-   the panel at the width it was built for and the cards wrapping beside it, so
-   nothing is off screen. */
-.fl-row{display:grid;gap:16px;grid-template-columns:340px minmax(0,1fr);
+/* The price watch panel sits above the flights, not beside them.
+ *
+ * It was a horizontal scroller first, which hid every leg after the first.
+ * Then 2 columns, the panel on the left and the cards sharing what was left,
+ * which on a wide screen squeezed the card to about 820px: the price rail
+ * ran off the edge, so "Price on request" was clipped and a country read
+ * "United Kingd...". The panel is 340px of reading matter that nobody needs
+ * level with the flights, so it goes on top and the cards get the full
+ * width, exactly as they have on the empty legs page. */
+.fl-row{display:grid;gap:18px;grid-template-columns:minmax(0,1fr);
   align-items:stretch;overflow:visible}
 .fl-row > .el-watch{flex:none}
-@media(max-width:1040px){.fl-row{grid-template-columns:1fr}}
-
-/* Beside the panel the card has roughly 820px rather than the full 1180, so it
-   uses the narrower proportions it already switches to on a small laptop. Same
-   card, same parts, nothing truncated. Below 1040 the panel moves above the
-   cards and they get the width back. */
-@media(min-width:1041px){
-  .fl-row .fl-list .fl-leg-main{grid-template-columns:168px minmax(0,1fr) 162px}
-}
 
 /* The price watch panel is left entirely alone. It keeps its own markup and its
    own rules from the page's stylesheet, so nothing here touches .el-watch. */
