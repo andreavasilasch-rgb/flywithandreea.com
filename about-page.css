@@ -352,3 +352,126 @@ body{background:transparent}
 #founder{background:rgba(250,250,251,.72)}
 .fv-legalstrip{background:rgba(255,255,255,.86)}
 footer{background:rgba(247,245,242,.92)}
+
+
+/* =====================================================================
+   STEP 1
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   1. "What Fly with Andreea does for you", rebuilt as the homepage
+      card track. Matches .routes-section / .routes-qa / .qa-card.
+
+   The markup is untouched. .value .head becomes the title block,
+   .vgrid stops being a 3 column grid and becomes the scrolling flex
+   track, and each .vcard becomes a 360px card. Six cards at 360 plus
+   five 16px gaps is 2240px, which is wider than the 1804px available at
+   a 1900px window, so the row scrolls sideways exactly as it does on the
+   homepage.
+   --------------------------------------------------------------------- */
+
+.value{padding:80px 48px 60px;
+  background:rgba(245,245,247,.86)}          /* BACKGROUND, see the note */
+
+.value > .wrap{max-width:none;margin:0;padding:0}
+
+/* the head was margin-left:212px, max-width:680px, text-align:center.
+   All three are cancelled so the title sits on the 48px page margin. */
+.value .head{margin:0;max-width:none;text-align:left}
+
+.value .head h2{font-family:'Cinzel',Georgia,serif;
+  font-size:clamp(22px,3vw,28px);font-weight:300;line-height:1.47;
+  letter-spacing:-.02em;color:#1D1D1F;text-transform:uppercase;
+  margin:0 0 10px;max-width:none;text-align:left}
+.value .head h2 em{font-style:italic;color:var(--gold)}
+
+.value .head p{font-family:var(--sans);font-size:13px;font-weight:400;
+  line-height:1.6;letter-spacing:-.01em;color:#8a8a90;
+  margin:0 0 28px;max-width:none;text-align:left}
+
+/* the track */
+.value .vgrid{display:flex;grid-template-columns:none;gap:16px;
+  width:auto;border-top:.5px solid #D2D2D7;padding:40px 0 8px;margin:0;
+  overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+  cursor:grab}
+.value .vgrid::-webkit-scrollbar{display:none}
+.value .vgrid:active{cursor:grabbing}
+
+/* the cards */
+.value .vcard{scroll-snap-align:start;width:360px;min-width:360px;
+  background:#fff;border:.5px solid #D2D2D7;border-radius:20px;
+  padding:28px 28px 32px;margin:0;
+  display:flex;flex-direction:column;gap:12px;
+  box-shadow:none;transition:border-color .2s,box-shadow .2s}
+.value .vcard:hover{border-color:var(--gold);
+  box-shadow:0 8px 28px rgba(26,24,20,.07)}
+
+.value .vcard h3{font-family:'Cinzel',Georgia,serif;font-size:15px;
+  font-weight:400;line-height:1.35;letter-spacing:-.025em;
+  color:#1D1D1F;margin:0}
+.value .vcard p{font-family:var(--sans);font-size:13px;font-weight:300;
+  line-height:1.75;letter-spacing:-.025em;color:#6E6E73;margin:0;flex:1 1 0}
+
+/* the six icons stay hidden, as they already are */
+.value .vcard .ic{display:none}
+
+
+/* ---------------------------------------------------------------------
+   2. "Good to know / Ask Andreea." aligned to the left page margin.
+
+   The section's children were capped at 1160px and centred with
+   margin:0 auto, which put the heading at x=398 on a 1900px window.
+   Only the horizontal values are changed here, so every vertical
+   padding on the question rows is left exactly as it is.
+
+   .fsub was text-align:center inside a 544px box, which centred the line
+   within its own column and is what made it look indented. Its width is
+   left at 68ch, because a single line of text 1804px wide would be
+   unreadable. Only the alignment changes.
+
+   Two selectors here are deliberately more specific than they look. The
+   first version of this block used .faq .head .fsub and relied on
+   .faq > * for the padding, and neither worked: the page already carries
+   .faq .head p.fsub, which has one more element in it and therefore wins,
+   and .faq .head{padding:0 28px}, which has two classes against one and
+   also wins. So the padding is set on .faq .head itself and the subline
+   is matched as p.fsub. Tested on the live page: every element in the
+   header and every question row now starts at x=48.
+   --------------------------------------------------------------------- */
+
+.faq > *{max-width:none;margin-left:0;margin-right:0;
+  padding-left:48px;padding-right:48px}
+
+.faq .head{max-width:none;margin:0 0 44px;padding:0 48px;text-align:left}
+.faq .head h2{max-width:none;text-align:left}
+.faq .head .eyebrow{text-align:left}
+.faq .head p.fsub{text-align:left}
+.faq .head p.fh-note{text-align:left}
+
+
+/* ---------------------------------------------------------------------
+   3. The footer colour, matched to the rest of the site.
+
+   Measured on /empty-legs against /about-andreea:
+
+       background    #F5F5F7                 rgba(247,245,242,.92)
+       border-top    1px #D2D2D7             0.5px rgba(29,29,31,.12)
+
+   #F7F5F2 is --paper-warm, a warm beige. Every other page uses #F5F5F7,
+   which is cool grey. The warm value came from the cloud block, where the
+   footer was given a translucent --paper-warm so the sky would carry
+   through it. That was the wrong base colour, and this corrects it.
+
+   It is set solid rather than translucent, because that is what
+   /empty-legs does and because a sky showing faintly through the footer
+   at the very bottom of the page buys nothing.
+   --------------------------------------------------------------------- */
+
+footer{background:#F5F5F7;border-top:1px solid #D2D2D7}
+
+
+@media(max-width:768px){
+  .value{padding:48px 24px}
+  .value .vcard{width:280px;min-width:280px}
+  .faq > *{padding-left:24px;padding-right:24px}
+}
