@@ -1,0 +1,316 @@
+/* about-page.css
+ *
+ * Linked from the about pages, last in the head, so it loads after the
+ * inline <style> block and wins the cascade without needing !important.
+ *
+ * Add this one line immediately before </head>:
+ *
+ *     <link rel="stylesheet" href="/about-page.css">
+ *
+ * Nothing else on the site is affected: only pages carrying that line use it.
+ */
+
+/* Fly with Andreea, about page. DESIGN ONLY, stage 1 of 2.
+ *
+ * Paste the whole of this at the end of your main stylesheet. Nothing else to
+ * do. No markup changes, no new images, no schema.
+ *
+ * WHAT THIS DOES TO THE PAGE AS IT STANDS TODAY
+ *   fixes the headline sliding under the fixed header, 70px of padding
+ *     against a 105px header
+ *   brings the story copy to a readable measure, it was running about 100
+ *     characters a line
+ *   one vertical rhythm, 96px major and 64px minor, in place of six values
+ *   one container, 1160 with 28px padding, in place of three
+ *   one heading size, 32px, in place of three
+ *   every eyebrow and heading on the same left edge, in place of alternating
+ *     left and centre with no pattern
+ *   hides the six icons in the value cards
+ *   closes the trailing rule under the last question and gives that section
+ *     room to end
+ *   shrinks the quote block from 839px to about 500px
+ *
+ * WHAT IS DELIBERATELY NOT IN HERE
+ *   the cloud background and its veil. Those set html to #EEF0F2 and make the
+ *   sections translucent, which only works once page-clouds.jpg and the
+ *   <div class="page-clouds"> are in place. Deployed on their own they would
+ *   put flat grey bands behind the hero, the numbers, the steps and the link
+ *   columns. They come in stage 2 with the content.
+ *
+ *   the .fv- component rules for the founder card and the legal strip are
+ *   included but match no markup yet, so they do nothing until stage 2. They
+ *   are here so stage 2 is a content only change.
+ *
+ * TOKENS. Checked against the 11 your site actually defines.
+ */
+
+/* Fly with Andreea, the founder section and the legal strip on the about page.
+ *
+ * Paste this at the end of your main stylesheet, or into a <style> block in
+ * the head of the 5 about pages.
+ *
+ * TOKENS. This file was rewritten to use the variables your site actually
+ * defines, read off the live stylesheet:
+ *
+ *   --gold        #CBAD91      --ink        #1D1D1F
+ *   --gold-light  #E0C4A0      --ink-soft   #2A2A2E
+ *   --gold-deep   #B8966B      --dark       #15151A
+ *   --paper       #FAFAFB      --card       #FFFFFF
+ *   --paper-warm  #F7F5F2      --grey       #8A8A90
+ *   --line        rgba(29,29,31,.12)
+ *
+ * An earlier version of this file used --off-white, --warm-grey, --grey-light,
+ * --grey-dark, --ink-2 and --gold-pale. None of those exist on the site, so
+ * every rule that referenced one would have fallen back to a browser default
+ * once deployed. Do not reintroduce them.
+ *
+ * Every class starts fv- so nothing here can collide with existing rules.
+ */
+
+.fv-sec{padding:72px 0;background:var(--paper)}
+.fv-wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+.fv-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--grey);margin:0 0 26px}
+
+/* the card: portrait on the left, identity on the right */
+.fv-card{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:start;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:36px}
+
+/* The portrait is a JPEG, so it has no transparency: whatever background it
+   was exported on is part of the picture. The frame below is --paper-warm,
+   which will show as a ring around the photo unless the photo's own backdrop
+   is close to it. If the edges look wrong once deployed, either export the
+   photo on #F7F5F2, or re-export it as a PNG with transparency and change the
+   four references back to .png. */
+.fv-portrait{width:200px;height:200px;border-radius:14px;overflow:hidden;
+  background:var(--paper-warm);border:1px solid var(--line);
+  display:flex;align-items:flex-end;justify-content:center}
+.fv-portrait img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+
+.fv-name{font-family:'Cinzel',Georgia,serif;font-weight:500;font-size:26px;
+  line-height:1.15;margin:0 0 4px;color:var(--ink)}
+.fv-role{font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-deep);margin:0 0 18px}
+.fv-rule{height:1px;background:var(--gold-light);border:0;margin:0 0 18px;opacity:.5}
+
+.fv-lead{font-size:16px;line-height:1.65;color:var(--ink-soft);margin:0 0 22px;max-width:62ch}
+
+.fv-contact{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px}
+.fv-contact li{min-width:0}
+.fv-k{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grey);margin:0 0 3px}
+.fv-v{display:block;font-size:15px;color:var(--ink);text-decoration:none;
+  overflow-wrap:anywhere}
+a.fv-v{border-bottom:1px solid var(--line);padding-bottom:1px}
+a.fv-v:hover{color:var(--gold-deep);border-bottom-color:var(--gold)}
+
+/* the ownership statement, set apart so it reads as a declaration */
+/* Two columns under the card, each capped with a gold hairline and a small
+   label. It was a single bordered box holding two stacked paragraphs, which
+   ran 213px tall and read as a block of legal text nobody finishes.
+   Side by side it is 136px, a 36% reduction, and the two claims can be taken
+   in at a glance rather than read in sequence.
+
+   The box is gone on purpose. The card above it is already a bordered white
+   panel, so a second one directly beneath made the section look like two
+   stacked containers. A hairline is enough structure here. */
+.fv-own{margin:24px 0 0;padding:0;background:transparent;border:0;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.fv-own .fv-col{border-top:1px solid var(--gold);padding-top:14px;min-width:0}
+.fv-own .fv-lbl{margin:0 0 8px;font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.fv-own p{margin:0;font-size:14.5px;line-height:1.65;color:var(--ink-soft)}
+.fv-own strong{color:var(--ink);font-weight:600}
+
+@media (max-width:720px){
+  .fv-own{grid-template-columns:1fr;gap:22px}
+}
+
+@media (max-width:720px){
+  .fv-sec{padding:52px 0}
+  .fv-card{grid-template-columns:1fr;gap:24px;padding:26px}
+  .fv-portrait{width:148px;height:148px}
+  .fv-contact{grid-template-columns:1fr}
+}
+
+/* ---------------------------------------------------------------------
+   The legal strip, directly above the footer.
+   --------------------------------------------------------------------- */
+
+/* Deliberately NOT part of the footer. It sits on --card, the white the page
+   content uses, with a hairline above and below, while the footer below it is
+   --paper. So the line belongs to the page and the footer starts underneath
+   it. If the footer background ever changes, this must stay different from
+   it, or the separation is lost. */
+.fv-legalstrip{background:var(--card);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:18px 0}
+
+/* One line, always, down to a 700px viewport.
+ *
+ * nowrap holds the sentence together; min() shrinks the type only once the
+ * window is too narrow to hold it at 9.5px, the size the footer disclaimer
+ * already uses. 1.08vw comes from the sentence needing 807px at 9.5px against
+ * a column of viewport minus 48px of padding, so it stays at full size on any
+ * window of 900px or more and only tapers below that.
+ *
+ * Below 700px it wraps and left aligns. Forcing one line there would need
+ * roughly 4px type, and deliberately shrunken type that small is the pattern
+ * search engines treat as hidden text.
+ */
+.fv-legalstrip p{margin:0 auto;text-align:center;white-space:nowrap;
+  font-size:min(9.5px, 1.08vw);line-height:1.55;color:var(--grey)}
+.fv-legalstrip strong{color:var(--ink-soft);font-weight:600}
+
+@media (max-width:700px){
+  .fv-legalstrip{padding:14px 0 10px}
+  .fv-legalstrip p{white-space:normal;font-size:9px;text-align:left}
+}
+
+/* ---------------------------------------------------------------------
+   Three fixes to existing sections.
+   --------------------------------------------------------------------- */
+
+/* 1. The end of the questions section.
+   Every .fitem carries a 0.5px bottom rule, including the last one, so the
+   section ended on a divider with nothing beneath it and only 10px of padding
+   before the next section began. Drop the last rule and give the section room
+   to finish. */
+.faq .fitem:last-child{border-bottom:0}
+.faq{padding-bottom:64px}
+
+/* 2. The six icons in the value cards, removed.
+   Hiding rather than deleting keeps the markup intact, so this is reversible
+   and needs no edit to five language files. The card keeps its top padding by
+   losing the icon's own margin. */
+.value .ic{display:none}
+
+/* ================= DESIGN SYSTEM ================= */
+
+/* Fly with Andreea, about page design system.
+ *
+ * Paste AFTER 01-css.css. It unifies the eleven sections, which had drifted
+ * into six vertical rhythms, three container widths, three heading sizes and
+ * five background treatments.
+ *
+ * MEASURED BEFORE, on the live page:
+ *   padding    148/40, 48/10, 64, 60, 66, 64, 60, 72, 64, 34, 18
+ *   container  1160px (site), 1040px (the blocks I added), none (hero, faq)
+ *   inner pad  28px (site) vs 24px (mine)
+ *   h2 size    29.3px, 31.1px, 34.5px
+ *   h2 align   left, centre, left, centre, with no pattern
+ *   eyebrows   on 5 sections, absent from 6, under 2 different class names
+ *   surfaces   transparent, dark, warm, and 3 different translucent whites
+ *
+ * THE SYSTEM
+ *   rhythm     96px major sections, 64px minor, 148px hero top
+ *   container  1160 / 28, the site's own. My 1040 was the odd one out.
+ *   measure    68ch body, 60ch hero lead, 72ch section headers
+ *   headers    eyebrow then h2, always left, one size
+ *   scale      h2 32 / lead 18.5 / body 16.5 / small 13 / eyebrow 11
+ *   surfaces   two states, veiled and clear, alternating, plus one dark
+ *
+ * Why left and not centred. The page alternated without logic, which is what
+ * read as messy. Picking one axis fixes it, and left is the one that suits
+ * long copy: a centred heading over a left ranged paragraph gives the eye two
+ * different starting points on the same screen.
+ */
+
+/* ---- rhythm ----
+   The veiled sections are panels floating over the sky, so they carry a 56px
+   bottom margin. That gap is where the clouds read through, and it is what
+   stops two adjacent white sections from merging into one dead slab. Internal
+   padding drops from 96 to 64 because the gap now does part of that work. */
+.hero{padding:148px 0 96px}
+.stats,.diff,.steps{padding:96px 0}
+.story,.value,.quote,#founder,.faq{padding:64px 0;margin:0 0 56px}
+.quote{padding-bottom:56px}
+.mesh{padding:64px 0}
+.fv-legalstrip{padding:18px 0}
+
+/* ---- one container ---- */
+.hero>.wrap,.story>.wrap,.value>.wrap,.stats>.wrap,.diff>.wrap,.steps>.wrap,
+.quote>.wrap,.mesh>.wrap,#founder>.fv-wrap,.fv-legalstrip>.fv-wrap{
+  max-width:1160px;margin:0 auto;padding-left:28px;padding-right:28px}
+
+/* .faq is the exception: it has no inner wrapper. Its eyebrow, h2, intro and
+   13 .fitem rows are all direct children of the section, and the section
+   carried its own max-width, so the panel stopped short of the viewport edge
+   while the heading sat hard against it. Full bleed the section, then give
+   every child the container. */
+.faq{max-width:none;width:auto;margin-left:0;margin-right:0}
+.faq>*{max-width:1160px;margin-left:auto;margin-right:auto;
+  padding-left:28px;padding-right:28px;box-sizing:border-box}
+.faq>.eyebrow{margin-bottom:14px}
+
+/* ---- one section header ---- */
+.head{max-width:72ch;margin:0 0 44px;text-align:left}
+.head p{text-align:left;max-width:68ch;margin:0}
+.hero .eyebrow,.diff .eyebrow,.steps .eyebrow,.faq .eyebrow,
+.value .eyebrow,.quote .eyebrow,.fv-eyebrow{
+  display:block;text-align:left;font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--grey);margin:0 0 14px}
+.diff .eyebrow{color:rgba(255,255,255,.55)}
+.story h2,.value h2,.steps h2,.faq h2,.diff h2,.mesh h2{
+  font-size:32px;line-height:1.22;text-align:left;margin:0 0 20px;
+  letter-spacing:.01em}
+.faq h2{margin:0 0 14px}
+
+/* ---- the questions header ----
+   Uses .head, the same wrapper every other section header on this page uses,
+   so the markup and the rules are the standard one rather than a special case.
+   Stacked, left, in the order eyebrow, h2, lead, note.
+
+   An earlier version of this put the heading and the lead in two columns. It
+   was wrong twice over: no other section does that, and the two columns sat on
+   different baselines so the heading hung low while the text started high. The
+   only thing worth keeping from it was the gold <em>, which the heading was
+   missing while every other heading had one.
+
+   .faq has no inner wrapper, so .head carries the container itself: 1160 wide
+   with 28px padding, exactly like .faq > * above. That is what puts the
+   heading on the same left edge, 28px, as every other section. */
+.faq .head{max-width:1160px;margin:0 auto 44px;padding:0 28px;
+  box-sizing:border-box;text-align:left}
+.faq .head .eyebrow{margin:0 0 14px;padding:0}
+.faq .head h2{margin:0 0 20px;padding:0;max-width:72ch}
+.faq .head p.fsub{margin:0 0 14px;padding:0;max-width:68ch;font-size:16px;
+  line-height:1.7;color:var(--grey)}
+.faq .head .fh-note{margin:0;padding:0;max-width:68ch;font-size:13.5px;
+  line-height:1.6;color:var(--grey)}
+.faq .head .fh-note a{color:var(--gold-deep);text-decoration:none;
+  border-bottom:1px solid var(--gold-light)}
+/* the FAQ intro line is p.fsub, a direct child of the section */
+.value>.wrap>p,.steps>.wrap>p,.faq>p.fsub{text-align:left;margin:0 0 44px;
+  max-width:68ch;font-size:18.5px;line-height:1.7;color:var(--grey)}
+
+/* ---- one measure for body copy ---- */
+.hero h1{margin:0 0 28px}
+.hero p{max-width:60ch;font-size:18.5px;line-height:1.72;color:var(--ink-soft)}
+.story .storycol{max-width:720px}
+.story .storycol p,.fv-lead,.fv-own p{max-width:68ch;font-size:16.5px;
+  line-height:1.8;color:var(--ink-soft);margin:0 0 1.15em}
+
+/* ---- the quote, brought onto the same axis ----
+   24ch was a mistake on my part: at 27px it turned the quote into a tall
+   narrow column 15 lines deep, 839px of page for one paragraph. 46ch at 23px
+   brings it to 7 lines and 501px, a 40% reduction, without touching a word of
+   it or breaking the 96px rhythm. Display type takes a shorter measure than
+   body copy, but not that short. */
+.quote,.quote blockquote,.quote p{text-align:left}
+.quote .wrap>*{margin-left:0;margin-right:0}
+.quote blockquote{max-width:46ch;font-size:23px;line-height:1.42}
+
+/* ---- phones ---- */
+@media (max-width:720px){
+  .hero{padding:124px 0 64px}
+  .story,.value,.stats,.diff,.steps,.quote,#founder,.faq{padding:64px 0}
+  .mesh{padding:48px 0}
+  .hero>.wrap,.story>.wrap,.value>.wrap,.stats>.wrap,.diff>.wrap,.steps>.wrap,
+  .quote>.wrap,.mesh>.wrap,#founder>.fv-wrap,.fv-legalstrip>.fv-wrap,.faq>div{
+    padding-left:20px;padding-right:20px}
+  .story h2,.value h2,.steps h2,.faq h2,.diff h2,.mesh h2{font-size:26px}
+  .hero p,.value>.wrap>p,.steps>.wrap>p{font-size:17px}
+}
