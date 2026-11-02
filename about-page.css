@@ -314,3 +314,41 @@ a.fv-v:hover{color:var(--gold-deep);border-bottom-color:var(--gold)}
   .story h2,.value h2,.steps h2,.faq h2,.diff h2,.mesh h2{font-size:26px}
   .hero p,.value>.wrap>p,.steps>.wrap>p{font-size:17px}
 }
+
+
+/* =====================================================================
+   THE CLOUD BACKGROUND
+   =====================================================================
+   The <div class="page-clouds"></div> is already the first element
+   inside <body> on the about page. Until these rules existed it was an
+   empty div with no styling, which is why the page was flat white.
+   page-clouds.jpg is already in the repository root.
+   ===================================================================== */
+
+html{background:#EEF0F2}
+body{background:transparent}
+
+.page-clouds{position:fixed;inset:0;z-index:-3;
+  background:#EEF0F2 url("/page-clouds.jpg") center center/cover no-repeat}
+
+/* THE VEIL. Do not remove it and do not lower the number.
+   page-clouds.jpg is a dark sky. At full strength the hero headline and
+   the body copy sit directly on it and become unreadable. Tested on the
+   live page at 0.84: the sky reads as atmosphere, the text keeps full
+   contrast. */
+.page-clouds::after{content:'';position:absolute;inset:0;
+  background:rgba(250,250,251,.84)}
+
+/* The sections then sit on translucent whites so the sky carries through
+   the page instead of stopping at every band. Each value matches that
+   section's existing opaque colour, so nothing shifts hue:
+     .value and .mesh were #FFFFFF
+     .quote and footer were #F7F5F2
+     #founder was #FAFAFB
+   The sections carrying the most reading are the most opaque. */
+.hero,.story,.stats,.steps,.faq{background:transparent}
+.value,.mesh{background:rgba(255,255,255,.78)}
+.quote{background:rgba(247,245,242,.80)}
+#founder{background:rgba(250,250,251,.72)}
+.fv-legalstrip{background:rgba(255,255,255,.86)}
+footer{background:rgba(247,245,242,.92)}
