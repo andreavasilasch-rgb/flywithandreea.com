@@ -144,7 +144,7 @@ h1 em,h2 em{font-style:italic;color:var(--gold);font-weight:400}
 .legs li{break-inside:avoid;padding:0 0 18px;font-size:15px;color:var(--muted);line-height:1.6}
 .legs li:target{color:var(--fg)}
 .legs li:target::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);margin-right:10px;vertical-align:middle}
-.legs a{color:var(--link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:.5px}
+.legs a,.legs a:link,.legs a:visited{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:.5px}
 .legs a:hover{color:var(--gold)}
 .legs b{font-weight:400;color:var(--fg)}
 @media (max-width:760px){ .legs{columns:1} }

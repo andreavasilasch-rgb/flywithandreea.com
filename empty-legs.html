@@ -506,7 +506,6 @@ button.fl-btn,button.fl-btn-g{font-family:var(--sans);-webkit-appearance:none;
 .fl-btn.dark{background:var(--gold);border-color:var(--gold);color:var(--white)}
 .fl-btn.dark:hover{background:var(--gold-dk);border-color:var(--gold-dk)}
 
-
 /* The grid view lived here and has been taken out.
  *
  * It never worked above 1040px, the only width at which it drew 2 columns.
@@ -586,7 +585,6 @@ button.fl-btn,button.fl-btn-g{font-family:var(--sans);-webkit-appearance:none;
   border:.5px solid var(--grey-light);background:var(--white);font:600 14px/1 var(--sans);
   color:var(--ink);cursor:pointer;min-height:44px}
 .more:hover{border-color:var(--gold)}
-
 
 /* ============================================================== filter sheet */
 /* The sheet has to clear the sticky toolbar (110) and the site bar (120).
@@ -1203,6 +1201,8 @@ main{display:block}
     <h1>Empty leg private jet flights. <em>Fly for less.</em></h1>
     <p class="lede">One way repositioning flights at a fraction of the charter rate. The whole
       aircraft, the same crew, the same private terminals. First come, first served.</p>
+  <style>.globe-link{margin:20px 0 0}.globe-link a,.globe-link a:link,.globe-link a:visited{display:inline-block;color:inherit;font-size:14px;letter-spacing:.02em;text-decoration:none;border-bottom:1px solid #CBAD91;padding-bottom:3px}.globe-link a:hover{border-bottom-color:#B8966B;opacity:.75}</style>
+  <p class="globe-link"><a href="/empty-legs-daily-updates-november-2026">See every empty leg on the globe &rsaquo;</a></p>
 
     <form class="search" id="searchForm" onsubmit="return false">
       <div class="sf">
@@ -1237,7 +1237,6 @@ main{display:block}
     </form>
   </div>
 
-  <p class="globe-link"><a href="/empty-legs-daily-updates-november-2026">See every empty leg on the globe &rsaquo;</a></p>
 </section>
 
 <!-- =============================================================== toolbar -->
@@ -2849,7 +2848,6 @@ function render(){
      middle of: a filter or a sort has moved the ground under it */
   window.dispatchEvent(new Event('fwa:redrawn'));
 }
-
 
 /* ---------------------------------------------------------- route preview */
 function detailHTML(l){
