@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>https://www.flywithandreea.com/sitemap-core.xml</loc><lastmod>2026-10-14</lastmod></sitemap>
+  <sitemap><loc>https://www.flywithandreea.com/sitemap-core.xml</loc><lastmod>2026-11-04</lastmod></sitemap>
   <sitemap><loc>https://www.flywithandreea.com/sitemap-routes-1.xml</loc><lastmod>2026-07-05</lastmod></sitemap>
   <sitemap><loc>https://www.flywithandreea.com/sitemap-routes-2.xml</loc><lastmod>2026-07-05</lastmod></sitemap>
   <sitemap><loc>https://www.flywithandreea.com/sitemap-routes-3.xml</loc><lastmod>2026-07-05</lastmod></sitemap>
@@ -21,5 +21,5 @@
   <sitemap><loc>https://www.flywithandreea.com/sitemap-routes-all-7.xml</loc><lastmod>2026-08-26</lastmod></sitemap>
   <sitemap><loc>https://www.flywithandreea.com/sitemap-blog.xml</loc><lastmod>2026-08-26</lastmod></sitemap>
   <sitemap><loc>https://www.flywithandreea.com/sitemap-routes-empty-legs.xml</loc><lastmod>2026-10-31</lastmod></sitemap>
-    <sitemap><loc>https://www.flywithandreea.com/sitemap-empty-leg-pages.xml</loc></sitemap>
+    <sitemap><loc>https://www.flywithandreea.com/sitemap-empty-leg-pages.xml</loc><lastmod>2026-11-04</lastmod></sitemap>
 </sitemapindex>
