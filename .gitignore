@@ -1,3 +1,23 @@
 *.backup
 *.xlsx
 make-leg-pages.py
+
+# page build and upgrade tools, never published
+say-fly-with-andreea.py
+brand-entity.py
+footer-profiles.py
+css-standard.py
+update-airport-legs.py
+verify-upgrade.py
+build.py
+prep.py
+seo.py
+*.backup
+/tmp-before/
+
+# internal working documents, never published
+UPGRADE-PLAN.md
+DEPLOY-NOW.md
+CITATION-RULES.md
+airport-guide-insert.html
+sitemap-core-add.xml
