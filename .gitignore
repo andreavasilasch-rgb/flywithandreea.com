@@ -27,3 +27,6 @@ add-to-guide.py
 airport-guide-insert.html
 sitemap-core-add.xml
 *.before
+
+.DS_Store
+**/.DS_Store
