@@ -21,3 +21,9 @@ DEPLOY-NOW.md
 CITATION-RULES.md
 airport-guide-insert.html
 sitemap-core-add.xml
+
+# guide and sitemap insert tools, never published
+add-to-guide.py
+airport-guide-insert.html
+sitemap-core-add.xml
+*.before
