@@ -30,3 +30,8 @@ sitemap-core-add.xml
 
 .DS_Store
 **/.DS_Store
+
+# empty leg merge tools and working data, never published
+merge-legs.py
+new-legs-batch.json
+legs-sample.json
