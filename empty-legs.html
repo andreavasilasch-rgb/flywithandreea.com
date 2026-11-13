@@ -99,6 +99,41 @@ button{font-family:inherit}
 .live i{width:7px;height:7px;border-radius:50%;background:var(--gold);
   box-shadow:0 0 0 3px rgba(203,173,145,.26)}
 
+/* ---- the globe page. Small, because the thing that sells it is the globe
+   turning, not the size of the button. ---- */
+.globe-cta{position:relative;display:inline-flex;align-items:center;gap:9px;
+  margin:0 0 20px;padding:7px 14px 7px 8px;border-radius:999px;text-decoration:none;
+  font:500 13px/1 var(--sans);color:var(--ink);letter-spacing:.01em;
+  background:rgba(255,255,255,.72);border:.5px solid var(--grey-light);
+  backdrop-filter:saturate(1.6) blur(6px);
+  transition:border-color .3s ease,background .3s ease,box-shadow .3s ease}
+.globe-cta:hover{border-color:var(--gold);background:var(--white);
+  box-shadow:0 8px 26px -16px rgba(29,29,31,.5)}
+.globe-cta span[data-live]{font-variant-numeric:tabular-nums;font-weight:600}
+.globe-cta-orb{position:relative;width:26px;height:26px;flex:none;color:var(--gold);
+  display:flex;align-items:center;justify-content:center}
+.globe-cta-orb svg{width:26px;height:26px;overflow:visible}
+/* only the meridian turns, so the sphere reads as a sphere rather than a
+   spinning picture of one */
+.globe-cta .g-mer{transform-origin:14px 14px;animation:g-spin 7s linear infinite}
+@keyframes g-spin{
+  0%{transform:scaleX(1)}   25%{transform:scaleX(.05)}
+  50%{transform:scaleX(-1)} 75%{transform:scaleX(.05)}
+  100%{transform:scaleX(1)}}
+/* a single aircraft going round it, which is the whole idea in one dot */
+.globe-cta .g-jet{position:absolute;inset:0;border-radius:50%;
+  animation:g-orbit 7s linear infinite}
+.globe-cta .g-jet::before{content:'';position:absolute;top:-1px;left:50%;
+  width:3.5px;height:3.5px;margin-left:-1.75px;border-radius:50%;
+  background:var(--gold-dk);box-shadow:0 0 0 2px rgba(203,173,145,.28)}
+@keyframes g-orbit{to{transform:rotate(360deg)}}
+.globe-cta-go{width:17px;height:17px;flex:none;color:var(--gold);
+  transition:transform .3s ease}
+.globe-cta:hover .globe-cta-go{transform:translateX(3px)}
+@media(prefers-reduced-motion:reduce){
+  .globe-cta .g-mer,.globe-cta .g-jet{animation:none}
+  .globe-cta,.globe-cta-go{transition:none}}
+
 /* ---- search bar ---- */
 .search{background:var(--white);border:.5px solid var(--grey-light);border-radius:999px;
   display:grid;grid-template-columns:1fr auto 1fr 1fr .8fr auto;align-items:center;
@@ -1055,7 +1090,8 @@ body.lock .fwac-b{display:none !important}
  * cards, meant to be skimmed by a person and read in full by a crawler.
  */
 .seo-intro p{font-size:var(--t-body);line-height:1.65;color:var(--grey-dark);
-  max-width:66ch;margin:0 0 14px}
+  margin:0 0 14px}
+.sec.seo-intro > .wrap > p{max-width:none}
 .seo-intro p b{color:var(--ink);font-weight:600}
 .seo-intro .seo-types{font-size:var(--t-soft);color:var(--grey-dark)}
 .seo-legs .seo-list{columns:2;column-gap:38px;margin:26px 0 0;padding:0;
@@ -1205,6 +1241,24 @@ main{display:block}
     <h1>Empty leg private jet flights. <em>Fly for less.</em></h1>
     <p class="lede">One way repositioning flights at a fraction of the charter rate. The whole
       aircraft, the same crew, the same private terminals. First come, first served.</p>
+
+
+    <a class="globe-cta" href="/empty-legs-daily-updates-november-2026">
+      <span class="globe-cta-orb" aria-hidden="true">
+        <svg viewBox="0 0 28 28" fill="none" stroke="currentColor"
+             stroke-width="1.1" stroke-linecap="round">
+          <circle cx="14" cy="14" r="9"/>
+          <ellipse class="g-mer" cx="14" cy="14" rx="4.2" ry="9"/>
+          <path d="M5.3 11h17.4M5.3 17h17.4"/>
+        </svg>
+        <i class="g-jet"></i>
+      </span>
+      <span>See all <span data-live="n">421</span> on the globe</span>
+      <svg class="globe-cta-go" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+        <path d="M6 12h11m0 0-4-4m4 4-4 4"/>
+      </svg>
+    </a>
 
     <form class="search" id="searchForm" onsubmit="return false">
       <div class="sf">
