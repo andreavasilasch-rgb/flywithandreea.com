@@ -35,3 +35,14 @@ sitemap-core-add.xml
 merge-legs.py
 new-legs-batch.json
 legs-sample.json
+
+# language build tools, not part of the site
+translate-page.py
+make-leg-pages-lang.py
+build-globe.py
+build-legsource-it.py
+extract-strings.py
+publish-languages.sh
+lang/
+*.before-languages
+*.untranslated.txt
