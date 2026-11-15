@@ -3972,7 +3972,9 @@ function paintQuickSort(){
  */
 function measureNav(){
   var nav = document.getElementById('navbar');
-  var h = nav ? Math.round(nav.getBoundingClientRect().height) : 0;
+  var tb = document.querySelector('.topbar');
+  var h = (nav ? Math.round(nav.getBoundingClientRect().height) : 0)
+        + (tb ? Math.round(tb.getBoundingClientRect().height) : 0);
   document.documentElement.style.setProperty('--navh', h + 'px');
   return h;
 }
