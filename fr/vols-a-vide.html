@@ -1256,6 +1256,11 @@ main{display:block}
 .tb-lang-opt.active{color:var(--gold-dk,#B8966B);font-weight:600}
 @media (max-width:600px){.topbar{padding:0 14px;gap:10px}.tb-search{max-width:none}}
 </style>
+<style id="fwa-fixes">
+@media(max-width:700px){
+  .modal .sheetbox{overflow:visible}
+}
+</style>
 <body>
 <div class="topbar"><div class="tb-search"><span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><input type="text" id="tbSearch" placeholder="Rechercher destinations, aéroports, FAQ…" autocomplete="off" aria-label="Rechercher sur le site"><div class="tb-results" id="tbResults"></div></div><div class="tb-lang" id="tbLang"><button type="button" class="tb-lang-btn" aria-haspopup="true" aria-expanded="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span class="lng">FR</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="tb-lang-menu"><a class="tb-lang-opt" href="/empty-legs" hreflang="en" data-lang="en">English</a><a class="tb-lang-opt" href="/it/voli-empty-leg" hreflang="it" data-lang="it">Italiano</a><a class="tb-lang-opt active" href="/fr/vols-a-vide" hreflang="fr" data-lang="fr">Français</a></div></div></div><script src="/search-index.js"></script><script>
 /* topbar, same behaviour as the homepage */
