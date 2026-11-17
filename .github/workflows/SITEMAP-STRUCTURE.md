@@ -132,7 +132,7 @@
 
 - [ ] Replace `+1234567890` with your real WhatsApp number (search in index.html)
 - [ ] Update Instagram handle `flywithAndreea` to your real one
-- [ ] Add email: `mailto:you@flywithandreea.com` in footer
+- [ ] Add email: `mailto:charter@flywithandreea.com` in footer
 - [ ] Connect quote form to email handler (Formspree.io — free, 5 min setup)
 - [ ] Create `/privacy-policy` and `/terms` pages
 - [ ] Submit sitemap.xml to Google Search Console after launch

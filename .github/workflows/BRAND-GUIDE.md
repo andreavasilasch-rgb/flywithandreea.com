@@ -60,7 +60,7 @@ BRAND-GUIDE.md          ← this file
 ### BEFORE GOING LIVE — checklist
 - [ ] Replace WhatsApp number: search `+1234567890` → your real number
 - [ ] Update Instagram handle: `flywithAndreea` → your real handle  
-- [ ] Add email address: `mailto:you@flywithandreea.com` in footer
+- [ ] Add email address: `mailto:charter@flywithandreea.com` in footer
 - [ ] Add phone number: `tel:+XX...` in footer
 - [ ] Upload all files to your hosting root at `www.flywithandreea.com`
 - [ ] Replace placeholder testimonial metrics with real numbers

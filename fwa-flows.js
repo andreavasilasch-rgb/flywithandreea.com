@@ -783,6 +783,6 @@ window.FWA_FLOWS = {
   rude: {
     re: /(f[u\*@]ck|sh[i\*@]t|bitch|bastard|idiot|moron|scam|fraud)/i,
     say: 'I would rather not go on like this. If something has gone wrong, Andreea '
-      + 'would genuinely like to hear about it at andreea@flywithandreea.com.'
+      + 'would genuinely like to hear about it at charter@flywithandreea.com.'
   }
 };

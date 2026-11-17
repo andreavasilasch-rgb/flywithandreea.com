@@ -7,7 +7,7 @@
 
   var WA    = 'https://wa.me/971503372980';
   var TEL   = 'tel:+971503372980';
-  var MAIL  = 'mailto:andreea@flywithandreea.com';
+  var MAIL  = 'mailto:charter@flywithandreea.com';
   var QUOTE = '/#quote';
 
   var css = ''
