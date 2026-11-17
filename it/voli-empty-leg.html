@@ -3307,13 +3307,13 @@ function quoteHTML(l){
 
    + '<div class="qrow">'
    + '<div><span class="qlab">Passeggeri</span>'
-   + '<div class="qval"><span id="fwa_paxN">' + a.pax + '</span> di ' + a.pax
+   + '<div class="qval"><span id="fwa_paxN">0</span> di ' + a.pax
    + ' <span class="qsep">&middot;</span> aeromobile intero</div></div>'
    + '<div class="step">'
    + '<button type="button" data-pax="-1" aria-label="Un passeggero in meno">'
    + '<svg viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>'
-   + '<input id="fwa_qSeats" type="text" inputmode="numeric" value="' + a.pax
-   + '" data-max="' + a.pax + '" aria-label="Passeggeri" readonly>'
+   + '<input id="fwa_qSeats" type="text" inputmode="numeric" value="0"'
+   + ' data-max="' + a.pax + '" aria-label="Passeggeri" readonly>'
    + '<button type="button" data-pax="1" aria-label="Un passeggero in più">'
    + '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>'
    + '</div></div>'
@@ -3441,12 +3441,14 @@ function openQuote(id){
   var seats = document.getElementById('fwa_qSeats'), paxN = document.getElementById('fwa_paxN');
   var max = parseInt(seats.getAttribute('data-max'), 10) || 1;
   function setPax(n){
-    n = Math.max(1, Math.min(max, n));
+    n = Math.max(0, Math.min(max, n));
     seats.value = n; paxN.textContent = n;
-    quoteBox.querySelector('[data-pax="-1"]').disabled = (n <= 1);
+    var stepWrap = seats.closest('.step');
+    if (stepWrap && n > 0) stepWrap.style.outline = '';
+    quoteBox.querySelector('[data-pax="-1"]').disabled = (n <= 0);
     quoteBox.querySelector('[data-pax="1"]').disabled = (n >= max);
   }
-  setPax(max);
+  setPax(0);
   [].forEach.call(quoteBox.querySelectorAll('[data-pax]'), function (b) {
     b.addEventListener('click', function () {
       setPax(parseInt(seats.value, 10) + parseInt(b.getAttribute('data-pax'), 10));
@@ -3490,6 +3492,20 @@ function openQuote(id){
       el.style.borderColor = ''; return true;
     });
     if (!ok) return;
+
+    /* Passengers is mandatory. The stepper input has no border to colour, so
+       the minus and plus group is outlined instead of the field. */
+    var paxEl = document.getElementById('fwa_qSeats');
+    if (!(parseInt(paxEl.value, 10) > 0)) {
+      var paxWrap = paxEl.closest('.step');
+      if (paxWrap) {
+        paxWrap.style.outline = '1.5px solid var(--gold-dk)';
+        paxWrap.style.outlineOffset = '4px';
+        paxWrap.style.borderRadius = '999px';
+        paxWrap.scrollIntoView({ block: 'center' });
+      }
+      return;
+    }
 
     var first = document.getElementById('fwa_fName').value.trim();
     var last = document.getElementById('fwa_lName').value.trim();
