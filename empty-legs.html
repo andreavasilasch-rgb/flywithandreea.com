@@ -3321,7 +3321,7 @@ function detailHTML(l){
    + 'another.</p></div>'
 
    + '<div class="d-foot"><div>' + priceHTML(l) + '</div>'
-   + '<div class="acts"><button class="fl-btn-g" type="button" data-ask="' + l.id + '">Ask Andreea</button>'
+   + '<div class="acts"><button class="fl-btn-g" type="button" data-ask="' + l.id + '">Message Fly with Andreea</button>'
    + '<button class="fl-btn" type="button" data-book="' + l.id + '">Book now</button></div></div>';
 }
 
@@ -3485,6 +3485,36 @@ function openDetail(id){
   detailBox.innerHTML = detailHTML(l); open(detailM); detailBox.scrollTop = 0;
   detailM.scrollTop = 0; wireGalleries(); wireMaps(detailBox);
 }
+/* The WhatsApp message, written once and used by both paths, so the button
+ * and the fallback cannot drift apart. `who` is the block of customer
+ * details; it exists only when the form was filled in. The message button
+ * has no form behind it, so it sends the flight and the link and lets
+ * WhatsApp supply the name and the number.
+ */
+function fwaWaText(l, a, who){
+  var when = dateSpan(l) + (l.time ? ', ' + l.time : '');
+  var txt = 'Empty leg request — ' + l.fc + ' to ' + l.tc
+    + '\n\n'
+    + 'Flight: ' + l.f + ' to ' + l.t + ', ' + when + '\n'
+    + 'Aircraft: ' + a.t + (who ? '' : ', up to ' + a.pax + ' passengers') + '\n'
+    + (who ? 'Passengers: ' + who.seats + ' of ' + a.pax + '\n' : '')
+    + 'Price shown: ' + (l.price ? money(l.price) : 'Price on request') + '\n'
+    + 'Reference: ' + l.id + '\n'
+    + location.href.split('#')[0] + '#leg-' + l.id;
+  if (who) {
+    txt += '\n\n'
+      + 'Name: ' + who.name + '\n'
+      + 'Email: ' + who.email + '\n'
+      + 'Phone: ' + who.phone + '\n'
+      + 'Preferred reply: ' + who.back
+      + (who.note ? '\n' + 'Note: ' + who.note : '');
+  }
+  return txt;
+}
+function fwaWaOpen(l, a, who){
+  window.open('https://wa.me/971503372980?text='
+    + encodeURIComponent(fwaWaText(l, a, who)), '_blank');
+}
 function openQuote(id){
   var l = byId(id); if (!l) return;
   var a = ac(l);                 /* the cabin, needed again when the form is sent */
@@ -3601,7 +3631,7 @@ function openQuote(id){
       preferred_reply: back,
       additional_info: note,
       leg_reference: l.id,
-      page: 'https://www.flywithandreea.com/empty-legs#leg-' + l.id
+      page: location.href.split('#')[0] + '#leg-' + l.id
     };
 
     sendBtn.disabled = true;
@@ -3623,13 +3653,8 @@ function openQuote(id){
          back so she can also simply try again. */
       sendBtn.disabled = false;
       sendBtn.textContent = said;
-      var msg = 'Hello Andreea, I would like this empty leg. '
-        + route + ' (' + l.f + ' to ' + l.t + ') on ' + when + '. '
-        + a.t + ', ' + seatsNow + ' passengers. '
-        + (l.price ? money(l.price) : 'Price on request') + '. '
-        + 'Name: ' + first + ' ' + last + ', ' + email + ', ' + phone + '.'
-        + (note ? ' ' + note : '');
-      window.open('https://wa.me/971503372980?text=' + encodeURIComponent(msg), '_blank');
+      fwaWaOpen(l, a, { seats: seatsNow, name: first + ' ' + last,
+                        email: email, phone: phone, back: back, note: note });
     });
   });
 }
@@ -3640,7 +3665,12 @@ document.addEventListener('click', function (e) {
   var book = t.closest('[data-book]');
   if (book) { e.preventDefault(); shut(detailM); openQuote(book.getAttribute('data-book')); return; }
   var ask = t.closest('[data-ask]');
-  if (ask) { e.preventDefault(); shut(detailM); openQuote(ask.getAttribute('data-ask')); return; }
+  if (ask) {
+    e.preventDefault();
+    var askLeg = byId(ask.getAttribute('data-ask'));
+    if (askLeg) { shut(detailM); fwaWaOpen(askLeg, ac(askLeg), null); }
+    return;
+  }
   var det = t.closest('[data-detail]');
   if (det) { e.preventDefault(); openDetail(det.getAttribute('data-detail')); return; }
   if (t.closest('.gal') || t.closest('.rail')) return;

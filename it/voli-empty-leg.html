@@ -1272,7 +1272,7 @@ main{display:block}
 @media(max-width:700px){.price.ask{font-size:12.5px}}
 </style>
 <body>
-<div class="topbar"><div class="tb-search"><span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><input type="text" id="tbSearch" placeholder="Search destinations, airports, FAQs…" autocomplete="off" aria-label="Cerca nel sito"><div class="tb-results" id="tbResults"></div></div><div class="tb-lang" id="tbLang"><button type="button" class="tb-lang-btn" aria-haspopup="true" aria-expanded="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span class="lng">IT</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="tb-lang-menu"><a class="tb-lang-opt" href="/empty-legs" hreflang="en" data-lang="en">English</a><a class="tb-lang-opt active" href="/it/voli-empty-leg" hreflang="it" data-lang="it">Italiano</a><a class="tb-lang-opt" href="/fr/vols-a-vide" hreflang="fr" data-lang="fr">Français</a></div></div></div><script src="/search-index.js"></script><script>
+<div class="topbar"><div class="tb-search"><span class="tb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><input type="text" id="tbSearch" placeholder="Cerca destinazioni, aeroporti, FAQ…" autocomplete="off" aria-label="Cerca nel sito"><div class="tb-results" id="tbResults"></div></div><div class="tb-lang" id="tbLang"><button type="button" class="tb-lang-btn" aria-haspopup="true" aria-expanded="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg><span class="lng">IT</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button><div class="tb-lang-menu"><a class="tb-lang-opt" href="/empty-legs" hreflang="en" data-lang="en">English</a><a class="tb-lang-opt active" href="/it/voli-empty-leg" hreflang="it" data-lang="it">Italiano</a><a class="tb-lang-opt" href="/fr/vols-a-vide" hreflang="fr" data-lang="fr">Français</a></div></div></div><script src="/search-index.js"></script><script>
 /* topbar, same behaviour as the homepage */
 (function(){
   var inp=document.getElementById("tbSearch"), box=document.getElementById("tbResults");
@@ -3264,7 +3264,7 @@ function detailHTML(l){
    + 'un&#39;altra.</p></div>'
 
    + '<div class="d-foot"><div>' + priceHTML(l) + '</div>'
-   + '<div class="acts"><button class="fl-btn-g" type="button" data-ask="' + l.id + '">Chiedi ad Andreea</button>'
+   + '<div class="acts"><button class="fl-btn-g" type="button" data-ask="' + l.id + '">Scrivi a Fly with Andreea</button>'
    + '<button class="fl-btn" type="button" data-book="' + l.id + '">Prenota ora</button></div></div>';
 }
 
@@ -3428,6 +3428,36 @@ function openDetail(id){
   detailBox.innerHTML = detailHTML(l); open(detailM); detailBox.scrollTop = 0;
   detailM.scrollTop = 0; wireGalleries(); wireMaps(detailBox);
 }
+/* The WhatsApp message, written once and used by both paths, so the button
+ * and the fallback cannot drift apart. `who` is the block of customer
+ * details; it exists only when the form was filled in. The message button
+ * has no form behind it, so it sends the flight and the link and lets
+ * WhatsApp supply the name and the number.
+ */
+function fwaWaText(l, a, who){
+  var when = dateSpan(l) + (l.time ? ', ' + l.time : '');
+  var txt = 'Richiesta empty leg — ' + l.fc + ' a ' + l.tc
+    + '\n\n'
+    + 'Volo: ' + l.f + ' a ' + l.t + ', ' + when + '\n'
+    + 'Aeromobile: ' + a.t + (who ? '' : ', fino a ' + a.pax + ' passeggeri') + '\n'
+    + (who ? 'Passeggeri: ' + who.seats + ' di ' + a.pax + '\n' : '')
+    + 'Prezzo indicato: ' + (l.price ? money(l.price) : 'Prezzo su richiesta') + '\n'
+    + 'Riferimento: ' + l.id + '\n'
+    + location.href.split('#')[0] + '#leg-' + l.id;
+  if (who) {
+    txt += '\n\n'
+      + 'Nome: ' + who.name + '\n'
+      + 'Email: ' + who.email + '\n'
+      + 'Telefono: ' + who.phone + '\n'
+      + 'Risposta preferita: ' + who.back
+      + (who.note ? '\n' + 'Nota: ' + who.note : '');
+  }
+  return txt;
+}
+function fwaWaOpen(l, a, who){
+  window.open('https://wa.me/971503372980?text='
+    + encodeURIComponent(fwaWaText(l, a, who)), '_blank');
+}
 function openQuote(id){
   var l = byId(id); if (!l) return;
   var a = ac(l);                 /* the cabin, needed again when the form is sent */
@@ -3544,7 +3574,7 @@ function openQuote(id){
       preferred_reply: back,
       additional_info: note,
       leg_reference: l.id,
-      page: 'https://www.flywithandreea.com/empty-legs#leg-' + l.id
+      page: location.href.split('#')[0] + '#leg-' + l.id
     };
 
     sendBtn.disabled = true;
@@ -3566,13 +3596,8 @@ function openQuote(id){
          back so she can also simply try again. */
       sendBtn.disabled = false;
       sendBtn.textContent = said;
-      var msg = 'Ciao Andreea, mi interessa questo empty leg. '
-        + route + ' (' + l.f + ' a ' + l.t + ') on ' + when + '. '
-        + a.t + ', ' + seatsNow + ' passeggeri. '
-        + (l.price ? money(l.price) : 'Prezzo su richiesta') + '. '
-        + 'Nome: ' + first + ' ' + last + ', ' + email + ', ' + phone + '.'
-        + (note ? ' ' + note : '');
-      window.open('https://wa.me/971503372980?text=' + encodeURIComponent(msg), '_blank');
+      fwaWaOpen(l, a, { seats: seatsNow, name: first + ' ' + last,
+                        email: email, phone: phone, back: back, note: note });
     });
   });
 }
@@ -3583,7 +3608,12 @@ document.addEventListener('click', function (e) {
   var book = t.closest('[data-book]');
   if (book) { e.preventDefault(); shut(detailM); openQuote(book.getAttribute('data-book')); return; }
   var ask = t.closest('[data-ask]');
-  if (ask) { e.preventDefault(); shut(detailM); openQuote(ask.getAttribute('data-ask')); return; }
+  if (ask) {
+    e.preventDefault();
+    var askLeg = byId(ask.getAttribute('data-ask'));
+    if (askLeg) { shut(detailM); fwaWaOpen(askLeg, ac(askLeg), null); }
+    return;
+  }
   var det = t.closest('[data-detail]');
   if (det) { e.preventDefault(); openDetail(det.getAttribute('data-detail')); return; }
   if (t.closest('.gal') || t.closest('.rail')) return;
